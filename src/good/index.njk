@@ -1,0 +1,181 @@
+---
+layout: base.njk
+title: The Good Enough Secret - TofuPass Security Guide
+pageKey: good
+extraCss:
+  - /assets/css/good.css
+backgroundDecor: leaves
+---
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">The <span class="gradient-text">Good Enough</span> Secret</h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">An honest guide to password security, without the fear-mongering.</p>
+      </div>
+
+      <!-- Section 1: The Hard Truth -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-pink" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 4 20 19H4z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 9v4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17h.01" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">The Hard Truth</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed text-base mb-5">
+          Given enough time and computing power, any password can eventually be cracked. The lock on your front door can be picked too, but that doesn't mean locks are useless.
+        </p>
+        <div class="callout-strip callout-strip-yellow">
+          <p class="text-[#4A3728] dark:text-[#F0E6D8] font-bold text-base leading-relaxed">The real goal? Be <span class="text-[#E6A800]">too expensive to bother with</span>.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">Attackers don't target individuals by hand. They run automated tools against millions of accounts simultaneously. If cracking your password would take centuries on modern hardware, you're safe in practice.</p>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 2: The Formula -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-purple" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 8h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">The Formula</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed mb-6">Password strength boils down to one equation:</p>
+
+        <div class="formula-display mb-8 text-center">
+          <div class="text-3xl sm:text-4xl font-black mb-2">
+            <span class="text-[#FF7A7A]">Strength</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 mx-3">=</span>
+            <span class="text-[#9B6DD7]">Pool</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 text-2xl mx-2">^</span>
+            <span class="text-[#5B9FD6]">Length</span>
+          </div>
+          <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-sm font-mono">combinations = character_set_size ^ password_length</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 sm:gap-12 mb-6">
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#FF7A7A]">26</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">Lowercase</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#E6A800]">62</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ Upper + Nums</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#6BBF59]">95</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ Symbols</div>
+          </div>
+        </div>
+        <p class="text-[#8B7355] text-sm leading-relaxed">Every extra character <em>multiplies</em> the total combinations. Going from 8 to 12 characters doesn't add 4 more guesses. It multiplies the guess count by the pool size, four times over.</p>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 3: Two Recipes -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-yellow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M6 7h12" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 12h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 17h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">Two Recipes That Work</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+          <!-- Standard Password -->
+          <div class="recipe-strip recipe-strip-pink">
+            <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-3">Standard Password</div>
+            <div class="font-mono text-[#FF7A7A] font-bold text-lg mb-4 break-all">!DancingKoala73</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Mixed case letters</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Leading symbol</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Trailing numbers</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 15 characters total</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> Great for daily use</li>
+            </ul>
+          </div>
+
+          <!-- Passphrase -->
+          <div class="recipe-strip recipe-strip-green">
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase mb-3">Passphrase</div>
+            <div class="font-mono text-[#6BBF59] font-bold text-lg mb-4 break-all">blooming-tiger-cosmic-leaf</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 4 random words</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Hyphen separated</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 280+ trillion combos</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Easy to type</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> Best for memory vaults</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 4: Three Golden Rules -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M8 4h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 4a2 2 0 0 0-2 2v12a2 2 0 1 0 0-4h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">Three Golden Rules</h2>
+        </div>
+        <div class="space-y-10">
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-pink">1</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Go Long</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Length matters more than complexity. A 20-character all-lowercase passphrase has more entropy than an 8-character "complex" password with symbols. Aim for at least 12 characters for standard accounts, 20+ for sensitive ones.</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-green">2</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Stay Random</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Humans are terrible at random. We gravitate toward patterns, dates, and words we like. Use a tool like TofuPass to generate truly random passwords. The word lists are curated to avoid predictable patterns.</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-yellow">3</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Check the Database</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Even a strong password is worthless if it appeared in a data breach. Use our <a href="/stresstest/" class="text-[#E6A800] hover:text-[#C28D00] underline underline-offset-2 decoration-[#E6A800]/30 hover:decoration-[#E6A800] transition-colors font-bold">Stress Tester</a> to check if your password shows up in HaveIBeenPwned's database of billions of compromised credentials, privately using k-Anonymity.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="text-center pt-4">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          Generate a Secure Password
+        </a>
+      </div>
+
+    </div>
+  </main>

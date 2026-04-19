@@ -1,0 +1,43 @@
+/* ── Privacy page – Kawaii Tofu theme ── */
+
+.gradient-text {
+  background: linear-gradient(135deg, #FF7A7A 0%, #FF9EAF 40%, #FFD166 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Section cards ── */
+.section-card {
+  background: var(--bg-surface);
+  border: 2px solid rgba(139, 195, 74, 0.12);
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 24px var(--shadow-base);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.section-card:hover {
+  border-color: rgba(107, 191, 89, 0.35);
+  box-shadow: 0 8px 32px rgba(107, 191, 89, 0.1);
+}
+
+/* ── Icon wrap ── */
+.icon-wrap {
+  width: 44px; height: 44px; flex-shrink: 0;
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.25rem;
+}
+
+/* ── No-collect list ── */
+.no-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.08);
+}
+.no-list li:last-child { border-bottom: none; }
+
+/* ── How-it-works sub-cards ── */
+.how-card {
+  background: rgba(107, 191, 89, 0.04);
+  border: 1px solid rgba(139, 195, 74, 0.1);
+  border-radius: 0.75rem;
+  padding: 1rem;
+}

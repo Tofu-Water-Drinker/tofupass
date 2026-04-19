@@ -1,0 +1,96 @@
+/* ── About page: open FAQ layout (comfort mode) ── */
+
+[x-cloak] { display: none !important; }
+
+/* ── Section groups ── */
+.faq-section {
+  margin-bottom: 0;
+}
+
+/* ── Section labels ── */
+.faq-section-label {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  padding: 4px 12px;
+  border-radius: 8px;
+}
+.faq-label-green  { color: #6BBF59; background: rgba(107, 191, 89, 0.08); }
+.faq-label-purple { color: #9B6DD7; background: rgba(155, 109, 215, 0.08); }
+.faq-label-pink   { color: #FF7A7A; background: rgba(255, 122, 122, 0.08); }
+.faq-label-yellow { color: #E6A800; background: rgba(255, 209, 102, 0.1); }
+
+/* ── Dividers ── */
+.faq-divider {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+/* ── Individual FAQ items ── */
+.faq-item {
+  border-bottom: 1px solid rgba(139, 195, 74, 0.08);
+}
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+/* ── Question trigger ── */
+.faq-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 0;
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+  cursor: pointer;
+  background: none;
+  border: none;
+  line-height: 1.4;
+}
+.faq-trigger:hover {
+  color: #6BBF59;
+}
+
+/* ── +/x icon ── */
+.faq-icon {
+  color: var(--text-secondary);
+  opacity: 0.3;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, opacity 0.2s ease;
+}
+.faq-trigger:hover .faq-icon {
+  opacity: 0.55;
+}
+
+/* ── Answer text ── */
+.faq-answer {
+  overflow: hidden;
+}
+.faq-answer p {
+  padding-bottom: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.85;
+}
+.faq-answer strong {
+  color: var(--text-primary);
+}
+.faq-answer code {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(107, 191, 89, 0.06);
+  border: 1px solid rgba(139, 195, 74, 0.12);
+  padding: 0.15em 0.45em;
+  border-radius: 6px;
+  font-size: 0.85em;
+  color: #6BBF59;
+}

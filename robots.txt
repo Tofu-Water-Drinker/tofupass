@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /api/password
+Disallow: /api/passphrase
+Disallow: /api/stats
+
+Sitemap: https://tofupass.com/sitemap.xml

@@ -1,0 +1,104 @@
+/* ── API Reference – Kawaii Tofu Theme ── */
+
+/* Code blocks */
+.code-block {
+  background: var(--code-bg);
+  border: 2px solid rgba(139,195,74,0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  position: relative;
+}
+.code-block pre { margin: 0; font-size: 0.85rem; line-height: 1.7; }
+.copy-code-btn {
+  position: absolute; top: 10px; right: 12px;
+  background: rgba(107,191,89,0.08); border: 1px solid rgba(107,191,89,0.15);
+  color: #6BBF59; font-size: 0.72rem; padding: 4px 10px;
+  border-radius: 6px; cursor: pointer; transition: all 0.2s;
+  font-family: 'Nunito', 'Inter', sans-serif;
+}
+.copy-code-btn:hover { background: rgba(107,191,89,0.15); color: #5aa84d; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FF9EAF 0%, #9B6DD7 40%, #5B9FD6 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* Glass card (warm) */
+.glass {
+  background: var(--bg-surface);
+  border: 2px solid rgba(139,195,74,0.1);
+  border-radius: 1.5rem;
+}
+
+/* Method badge */
+.method-get {
+  background: rgba(107,191,89,0.1); color: #6BBF59;
+  border: 1px solid rgba(107,191,89,0.2);
+}
+
+/* Param table */
+.param-row { border-bottom: 1px solid rgba(139,195,74,0.06); }
+.param-row:last-child { border-bottom: none; }
+
+/* Endpoint card hover */
+.endpoint-card {
+  background: var(--bg-surface);
+  border: 2px solid rgba(139,195,74,0.1);
+  border-radius: 1.5rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.endpoint-card:hover {
+  border-color: rgba(107,191,89,0.25);
+  box-shadow: 0 8px 40px rgba(107,191,89,0.08);
+}
+
+/* Badge */
+.badge {
+  background: rgba(107,191,89,0.06);
+  border: 1px solid rgba(107,191,89,0.12);
+}
+
+/* Mascot glow */
+.mascot-glow { filter: drop-shadow(0 0 20px rgba(107,191,89,0.3)); transition: filter 0.3s; }
+.mascot-glow:hover { filter: drop-shadow(0 0 30px rgba(107,191,89,0.5)); }
+
+/* Status badges */
+.status-200 { background: rgba(107,191,89,0.08); color: #6BBF59; border: 1px solid rgba(107,191,89,0.2); }
+.status-400 { background: rgba(255,122,122,0.08); color: #FF7A7A; border: 1px solid rgba(255,122,122,0.2); }
+
+/* Syntax colors */
+.tok-key { color: #9B6DD7; }
+.tok-str { color: #6BBF59; }
+.tok-num { color: #E6A800; }
+.tok-url { color: #5B9FD6; }
+.tok-comment { color: rgba(139,115,85,0.5); }
+
+@media (max-width: 640px) {
+  .code-block {
+    padding: 14px 14px 16px;
+  }
+  .code-block pre {
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+  .copy-code-btn {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+  }
+  .endpoint-card > div:first-child {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  .endpoint-card > div:first-child .ml-auto {
+    margin-left: 0;
+    width: 100%;
+  }
+  .param-row,
+  .glass.rounded-xl.overflow-hidden > .grid {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}

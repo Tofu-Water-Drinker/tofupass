@@ -1,0 +1,12 @@
+node_modules/
+_site/
+.DS_Store
+npm-debug.log*
+
+# Local editor / agent state
+.claude/
+.vscode/
+.idea/
+
+# Word lists kept out of the open-source repo
+assets/js/wordlists.js

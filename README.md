@@ -3,13 +3,14 @@
 A privacy-focused, client-side password generator. Everything runs in your browser — no server ever sees what you generate.
 
 **Live site:** [tofupass.com](https://tofupass.com)
+**API backend:** [tofupass-api](https://github.com/Tofu-Water-Drinker/tofupass-api) (separate repo)
 
 ## What it does
 
 - Generates memorable passwords using curated word lists + `crypto.getRandomValues()` (the Web Crypto CSPRNG)
 - Three strength tiers: Soft (word+word+number), Firm (symbol+Word+Word+number), Extra Firm (four-word passphrase)
 - Includes a **Stress Tester** that checks passwords against Have I Been Pwned using k-Anonymity (only a 5-char hash prefix leaves your device)
-- Offers a free **API** for programmatic generation — no auth, no rate-limit drama
+- Offers a free **[API](https://github.com/Tofu-Water-Drinker/tofupass-api)** for programmatic generation — no auth, no rate-limit drama
 
 No accounts. No analytics. No cookies. No tracking pixels. Works offline once loaded.
 

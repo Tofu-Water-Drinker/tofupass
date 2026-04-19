@@ -326,7 +326,7 @@
 
       const announcement = document.querySelector('[data-announcement]');
       const announcementClose = document.querySelector('[data-announcement-close]');
-      const announcementStorageKey = 'tofupass-announcement-2026-04-18-opensource';
+      const announcementStorageKey = 'tofupass-announcement-2026-04-18-api-opensource';
 
       if (announcement && announcementClose) {
         try {

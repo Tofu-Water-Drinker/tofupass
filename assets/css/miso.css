@@ -1,0 +1,293 @@
+/* ── Miso's page: GOOPY, colorful, chaotic fun ── */
+
+/* ── Background blobs (big squishy paint globs) ── */
+.blob-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.blob {
+  position: absolute;
+  border-radius: 42% 58% 62% 38% / 45% 52% 48% 55%;
+  animation: blobWobble 12s ease-in-out infinite alternate;
+}
+.blob-1 {
+  width: 500px; height: 460px;
+  background: rgba(139, 195, 74, 0.18);
+  top: -120px; left: -100px;
+  animation-delay: 0s;
+}
+.blob-2 {
+  width: 420px; height: 400px;
+  background: rgba(255, 158, 175, 0.2);
+  top: 15%; right: -80px;
+  border-radius: 55% 45% 38% 62% / 50% 42% 58% 50%;
+  animation-delay: -3s;
+  animation-duration: 15s;
+}
+.blob-3 {
+  width: 350px; height: 380px;
+  background: rgba(255, 209, 102, 0.18);
+  top: 45%; left: -60px;
+  border-radius: 48% 52% 55% 45% / 58% 42% 55% 45%;
+  animation-delay: -6s;
+  animation-duration: 18s;
+}
+.blob-4 {
+  width: 450px; height: 420px;
+  background: rgba(155, 109, 215, 0.12);
+  bottom: 10%; right: -120px;
+  border-radius: 38% 62% 45% 55% / 55% 48% 52% 45%;
+  animation-delay: -2s;
+  animation-duration: 14s;
+}
+.blob-5 {
+  width: 300px; height: 280px;
+  background: rgba(91, 159, 214, 0.14);
+  bottom: -60px; left: 30%;
+  border-radius: 52% 48% 42% 58% / 45% 55% 45% 55%;
+  animation-delay: -8s;
+  animation-duration: 16s;
+}
+@keyframes blobWobble {
+  0% { border-radius: 42% 58% 62% 38% / 45% 52% 48% 55%; transform: rotate(0deg) scale(1); }
+  33% { border-radius: 55% 45% 38% 62% / 52% 48% 55% 45%; transform: rotate(3deg) scale(1.04); }
+  66% { border-radius: 48% 52% 55% 45% / 38% 62% 42% 58%; transform: rotate(-2deg) scale(0.97); }
+  100% { border-radius: 38% 62% 42% 58% / 55% 45% 52% 48%; transform: rotate(1deg) scale(1.02); }
+}
+
+/* ── Splat accents (small paint dots scattered) ── */
+.splat {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+}
+.splat-1 { width: 18px; height: 18px; background: #FF9EAF; top: 22%; left: 12%; opacity: 0.35; }
+.splat-2 { width: 12px; height: 12px; background: #8BC34A; top: 38%; right: 8%; opacity: 0.3; }
+.splat-3 { width: 24px; height: 24px; background: #FFD166; top: 55%; left: 6%; opacity: 0.25; }
+.splat-4 { width: 10px; height: 10px; background: #9B6DD7; top: 70%; right: 15%; opacity: 0.3; }
+.splat-5 { width: 16px; height: 16px; background: #5B9FD6; bottom: 25%; left: 25%; opacity: 0.2; }
+.splat-6 { width: 20px; height: 20px; background: #FF7A7A; top: 12%; right: 22%; opacity: 0.2; }
+
+/* ── Page header ── */
+.gradient-text {
+  background: linear-gradient(135deg, #FF7A7A 0%, #FFD166 30%, #6BBF59 60%, #5B9FD6 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.miso-kicker {
+  color: #FF9EAF;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+/* ── Mascot ── */
+.mascot-hero {
+  filter: drop-shadow(0 8px 40px rgba(107, 191, 89, 0.3));
+  animation: floatMascot 4s ease-in-out infinite;
+}
+@keyframes floatMascot {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+.mascot-ring {
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  position: relative;
+  background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.15) 60%, transparent 75%);
+  display: flex; align-items: center; justify-content: center;
+}
+.mascot-ring::before {
+  content: ''; position: absolute; inset: 0;
+  border-radius: 50%; border: 2.5px solid rgba(255,255,255,0.35);
+  animation: rotatePulse 6s linear infinite;
+}
+@keyframes rotatePulse {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ── Colored section blobs (inline background shapes behind sections) ── */
+.miso-blob-section {
+  position: relative;
+  padding: 2.5rem 2rem;
+  margin-bottom: 1.5rem;
+  border-radius: 40% 60% 55% 45% / 50% 45% 55% 50%;
+  overflow: visible;
+}
+.miso-blob-green {
+  background: rgba(139, 195, 74, 0.1);
+}
+.miso-blob-pink {
+  background: rgba(255, 158, 175, 0.1);
+}
+.miso-blob-yellow {
+  background: rgba(255, 209, 102, 0.1);
+}
+.miso-blob-purple {
+  background: rgba(155, 109, 215, 0.08);
+}
+.miso-blob-section h2 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin: 0 0 0.75rem;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+}
+.miso-blob-section p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-tertiary);
+  margin-bottom: 1rem;
+}
+.miso-blob-section p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Moods grid ── */
+.moods-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.25rem;
+}
+.mood-item {
+  text-align: center;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mood-item:hover {
+  transform: translateY(-6px) rotate(-2deg);
+}
+.mood-img {
+  width: 100px; height: 100px;
+  margin: 0 auto 0.75rem;
+  filter: drop-shadow(0 6px 20px rgba(74, 55, 40, 0.12));
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.mood-item:hover .mood-img {
+  transform: scale(1.15) rotate(3deg);
+}
+.mood-name {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.4rem;
+}
+.mood-name-green  { color: #6BBF59; }
+.mood-name-yellow { color: #E6A800; }
+.mood-name-pink   { color: #FF7A7A; }
+.mood-desc {
+  font-size: 0.85rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+/* ── Fun facts ── */
+.fun-facts {
+  margin-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.fun-fact {
+  background: var(--bg-surface);
+  border-radius: 99px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px var(--shadow-base);
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+}
+.fun-fact:hover {
+  transform: translateY(-2px) rotate(-1deg);
+  box-shadow: 0 6px 16px rgba(74, 55, 40, 0.1);
+}
+.fun-fact-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #FF9EAF;
+  white-space: nowrap;
+}
+.fun-fact-value {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* ── Miso letter (sticky note style) ── */
+.miso-letter {
+  position: relative;
+  margin-top: 0.75rem;
+  padding: 2rem 2rem 1.75rem;
+  background: linear-gradient(175deg, #FFF9B0 0%, #FFEF6E 100%);
+  border-radius: 4px;
+  box-shadow: 3px 4px 14px rgba(74, 55, 40, 0.1);
+  transform: rotate(-1.2deg);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.miso-letter:hover {
+  transform: rotate(0.5deg) scale(1.01);
+}
+.miso-letter-stamp {
+  position: absolute;
+  top: 14px; right: 16px;
+  background: #FF9EAF;
+  color: #5d203f;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  transform: rotate(4deg);
+  box-shadow: 0 2px 8px rgba(255, 158, 175, 0.2);
+}
+.miso-letter-body {
+  font-family: 'Caveat', cursive;
+  font-size: 1.35rem;
+  line-height: 1.55;
+  color: #5B4A28;
+}
+.miso-letter-body p {
+  margin-bottom: 0.4rem;
+}
+.miso-letter-sign {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #4A8B3A;
+  margin-top: 0.5rem;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .blob-1, .blob-2, .blob-3, .blob-4, .blob-5 {
+    transform: scale(0.6);
+  }
+  .moods-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+  .mood-img { width: 85px; height: 85px; }
+  .miso-blob-section {
+    padding: 1.75rem 1.25rem;
+    border-radius: 35% 65% 55% 45% / 48% 42% 58% 52%;
+  }
+  .miso-letter {
+    padding: 1.5rem;
+  }
+  .miso-letter-body { font-size: 1.2rem; }
+  .miso-kicker { letter-spacing: 0.14em; font-size: 0.78rem; }
+  .fun-facts { gap: 8px; }
+}
+
+html.dark .blob { opacity: 0.7; }

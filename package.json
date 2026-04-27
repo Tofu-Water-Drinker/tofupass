@@ -1,0 +1,14 @@
+{
+  "name": "tofupass",
+  "version": "1.0.0",
+  "description": "Beautifully secure passwords",
+  "private": true,
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

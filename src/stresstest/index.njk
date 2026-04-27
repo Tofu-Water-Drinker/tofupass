@@ -1,0 +1,130 @@
+---
+layout: base.njk
+title: Stress Tester - TofuPass
+pageKey: stresstest
+extraCss:
+  - /assets/css/stresstest.css
+pageScripts:
+  - /assets/js/stresstest.js
+backgroundDecor: leaves
+---
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]"><span class="gradient-text">Stress</span> Tester</h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-sm mx-auto">How long would it take a computer to crack your password? And has it already been leaked?</p>
+      </div>
+
+      <!-- Password Input -->
+      <div class="mb-6">
+        <label class="block text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest mb-2">Your Password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="Enter a password to analyze..."
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          class="pw-input"
+        />
+        <div class="flex items-center justify-between mt-2">
+          <button onclick="toggleVisibility()" id="visBtn"
+            class="text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 hover:text-[#4A3728] dark:hover:text-[#F0E6D8] transition-colors flex items-center gap-1">
+            <span id="visIcon">👁</span> <span id="visText">Show</span>
+          </button>
+          <div id="char-count" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40"></div>
+        </div>
+      </div>
+
+      <!-- Strength Meter -->
+      <div class="mb-6">
+        <div class="flex items-center justify-between mb-2">
+          <label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest">Strength</label>
+          <span id="strength-label" class="strength-label text-[#8B7355]/50 dark:text-[#B8A890]/50 bg-[#6BBF59]/5 dark:bg-[#7DD668]/10">Waiting</span>
+        </div>
+        <div class="meter-track">
+          <div id="meter-fill"></div>
+        </div>
+      </div>
+
+      <!-- Hardware Select -->
+      <div class="mb-6">
+        <div class="flex items-center gap-2 mb-2">
+          <label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest" for="hardware">Attacker Hardware</label>
+          <div class="tooltip-wrap">
+            <button class="w-4 h-4 rounded-full bg-[#6BBF59]/10 dark:bg-[#7DD668]/15 text-[#8B7355] dark:text-[#B8A890] text-xs flex items-center justify-center hover:bg-[#6BBF59]/20 dark:hover:bg-[#7DD668]/25 transition-colors">?</button>
+            <div class="tooltip-content">
+              <strong class="text-[#4A3728] dark:text-[#F0E6D8]">Attack speed</strong> represents how many password guesses per second the hardware can make. Modern GPUs can test billions of hashes per second against offline databases.
+            </div>
+          </div>
+        </div>
+        <select id="hardware" class="hw-select">
+          <option value="1e9">Consumer GPU (1 billion/sec)</option>
+          <option value="1e10">High-end Gaming PC (10 billion/sec)</option>
+          <option value="1e12">Botnet / Cloud Cluster (1 trillion/sec)</option>
+          <option value="1e14">Nation-State Hardware (100 trillion/sec)</option>
+        </select>
+      </div>
+
+      <!-- Time Display -->
+      <div class="mb-6 text-center py-6 border-y-2 border-[#6BBF59]/8 dark:border-[#7DD668]/12">
+        <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">Estimated Crack Time</div>
+        <div id="time-display">Not yet</div>
+        <div id="scanning-text" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40 mt-2 h-4"></div>
+      </div>
+
+      <!-- Breach Alert -->
+      <div id="breach-card">
+        <div class="flex items-start gap-3">
+          <div class="text-2xl">🚨</div>
+          <div>
+            <div class="font-bold text-[#FF7A7A] text-sm mb-1">Found in Data Breaches</div>
+            <p id="breach-text" class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 text-sm leading-relaxed"></p>
+            <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-xs mt-2">Stop using this password immediately. Generate a new one above.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats -->
+      <div class="flex items-center mt-8 mb-8 pt-6 border-t border-[#6BBF59]/08">
+        <div class="flex-1 text-center">
+          <div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-length">0</div>
+          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Characters</div>
+        </div>
+        <div class="w-px h-10 bg-[#6BBF59]/10 flex-shrink-0"></div>
+        <div class="flex-1 text-center">
+          <div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-pool">0</div>
+          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Pool Size</div>
+        </div>
+        <div class="w-px h-10 bg-[#6BBF59]/10 flex-shrink-0"></div>
+        <div class="flex-1 text-center">
+          <div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-entropy">0</div>
+          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Bits of Entropy</div>
+        </div>
+      </div>
+
+      <!-- How it works / Privacy note -->
+      <div class="st-callout">
+        <div class="flex items-start gap-3">
+          <div class="text-xl mt-0.5">
+            <div class="tooltip-wrap">
+              🔑
+              <div class="tooltip-content" style="left: 0; transform: none;">
+                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-Anonymity</strong>: Only the first 5 characters of your password's SHA-1 hash are sent to Have I Been Pwned. The full hash and your actual password never leave your device. The API returns all hashes with that prefix, and matching is done locally.
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">100% Private Breach Check</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">Breach detection uses <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-Anonymity</strong> via Have I Been Pwned. Your actual password is never transmitted. Only a 5-character hash prefix is sent. Hover the key icon to learn more.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>

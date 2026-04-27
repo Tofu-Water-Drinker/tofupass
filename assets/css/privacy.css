@@ -1,0 +1,41 @@
+/* ── Privacy page – Kawaii Tofu theme ── */
+
+.gradient-text {
+  background: linear-gradient(135deg, #FF7A7A 0%, #FF9EAF 40%, #FFD166 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* ── Commitment callout ── */
+.privacy-commitment {
+  border-left: 4px solid rgba(107, 191, 89, 0.5);
+  padding-left: 1.25rem;
+  margin-bottom: 3rem;
+}
+
+/* ── Open sections ── */
+.privacy-section {
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.08);
+}
+.privacy-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+/* ── No-collect list ── */
+.no-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.08);
+}
+.no-list li:last-child { border-bottom: none; }
+
+/* ── How-it-works items (left-border strip) ── */
+.how-item {
+  border-left: 3px solid rgba(139, 195, 74, 0.3);
+  padding: 0.6rem 0 0.6rem 1rem;
+  margin-bottom: 0.75rem;
+}
+.how-item:last-child { margin-bottom: 0; }

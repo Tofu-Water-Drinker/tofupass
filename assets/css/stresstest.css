@@ -1,0 +1,112 @@
+* { font-family: 'Nunito', sans-serif; }
+body { min-height: 100vh; }
+
+.gradient-text {
+  background: linear-gradient(135deg, #FF9EAF 0%, #9B6DD7 40%, #5B9FD6 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* Input */
+.pw-input {
+  background: var(--bg-surface); border: 2px solid rgba(139,195,74,0.15);
+  color: var(--text-primary); border-radius: 14px; padding: 14px 18px;
+  font-size: 1.1rem; width: 100%;
+  font-family: 'JetBrains Mono', monospace;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+.pw-input:focus { border-color: #6BBF59; box-shadow: 0 0 0 3px rgba(107,191,89,0.12); }
+.pw-input::placeholder { color: var(--text-secondary); font-family: 'Nunito', sans-serif; font-size: 0.95rem; opacity: 0.5; }
+
+/* Strength meter */
+.meter-track {
+  height: 8px; background: rgba(139,195,74,0.1);
+  border-radius: 99px; overflow: hidden;
+}
+#meter-fill {
+  height: 100%; width: 0%; background: #6BBF59;
+  border-radius: 99px;
+  transition: width 0.5s cubic-bezier(0.4,0,0.2,1), background 0.4s ease;
+}
+
+/* Hardware select */
+.hw-select {
+  background: var(--bg-surface); border: 2px solid rgba(139,195,74,0.15);
+  color: var(--text-primary); border-radius: 12px; padding: 10px 14px;
+  font-size: 0.875rem; width: 100%; outline: none;
+  transition: border-color 0.2s; cursor: pointer;
+  -webkit-appearance: none; appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='rgba(74,55,40,0.3)' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: right 14px center;
+  padding-right: 36px;
+}
+.hw-select:focus { border-color: #6BBF59; }
+.hw-select option { background: var(--bg-surface); color: var(--text-primary); }
+
+/* Time display */
+#time-display {
+  font-size: 2.5rem; font-weight: 900; color: #6BBF59;
+  transition: color 0.4s ease; letter-spacing: -0.02em;
+  min-height: 64px; display: flex; align-items: center; justify-content: center;
+  font-family: 'Nunito', sans-serif;
+}
+
+/* Breach alert (left-border callout, hidden until JS reveals it) */
+#breach-card {
+  display: none;
+  border-left: 4px solid rgba(255,122,122,0.6);
+  padding: 14px 0 14px 18px;
+  margin-bottom: 1.5rem;
+}
+
+/* Tooltip */
+.tooltip-wrap { position: relative; display: inline-block; }
+.tooltip-content {
+  display: none; position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%);
+  background: var(--bg-surface); border: 2px solid rgba(139,195,74,0.12);
+  border-radius: 10px; padding: 12px 14px; width: 260px; font-size: 0.78rem;
+  line-height: 1.6; color: var(--text-primary); z-index: 50;
+  box-shadow: 0 10px 30px rgba(74,55,40,0.08);
+}
+.tooltip-wrap:hover .tooltip-content { display: block; }
+.tooltip-content::after {
+  content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+  border: 6px solid transparent; border-top-color: rgba(139,195,74,0.12);
+}
+
+/* Strength labels */
+.strength-label {
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 3px 10px; border-radius: 6px;
+}
+
+/* Privacy callout strip */
+.st-callout {
+  border-left: 4px solid rgba(107, 191, 89, 0.4);
+  padding-left: 1.25rem;
+}
+
+.badge { background: rgba(107,191,89,0.08); border: 2px solid rgba(107,191,89,0.15); }
+.mascot-glow { filter: drop-shadow(0 2px 8px rgba(107,191,89,0.2)); transition: filter 0.3s; }
+.mascot-glow:hover { filter: drop-shadow(0 4px 12px rgba(107,191,89,0.35)); }
+
+/* Scanning animation */
+@keyframes scanPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.scanning { animation: scanPulse 1s ease-in-out infinite; }
+
+@media (max-width: 640px) {
+  .pw-input {
+    padding: 12px 14px;
+    font-size: 1rem;
+  }
+  #time-display {
+    font-size: 2rem;
+    min-height: 52px;
+  }
+  .tooltip-content {
+    width: min(260px, calc(100vw - 32px));
+  }
+}

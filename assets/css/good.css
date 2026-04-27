@@ -1,0 +1,130 @@
+/* ── Good Enough Secret page ── */
+
+    .gradient-text {
+      background: linear-gradient(135deg, #FF7A7A 0%, #9B6DD7 40%, #5B9FD6 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* ── Section dot icons (circle, no card) ── */
+    .section-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+    .section-dot:hover { transform: scale(1.1); }
+    .section-dot-pink {
+      background: rgba(255, 122, 122, 0.1);
+      color: #FF7A7A;
+      box-shadow: 0 4px 12px rgba(255, 122, 122, 0.1);
+    }
+    .section-dot-purple {
+      background: rgba(155, 109, 215, 0.1);
+      color: #9B6DD7;
+      box-shadow: 0 4px 12px rgba(155, 109, 215, 0.1);
+    }
+    .section-dot-yellow {
+      background: rgba(230, 168, 0, 0.1);
+      color: #E6A800;
+      box-shadow: 0 4px 12px rgba(230, 168, 0, 0.1);
+    }
+    .section-dot-blue {
+      background: rgba(91, 159, 214, 0.1);
+      color: #5B9FD6;
+      box-shadow: 0 4px 12px rgba(91, 159, 214, 0.1);
+    }
+
+    /* ── Callout strip (left border accent, no full card) ── */
+    .callout-strip {
+      padding: 1.25rem 1.5rem;
+      border-radius: 0 1rem 1rem 0;
+      border-left: 4px solid;
+    }
+    .callout-strip-yellow {
+      border-left-color: #FFD166;
+      background: rgba(255, 209, 102, 0.06);
+    }
+
+    /* ── Formula display (just text, no card wrapper) ── */
+    .formula-display {
+      padding: 1.5rem 0;
+    }
+
+    /* ── Recipe strips (left-accent instead of full card border) ── */
+    .recipe-strip {
+      padding: 0 0 0 1.5rem;
+      border-left: 4px solid;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .recipe-strip:hover {
+      transform: translateX(4px);
+    }
+    .recipe-strip-pink {
+      border-left-color: #FF7A7A;
+    }
+    .recipe-strip-green {
+      border-left-color: #6BBF59;
+    }
+
+    /* ── Rule items (open, no card) ── */
+    .rule-open {
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .rule-open:hover {
+      transform: translateX(4px);
+    }
+    .rule-num {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.25rem;
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    }
+    .rule-open:hover .rule-num {
+      transform: scale(1.1);
+    }
+    .rule-num-pink {
+      background: rgba(255, 122, 122, 0.1);
+      color: #FF7A7A;
+      box-shadow: 0 4px 12px rgba(255, 122, 122, 0.08);
+    }
+    .rule-open:hover .rule-num-pink {
+      box-shadow: 0 6px 20px rgba(255, 122, 122, 0.18);
+    }
+    .rule-num-green {
+      background: rgba(107, 191, 89, 0.1);
+      color: #6BBF59;
+      box-shadow: 0 4px 12px rgba(107, 191, 89, 0.08);
+    }
+    .rule-open:hover .rule-num-green {
+      box-shadow: 0 6px 20px rgba(107, 191, 89, 0.18);
+    }
+    .rule-num-yellow {
+      background: rgba(230, 168, 0, 0.1);
+      color: #E6A800;
+      box-shadow: 0 4px 12px rgba(230, 168, 0, 0.08);
+    }
+    .rule-open:hover .rule-num-yellow {
+      box-shadow: 0 6px 20px rgba(230, 168, 0, 0.18);
+    }
+
+    @media (max-width: 640px) {
+      .formula-display {
+        padding: 1rem 0;
+      }
+      .recipe-strip {
+        padding-left: 1.15rem;
+      }
+      .callout-strip {
+        padding: 1rem 1.15rem;
+      }
+    }

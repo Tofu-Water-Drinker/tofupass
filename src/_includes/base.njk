@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  {% if description %}<meta name="description" content="{{ description }}" />{% endif %}
+  {% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>tailwind.config={darkMode:'class'}</script>
+  <script>(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme:dark)').matches))document.documentElement.classList.add('dark');})()</script>
+  {% for font in extraFonts %}<link rel="stylesheet" href="{{ font }}" />
+  {% endfor %}
+  {% for script in headScripts %}<script defer src="{{ script }}"></script>
+  {% endfor %}
+  <link rel="stylesheet" href="/assets/css/base.css" />
+  {% for css in extraCss %}<link rel="stylesheet" href="{{ css }}" />
+  {% endfor %}
+</head>
+<body class="overflow-x-hidden">
+
+  {% if backgroundDecor == "leaves" %}
+  <div class="bg-deco">
+    <div class="bg-leaf bg-leaf-1"></div>
+    <div class="bg-leaf bg-leaf-2"></div>
+    <div class="bg-leaf bg-leaf-3"></div>
+    <div class="bg-leaf bg-leaf-4"></div>
+    <div class="bg-leaf bg-leaf-5"></div>
+    <div class="bg-dot bg-dot-1"></div>
+    <div class="bg-dot bg-dot-2"></div>
+    <div class="bg-dot bg-dot-3"></div>
+    <div class="bg-dot bg-dot-4"></div>
+    <div class="bg-dot bg-dot-5"></div>
+  </div>
+  {% elif backgroundDecor == "blobs" %}
+  <div class="blob-bg">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="blob blob-4"></div>
+    <div class="blob blob-5"></div>
+    <div class="splat splat-1"></div>
+    <div class="splat splat-2"></div>
+    <div class="splat splat-3"></div>
+    <div class="splat splat-4"></div>
+    <div class="splat splat-5"></div>
+    <div class="splat splat-6"></div>
+  </div>
+  {% endif %}
+
+  <nav class="nav-blur fixed top-0 left-0 right-0 z-50" data-nav-root>
+    <div class="nav-shell max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
+      <div class="flex items-center gap-3">
+        <div class="wordmark-wrap">
+          <a href="/" class="flex items-center group" aria-label="TofuPass Home">
+            <img src="/tofu.png" alt="" class="w-7 h-7 mr-2" aria-hidden="true" style="filter: drop-shadow(0 2px 4px rgba(107,191,89,0.2));" />
+            <span class="font-black text-xl tracking-tight text-[#4A3728] dark:text-[#F0E6D8]">Tofu<span class="text-[#6BBF59] dark:text-[#7DD668]">Pass</span></span>
+          </a>
+          {% if showAnnouncement %}
+          <div class="announcement-note" data-announcement role="status" aria-live="polite">
+            <img src="/excited.png" alt="" class="announcement-mascot" aria-hidden="true" />
+            <div class="announcement-copy">
+              <span class="announcement-kicker">Now Open Source</span>
+              <p>The <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="announcement-link">site</a> and <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="announcement-link">API</a> are open source on GitHub, for your peace of mind.</p>
+            </div>
+            <button type="button" class="announcement-close" data-announcement-close aria-label="Dismiss announcement">&times;</button>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <div class="nav-links flex items-center gap-1 sm:gap-2" data-nav-menu>
+          {% for item in nav %}
+            {% if item.key == pageKey %}
+              <a href="{{ item.href }}" class="px-3 py-2 rounded-lg text-[#4A3728] dark:text-[#F0E6D8] font-bold text-sm bg-[#6BBF59]/10 dark:bg-[#7DD668]/15 border-2 border-[#6BBF59]/20 dark:border-[#7DD668]/25">{{ item.label }}</a>
+            {% else %}
+              <a href="{{ item.href }}" class="px-3 py-2 rounded-lg text-[#8B7355] dark:text-[#B8A890] hover:text-[#4A3728] dark:hover:text-[#F0E6D8] font-semibold text-sm hover:bg-[#6BBF59]/5 dark:hover:bg-[#7DD668]/10 transition-all">{{ item.label }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">
+          <svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button class="nav-toggle md:hidden" type="button" aria-expanded="false" aria-label="Toggle navigation menu" data-nav-toggle>
+          <span class="nav-toggle-icon" aria-hidden="true">
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+            <span class="nav-toggle-bar"></span>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  {{ content | safe }}
+
+  <footer class="relative z-10 py-8 px-4 border-t-2 border-[#8BC34A]/10 dark:border-[#8BC34A]/15">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <span class="text-[#8B7355]/40 dark:text-[#B8A890]/40 text-xs">Open source &middot; No tracking &middot; No accounts</span>
+      <div class="flex flex-wrap justify-center gap-1">
+        {% set footerLinks = [
+          { key: "about", label: "About", href: "/about/" },
+          { key: "why", label: "Why TofuPass", href: "/why/" },
+          { key: "privacy", label: "Privacy", href: "/privacy/" },
+          { key: "source", label: "Source", href: "https://github.com/Tofu-Water-Drinker/tofupass", external: true }
+        ] %}
+        {% for link in footerLinks %}
+          {% if not loop.first %}<span class="text-[#8B7355]/25 dark:text-[#B8A890]/25 text-xs py-1.5">&middot;</span>{% endif %}
+          {% if link.key == pageKey %}
+            <a href="{{ link.href }}" class="text-[#4A3728] dark:text-[#F0E6D8] text-xs px-3 py-1.5 rounded-lg bg-[#6BBF59]/8 border-2 border-[#6BBF59]/15 dark:border-[#7DD668]/20 transition-all font-semibold">{{ link.label }}</a>
+          {% else %}
+            <a href="{{ link.href }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %} class="text-[#8B7355] dark:text-[#B8A890] hover:text-[#6BBF59] text-xs px-3 py-1.5 rounded-lg hover:bg-[#6BBF59]/5 dark:hover:bg-[#7DD668]/10 transition-all font-semibold">{{ link.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs footer-credit">Made with <span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 20-7-7a4.5 4.5 0 0 1 6.4-6.3L12 7.3l.6-.6A4.5 4.5 0 0 1 19 13z"></path></svg></span> by <a href="https://tofuwater.com/" target="_blank" rel="noopener noreferrer">TofuWater</a></p>
+    </div>
+  </footer>
+
+  {% for script in pageScripts %}<script src="{{ script }}"></script>
+  {% endfor %}
+  <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/theme.js"></script>
+  <script src="/assets/js/konami.js"></script>
+</body>
+</html>

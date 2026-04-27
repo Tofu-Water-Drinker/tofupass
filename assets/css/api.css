@@ -1,0 +1,110 @@
+/* ── API Reference – Kawaii Tofu Theme ── */
+
+/* Code blocks */
+.code-block {
+  background: var(--code-bg);
+  border: 2px solid rgba(139,195,74,0.12);
+  border-radius: 12px;
+  padding: 16px 20px;
+  overflow-x: auto;
+  position: relative;
+}
+.code-block pre { margin: 0; font-size: 0.85rem; line-height: 1.7; }
+.copy-code-btn {
+  position: absolute; top: 10px; right: 12px;
+  background: rgba(107,191,89,0.08); border: 1px solid rgba(107,191,89,0.15);
+  color: #6BBF59; font-size: 0.72rem; padding: 4px 10px;
+  border-radius: 6px; cursor: pointer; transition: all 0.2s;
+  font-family: 'Nunito', 'Inter', sans-serif;
+}
+.copy-code-btn:hover { background: rgba(107,191,89,0.15); color: #5aa84d; }
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FF9EAF 0%, #9B6DD7 40%, #5B9FD6 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+
+/* Method badge */
+.method-get {
+  background: rgba(107,191,89,0.1); color: #6BBF59;
+  border: 1px solid rgba(107,191,89,0.2);
+}
+
+/* Param table */
+.param-row { border-bottom: 1px solid rgba(139,195,74,0.06); }
+.param-row:last-child { border-bottom: none; }
+
+/* Param table container */
+.param-table {
+  border: 1px solid rgba(139,195,74,0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Open endpoint sections */
+.api-section {
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.08);
+}
+.api-section:last-of-type {
+  border-bottom: none;
+}
+
+/* Endpoint header row */
+.endpoint-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.08);
+}
+
+/* API callout strip */
+.api-callout {
+  border-left: 4px solid rgba(107, 191, 89, 0.4);
+  padding-left: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.api-callout:last-child { margin-bottom: 0; }
+
+/* Status badges */
+.status-200 { background: rgba(107,191,89,0.08); color: #6BBF59; border: 1px solid rgba(107,191,89,0.2); }
+.status-400 { background: rgba(255,122,122,0.08); color: #FF7A7A; border: 1px solid rgba(255,122,122,0.2); }
+
+/* Syntax colors */
+.tok-key { color: #9B6DD7; }
+.tok-str { color: #6BBF59; }
+.tok-num { color: #E6A800; }
+.tok-url { color: #5B9FD6; }
+.tok-comment { color: rgba(139,115,85,0.5); }
+
+@media (max-width: 640px) {
+  .code-block {
+    padding: 14px 14px 16px;
+  }
+  .code-block pre {
+    font-size: 0.78rem;
+    line-height: 1.6;
+  }
+  .copy-code-btn {
+    position: static;
+    display: inline-flex;
+    margin-bottom: 0.75rem;
+  }
+  .endpoint-header {
+    align-items: flex-start;
+  }
+  .endpoint-header .ml-auto {
+    margin-left: 0;
+    width: 100%;
+  }
+  .param-row,
+  .param-table > .grid {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}

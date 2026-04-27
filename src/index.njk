@@ -1,0 +1,240 @@
+---
+layout: base.njk
+title: TofuPass - Beautifully Secure Passwords
+pageKey: home
+extraCss:
+  - /assets/css/home.css?v=2
+pageScripts:
+  - /assets/js/wordlists.js
+  - /assets/js/home.js
+backgroundDecor: leaves
+showAnnouncement: true
+eleventyExcludeFromCollections: true
+permalink: /index.html
+---
+
+  <!-- COLORFUL TOP BAND -->
+  <div class="hero-band" aria-hidden="true"></div>
+
+  <!-- GENERATOR (front and center) -->
+  <main class="relative z-10 pt-24 pb-16 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="hero-stage">
+
+        <!-- GENERATOR CARD -->
+        <div class="generator-shell mb-6">
+        <div class="generator-card p-6 sm:p-8 relative">
+          <!-- Mascot + tagline -->
+          <div class="flex flex-col items-center mb-5">
+            <a href="/miso/" class="mascot-wrap" aria-label="Meet Miso">
+              <img id="generatorMascot" src="/tofu.png" alt="Miso the TofuPass mascot" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
+              <span id="mascotSparks" class="mascot-sparks" aria-hidden="true">
+                <span class="mascot-spark mascot-spark-1"></span>
+                <span class="mascot-spark mascot-spark-2"></span>
+                <span class="mascot-spark mascot-spark-3"></span>
+                <span class="mascot-spark mascot-spark-4"></span>
+              </span>
+              <span id="mascotBubble" class="mascot-bubble" aria-live="polite" aria-atomic="true"></span>
+            </a>
+            <p class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355]/50 dark:text-[#B8A890]/50">Tap to generate &nbsp;&middot;&nbsp; Click to copy</p>
+          </div>
+
+          <!-- Password Display -->
+          <button type="button" onclick="copyPassword()" id="passwordPanel"
+            class="password-panel w-full px-5 py-5 mb-5 min-h-[72px] flex flex-col items-center justify-center text-center">
+            <p id="passwordDisplay" class="text-2xl sm:text-3xl font-bold text-center text-[#6BBF59] break-all leading-snug">
+              Generating...
+            </p>
+            <span id="passwordHint" class="password-hint mt-3 text-[11px] font-bold uppercase tracking-[0.22em]">Click password to copy</span>
+          </button>
+
+          <!-- Action Buttons -->
+          <div class="flex gap-3 flex-col sm:flex-row">
+            <button id="generateBtn" onclick="generateNewPassword()"
+              class="cta-btn flex-1 relative z-10 px-6 py-3 rounded-xl font-bold text-base text-white shadow-lg">
+              Generate New Password
+            </button>
+            <button id="phoneticBtn" onclick="togglePhoneticGuide()" aria-expanded="false"
+              class="flex-1 px-6 py-3 rounded-xl font-semibold text-sm transition-all">
+              <span class="ui-icon phonetic-label-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 6h6"></path>
+                  <path d="M4 10h10"></path>
+                  <path d="M4 14h7"></path>
+                  <path d="M15 6l5 5-5 5"></path>
+                </svg>
+              </span>Phonetic Guide
+            </button>
+          </div>
+        </div>
+        </div>
+
+        <!-- LEVEL SELECTOR CARDS -->
+        <div class="firmness-grid grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+
+        <!-- Soft -->
+        <div class="level-card p-5 text-left"
+          id="card-soft" onclick="selectLevel('soft')">
+          <div class="ui-icon level-icon icon-soft" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 12c0-3-2-5-4-5-1.7 0-3 1.3-3 3 0 2 2 4 7 7"></path>
+              <path d="M12 12c0-3 2-5 4-5 1.7 0 3 1.3 3 3 0 2-2 4-7 7"></path>
+              <circle cx="12" cy="12" r="1.5"></circle>
+            </svg>
+          </div>
+          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">Soft</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Simple & Sweet</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">word + word + number<br/>e.g. <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">happykoala72</span></p>
+        </div>
+
+        <!-- Firm -->
+        <div class="level-card p-5 text-left active-firm"
+          id="card-firm" onclick="selectLevel('firm')">
+          <div class="ui-icon level-icon icon-firm" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path>
+            </svg>
+          </div>
+          <div class="flex items-center gap-2 mb-1">
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">Firm</div>
+            <span class="text-xs text-[#6BBF59] font-bold">Recommended</span>
+          </div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Strong & Usable</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">symbol + Word + Word + number<br/>e.g. <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">!DancingKoala73</span></p>
+        </div>
+
+        <!-- Extra Firm -->
+        <div class="level-card p-5 text-left"
+          id="card-extra" onclick="selectLevel('extra')">
+          <div class="ui-icon level-icon icon-extra" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <rect x="4" y="5" width="16" height="4" rx="1.5"></rect>
+              <rect x="4" y="10" width="16" height="4" rx="1.5"></rect>
+              <rect x="4" y="15" width="16" height="4" rx="1.5"></rect>
+            </svg>
+          </div>
+          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">Extra Firm</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Passphrase Power</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">word-word-word-word<br/>e.g. <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">bloom-tiger-leaf-fog</span></p>
+        </div>
+
+        </div>
+
+        <p class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-3 font-semibold">Built for the sweet spot between security and usability, with all generation staying on your device.</p>
+
+        <a href="#why-tofupass" class="scroll-cue" aria-label="Scroll down to learn more">
+          <span class="scroll-cue-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 5v14"></path>
+              <path d="m6 13 6 6 6-6"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- FEATURES SECTION (open layout, no cards) -->
+  <section id="why-tofupass" class="relative z-10 pt-16 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">What makes <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span> different?</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">A password generator built around real-world usability, trustworthy randomness, and patterns people can actually work with.</p>
+      </div>
+      <div class="features-open grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
+
+        <!-- Feature 1 -->
+        <div class="feature-open text-center">
+          <div class="feature-dot feature-dot-violet mx-auto mb-5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-6 h-6">
+              <rect x="5" y="11" width="14" height="10" rx="2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></rect>
+              <path d="M8 11V8a4 4 0 1 1 8 0v3" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Security Without Theater</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Uses the browser's <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code> so the randomness is real, not decorative.</p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-open text-center">
+          <div class="feature-dot feature-dot-green mx-auto mb-5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-6 h-6">
+              <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Designed For Humans</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Word-based passwords are easier to type and recall, which means less reuse, less simplification, and fewer sticky notes.</p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-open text-center">
+          <div class="feature-dot feature-dot-yellow mx-auto mb-5" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-6 h-6">
+              <path d="M6 8.5c0-1.4 1.1-2.5 2.5-2.5h7c1.4 0 2.5 1.1 2.5 2.5v7c0 1.4-1.1 2.5-2.5 2.5h-7C7.1 18 6 16.9 6 15.5z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 10h6" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
+              <path d="M9 14h4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Clear, Consistent Patterns</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Soft, Firm, and Extra Firm each follow predictable structures, so you always know what you're getting.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION (flowing, no boxes) -->
+  <section class="relative z-10 pb-24 px-4">
+    <div class="max-w-2xl mx-auto text-center">
+      <!-- Wavy divider -->
+      <div class="flex justify-center mb-12">
+        <svg class="w-48 h-4 text-[#8BC34A]/20" viewBox="0 0 200 16" fill="none" aria-hidden="true">
+          <path d="M0 8 C 25 0, 50 16, 75 8 S 125 0, 150 8 S 175 16, 200 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <img src="/excited.png" alt="Miso looking excited" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
+      <h2 class="text-2xl sm:text-3xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Already have a password?</h2>
+      <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-8 max-w-md mx-auto font-medium leading-relaxed">See how long it'd take to crack and whether it's appeared in any known data breaches.</p>
+      <a href="/stresstest/" class="inline-block cta-btn relative z-10 px-8 py-4 rounded-2xl font-bold text-base text-white shadow-xl mb-6">
+        Open Stress Tester
+      </a>
+      <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm font-semibold">
+        Curious about the philosophy? <a href="/why/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 decoration-[#6BBF59]/30 hover:decoration-[#6BBF59] transition-colors font-bold">Read why TofuPass exists</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- PHONETIC BOTTOM SHEET (overlay, doesn't push content) -->
+  <div id="phoneticBackdrop" class="phonetic-backdrop" onclick="closePhoneticGuide()"></div>
+  <aside id="phoneticDrawer" class="phonetic-sheet" aria-labelledby="phoneticTitle" aria-hidden="true">
+    <div class="phonetic-sheet-head">
+      <div class="flex items-center justify-between mb-3">
+        <span class="text-sm font-extrabold uppercase tracking-[0.12em] text-[#4A3728] dark:text-[#F0E6D8]">Phonetic Guide</span>
+        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="Close phonetic guide">&times;</button>
+      </div>
+      <div id="phoneticPasswordEcho" class="phonetic-pw-echo font-mono text-lg font-bold text-[#6BBF59] break-all text-center mb-3"></div>
+      <div class="flex gap-2">
+        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="Military NATO phonetic guide">
+          <span class="ui-icon phonetic-label-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M5 11a7 7 0 0 1 14 0"></path>
+              <path d="M7 11v2a5 5 0 0 0 10 0v-2"></path>
+              <path d="M4 11h16"></path>
+            </svg>
+          </span>NATO
+        </button>
+        <button id="tabKid" class="tab-btn" onclick="setPhoneticMode('kid')" aria-selected="false" aria-label="Kid-friendly phonetic guide">
+          <span class="ui-icon phonetic-label-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="3"></circle>
+              <path d="M7 19a5 5 0 0 1 10 0"></path>
+            </svg>
+          </span>Friendly
+        </button>
+      </div>
+    </div>
+    <!-- Scrollable phonetic list -->
+    <div class="phonetic-sheet-body">
+      <div id="phoneticList"></div>
+    </div>
+  </aside>

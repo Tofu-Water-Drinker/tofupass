@@ -1,0 +1,17 @@
+node_modules/
+_site/
+cheater/
+AGENTS.md
+.DS_Store
+npm-debug.log*
+
+# Local editor / agent state
+.vscode/
+.idea/
+.claude/
+
+# Word lists kept out of the open-source repo
+assets/js/wordlists.js
+
+# Stray RTF drafts (API source lives in its own repo)
+*.rtf

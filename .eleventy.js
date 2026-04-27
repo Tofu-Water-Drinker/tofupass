@@ -4,6 +4,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("tofu.png");
   eleventyConfig.addPassthroughCopy("alert.png");
   eleventyConfig.addPassthroughCopy("excited.png");
+  eleventyConfig.addPassthroughCopy("dev.png");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");

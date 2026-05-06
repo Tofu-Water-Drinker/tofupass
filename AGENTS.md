@@ -33,6 +33,20 @@ Putting the toggle as a standalone sibling breaks `justify-between` (it ends up 
 ### Clipboard
 `navigator.clipboard.writeText()` silently fails on HTTP or restricted mobile contexts. Any new copy-to-clipboard code must include a `textarea + document.execCommand('copy')` fallback, matching the pattern in `home.js` `copyPassword()`.
 
+## Offline / desktop-forward build
+
+`Offline/tofupass-offline.html` is a single-file, fully self-contained version of the generator. **No external CSS, JS, fonts, images, or CDNs.** Open from `file://` and it works.
+
+- **Generation logic** mirrors `assets/js/home.js` exactly (Soft / Firm / Extra Firm). If you change generation behavior in `home.js`, change it here too — the brief is "same outputs as the live site."
+- **Word lists** are copied from the public `tofupass-api` repo (GPL v3) — lowercase, deduped — *not* the private `assets/js/wordlists.js`. The offline file is shipped in this repo, so it must only ever embed public lists.
+- **No `Math.random`** — only `crypto.getRandomValues` (and `crypto.subtle.digest` for the breach check).
+- **Stress tester** preserves the same HIBP k-anonymity flow (5-char SHA-1 prefix → `api.pwnedpasswords.com`). It auto-disables when `navigator.onLine === false` and listens for `online`/`offline` events.
+- **Visual style is light-mode-only and desktop-utility**: title bar with traffic-light dots, status pill, app window card. Avoid SaaS hero / marketing energy here even if it sneaks into the live site.
+- **Mascot** is a tiny inline SVG, not the production Miso PNG (single-file constraint). Brand carve-out in `LICENSE` still applies — public forks must replace it.
+- **Self-tests** live in the same file behind `?test=1` and assert generator behavior. Add to them (don't drop them) when you change generation.
+- **Build script**: `Offline/build.js` regenerates the HTML by inlining word lists from the sibling `tofupass-api` repo. Run with `node Offline/build.js`. Override the API path via `TOFUPASS_API_PATH=/some/where/tofupass-api`. The script is a build helper — the HTML is the artifact and is checked in alongside it. Re-run after any change to the file (don't edit the generated HTML directly; edit `build.js`).
+- **Eleventy passthrough**: `Offline/` is in `.eleventy.js` so the dev server serves it at `/Offline/tofupass-offline.html`. The file is a peer of the site, not a route inside it.
+
 ## Easter egg
 
 Konami code (↑↑↓↓←→←→BA) navigates to `/cheater/`. Listener lives in `assets/js/konami.js` and is loaded globally. Inputs/textareas/contenteditable reset the sequence so it never fires while typing.

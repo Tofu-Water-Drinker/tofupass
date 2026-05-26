@@ -4,4 +4,29 @@ title: API - TofuPass
 pageKey: api
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">GET /api/password · GET /api/passphrase</p></article></main>
+
+<main class="relative z-10 pt-28 pb-20 px-4">
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1>
+    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-10">Akses programatik ke generator TofuPass.</p>
+    <div class="space-y-6">
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">Bahasa</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3 leading-relaxed">API memakai bahasa Inggris secara default. Untuk memakai daftar kata bahasa lain, tambahkan <code>lang</code> ke <code>/api/password</code> atau <code>/api/passphrase</code>. Jika bahasa kosong atau tidak didukung, respons kembali ke bahasa Inggris.</p>
+        <code class="block text-sm text-[#6BBF59] break-all mb-2">curl https://tofupass.com/api/password?lang=id</code>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=id</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-3">Kode: en, es, pt, fr, de, ja, zh-cn, ar, id, hi, ru.</p>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/password</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Mengembalikan kata sandi yang dibuat dengan aman. Gunakan <code>lang=id</code> untuk kata Indonesia.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/password?lang=id</code>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/passphrase</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Mengembalikan frasa dengan tanda hubung. Pakai <code>count</code> untuk jumlah kata dan <code>lang</code> untuk bahasa.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=id</code>
+      </section>
+    </div>
+  </article>
+</main>

@@ -4,4 +4,29 @@ title: API - TofuPass
 pageKey: api
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">GET /api/password · GET /api/passphrase</p></article></main>
+
+<main class="relative z-10 pt-28 pb-20 px-4">
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1>
+    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-10">وصول برمجي إلى توليد TofuPass.</p>
+    <div class="space-y-6">
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">اللغات</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3 leading-relaxed">تستخدم الواجهة الإنجليزية افتراضيا. لاستخدام قائمة كلمات بلغة أخرى، أضف <code>lang</code> إلى <code>/api/password</code> أو <code>/api/passphrase</code>. إذا لم يتم إرسال لغة صالحة، تعود الاستجابة إلى الإنجليزية.</p>
+        <code class="block text-sm text-[#6BBF59] break-all mb-2">curl https://tofupass.com/api/password?lang=ar</code>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=ar</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-3">الرموز: en, es, pt, fr, de, ja, zh-cn, ar, id, hi, ru.</p>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/password</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">يعيد كلمة مرور آمنة. استخدم <code>lang=ar</code> للكلمات العربية.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/password?lang=ar</code>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/passphrase</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">يعيد عبارة مفصولة بشرطات. استخدم <code>count</code> لعدد الكلمات و <code>lang</code> للغة.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=ar</code>
+      </section>
+    </div>
+  </article>
+</main>

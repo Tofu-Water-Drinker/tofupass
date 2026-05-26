@@ -4,4 +4,29 @@ title: API - TofuPass
 pageKey: api
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">GET /api/password · GET /api/passphrase</p></article></main>
+
+<main class="relative z-10 pt-28 pb-20 px-4">
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1>
+    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-10">通过程序调用 TofuPass 生成功能。</p>
+    <div class="space-y-6">
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">语言</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3 leading-relaxed">API 默认使用英语。要使用其他语言的词库，请在 <code>/api/password</code> 或 <code>/api/passphrase</code> 中加入 <code>lang</code>。没有指定语言或代码不受支持时，会回退到英语。</p>
+        <code class="block text-sm text-[#6BBF59] break-all mb-2">curl https://tofupass.com/api/password?lang=zh-cn</code>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=zh-cn</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-3">代码: en, es, pt, fr, de, ja, zh-cn, ar, id, hi, ru.</p>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/password</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">返回安全生成的密码。使用 <code>lang=zh-cn</code> 生成简体中文词语。</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/password?lang=zh-cn</code>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/passphrase</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">返回用连字符分隔的短语。用 <code>count</code> 设置词数，用 <code>lang</code> 设置语言。</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=zh-cn</code>
+      </section>
+    </div>
+  </article>
+</main>

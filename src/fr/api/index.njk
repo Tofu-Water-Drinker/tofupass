@@ -4,4 +4,29 @@ title: API - TofuPass
 pageKey: api
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">GET /api/password · GET /api/passphrase</p></article></main>
+
+<main class="relative z-10 pt-28 pb-20 px-4">
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1>
+    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-10">Accès programmatique à la génération TofuPass.</p>
+    <div class="space-y-6">
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">Langues</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3 leading-relaxed">L'API utilise l'anglais par défaut. Ajoutez <code>lang</code> à <code>/api/password</code> ou <code>/api/passphrase</code> pour choisir une autre liste de mots. Sans langue valide, la réponse reste en anglais.</p>
+        <code class="block text-sm text-[#6BBF59] break-all mb-2">curl https://tofupass.com/api/password?lang=fr</code>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=fr</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-3">Codes: en, es, pt, fr, de, ja, zh-cn, ar, id, hi, ru.</p>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/password</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Retourne un mot de passe sécurisé. Utilisez <code>lang=fr</code> pour le français.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/password?lang=fr</code>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/passphrase</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Retourne une phrase séparée par des traits d'union. Utilisez <code>count</code> pour le nombre de mots et <code>lang</code> pour la langue.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=fr</code>
+      </section>
+    </div>
+  </article>
+</main>

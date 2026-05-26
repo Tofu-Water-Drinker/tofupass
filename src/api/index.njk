@@ -27,6 +27,23 @@ backgroundDecor: leaves
         </div>
       </div>
 
+      <!-- Languages -->
+      <div class="glass rounded-2xl p-5 mb-8">
+        <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs font-bold tracking-widest uppercase mb-3">Language Support</div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed mb-4">API output defaults to English. If you want passwords or passphrases generated from another language's word lists, add the optional <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code> query parameter to the request.</p>
+        <div class="code-block mb-4">
+          <pre><span class="tok-comment"># Default English output</span>
+curl <span class="tok-url">https://tofupass.com/api/password</span>
+
+<span class="tok-comment"># Spanish output</span>
+curl <span class="tok-url">https://tofupass.com/api/password?lang=es</span>
+
+<span class="tok-comment"># Spanish passphrase output</span>
+curl <span class="tok-url">https://tofupass.com/api/passphrase?count=4&amp;lang=es</span></pre>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Supported codes: <code class="mono">en</code>, <code class="mono">es</code>, <code class="mono">pt</code>, <code class="mono">fr</code>, <code class="mono">de</code>, <code class="mono">ja</code>, <code class="mono">zh-cn</code>, <code class="mono">ar</code>, <code class="mono">id</code>, <code class="mono">hi</code>, and <code class="mono">ru</code>. If <code class="mono">lang</code> is missing, blank, or unsupported, the API uses English.</p>
+      </div>
+
       <!-- ENDPOINT 1: /api/password -->
       <div class="endpoint-card rounded-2xl mb-6 overflow-hidden">
         <div class="px-6 py-5 border-b border-[#6BBF59]/10 flex items-center gap-3">
@@ -35,7 +52,26 @@ backgroundDecor: leaves
           <span class="ml-auto text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs">Get a single password</span>
         </div>
         <div class="px-6 py-6">
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Returns a single cryptographically generated password at the Firm strength level. No parameters required.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Returns a single cryptographically generated password at the Firm strength level. No parameters are required; add <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code> only when you want a specific language.</p>
+
+          <!-- Parameters -->
+          <div class="mb-5">
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">Query Parameters</div>
+            <div class="glass rounded-xl overflow-hidden">
+              <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-2 border-b border-[#6BBF59]/10 text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 font-semibold uppercase tracking-wider">
+                <div>Name</div>
+                <div>Type</div>
+                <div>Default</div>
+                <div>Description</div>
+              </div>
+              <div class="param-row grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-3 text-sm">
+                <div class="mono text-[#9B6DD7]">lang</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs pt-0.5">string</div>
+                <div class="mono text-[#E6A800] text-xs pt-0.5">en</div>
+                <div class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed pt-0.5">Optional language code for the generated words</div>
+              </div>
+            </div>
+          </div>
 
           <!-- Request example -->
           <div class="mb-5">
@@ -44,6 +80,9 @@ backgroundDecor: leaves
               <button class="copy-code-btn" onclick="copyCode(this, 'curl https://tofupass.com/api/password')">Copy</button>
               <pre><span class="tok-comment"># Using curl</span>
 curl <span class="tok-url">https://tofupass.com/api/password</span>
+
+<span class="tok-comment"># Spanish words</span>
+curl <span class="tok-url">https://tofupass.com/api/password?lang=es</span>
 
 <span class="tok-comment"># Using JavaScript fetch</span>
 <span class="tok-key">const</span> res = <span class="tok-key">await</span> fetch(<span class="tok-str">'https://tofupass.com/api/password'</span>);
@@ -74,7 +113,7 @@ curl <span class="tok-url">https://tofupass.com/api/password</span>
           <span class="ml-auto text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs">Get a passphrase</span>
         </div>
         <div class="px-6 py-6">
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Returns a hyphen-separated passphrase generated from a pool of 4,000+ curated words. Control word count with the <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">count</code> parameter.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Returns a hyphen-separated passphrase generated from curated word lists. Control word count with <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">count</code>, and choose a language with <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code>.</p>
 
           <!-- Parameters -->
           <div class="mb-5">
@@ -92,6 +131,12 @@ curl <span class="tok-url">https://tofupass.com/api/password</span>
                 <div class="mono text-[#E6A800] text-xs pt-0.5">4</div>
                 <div class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed pt-0.5">Number of words (4–30)</div>
               </div>
+              <div class="param-row grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-3 text-sm">
+                <div class="mono text-[#9B6DD7]">lang</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs pt-0.5">string</div>
+                <div class="mono text-[#E6A800] text-xs pt-0.5">en</div>
+                <div class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed pt-0.5">Optional language code for the generated words</div>
+              </div>
             </div>
           </div>
 
@@ -105,6 +150,9 @@ curl <span class="tok-url">https://tofupass.com/api/passphrase</span>
 
 <span class="tok-comment"># Custom word count</span>
 curl <span class="tok-url">https://tofupass.com/api/passphrase?count=6</span>
+
+<span class="tok-comment"># Spanish words</span>
+curl <span class="tok-url">https://tofupass.com/api/passphrase?count=4&amp;lang=es</span>
 
 <span class="tok-comment"># JavaScript fetch</span>
 <span class="tok-key">const</span> res = <span class="tok-key">await</span> fetch(<span class="tok-str">'https://tofupass.com/api/passphrase?count=4'</span>);

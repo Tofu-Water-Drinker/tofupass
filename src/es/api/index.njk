@@ -12,18 +12,24 @@ backgroundDecor: leaves
 
     <div class="space-y-6">
       <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">Idiomas</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3 leading-relaxed">La API usa inglés por defecto. Para pedir palabras en otro idioma, agrega <code>lang</code> a <code>/api/password</code> o <code>/api/passphrase</code>. Si no mandas un idioma, o el idioma no existe, la respuesta vuelve a inglés.</p>
+        <code class="block text-sm text-[#6BBF59] break-all mb-2">curl https://tofupass.com/api/password?lang=es</code>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=es</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-3">Códigos: en, es, pt, fr, de, ja, zh-cn, ar, id, hi, ru.</p>
+      </section>
+
+      <section class="glass rounded-2xl p-5">
         <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/password</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Devuelve una contraseña generada de forma segura en el servidor.</p>
-        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/password</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Devuelve una contraseña generada de forma segura. Usa <code>lang=es</code> para palabras en español.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/password?lang=es</code>
       </section>
 
       <section class="glass rounded-2xl p-5">
         <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/passphrase</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Devuelve una frase separada por guiones. Puedes ajustar el número de palabras con <code>count</code>.</p>
-        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Devuelve una frase separada por guiones. Ajusta el número de palabras con <code>count</code> y el idioma con <code>lang</code>.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=es</code>
       </section>
-
-      <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">La API pública sigue usando listas y lógica del servidor. La página española del navegador usa su propia lista local en español mexicano.</p>
     </div>
   </article>
 </main>

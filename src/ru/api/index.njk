@@ -4,4 +4,29 @@ title: API - TofuPass
 pageKey: api
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">GET /api/password · GET /api/passphrase</p></article></main>
+
+<main class="relative z-10 pt-28 pb-20 px-4">
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API</h1>
+    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-10">Программный доступ к генерации TofuPass.</p>
+    <div class="space-y-6">
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">Языки</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3 leading-relaxed">API по умолчанию использует английский. Чтобы выбрать другой список слов, добавьте <code>lang</code> к <code>/api/password</code> или <code>/api/passphrase</code>. Если язык не указан или не поддерживается, ответ будет на английском.</p>
+        <code class="block text-sm text-[#6BBF59] break-all mb-2">curl https://tofupass.com/api/password?lang=ru</code>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=ru</code>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-3">Коды: en, es, pt, fr, de, ja, zh-cn, ar, id, hi, ru.</p>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/password</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Возвращает безопасно сгенерированный пароль. Используйте <code>lang=ru</code> для русских слов.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/password?lang=ru</code>
+      </section>
+      <section class="glass rounded-2xl p-5">
+        <h2 class="font-black text-[#4A3728] dark:text-[#F0E6D8] mb-2">GET /api/passphrase</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-3">Возвращает фразу с дефисами. Используйте <code>count</code> для числа слов и <code>lang</code> для языка.</p>
+        <code class="block text-sm text-[#6BBF59] break-all">curl https://tofupass.com/api/passphrase?count=4&amp;lang=ru</code>
+      </section>
+    </div>
+  </article>
+</main>

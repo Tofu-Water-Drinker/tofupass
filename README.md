@@ -8,7 +8,8 @@ A privacy-focused, client-side password generator. Everything runs in your brows
 ## What it does
 
 - Generates memorable passwords using curated word lists + `crypto.getRandomValues()` (the Web Crypto CSPRNG)
-- Three strength tiers: Soft (word+word+number), Firm (symbol+Word+Word+number), Extra Firm (four-word passphrase)
+- Three password tiers: Soft (two capped words + symbol + two digits), Firm (three capped words + symbol + two digits), Extra Firm (four capped word chunks + symbol + two digits)
+- Dedicated passphrase generator for long readable word sequences
 - Includes a **Stress Tester** that checks passwords against Have I Been Pwned using k-Anonymity (only a 5-char hash prefix leaves your device)
 - Offers a free **[API](https://github.com/Tofu-Water-Drinker/tofupass-api)** for programmatic generation — no auth, no rate-limit drama
 
@@ -19,6 +20,7 @@ No accounts. No analytics. No cookies. No tracking pixels. Works offline once lo
 - [Eleventy](https://www.11ty.dev/) v3 — static site generator, Nunjucks templates
 - [Tailwind CSS](https://tailwindcss.com/) via CDN (dark mode: class-based)
 - Vanilla JS — no framework, no build step for scripts
+- [Electron](https://www.electronjs.org/) + electron-builder — optional desktop app packaging
 - [Alpine.js](https://alpinejs.dev/) (FAQ page only, via jsDelivr)
 - [Bunny Fonts](https://fonts.bunny.net/) — privacy-friendly Google Fonts alternative
 
@@ -33,6 +35,21 @@ npm run build  # production build -> _site/
 npm run clean  # remove _site/
 ```
 
+## Desktop app builds
+
+`Offline/tofupass-offline.html` is the desktop download page by default. Electron loads the same file with `?shell=desktop`, which reveals the local-only generator and lets each OS show its native window controls.
+
+```bash
+npm run desktop      # open the Electron desktop app locally
+npm run dist:mac     # build a macOS .dmg on macOS
+npm run dist:win     # build a Windows .exe on Windows
+npm run dist:linux   # build a Linux .AppImage on Linux
+```
+
+Release artifacts are written to `release/`. Cross-platform downloadable builds are handled by `.github/workflows/desktop-release.yml`: push a `v*` tag or run the workflow manually to produce Windows `.exe`, macOS `.dmg`, and Linux `.AppImage` artifacts.
+
+The macOS build is currently unsigned/not notarized. That is fine for internal testing, but public macOS releases should be signed with an Apple Developer ID and notarized so users do not hit Gatekeeper warnings.
+
 ## Project structure
 
 ```
@@ -46,6 +63,7 @@ npm run clean  # remove _site/
 │   ├── api/                # API docs
 │   ├── good/               # password guide
 │   ├── miso/               # mascot page
+│   ├── passphrases/        # passphrase generator
 │   ├── privacy/            # privacy policy
 │   ├── stresstest/         # HIBP k-anonymity check
 │   └── why/                # why TofuPass
@@ -57,6 +75,11 @@ npm run clean  # remove _site/
 │       ├── api.js, nav.js, theme.js, konami.js
 │       ├── wordlists.js          # (GITIGNORED — production lists)
 │       └── wordlists.sample.js   # public stub to keep clones working
+├── desktop/
+│   └── main.js             # Electron desktop wrapper
+├── Offline/
+│   ├── build.js            # single-file offline app generator
+│   └── tofupass-offline.html
 ├── tofu.png, alert.png, excited.png, favicon.ico
 ├── robots.txt, sitemap.xml
 └── LICENSE

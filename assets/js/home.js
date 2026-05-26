@@ -1,8 +1,20 @@
-    const natoAlphabet = {a:'alpha',b:'bravo',c:'charlie',d:'delta',e:'echo',f:'foxtrot',g:'golf',h:'hotel',i:'india',j:'juliett',k:'kilo',l:'lima',m:'mike',n:'november',o:'oscar',p:'papa',q:'quebec',r:'romeo',s:'sierra',t:'tango',u:'uniform',v:'victor',w:'whiskey',x:'x-ray',y:'yankee',z:'zulu'};
-    const kidAlphabet = {a:'apple',b:'bear',c:'cat',d:'dog',e:'elephant',f:'frog',g:'giraffe',h:'hat',i:'igloo',j:'juice',k:'kite',l:'lion',m:'monkey',n:'nest',o:'octopus',p:'penguin',q:'queen',r:'rabbit',s:'sun',t:'turtle',u:'umbrella',v:'van',w:'whale',x:'xylophone',y:'yo-yo',z:'zebra'};
-    const symbolNames = {'!':'Exclamation Mark','@':'At Symbol','#':'Hash','$':'Dollar Sign','?':'Question Mark','*':'Asterisk'};
-    const numberNames = {'0':'zero','1':'one','2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine'};
-    const mascotPhrases = [
+    const localeConfig = window.tofupassLocale || {};
+    const text = Object.assign({
+      clickToCopy: 'Click password to copy',
+      copied: 'Copied to clipboard',
+      emptyPhonetic: 'Generate a password to see a readable phonetic spelling.',
+      letter: 'Letter',
+      uppercaseLetter: 'Uppercase letter',
+      number: 'Number',
+      symbol: 'Symbol',
+      capitalPrefix: 'capital',
+      angryMascotPhrase: "I'm sorry I'll try to get you a password you actually want."
+    }, localeConfig.text || {});
+    const natoAlphabet = localeConfig.natoAlphabet || {a:'alpha',b:'bravo',c:'charlie',d:'delta',e:'echo',f:'foxtrot',g:'golf',h:'hotel',i:'india',j:'juliett',k:'kilo',l:'lima',m:'mike',n:'november',o:'oscar',p:'papa',q:'quebec',r:'romeo',s:'sierra',t:'tango',u:'uniform',v:'victor',w:'whiskey',x:'x-ray',y:'yankee',z:'zulu'};
+    const kidAlphabet = localeConfig.kidAlphabet || {a:'apple',b:'bear',c:'cat',d:'dog',e:'elephant',f:'frog',g:'giraffe',h:'hat',i:'igloo',j:'juice',k:'kite',l:'lion',m:'monkey',n:'nest',o:'octopus',p:'penguin',q:'queen',r:'rabbit',s:'sun',t:'turtle',u:'umbrella',v:'van',w:'whale',x:'xylophone',y:'yo-yo',z:'zebra'};
+    const symbolNames = localeConfig.symbolNames || {'!':'Exclamation Mark','@':'At Symbol','#':'Hash','$':'Dollar Sign','?':'Question Mark','*':'Asterisk'};
+    const numberNames = localeConfig.numberNames || {'0':'zero','1':'one','2':'two','3':'three','4':'four','5':'five','6':'six','7':'seven','8':'eight','9':'nine'};
+    const mascotPhrases = localeConfig.mascotPhrases || [
       "I knew you'd like that one!",
       "Fresh from the tofu vault.",
       "That one has excellent tofu energy.",
@@ -64,30 +76,49 @@
     const angryMascotThreshold = 20;
     const angryMascotWindowMs = 2800;
     const angryMascotDurationMs = 2600;
-    const angryMascotPhrase = "I'm sorry I'll try to get you a password you actually want.";
+    const angryMascotPhrase = text.angryMascotPhrase;
 
     function getSecureRandomInt(max) {
+      if (!Number.isInteger(max) || max <= 0) {
+        throw new Error('max must be a positive integer');
+      }
+
       const buffer = new Uint32Array(1);
-      window.crypto.getRandomValues(buffer);
+      const limit = Math.floor(0x100000000 / max) * max;
+
+      do {
+        window.crypto.getRandomValues(buffer);
+      } while (buffer[0] >= limit);
+
       return buffer[0] % max;
     }
     function generate(firmness) {
       const getRandom = (list) => list[getSecureRandomInt(list.length)];
       const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
-      let password = "";
-      if (firmness === 'soft') {
-        password = `${getRandom(adjectives)}${getRandom(nouns)}${getSecureRandomInt(90)+10}`;
-      } else if (firmness === 'firm') {
-        const adjective = cap(getRandom(adjectives));
-        const noun = cap(getRandom(nouns));
+      const buildPassword = (words) => {
         const number = `${getSecureRandomInt(90)+10}`;
         const special = getRandom(specials);
-        const firmParts = [adjective, noun, number];
-        const specialIndex = getSecureRandomInt(firmParts.length + 1);
-        firmParts.splice(specialIndex, 0, special);
-        password = firmParts.join('');
+        const parts = [...words, number];
+        const specialIndex = getSecureRandomInt(parts.length + 1);
+        parts.splice(specialIndex, 0, special);
+        return parts.join('');
+      };
+      let password = "";
+      if (firmness === 'soft') {
+        const adjective = cap(getRandom(adjectives));
+        const noun = cap(getRandom(nouns));
+        password = buildPassword([adjective, noun]);
+      } else if (firmness === 'firm') {
+        const adjective = cap(getRandom(adjectives));
+        const firstNoun = cap(getRandom(nouns));
+        const secondNoun = cap(getRandom(nouns));
+        password = buildPassword([adjective, firstNoun, secondNoun]);
       } else {
-        password = [getRandom(adjectives),getRandom(nouns),getRandom(adjectives),getRandom(nouns)].join('-');
+        const firstAdjective = cap(getRandom(adjectives));
+        const firstNoun = cap(getRandom(nouns));
+        const secondAdjective = cap(getRandom(adjectives));
+        const secondNoun = cap(getRandom(nouns));
+        password = buildPassword([firstAdjective, firstNoun, secondAdjective, secondNoun]);
       }
       currentPassword = password;
       const passwordDisplay = document.getElementById('passwordDisplay');
@@ -98,7 +129,7 @@
       const panel = document.getElementById('passwordPanel');
       const hint = document.getElementById('passwordHint');
       panel.classList.remove('copied');
-      hint.textContent = 'Click password to copy';
+      hint.textContent = text.clickToCopy;
       const drawer = document.getElementById('phoneticDrawer');
       if (drawer && drawer.classList.contains('active')) { syncPasswordEcho(); renderPhoneticGuide(); }
     }
@@ -126,10 +157,10 @@
         var panel = document.getElementById('passwordPanel');
         var hint = document.getElementById('passwordHint');
         panel.classList.add('copied');
-        hint.textContent = 'Copied to clipboard';
+        hint.textContent = text.copied;
         if (mascotMood !== 'angry' && getSecureRandomInt(10) === 0) celebrateMascot();
         setTimeout(function() {
-          hint.textContent = 'Click password to copy';
+          hint.textContent = text.clickToCopy;
           panel.classList.remove('copied');
         }, 1800);
       }
@@ -244,19 +275,19 @@
       if (isUpper) word = word.charAt(0).toUpperCase() + word.slice(1);
 
       let tone = 'letter';
-      let detail = 'Letter';
+      let detail = text.letter;
       let spoken = word;
 
       if (isUpper) {
         tone = 'uppercase';
-        detail = 'Uppercase letter';
-        spoken = `capital ${word}`;
+        detail = text.uppercaseLetter;
+        spoken = `${text.capitalPrefix} ${word}`;
       } else if (isNumber) {
         tone = 'number';
-        detail = 'Number';
+        detail = text.number;
       } else if (isSymbol) {
         tone = 'symbol';
-        detail = 'Symbol';
+        detail = text.symbol;
       }
 
       return { char, word, tone, detail, spoken };
@@ -268,7 +299,7 @@
       const details = [...currentPassword].map(describeCharacter);
 
       if (!details.length) {
-        list.innerHTML = '<div class="phonetic-empty">Generate a password to see a readable phonetic spelling.</div>';
+        list.innerHTML = `<div class="phonetic-empty">${text.emptyPhonetic}</div>`;
         return;
       }
 

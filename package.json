@@ -3,12 +3,77 @@
   "version": "1.0.0",
   "description": "Beautifully secure passwords",
   "private": true,
+  "main": "desktop/main.js",
+  "author": "Matthew Johnson / TofuWater",
   "scripts": {
     "build": "eleventy",
+    "build:offline": "node Offline/build.js",
     "start": "eleventy --serve",
-    "clean": "rm -rf _site"
+    "desktop": "npm run build:offline && electron .",
+    "dist": "npm run build:offline && electron-builder --publish never",
+    "dist:all": "npm run build:offline && electron-builder --mac dmg --win nsis --linux AppImage",
+    "dist:mac": "npm run build:offline && electron-builder --mac dmg",
+    "dist:win": "npm run build:offline && electron-builder --win nsis",
+    "dist:linux": "npm run build:offline && electron-builder --linux AppImage",
+    "clean": "rm -rf _site release dist"
+  },
+  "build": {
+    "appId": "com.tofupass.desktop",
+    "productName": "TofuPass",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "Offline/tofupass-offline.html",
+      "tofu.png",
+      "favicon.ico",
+      "package.json"
+    ],
+    "artifactName": "${productName}-${version}-${os}-${arch}.${ext}",
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "category": "public.app-category.utilities",
+      "icon": "build/icon.icns",
+      "identity": null
+    },
+    "dmg": {
+      "artifactName": "${productName}-${version}-mac-${arch}.${ext}"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "category": "Utility",
+      "icon": "tofu.png"
+    }
   },
   "devDependencies": {
-    "@11ty/eleventy": "^3.0.0"
+    "@11ty/eleventy": "^3.0.0",
+    "electron": "^42.1.0",
+    "electron-builder": "^26.8.1"
   }
 }

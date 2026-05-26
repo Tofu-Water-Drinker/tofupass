@@ -91,7 +91,7 @@ headScripts:
             <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
           </button>
           <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-            <p>TofuPass combines curated word lists with numbers and symbols using <code>crypto.getRandomValues()</code> for true randomness. <span class="text-[#FF7A7A] font-bold">Soft</span> = word + word + number. <span class="text-[#6BBF59] font-bold">Firm</span> = symbol + Word + Word + number. <span class="text-[#E6A800] font-bold">Extra Firm</span> = four-word passphrase.</p>
+            <p>TofuPass combines curated word lists with numbers and symbols using <code>crypto.getRandomValues()</code> for true randomness. <span class="text-[#FF7A7A] font-bold">Soft</span> = Word + Word + symbol + number. <span class="text-[#6BBF59] font-bold">Firm</span> adds a third word. <span class="text-[#E6A800] font-bold">Extra Firm</span> adds a fourth word chunk for higher entropy while keeping the same readable password shape.</p>
           </div>
         </div>
 
@@ -101,7 +101,7 @@ headScripts:
             <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
           </button>
           <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-            <p>Soft and Firm offer over a billion combinations (~30 bits of entropy). Extra Firm draws from 4,000+ words for 280+ trillion combinations (~48 bits), which covers most real-world needs.</p>
+            <p>Each tier keeps the same friendly structure - capitalized words, a common symbol, and a two-digit number - then increases strength by adding more random word chunks. For long lowercase secrets, use the dedicated <a href="/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">Passphrases</a> page.</p>
           </div>
         </div>
 
@@ -111,7 +111,7 @@ headScripts:
             <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
           </button>
           <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
-            <p><code>!DancingKoala73</code> is far easier to recall than <code>j2#Xp9$k</code> but provides comparable security. When people can actually remember a password, they're less likely to reuse it.</p>
+            <p><code>DancingKoalaRiver!73</code> is far easier to recall than <code>j2#Xp9$k</code> while still meeting the capital, symbol, and number rules most forms demand. When people can actually remember a password, they're less likely to reuse it.</p>
           </div>
         </div>
       </section>

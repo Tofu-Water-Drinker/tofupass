@@ -1,5 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+{% set pagePath = page.url | default('/') %}
+{% set currentLang = 'en' %}
+{% if pagePath == '/es/' or pagePath.startsWith('/es/') %}{% set currentLang = 'es' %}{% endif %}
+{% if pagePath == '/pt/' or pagePath.startsWith('/pt/') %}{% set currentLang = 'pt' %}{% endif %}
+{% if pagePath == '/fr/' or pagePath.startsWith('/fr/') %}{% set currentLang = 'fr' %}{% endif %}
+{% if pagePath == '/de/' or pagePath.startsWith('/de/') %}{% set currentLang = 'de' %}{% endif %}
+{% if pagePath == '/ja/' or pagePath.startsWith('/ja/') %}{% set currentLang = 'ja' %}{% endif %}
+{% if pagePath == '/zh-cn/' or pagePath.startsWith('/zh-cn/') %}{% set currentLang = 'zh-cn' %}{% endif %}
+{% if pagePath == '/ar/' or pagePath.startsWith('/ar/') %}{% set currentLang = 'ar' %}{% endif %}
+{% if pagePath == '/id/' or pagePath.startsWith('/id/') %}{% set currentLang = 'id' %}{% endif %}
+{% if pagePath == '/hi/' or pagePath.startsWith('/hi/') %}{% set currentLang = 'hi' %}{% endif %}
+{% if pagePath == '/ru/' or pagePath.startsWith('/ru/') %}{% set currentLang = 'ru' %}{% endif %}
+{% set isSpanish = currentLang == 'es' %}
+{% set isPortuguese = currentLang == 'pt' %}
+{% set isLocalized = currentLang != 'en' %}
+{% set localeMeta = {
+  en: { lang: 'en', prefix: '', home: 'Home', passphrases: 'Passphrases', stresstest: 'Stress Tester', good: 'Guide', api: 'API', about: 'About', why: 'Why TofuPass', privacy: 'Privacy', source: 'Source', tagline: 'Open source · No tracking · No accounts', made: 'Made with', by: 'by', theme: 'Toggle dark mode', menu: 'Toggle navigation menu', homeAria: 'TofuPass Home', label: 'Language', dir: 'ltr', announceTitle: 'TofuPass speaks more languages now!', announceBody: 'Generate friendly passwords in Spanish, Portuguese, French, German, Japanese, Chinese, Arabic, Indonesian, Hindi, and Russian. Pick your language from the menu and TofuPass will remember it.', announceDismiss: 'Dismiss announcement' },
+  es: { lang: 'es-MX', prefix: '/es', home: 'Inicio', passphrases: 'Frases', stresstest: 'Probador', good: 'Guía', api: 'API', about: 'Acerca de', why: 'Por qué TofuPass', privacy: 'Privacidad', source: 'Código', tagline: 'Código abierto · Sin rastreo · Sin cuentas', made: 'Hecho con', by: 'por', theme: 'Cambiar modo oscuro', menu: 'Abrir menú de navegación', homeAria: 'Inicio de TofuPass', label: 'Idioma', dir: 'ltr', announceTitle: '¡TofuPass ahora habla más idiomas!', announceBody: 'Genera contraseñas amigables en español, portugués, francés, alemán, japonés, chino, árabe, indonesio, hindi y ruso. Elige tu idioma en el menú y TofuPass lo recordará.', announceDismiss: 'Cerrar aviso' },
+  pt: { lang: 'pt-BR', prefix: '/pt', home: 'Início', passphrases: 'Frases', stresstest: 'Teste', good: 'Guia', api: 'API', about: 'Sobre', why: 'Por que TofuPass', privacy: 'Privacidade', source: 'Código', tagline: 'Código aberto · Sem rastreamento · Sem contas', made: 'Feito com', by: 'por', theme: 'Alternar modo escuro', menu: 'Abrir menu de navegação', homeAria: 'Início do TofuPass', label: 'Idioma', dir: 'ltr', announceTitle: 'TofuPass fala mais idiomas agora!', announceBody: 'Gere senhas amigáveis em espanhol, português, francês, alemão, japonês, chinês, árabe, indonésio, hindi e russo. Escolha seu idioma no menu e o TofuPass vai lembrar.', announceDismiss: 'Fechar aviso' },
+  fr: { lang: 'fr', prefix: '/fr', home: 'Accueil', passphrases: 'Phrases', stresstest: 'Test', good: 'Guide', api: 'API', about: 'À propos', why: 'Pourquoi TofuPass', privacy: 'Confidentialité', source: 'Code', tagline: 'Code ouvert · Sans suivi · Sans compte', made: 'Fait avec', by: 'par', theme: 'Basculer le mode sombre', menu: 'Ouvrir le menu', homeAria: 'Accueil TofuPass', label: 'Langue', dir: 'ltr', announceTitle: 'TofuPass parle plus de langues maintenant !', announceBody: 'Générez des mots de passe conviviaux en espagnol, portugais, français, allemand, japonais, chinois, arabe, indonésien, hindi et russe. Choisissez votre langue dans le menu et TofuPass s’en souviendra.', announceDismiss: 'Fermer l’annonce' },
+  de: { lang: 'de', prefix: '/de', home: 'Start', passphrases: 'Phrasen', stresstest: 'Tester', good: 'Leitfaden', api: 'API', about: 'Über', why: 'Warum TofuPass', privacy: 'Datenschutz', source: 'Code', tagline: 'Open Source · Kein Tracking · Keine Konten', made: 'Gemacht mit', by: 'von', theme: 'Dunkelmodus umschalten', menu: 'Navigation öffnen', homeAria: 'TofuPass Start', label: 'Sprache', dir: 'ltr', announceTitle: 'TofuPass spricht jetzt mehr Sprachen!', announceBody: 'Erzeuge freundliche Passwörter auf Spanisch, Portugiesisch, Französisch, Deutsch, Japanisch, Chinesisch, Arabisch, Indonesisch, Hindi und Russisch. Wähle deine Sprache im Menü und TofuPass merkt sie sich.', announceDismiss: 'Hinweis schließen' },
+  ja: { lang: 'ja', prefix: '/ja', home: 'ホーム', passphrases: 'フレーズ', stresstest: 'テスト', good: 'ガイド', api: 'API', about: '概要', why: 'TofuPassの理由', privacy: 'プライバシー', source: 'コード', tagline: 'オープンソース · 追跡なし · アカウント不要', made: '作成', by: 'by', theme: 'ダークモード切替', menu: 'ナビゲーションを開く', homeAria: 'TofuPass ホーム', label: '言語', dir: 'ltr', announceTitle: 'TofuPass がさらに多くの言語に対応しました！', announceBody: 'スペイン語、ポルトガル語、フランス語、ドイツ語、日本語、中国語、アラビア語、インドネシア語、ヒンディー語、ロシア語で使いやすいパスワードを生成できます。メニューで言語を選ぶと、TofuPass が記憶します。', announceDismiss: 'お知らせを閉じる' },
+  'zh-cn': { lang: 'zh-CN', prefix: '/zh-cn', home: '首页', passphrases: '短语', stresstest: '测试', good: '指南', api: 'API', about: '关于', why: '为什么 TofuPass', privacy: '隐私', source: '代码', tagline: '开源 · 无跟踪 · 无账户', made: '用心制作', by: '作者', theme: '切换深色模式', menu: '打开导航菜单', homeAria: 'TofuPass 首页', label: '语言', dir: 'ltr', announceTitle: 'TofuPass 现在支持更多语言！', announceBody: '可以用西班牙语、葡萄牙语、法语、德语、日语、中文、阿拉伯语、印尼语、印地语和俄语生成友好的密码。在菜单中选择语言，TofuPass 会记住它。', announceDismiss: '关闭公告' },
+  ar: { lang: 'ar', prefix: '/ar', home: 'الرئيسية', passphrases: 'عبارات', stresstest: 'اختبار', good: 'دليل', api: 'API', about: 'حول', why: 'لماذا TofuPass', privacy: 'الخصوصية', source: 'الكود', tagline: 'مفتوح المصدر · بلا تتبع · بلا حسابات', made: 'صنع بـ', by: 'بواسطة', theme: 'تبديل الوضع الداكن', menu: 'فتح قائمة التنقل', homeAria: 'TofuPass الرئيسية', label: 'اللغة', dir: 'rtl', announceTitle: 'TofuPass يدعم لغات أكثر الآن!', announceBody: 'أنشئ كلمات مرور سهلة بلغات الإسبانية والبرتغالية والفرنسية والألمانية واليابانية والصينية والعربية والإندونيسية والهندية والروسية. اختر لغتك من القائمة وسيتذكرها TofuPass.', announceDismiss: 'إغلاق الإعلان' },
+  id: { lang: 'id', prefix: '/id', home: 'Beranda', passphrases: 'Frasa', stresstest: 'Tes', good: 'Panduan', api: 'API', about: 'Tentang', why: 'Mengapa TofuPass', privacy: 'Privasi', source: 'Kode', tagline: 'Sumber terbuka · Tanpa pelacakan · Tanpa akun', made: 'Dibuat dengan', by: 'oleh', theme: 'Alihkan mode gelap', menu: 'Buka menu', homeAria: 'Beranda TofuPass', label: 'Bahasa', dir: 'ltr', announceTitle: 'TofuPass sekarang mendukung lebih banyak bahasa!', announceBody: 'Buat kata sandi yang ramah dalam bahasa Spanyol, Portugis, Prancis, Jerman, Jepang, Tionghoa, Arab, Indonesia, Hindi, dan Rusia. Pilih bahasa dari menu dan TofuPass akan mengingatnya.', announceDismiss: 'Tutup pengumuman' },
+  hi: { lang: 'hi', prefix: '/hi', home: 'होम', passphrases: 'वाक्यांश', stresstest: 'परीक्षक', good: 'गाइड', api: 'API', about: 'परिचय', why: 'TofuPass क्यों', privacy: 'गोपनीयता', source: 'कोड', tagline: 'ओपन सोर्स · कोई ट्रैकिंग नहीं · कोई खाते नहीं', made: 'बनाया गया', by: 'द्वारा', theme: 'डार्क मोड बदलें', menu: 'नेविगेशन खोलें', homeAria: 'TofuPass होम', label: 'भाषा', dir: 'ltr', announceTitle: 'TofuPass अब और भाषाएँ बोलता है!', announceBody: 'स्पेनिश, पुर्तगाली, फ्रेंच, जर्मन, जापानी, चीनी, अरबी, इंडोनेशियाई, हिंदी और रूसी में आसान पासवर्ड बनाएँ। मेनू से भाषा चुनें और TofuPass उसे याद रखेगा।', announceDismiss: 'सूचना बंद करें' },
+  ru: { lang: 'ru', prefix: '/ru', home: 'Главная', passphrases: 'Фразы', stresstest: 'Тест', good: 'Гид', api: 'API', about: 'О проекте', why: 'Почему TofuPass', privacy: 'Приватность', source: 'Код', tagline: 'Открытый код · Без отслеживания · Без аккаунтов', made: 'Сделано с', by: 'от', theme: 'Переключить тёмный режим', menu: 'Открыть навигацию', homeAria: 'Главная TofuPass', label: 'Язык', dir: 'ltr', announceTitle: 'TofuPass теперь говорит на большем числе языков!', announceBody: 'Создавайте удобные пароли на испанском, португальском, французском, немецком, японском, китайском, арабском, индонезийском, хинди и русском. Выберите язык в меню, и TofuPass запомнит его.', announceDismiss: 'Закрыть объявление' }
+} %}
+{% set m = localeMeta[currentLang] %}
+{% set localizedNav = [
+  { key: 'home', label: m.home, href: m.prefix + '/' },
+  { key: 'passphrases', label: m.passphrases, href: m.prefix + '/passphrases/' },
+  { key: 'stresstest', label: m.stresstest, href: m.prefix + '/stresstest/' },
+  { key: 'good', label: m.good, href: m.prefix + '/good/' },
+  { key: 'api', label: m.api, href: m.prefix + '/api/' }
+] %}
+{% set localizedFooter = [
+  { key: 'about', label: m.about, href: m.prefix + '/about/' },
+  { key: 'why', label: m.why, href: m.prefix + '/why/' },
+  { key: 'privacy', label: m.privacy, href: m.prefix + '/privacy/' },
+  { key: 'source', label: m.source, href: 'https://github.com/Tofu-Water-Drinker/tofupass', external: true }
+] %}
+<html lang="{{ lang | default(m.lang) }}" dir="{{ m.dir }}">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,7 +95,7 @@
     <div class="nav-shell max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
       <div class="flex items-center gap-3">
         <div class="wordmark-wrap">
-          <a href="/" class="flex items-center group" aria-label="TofuPass Home">
+          <a href="{{ homeHref | default(m.prefix + '/') }}" class="flex items-center group" aria-label="{{ homeAriaLabel | default(m.homeAria) }}">
             <img src="/tofu.png" alt="" class="w-7 h-7 mr-2" aria-hidden="true" style="filter: drop-shadow(0 2px 4px rgba(107,191,89,0.2));" />
             <span class="font-black text-xl tracking-tight text-[#4A3728] dark:text-[#F0E6D8]">Tofu<span class="text-[#6BBF59] dark:text-[#7DD668]">Pass</span></span>
           </a>
@@ -61,17 +103,18 @@
           <div class="announcement-note" data-announcement role="status" aria-live="polite">
             <img src="/excited.png" alt="" class="announcement-mascot" aria-hidden="true" />
             <div class="announcement-copy">
-              <span class="announcement-kicker">The API is open source too!</span>
-              <p>Both the <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="announcement-link">site</a> and the <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="announcement-link">API</a> are on GitHub under <strong>GPL v3</strong>. Brand &amp; mascot stay ours &mdash; bring your own when you fork.</p>
+              <span class="announcement-kicker">{{ m.announceTitle }}</span>
+              <p>{{ m.announceBody }}</p>
             </div>
-            <button type="button" class="announcement-close" data-announcement-close aria-label="Dismiss announcement">&times;</button>
+            <button type="button" class="announcement-close" data-announcement-close aria-label="{{ m.announceDismiss }}">&times;</button>
           </div>
           {% endif %}
         </div>
       </div>
       <div class="flex items-center gap-2">
         <div class="nav-links flex items-center gap-1 sm:gap-2" data-nav-menu>
-          {% for item in nav %}
+          {% set primaryNav = navItems | default(localizedNav if isLocalized else nav) %}
+          {% for item in primaryNav %}
             {% if item.key == pageKey %}
               <a href="{{ item.href }}" class="px-3 py-2 rounded-lg text-[#4A3728] dark:text-[#F0E6D8] font-bold text-sm bg-[#6BBF59]/10 dark:bg-[#7DD668]/15 border-2 border-[#6BBF59]/20 dark:border-[#7DD668]/25">{{ item.label }}</a>
             {% else %}
@@ -79,11 +122,27 @@
             {% endif %}
           {% endfor %}
         </div>
-        <button type="button" class="theme-toggle" data-theme-toggle aria-label="Toggle dark mode" title="Toggle dark mode">
+        <button type="button" class="theme-toggle" data-theme-toggle aria-label="{{ themeToggleLabel | default(m.theme) }}" title="{{ themeToggleLabel | default(m.theme) }}">
           <svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
           <svg class="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
         </button>
-        <button class="nav-toggle md:hidden" type="button" aria-expanded="false" aria-label="Toggle navigation menu" data-nav-toggle>
+        <div class="language-switcher" data-language-switcher>
+          <label class="sr-only" for="languageSelect">{{ m.label }}</label>
+          <select id="languageSelect" class="language-select" data-language-select aria-label="{{ m.label }}">
+            <option value="en"{% if currentLang == 'en' %} selected{% endif %}>EN</option>
+            <option value="es"{% if currentLang == 'es' %} selected{% endif %}>ES</option>
+            <option value="pt"{% if currentLang == 'pt' %} selected{% endif %}>PT</option>
+            <option value="fr"{% if currentLang == 'fr' %} selected{% endif %}>FR</option>
+            <option value="de"{% if currentLang == 'de' %} selected{% endif %}>DE</option>
+            <option value="ja"{% if currentLang == 'ja' %} selected{% endif %}>JA</option>
+            <option value="zh-cn"{% if currentLang == 'zh-cn' %} selected{% endif %}>ZH</option>
+            <option value="ar"{% if currentLang == 'ar' %} selected{% endif %}>AR</option>
+            <option value="id"{% if currentLang == 'id' %} selected{% endif %}>ID</option>
+            <option value="hi"{% if currentLang == 'hi' %} selected{% endif %}>HI</option>
+            <option value="ru"{% if currentLang == 'ru' %} selected{% endif %}>RU</option>
+          </select>
+        </div>
+        <button class="nav-toggle md:hidden" type="button" aria-expanded="false" aria-label="{{ navToggleLabel | default(m.menu) }}" data-nav-toggle>
           <span class="nav-toggle-icon" aria-hidden="true">
             <span class="nav-toggle-bar"></span>
             <span class="nav-toggle-bar"></span>
@@ -98,14 +157,15 @@
 
   <footer class="relative z-10 py-8 px-4 border-t-2 border-[#8BC34A]/10 dark:border-[#8BC34A]/15">
     <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <span class="text-[#8B7355]/40 dark:text-[#B8A890]/40 text-xs">Open source &middot; No tracking &middot; No accounts</span>
+      <span class="text-[#8B7355]/40 dark:text-[#B8A890]/40 text-xs">{{ footerTagline | default(m.tagline) }}</span>
       <div class="flex flex-wrap justify-center gap-1">
-        {% set footerLinks = [
+        {% set defaultFooterLinks = [
           { key: "about", label: "About", href: "/about/" },
           { key: "why", label: "Why TofuPass", href: "/why/" },
           { key: "privacy", label: "Privacy", href: "/privacy/" },
           { key: "source", label: "Source", href: "https://github.com/Tofu-Water-Drinker/tofupass", external: true }
         ] %}
+        {% set footerLinks = footerNavItems | default(localizedFooter if isLocalized else defaultFooterLinks) %}
         {% for link in footerLinks %}
           {% if not loop.first %}<span class="text-[#8B7355]/25 dark:text-[#B8A890]/25 text-xs py-1.5">&middot;</span>{% endif %}
           {% if link.key == pageKey %}
@@ -115,13 +175,14 @@
           {% endif %}
         {% endfor %}
       </div>
-      <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs footer-credit">Made with <span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 20-7-7a4.5 4.5 0 0 1 6.4-6.3L12 7.3l.6-.6A4.5 4.5 0 0 1 19 13z"></path></svg></span> by <a href="https://tofuwater.com/" target="_blank" rel="noopener noreferrer">TofuWater</a></p>
+      <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs footer-credit">{{ m.made }} <span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 20-7-7a4.5 4.5 0 0 1 6.4-6.3L12 7.3l.6-.6A4.5 4.5 0 0 1 19 13z"></path></svg></span> {{ m.by }} <a href="https://tofuwater.com/" target="_blank" rel="noopener noreferrer">TofuWater</a></p>
     </div>
   </footer>
 
   {% for script in pageScripts %}<script src="{{ script }}"></script>
   {% endfor %}
   <script src="/assets/js/nav.js"></script>
+  <script src="/assets/js/language.js"></script>
   <script src="/assets/js/theme.js"></script>
   <script src="/assets/js/konami.js"></script>
 </body>

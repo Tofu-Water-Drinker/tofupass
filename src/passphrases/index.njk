@@ -1,0 +1,103 @@
+---
+layout: base.njk
+title: Passphrases - TofuPass
+pageKey: passphrases
+extraCss:
+  - /assets/css/passphrases.css
+pageScripts:
+  - /assets/js/wordlists.js
+  - /assets/js/passphrases.js
+backgroundDecor: leaves
+---
+
+  <div class="passphrase-band" aria-hidden="true"></div>
+
+  <main class="relative z-10 pt-24 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <section class="passphrase-stage">
+        <div class="passphrase-copy">
+          <img src="/excited.png" alt="Miso looking excited" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">Readable long secrets</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Passphrases</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Long, lower-friction secrets for places where length is welcome and memorability matters more than meeting fussy symbol rules.</p>
+          <div class="passphrase-example" aria-hidden="true">bloom-tiger-leaf-fog</div>
+        </div>
+
+        <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
+          <div class="passphrase-tool-head">
+            <div>
+              <p class="passphrase-kicker">Generator</p>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Fresh passphrase</h2>
+            </div>
+            <span class="passphrase-badge" id="passphraseCountBadge">4 words</span>
+          </div>
+
+          <button type="button" id="passphrasePanel" class="passphrase-panel">
+            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">Generating...</output>
+            <span id="passphraseHint" class="passphrase-hint">Click passphrase to copy</span>
+          </button>
+
+          <div class="passphrase-actions">
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Generate New Passphrase</button>
+            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
+              <span class="ui-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </span>
+              Copy
+            </button>
+          </div>
+
+          <div class="passphrase-controls" aria-label="Passphrase options">
+            <div>
+              <div class="control-label">Words</div>
+              <div class="segmented-control" data-control="count">
+                <button type="button" data-count="4" aria-pressed="true">4</button>
+                <button type="button" data-count="5" aria-pressed="false">5</button>
+                <button type="button" data-count="6" aria-pressed="false">6</button>
+                <button type="button" data-count="8" aria-pressed="false">8</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">Separator</div>
+              <div class="segmented-control" data-control="separator">
+                <button type="button" data-separator="-" aria-pressed="true">-</button>
+                <button type="button" data-separator=" " aria-pressed="false">space</button>
+                <button type="button" data-separator="." aria-pressed="false">.</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">Case</div>
+              <div class="segmented-control" data-control="case">
+                <button type="button" data-case="lower" aria-pressed="true">lower</button>
+                <button type="button" data-case="title" aria-pressed="false">Title</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="passphrase-notes" aria-label="Passphrase guidance">
+        <div class="note-strip note-strip-green">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </div>
+          <div>
+            <h2>Use passphrases when length is allowed.</h2>
+            <p>They shine for vault master passwords, Wi-Fi passwords, device passcodes, recovery phrases you need to type by hand, and any place that accepts spaces or separators.</p>
+          </div>
+        </div>
+
+        <div class="note-strip note-strip-yellow">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
+          </div>
+          <div>
+            <h2>Use Firm or Extra Firm for picky forms.</h2>
+            <p>When a site demands capitals, a symbol, and numbers, the main generator keeps those requirements built into every Soft, Firm, and Extra Firm password.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>

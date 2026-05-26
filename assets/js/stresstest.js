@@ -1,3 +1,29 @@
+const stressLocale = window.tofupassStressLocale || {};
+    const stressText = Object.assign({
+      show: 'Show',
+      hide: 'Hide',
+      chars: 'chars',
+      waiting: 'Waiting',
+      notYet: 'Not yet',
+      checkingBreaches: 'Checking breach databases...',
+      breached: 'This password appeared in <strong>{count}</strong> known data breaches.',
+      instantCompromised: 'Instant (Compromised)',
+      compromised: 'Compromised',
+      instantaneous: 'Instantaneous',
+      seconds: 'Seconds',
+      minutes: 'Minutes',
+      hours: 'Hours',
+      days: 'Days',
+      years: 'Years',
+      millionYears: 'Million Years',
+      eons: 'Eons',
+      veryWeak: 'Very Weak',
+      weak: 'Weak',
+      moderate: 'Moderate',
+      strong: 'Strong',
+      veryStrong: 'Very Strong'
+    }, stressLocale.text || {});
+
 const pwdInput = document.getElementById('password');
     const hwSelect = document.getElementById('hardware');
     const timeDisplay = document.getElementById('time-display');
@@ -17,23 +43,23 @@ const pwdInput = document.getElementById('password');
     function toggleVisibility() {
       isVisible = !isVisible;
       pwdInput.type = isVisible ? 'text' : 'password';
-      document.getElementById('visText').textContent = isVisible ? 'Hide' : 'Show';
+      document.getElementById('visText').textContent = isVisible ? stressText.hide : stressText.show;
       document.getElementById('visIcon').textContent = isVisible ? '🙈' : '👁';
     }
 
     function getStrengthLabel(score) {
-      if (score < 25) return { text: 'Very Weak', color: '#FF7A7A', bg: 'rgba(255,122,122,0.1)' };
-      if (score < 50) return { text: 'Weak', color: '#FF9F6B', bg: 'rgba(255,159,107,0.1)' };
-      if (score < 70) return { text: 'Moderate', color: '#E6A800', bg: 'rgba(255,209,102,0.1)' };
-      if (score < 88) return { text: 'Strong', color: '#6BBF59', bg: 'rgba(107,191,89,0.1)' };
-      return { text: 'Very Strong', color: '#6BBF59', bg: 'rgba(107,191,89,0.12)' };
+      if (score < 25) return { text: stressText.veryWeak, color: '#FF7A7A', bg: 'rgba(255,122,122,0.1)' };
+      if (score < 50) return { text: stressText.weak, color: '#FF9F6B', bg: 'rgba(255,159,107,0.1)' };
+      if (score < 70) return { text: stressText.moderate, color: '#E6A800', bg: 'rgba(255,209,102,0.1)' };
+      if (score < 88) return { text: stressText.strong, color: '#6BBF59', bg: 'rgba(107,191,89,0.1)' };
+      return { text: stressText.veryStrong, color: '#6BBF59', bg: 'rgba(107,191,89,0.12)' };
     }
 
     async function updateLogic() {
       const val = pwdInput.value;
       const speed = parseFloat(hwSelect.value);
 
-      charCount.textContent = val ? `${val.length} chars` : '';
+      charCount.textContent = val ? `${val.length} ${stressText.chars}` : '';
 
       if (!val) { resetUI(); return; }
 
@@ -55,7 +81,7 @@ const pwdInput = document.getElementById('password');
       // Breach check with debounce
       clearTimeout(debounceTimer);
       if (val.length >= 4) {
-        scanningText.textContent = 'Checking breach databases...';
+        scanningText.textContent = stressText.checkingBreaches;
         scanningText.className = 'text-xs text-[#8B7355]/50 mt-2 h-4 scanning';
         debounceTimer = setTimeout(async () => {
           const breachCount = await checkBreach(val);
@@ -86,26 +112,26 @@ const pwdInput = document.getElementById('password');
 
     function renderResults(seconds, isBreached, breachCount) {
       if (isBreached) {
-        breachText.innerHTML = `This password appeared in <strong>${breachCount.toLocaleString()}</strong> known data breaches.`;
+        breachText.innerHTML = stressText.breached.replace('{count}', breachCount.toLocaleString());
         breachCard.style.display = 'block';
         meterFill.style.width = '100%';
         meterFill.style.background = '#FF7A7A';
-        timeDisplay.textContent = 'Instant (Compromised)';
+        timeDisplay.textContent = stressText.instantCompromised;
         timeDisplay.style.color = '#FF7A7A';
-        strengthLabel.textContent = 'Compromised';
+        strengthLabel.textContent = stressText.compromised;
         strengthLabel.style.color = '#FF7A7A';
         strengthLabel.style.background = 'rgba(255,122,122,0.1)';
       } else {
         breachCard.style.display = 'none';
         let timeStr;
-        if (seconds < 1) timeStr = 'Instantaneous';
-        else if (seconds < 60) timeStr = Math.floor(seconds) + ' Seconds';
-        else if (seconds < 3600) timeStr = Math.floor(seconds/60) + ' Minutes';
-        else if (seconds < 86400) timeStr = Math.floor(seconds/3600) + ' Hours';
-        else if (seconds < 31536000) timeStr = Math.floor(seconds/86400) + ' Days';
-        else if (seconds < 1e12) timeStr = Math.floor(seconds/31536000).toLocaleString() + ' Years';
-        else if (seconds < 1e15) timeStr = (seconds/31536000/1e6).toFixed(1) + ' Million Years';
-        else timeStr = 'Eons';
+        if (seconds < 1) timeStr = stressText.instantaneous;
+        else if (seconds < 60) timeStr = Math.floor(seconds) + ' ' + stressText.seconds;
+        else if (seconds < 3600) timeStr = Math.floor(seconds/60) + ' ' + stressText.minutes;
+        else if (seconds < 86400) timeStr = Math.floor(seconds/3600) + ' ' + stressText.hours;
+        else if (seconds < 31536000) timeStr = Math.floor(seconds/86400) + ' ' + stressText.days;
+        else if (seconds < 1e12) timeStr = Math.floor(seconds/31536000).toLocaleString() + ' ' + stressText.years;
+        else if (seconds < 1e15) timeStr = (seconds/31536000/1e6).toFixed(1) + ' ' + stressText.millionYears;
+        else timeStr = stressText.eons;
 
         timeDisplay.textContent = timeStr;
 
@@ -123,12 +149,12 @@ const pwdInput = document.getElementById('password');
     }
 
     function resetUI() {
-      timeDisplay.textContent = 'Not yet';
+      timeDisplay.textContent = stressText.notYet;
       timeDisplay.style.color = '#6BBF59';
       meterFill.style.width = '0%';
       breachCard.style.display = 'none';
       scanningText.textContent = '';
-      strengthLabel.textContent = 'Waiting';
+      strengthLabel.textContent = stressText.waiting;
       strengthLabel.style.color = '#8B7355';
       strengthLabel.style.background = 'rgba(139,195,74,0.06)';
       statLength.textContent = '0';

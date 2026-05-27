@@ -2,6 +2,96 @@
 layout: base.njk
 title: 为什么选择 TofuPass - TofuPass
 pageKey: why
-backgroundDecor: leaves
+extraFonts:
+- https://fonts.bunny.net/css?family=caveat:700
+extraCss:
+- /assets/css/why.css
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">为什么选择 TofuPass</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">为真实使用而设计：可记忆词语、可靠随机性，生成过程不离开浏览器。</p></article></main>
+
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">为什么 <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">长篇观察的短篇.</p>
+      </div>
+
+      <article class="why-article">
+
+        <!-- Section 1 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-pink">问题</div>
+          <h2>密码是人无法忍受的,不能保证安全.</h2>
+          <p>那里已经有很多密码发电机了 例如,DinoPass使密码的创建变得简单易用. 我用过很多年了</p>
+          <p>但我工作在IT。 我所看到的图案不是缺乏工具 而是发生了什么 <em>之后</em> 人们得到了他们的密码。 他们会重用,简化,或者录到他们的监视器上。</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#FFD166]/25" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 2 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-yellow">触发器</div>
+          <h2>小的摩擦, 巨大的后果。</h2>
+          <p>密码一旦越过摩擦门槛,人们就会停止工作 <em>与</em> 开始工作 <em>环绕</em> 这个 触发器总是相同的:</p>
+          <div class="why-grid">
+            <div class="why-grid-item">太多的首都</div>
+            <div class="why-grid-item">无名符号</div>
+            <div class="why-grid-item">长随机字符串</div>
+            <div class="why-grid-item">字符替换</div>
+          </div>
+        </section>
+
+        <!-- Sticky note -->
+        <div class="sticky-note-wrap">
+          <div class="sticky-note">
+            <div class="sticky-note-tape"></div>
+            <p class="sticky-note-text">P@ssw0rd123 (英语).</p>
+            <p class="sticky-note-sub">- 工作电子邮件</p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-green">方针</div>
+          <h2>结构与混乱。</h2>
+          <p>TofuPass注重可读模式,而不是最大随机性. 熟悉的单词块,常见符号,简称. 密码如下:</p>
+          <div class="why-examples">
+            <span>科阿拉快乐!</span>
+            <span>跳舞科阿拉里弗! 73号!</span>
+            <span>风向监测员BrightLeaf#88</span>
+          </div>
+          <p>并非无法破解 而是真正有用的 在引擎盖下,所有的东西 仍然在你的浏览器中通过密码随机生成。 没有账号,没有分析,没有留下任何设备。 当你想要一个干净的长形秘密代替, <a href="/zh-cn/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">密码句生成器</a> 做那个工作是在那里的。</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 4 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-blue">合适的</div>
+          <h2>不是替补 一桥.</h2>
+          <p>如果你使用一个密码管理器 长随机字符串的一切 - 很好。 这是理想。 TofuPass存在了剩下的时间:当你需要足够坚固,可以真正使用,足够简单的记忆,足够私人,你不必相信任何人.</p>
+          <div class="pull-quote pull-quote-green">
+            使用简单的密码 。 使用的密码保持独有性 。 独特的密码可以保证人们的安全.
+          </div>
+        </section>
+
+      </article>
+
+      <!-- CTA -->
+      <div class="text-center mt-14">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          试试TofuPass
+        </a>
+      </div>
+    </div>
+  </main>

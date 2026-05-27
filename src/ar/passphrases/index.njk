@@ -3,11 +3,102 @@ layout: base.njk
 title: عبارات المرور - TofuPass
 pageKey: passphrases
 extraCss:
-  - /assets/css/passphrases.css
+- /assets/css/passphrases.css
 pageScripts:
-  - /assets/js/passphrases-ar.js
-  - /assets/js/wordlists-ar.js
-  - /assets/js/passphrases.js
+- /assets/js/passphrases-ar.js
+- /assets/js/wordlists-ar.js
+- /assets/js/passphrases.js
 backgroundDecor: leaves
 ---
-<div class="passphrase-band" aria-hidden="true"></div><main class="relative z-10 pt-24 pb-20 px-4"><div class="max-w-5xl mx-auto"><section class="passphrase-stage"><div class="passphrase-copy"><img src="/excited.png" alt="Miso" class="w-20 h-20 mb-5 mascot-glow" /><p class="passphrase-kicker">أسرار طويلة ومقروءة</p><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">عبارات المرور</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">أسرار طويلة سهلة الكتابة للأماكن التي تسمح بالطول.</p><div class="passphrase-example" aria-hidden="true">alpha-beta-gamma-delta</div></div><div class="passphrase-tool" aria-labelledby="passphraseToolTitle"><div class="passphrase-tool-head"><div><p class="passphrase-kicker">Generator</p><h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">عبارة جديدة</h2></div><span class="passphrase-badge" id="passphraseCountBadge">4 كلمات</span></div><button type="button" id="passphrasePanel" class="passphrase-panel"><output id="passphraseDisplay" class="passphrase-display" aria-live="polite">...</output><span id="passphraseHint" class="passphrase-hint">انقر للنسخ</span></button><div class="passphrase-actions"><button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">إنشاء عبارة جديدة</button><button type="button" id="passphraseCopy" class="passphrase-copy-btn">Copy</button></div><div class="passphrase-controls" aria-label="Options"><div><div class="control-label">كلمات</div><div class="segmented-control" data-control="count"><button type="button" data-count="4" aria-pressed="true">4</button><button type="button" data-count="5" aria-pressed="false">5</button><button type="button" data-count="6" aria-pressed="false">6</button><button type="button" data-count="8" aria-pressed="false">8</button></div></div><div><div class="control-label">Separator</div><div class="segmented-control" data-control="separator"><button type="button" data-separator="-" aria-pressed="true">-</button><button type="button" data-separator=" " aria-pressed="false">space</button><button type="button" data-separator="." aria-pressed="false">.</button></div></div><div><div class="control-label">Case</div><div class="segmented-control" data-control="case"><button type="button" data-case="lower" aria-pressed="true">lower</button><button type="button" data-case="title" aria-pressed="false">Title</button></div></div></div></div></section></div></main>
+
+  <div class="passphrase-band" aria-hidden="true"></div>
+
+  <main class="relative z-10 pt-24 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <section class="passphrase-stage">
+        <div class="passphrase-copy">
+          <img src="/excited.png" alt="Miso" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">أسرار طويلة قابلة للقراءة</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">التصاريح</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">أسرار طويلة، أقل انحرافاً للأماكن التي يكون فيها طولها موضع ترحيب، والاحتفال يُهم أكثر من مقابلة قواعد رمزية غامضة.</p>
+          <div class="passphrase-example" aria-hidden="true">bloom-tiger-leaf-fog</div>
+        </div>
+
+        <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
+          <div class="passphrase-tool-head">
+            <div>
+              <p class="passphrase-kicker">مولدات كهربائية</p>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">تمرير جديد</h2>
+            </div>
+            <span class="passphrase-badge" id="passphraseCountBadge">4 كلمات</span>
+          </div>
+
+          <button type="button" id="passphrasePanel" class="passphrase-panel">
+            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">تولد...</output>
+            <span id="passphraseHint" class="passphrase-hint">ترجمة</span>
+          </button>
+
+          <div class="passphrase-actions">
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">جائزة جديدة</button>
+            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
+              <span class="ui-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </span>
+              نسخ
+            </button>
+          </div>
+
+          <div class="passphrase-controls" aria-label="خيارات الدفن">
+            <div>
+              <div class="control-label">الكلمات</div>
+              <div class="segmented-control" data-control="count">
+                <button type="button" data-count="4" aria-pressed="true">4</button>
+                <button type="button" data-count="5" aria-pressed="false">5</button>
+                <button type="button" data-count="6" aria-pressed="false">6</button>
+                <button type="button" data-count="8" aria-pressed="false">8</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">Separator</div>
+              <div class="segmented-control" data-control="separator">
+                <button type="button" data-separator="-" aria-pressed="true">-</button>
+                <button type="button" data-separator=" " aria-pressed="false">الفضاء</button>
+                <button type="button" data-separator="." aria-pressed="false">.</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">القضية</div>
+              <div class="segmented-control" data-control="case">
+                <button type="button" data-case="lower" aria-pressed="true">أدنى</button>
+                <button type="button" data-case="title" aria-pressed="false">العنوان</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="passphrase-notes" aria-label="التوجيه بشأن التصاريح">
+        <div class="note-strip note-strip-green">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </div>
+          <div>
+            <h2>استخدام الممرات عندما يسمح بالطول</h2>
+            <p>يلمعون لكلمات السر الرئيسية الخزنة، وكلمات السر في الواي فاي، رموز مرور الأجهزة، وعبارات الاسترداد التي تحتاج للطباعة باليد، وأي مكان يقبل الأماكن أو المنفصلين.</p>
+          </div>
+        </div>
+
+        <div class="note-strip note-strip-yellow">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
+          </div>
+          <div>
+            <h2>استعملي "فيرم" أو "فيرم" للحصول على استمارات</h2>
+            <p>وعندما يتطلب الموقع عواصم ورمزا وأرقاما، يحتفظ المولد الرئيسي بتلك المتطلبات التي بنيت في كل حرف وفيرم وكلمة مرور إضافية.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>

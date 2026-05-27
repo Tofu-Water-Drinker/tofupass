@@ -2,6 +2,198 @@
 layout: base.njk
 title: Privasi - TofuPass
 pageKey: privacy
+extraCss:
+- /assets/css/privacy.css
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Privasi</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">Kata sandi Anda milik Anda. TofuPass tidak memakai analitik, tidak menjual data, dan tidak menerima kata sandi yang dibuat.</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-black text-[#4A3728] dark:text-[#F0E6D8] mb-3"><span class="gradient-text">Privasi</span> Kebijakan</h1>
+        <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-sm">Terakhir diperbarui: 23 Maret 2026</p>
+      </div>
+
+      <!-- Commitment banner -->
+      <div class="mb-8 rounded-2xl p-6 border-2 border-[#6BBF59]/20" style="background: rgba(107,191,89,0.05);">
+        <div class="flex items-start gap-4">
+          <div class="text-[#6BBF59]"><span class="inline-icon text-3xl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20v-8"></path><path d="M12 12c0-4-2.5-7-7-7 0 4.5 3 7 7 7Z"></path><path d="M12 12c0-4 2.5-7 7-7 0 4.5-3 7-7 7Z"></path></svg></span></div>
+          <div>
+            <div class="font-bold text-[#6BBF59] text-base mb-2">Komitmen Privasi kami</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass dibangun dengan prinsip sederhana: <strong class="text-[#4A3728] dark:text-[#F0E6D8]">password Anda milik Anda</strong>Kami tidak menjalankan analisis, melayani iklan, atau menjual data pribadi. Privasi bukanlah fitur. Itu pondasinya.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1: Our Commitment -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#6BBF59]/10 border border-[#6BBF59]/20 text-[#6BBF59]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Komitmen kita</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Tidak ada data. Tidak ada pelacakan. Tidak ada kompromi.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass dirancang untuk meminimalkan pengumpulan data dan menjaga pembuatan sandi lokal kapanpun mungkin. Kebanyakan fitur inti bekerja sepenuhnya dalam peramban Anda, dan di mana permintaan jaringan diperlukan, kebijakan ini menjelaskan apa yang dikirim dan mengapa.</p>
+        <p class="text-[#8B7355]/70 dark:text-[#B8A890]/70 text-sm leading-relaxed mt-4">TofuPass dimiliki dan dioperasikan oleh Matthew Johnson, juga dikenal sebagai TofuWater.</p>
+      </div>
+
+      <!-- Section 2: What We Don't Collect -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-5">
+          <div class="icon-wrap bg-[#FF7A7A]/10 border border-[#FF7A7A]/20 text-[#FF7A7A]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 8.5 15.5 15.5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Apa yang tidak kita kumpulkan</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Daftar singkatnya: semuanya.</p>
+          </div>
+        </div>
+        <ul class="no-list">
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Sandi dari generator utama</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Dihasilkan secara lokal di browser Anda. Tidak dikirim ke server TofuPass.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Akun dan profil</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Tak ada tanda tangan, log masuk, profil pengguna, atau pengidentifikasi berbasis akun.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Analitik</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Tidak ada Google Analytics, Prusible, Fothom, atau skrip pelacakan apapun.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Iklan</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Tidak ada jaringan iklan. Tidak ditargetkan iklan. Tidak ada pelacakan uang.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Informasi Pribadi</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Tidak ada nama, email, akun, atau informasi identifikasi yang diperlukan atau dikumpulkan.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3: How It Works -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#9B6DD7]/10 border border-[#9B6DD7]/20 text-[#9B6DD7]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6z"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">3.</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Generasi lokal, API jujur.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="how-card">
+            <div class="text-xs font-bold text-[#6BBF59] uppercase tracking-widest mb-2">Situs web</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Generator sandi utama membuat sandi dalam peramban Anda menggunakan Web Crypto API. TofuPass tidak menerima password yang anda buat di halaman itu. Setelah halaman dimuat, generasi bekerja offline.</p>
+          </div>
+          <div class="how-card">
+            <div class="text-xs font-bold text-[#9B6DD7] uppercase tracking-widest mb-2">API</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Masyarakat API menghasilkan password dan passphrases server- sisi menggunakan kriptografi aman RNG. Nilai yang dihasilkan dikembalikan dalam respon dan tidak sengaja disimpan setelah pengiriman. API juga mengekspos kumpulan counter melalui <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 font-mono">/api/stats</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Third-Party Requests -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#5B9FD6]/10 border border-[#5B9FD6]/20 text-[#5B9FD6]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h12l2 2v12H5z"></path><path d="M8 5v6h8V5"></path><path d="M9 17h6"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Permintaan pesta ke-30.</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Digunakan singkat dan menjelaskan dengan jelas.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Beberapa halaman meminta dukungan aset atau layanan dari pihak ketiga sebagai bagian dari pengiriman halaman normal. Penyedia tersebut mungkin menerima data permintaan teknis seperti alamat IP Anda, metadata peramban, dan tajuk standar HTTP ketika peramban Anda memuat sumber daya tersebut.</p>
+          <ul class="no-list">
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Stres Tester cek pelanggaran</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">The Stress Temter hanya mengirimkan 5 karakter pertama dari kata sandi Anda SHA-1 hash ke <a href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Have I Been Pwned jangkauan API</a>. Sandi lengkap dan hash lengkap Anda tetap pada perangkat Anda, dan pencocokan dilakukan secara lokal.</div>
+              </div>
+            </li>
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Fonta dan pustaka awalan</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Situs ini saat ini memuat beberapa aset dari penyedia seperti <a href="https://fonts.bunny.net/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Fonta Kelinci</a>, <a href="https://tailwindcss.com/docs/installation/play-cdn" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">CDN Tailwind</a>, dan <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">jsDelivr</a>/<a href="https://alpinejs.dev/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Alpine.js</a>. Memuat aset tersebut mungkin membuat permintaan peramban standar kepada penyedia tersebut.</div>
+              </div>
+            </li>
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Penyedia struktur</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">TofuPass dikirim melalui infrastruktur seperti <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Cloudflare</a>, yang dapat memproses metadata koneksi untuk menyediakan caching, keamanan, dan perlindungan penyalahgunaan.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 5: Local Browser Features -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#E6A800]/10 border border-[#E6A800]/20 text-[#E6A800]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Fitur Peramban Lokal</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Papan klip dan pemrosesan hanya dalam browser.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass dapat menyalin sandi yang dihasilkan atau snippet kode ke papan klip Anda ketika Anda mengklik kontrol salinan. Aksi tersebut ditangani oleh peramban Anda pada perangkat Anda. Stress Tester menghitung sandi secara lokal sebelum membuat permintaan k-anonimitas apapun.</p>
+      </div>
+
+      <!-- Section 6: Cookies And Tracking -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#FF7A7A]/10 border border-[#FF7A7A]/20 text-[#FF7A7A]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 8.5 15.5 15.5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Cookies And Tracking</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Tidak ada kue analitik dari TofuPass.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass tidak menggunakan analisis partai pertama, kue iklan, atau pixel pelacakan. Penyedia pihak tiga puluh yang terlibat dalam pengiriman aset atau infrastruktur dapat menggunakan cookie atau mekanisme penebangan sesuai dengan kebijakan mereka.</p>
+      </div>
+
+      <!-- Section 7: Security -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#E6A800]/10 border border-[#E6A800]/20 text-[#E6A800]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Keamanan.</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Pertahanan di kedalaman.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Semua halaman disajikan di atas HTTPS. TofuPass menggunakan kriptografi peramban modern untuk generasi lokal dan bergantung pada perlindungan infrastruktur seperti Cloudflare untuk ketersediaan dan keamanan tepi.</p>
+      </div>
+
+      <!-- Section 8: Contact -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#6BBF59]/10 border border-[#6BBF59]/20 text-[#6BBF59]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"></rect><path d="m5 8 7 5 7-5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Kontak</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Pertanyaan? Kita mudah dijangkau.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau bagaimana TofuPass menangani data Anda, email <span class="text-[#6BBF59] font-semibold">halo &lt; at &gt; tofuwater.com</span>.</p>
+      </div>
+
+    </div>
+  </main>

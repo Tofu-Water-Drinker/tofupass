@@ -3,11 +3,102 @@ layout: base.njk
 title: पासफ्रेज़ - TofuPass
 pageKey: passphrases
 extraCss:
-  - /assets/css/passphrases.css
+- /assets/css/passphrases.css
 pageScripts:
-  - /assets/js/passphrases-hi.js
-  - /assets/js/wordlists-hi.js
-  - /assets/js/passphrases.js
+- /assets/js/passphrases-hi.js
+- /assets/js/wordlists-hi.js
+- /assets/js/passphrases.js
 backgroundDecor: leaves
 ---
-<div class="passphrase-band" aria-hidden="true"></div><main class="relative z-10 pt-24 pb-20 px-4"><div class="max-w-5xl mx-auto"><section class="passphrase-stage"><div class="passphrase-copy"><img src="/excited.png" alt="Miso" class="w-20 h-20 mb-5 mascot-glow" /><p class="passphrase-kicker">लंबे और पढ़ने योग्य रहस्य</p><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">पासफ्रेज़</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">जहाँ लंबाई स्वीकार हो, वहाँ के लिए आसान रहस्य।</p><div class="passphrase-example" aria-hidden="true">alpha-beta-gamma-delta</div></div><div class="passphrase-tool" aria-labelledby="passphraseToolTitle"><div class="passphrase-tool-head"><div><p class="passphrase-kicker">Generator</p><h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">नया वाक्यांश</h2></div><span class="passphrase-badge" id="passphraseCountBadge">4 शब्द</span></div><button type="button" id="passphrasePanel" class="passphrase-panel"><output id="passphraseDisplay" class="passphrase-display" aria-live="polite">...</output><span id="passphraseHint" class="passphrase-hint">कॉपी करने के लिए क्लिक करें</span></button><div class="passphrase-actions"><button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">नया वाक्यांश बनाएँ</button><button type="button" id="passphraseCopy" class="passphrase-copy-btn">Copy</button></div><div class="passphrase-controls" aria-label="Options"><div><div class="control-label">शब्द</div><div class="segmented-control" data-control="count"><button type="button" data-count="4" aria-pressed="true">4</button><button type="button" data-count="5" aria-pressed="false">5</button><button type="button" data-count="6" aria-pressed="false">6</button><button type="button" data-count="8" aria-pressed="false">8</button></div></div><div><div class="control-label">Separator</div><div class="segmented-control" data-control="separator"><button type="button" data-separator="-" aria-pressed="true">-</button><button type="button" data-separator=" " aria-pressed="false">space</button><button type="button" data-separator="." aria-pressed="false">.</button></div></div><div><div class="control-label">Case</div><div class="segmented-control" data-control="case"><button type="button" data-case="lower" aria-pressed="true">lower</button><button type="button" data-case="title" aria-pressed="false">Title</button></div></div></div></div></section></div></main>
+
+  <div class="passphrase-band" aria-hidden="true"></div>
+
+  <main class="relative z-10 pt-24 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <section class="passphrase-stage">
+        <div class="passphrase-copy">
+          <img src="/excited.png" alt="Miso उत्साहित" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">लंबे समय तक रहस्य</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">पास्फ्रास</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">लंबे समय तक, निचले-घर्षण रहस्य उन जगहों के लिए जहां लंबाई का स्वागत है और यादगारता भविष्य के प्रतीक नियमों की बैठक की तुलना में अधिक होती है।</p>
+          <div class="passphrase-example" aria-hidden="true">खिलना</div>
+        </div>
+
+        <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
+          <div class="passphrase-tool-head">
+            <div>
+              <p class="passphrase-kicker">जेनरेटर</p>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">ताजा passphrase</h2>
+            </div>
+            <span class="passphrase-badge" id="passphraseCountBadge">4 शब्द</span>
+          </div>
+
+          <button type="button" id="passphrasePanel" class="passphrase-panel">
+            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">जनरेटिंग ...</output>
+            <span id="passphraseHint" class="passphrase-hint">कॉपी करने के लिए पासफ्रेज़ पर क्लिक करें</span>
+          </button>
+
+          <div class="passphrase-actions">
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">नई Passphrase</button>
+            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
+              <span class="ui-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </span>
+              कॉपी
+            </button>
+          </div>
+
+          <div class="passphrase-controls" aria-label="Passphrase विकल्प">
+            <div>
+              <div class="control-label">शब्द</div>
+              <div class="segmented-control" data-control="count">
+                <button type="button" data-count="4" aria-pressed="true">4</button>
+                <button type="button" data-count="5" aria-pressed="false">5</button>
+                <button type="button" data-count="6" aria-pressed="false">6</button>
+                <button type="button" data-count="8" aria-pressed="false">8</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">विभाजक</div>
+              <div class="segmented-control" data-control="separator">
+                <button type="button" data-separator="-" aria-pressed="true">-</button>
+                <button type="button" data-separator=" " aria-pressed="false">अंतरिक्ष</button>
+                <button type="button" data-separator="." aria-pressed="false">.</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">केस</div>
+              <div class="segmented-control" data-control="case">
+                <button type="button" data-case="lower" aria-pressed="true">कम</button>
+                <button type="button" data-case="title" aria-pressed="false">शीर्षक</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="passphrase-notes" aria-label="Passphrase मार्गदर्शन">
+        <div class="note-strip note-strip-green">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </div>
+          <div>
+            <h2>जब लंबाई की अनुमति होती है तो पासफ्रास का उपयोग करें।</h2>
+            <p>वे वॉल्ट मास्टर पासवर्ड, वाई-फाई पासवर्ड, डिवाइस पासकोड, रिकवरी वाक्यांशों के लिए चमकते हैं जिन्हें आपको हाथ से टाइप करने की आवश्यकता होती है, और किसी भी जगह जो स्पेस या विभाजक को स्वीकार करती है।</p>
+          </div>
+        </div>
+
+        <div class="note-strip note-strip-yellow">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
+          </div>
+          <div>
+            <h2>पिकी रूपों के लिए फर्म या अतिरिक्त फर्म का उपयोग करें।</h2>
+            <p>जब कोई साइट पूंजी, प्रतीक और संख्या की मांग करती है, तो मुख्य जनरेटर उन आवश्यकताओं को रखता है जो प्रत्येक सॉफ्ट, फर्म और अतिरिक्त फर्म पासवर्ड में बनाई गई हैं।</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>

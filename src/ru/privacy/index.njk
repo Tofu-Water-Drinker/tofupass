@@ -2,6 +2,198 @@
 layout: base.njk
 title: Приватность - TofuPass
 pageKey: privacy
+extraCss:
+- /assets/css/privacy.css
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Приватность</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">Ваши пароли принадлежат вам. TofuPass не использует аналитику, не продаёт данные и не получает созданные пароли.</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-black text-[#4A3728] dark:text-[#F0E6D8] mb-3"><span class="gradient-text">конфиденциальность</span> Политика</h1>
+        <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-sm">Последнее обновление: 23 марта 2026</p>
+      </div>
+
+      <!-- Commitment banner -->
+      <div class="mb-8 rounded-2xl p-6 border-2 border-[#6BBF59]/20" style="background: rgba(107,191,89,0.05);">
+        <div class="flex items-start gap-4">
+          <div class="text-[#6BBF59]"><span class="inline-icon text-3xl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20v-8"></path><path d="M12 12c0-4-2.5-7-7-7 0 4.5 3 7 7 7Z"></path><path d="M12 12c0-4 2.5-7 7-7 0 4.5-3 7-7 7Z"></path></svg></span></div>
+          <div>
+            <div class="font-bold text-[#6BBF59] text-base mb-2">Наша приверженность конфиденциальности</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass построен по простому принципу: <strong class="text-[#4A3728] dark:text-[#F0E6D8]">Ваши пароли принадлежат вам</strong>Мы не запускаем аналитику, не размещаем рекламу и не продаем персональные данные. Конфиденциальность не является особенностью. Это фундамент.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1: Our Commitment -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#6BBF59]/10 border border-[#6BBF59]/20 text-[#6BBF59]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">1.Наша приверженность</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Никаких данных. Никаких следов. Никаких компромиссов.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass предназначен для минимизации сбора данных и сохранения локальной генерации паролей. Большинство основных функций полностью работают в вашем браузере, и там, где требуется сетевой запрос, эта политика объясняет, что именно отправляется и почему.</p>
+        <p class="text-[#8B7355]/70 dark:text-[#B8A890]/70 text-sm leading-relaxed mt-4">TofuPass принадлежит и управляется Matthew Johnson, также известной как TofuWater.</p>
+      </div>
+
+      <!-- Section 2: What We Don't Collect -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-5">
+          <div class="icon-wrap bg-[#FF7A7A]/10 border border-[#FF7A7A]/20 text-[#FF7A7A]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 8.5 15.5 15.5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">2 Что мы не собираем</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Короткий список: все.</p>
+          </div>
+        </div>
+        <ul class="no-list">
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Пароли от главного генератора</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Создан локально в вашем браузере. Не отправляется на серверы TofuPass.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Учетные записи и профили</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Никаких регистраций, входов в систему, профилей пользователей или идентификаторов на основе учетной записи.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Аналитика</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Нет Google Analytics, Plausible, Fathom или каких-либо скриптов отслеживания.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Реклама</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Никаких рекламных сетей. Никакой целевой рекламы. Нет монетизированного отслеживания.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Персональная информация</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Никаких имен, электронных писем, учетных записей или любой идентифицирующей информации, необходимой или собранной.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3: How It Works -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#9B6DD7]/10 border border-[#9B6DD7]/20 text-[#9B6DD7]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6z"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">3 Как это работает</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Местное поколение, честный API.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="how-card">
+            <div class="text-xs font-bold text-[#6BBF59] uppercase tracking-widest mb-2">Сайт</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Генератор паролей создает пароли в вашем браузере с помощью Web Crypto API. TofuPass не получает пароли, которые вы создаете на этой странице. После загрузки страницы генерация работает оффлайн.</p>
+          </div>
+          <div class="how-card">
+            <div class="text-xs font-bold text-[#9B6DD7] uppercase tracking-widest mb-2">API</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Публичный API генерирует пароли и пароли на стороне сервера с использованием криптографически безопасного RNG. Сгенерированные значения возвращаются в ответ и не хранятся намеренно после доставки. API также предоставляет агрегированные счетчики через <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 font-mono">/api/stats</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Third-Party Requests -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#5B9FD6]/10 border border-[#5B9FD6]/20 text-[#5B9FD6]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h12l2 2v12H5z"></path><path d="M8 5v6h8V5"></path><path d="M9 17h6"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">4. Третьи стороны просят</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Используется скупо и объясняется четко.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Некоторые страницы запрашивают поддержку активов или услуг у третьих лиц в рамках обычной доставки страниц. Эти провайдеры могут получать технические данные запроса, такие как ваш IP-адрес, метаданные браузера и стандартные заголовки HTTP, когда ваш браузер загружает эти ресурсы.</p>
+          <ul class="no-list">
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Стресс Проверка нарушений тестировщика</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Stress Tester отправляет только первые 5 символов хэша SHA-1 вашего пароля. <a href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Have I Been Pwned API</a>Ваш полный пароль и полный хэш остаются на вашем устройстве, и сопоставление выполняется локально.</div>
+              </div>
+            </li>
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Шрифты и интерфейсные библиотеки</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">В настоящее время сайт загружает некоторые активы от таких поставщиков, как <a href="https://fonts.bunny.net/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Банни Фонты</a>, <a href="https://tailwindcss.com/docs/installation/play-cdn" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Хвостовой ветер CDN</a>и <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">jsDelivr</a>/<a href="https://alpinejs.dev/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Alpine.js</a>Загрузка этих активов может создавать стандартные запросы браузера для этих поставщиков.</div>
+              </div>
+            </li>
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Инфраструктурные провайдеры</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">TofuPass поставляется через инфраструктуру. <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Cloudflare</a>, который может обрабатывать метаданные соединения для обеспечения кэширования, безопасности и защиты от злоупотреблений.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 5: Local Browser Features -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#E6A800]/10 border border-[#E6A800]/20 text-[#E6A800]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">5. Функции локального браузера</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Обработка Clipboard и in-browser.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass может копировать сгенерированные пароли или фрагменты кода в ваш буфер обмена при нажатии на элементы управления копированием. Это действие обрабатывается вашим браузером на вашем устройстве. Stress Tester вычисляет хэши паролей локально, прежде чем сделать запрос на k-анонимность.</p>
+      </div>
+
+      <!-- Section 6: Cookies And Tracking -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#FF7A7A]/10 border border-[#FF7A7A]/20 text-[#FF7A7A]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 8.5 15.5 15.5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">6. Cookies и отслеживание</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Никаких аналитических файлов cookie от TofuPass.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass не использует стороннюю аналитику, рекламные файлы cookie или пиксели отслеживания. Сторонние поставщики, участвующие в доставке активов или инфраструктуры, могут использовать свои собственные файлы cookie или механизмы регистрации в соответствии с их политикой.</p>
+      </div>
+
+      <!-- Section 7: Security -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#E6A800]/10 border border-[#E6A800]/20 text-[#E6A800]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">7. Безопасность.</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Глубокая оборона.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Все страницы обслуживаются через HTTPS. TofuPass использует современную криптографию браузера для локального поколения и полагается на защиту инфраструктуры, такую как Cloudflare, для обеспечения доступности и безопасности.</p>
+      </div>
+
+      <!-- Section 8: Contact -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#6BBF59]/10 border border-[#6BBF59]/20 text-[#6BBF59]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"></rect><path d="m5 8 7 5 7-5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">8.Контакт.</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Вопросы? До нас легко добраться.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Если у вас есть какие-либо вопросы об этой политике конфиденциальности или о том, как TofuPass обрабатывает ваши данные, по электронной почте <span class="text-[#6BBF59] font-semibold">Hello&lt;at&gt;tofuwater.com</span>.</p>
+      </div>
+
+    </div>
+  </main>

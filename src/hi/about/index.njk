@@ -2,6 +2,203 @@
 layout: base.njk
 title: परिचय - TofuPass
 pageKey: about
-backgroundDecor: leaves
+extraCss:
+- /assets/css/about.css
+headScripts:
+- https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">परिचय</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">TofuPass आपके ब्राउज़र में मजबूत और याद रखने योग्य पासवर्ड बनाता है।</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">के बारे में <span class="font-black">Tofu<span class="text-[#6BBF59]">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">सब कुछ जो आप जानना चाहते हैं।</p>
+      </div>
+
+      <!-- Section: About TofuPass -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-green">TofuPass</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>TofuPass क्या है?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>एक गोपनीयता केंद्रित पासवर्ड जनरेटर जो आपके ब्राउज़र में पूरी तरह से मजबूत, यादगार पासवर्ड बनाता है। कोई सर्वर कभी नहीं देखता है कि आप क्या उत्पन्न करते हैं।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>इसे TofuPass क्यों कहा जाता है?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>मेरा हैंडल "TofuWater" है, इसलिए "TofuPass" स्पष्ट विकल्प था। तथ्य यह है कि यह "Tough Pass" की तरह लगता है एक खुश दुर्घटना मैं अब दावा जानबूझकर था।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>यह कौन बनाता है?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Me - Matthew, a.k.a. TofuWater. दिन तक सेवा डेस्क तकनीशियन, रात तक साइबर सुरक्षा टिंकर। मैंने TofuPass का निर्माण किया क्योंकि मैं एक पासवर्ड जनरेटर चाहता था मैं वास्तव में विश्वास कर सकता हूं और बिना किसी हिचकिचाहट के उपयोगकर्ताओं को समाप्त कर सकता हूं।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 4 ? null : 4">
+            <span>क्या यह मुफ्त है? आप कैसे पैसे कमाने?</span>
+            <span class="faq-icon" :class="open === 4 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 4" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>पूरी तरह से मुक्त। मैं इससे पैसा नहीं बनाती। कोई विज्ञापन, कोई प्रीमियम टियर नहीं, बेचने के लिए कोई डेटा नहीं। यह एक जुनून परियोजना है जो मैं एक खुशहाल नुकसान पर चल रहा हूं।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 5 ? null : 5">
+            <span>क्या TofuPass खुला स्रोत है?</span>
+            <span class="faq-icon" :class="open === 5 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 5" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>हाँ - इसके दोनों हिस्सों। साइट के HTML, CSS और जावास्क्रिप्ट पर हैं <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">GitHub</a>, और बैकएंड <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">API सर्वर</a> शक्तियां <code>/api/*</code> भी सार्वजनिक है। दोनों नीचे हैं <strong>GNU GPL v3</strong>इसलिए आप अपने ब्राउज़र में क्या चल सकते हैं? <em>और</em> सर्वर पर क्या होता है, फोर्क या तो एक, और इसे संशोधित करें - जब तक आपका फोर्क उसी लाइसेंस के तहत खुला स्रोत रहता है। फ्रंटेंड के क्यूरेट किए गए शब्द सूचियों को पासवर्ड आउटपुट को कम पूर्वानुमानित रखने के लिए निजी रखा जाता है, लेकिन पीढ़ी तर्क - जिसमें उपयोग का उपयोग शामिल है <code>crypto.getRandomValues()</code> - पूरी तरह से दिखाई देता है।</p>
+            <p class="mt-3">The The most of the <strong>TofuPass</strong> नाम और Miso mascot (tofu, चेतावनी, और उत्साहित कलाकृति) <strong>सभी अधिकार सुरक्षित</strong> और जीपीएल द्वारा कवर नहीं किया गया। आप कोड को फोर्क करने के लिए स्वागत करते हैं - जब आप प्रकाशित करते हैं तो बस अपना खुद का ब्रांडिंग और शुभंकर लाएं।</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: How It Works -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-purple">यह कैसे काम करता है</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>पासवर्ड जनरेशन कैसे काम करता है?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>TofuPass संख्याओं और प्रतीकों के साथ क्यूरेट शब्द सूचियों को जोड़ती है <code>crypto.getRandomValues()</code> वास्तविक यादृच्छिकता के लिए। <span class="text-[#FF7A7A] font-bold">शीतल</span> = वर्ड + वर्ड + प्रतीक + संख्या। <span class="text-[#6BBF59] font-bold">फर्म</span> एक तीसरा शब्द जोड़ता है। <span class="text-[#E6A800] font-bold">अतिरिक्त फर्म</span> एक ही पठनीय पासवर्ड आकार को रखते हुए उच्च एन्ट्रापी के लिए चौथे शब्द का हिस्सा जोड़ता है।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>कैसे सुरक्षित पासवर्ड हैं?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>प्रत्येक टियर एक ही अनुकूल संरचना रखता है - पूंजीकृत शब्द, एक आम प्रतीक, और एक दो अंकों की संख्या - फिर अधिक यादृच्छिक शब्द चंक जोड़कर ताकत बढ़ाता है। लंबे लोअरकेस रहस्यों के लिए, समर्पित का उपयोग करें <a href="/hi/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">पास्फ्रास</a> पृष्ठ</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>क्यों यादृच्छिक अक्षरों के बजाय शब्द?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p><code>DancingKoalaRiver!73</code> याद करने में बहुत आसान है <code>j2#Xp9$k</code> जबकि अभी भी पूंजी, प्रतीक और संख्या नियमों को सबसे ज्यादा मांग करते हैं। जब लोग वास्तव में एक पासवर्ड याद कर सकते हैं, तो वे इसका पुन: उपयोग करने की संभावना कम हैं।</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Security & Privacy -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-pink">गोपनीयता</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>क्या पासवर्ड ऑनलाइन सुरक्षित है?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>हाँ। सब कुछ आपके ब्राउज़र में स्थानीय रूप से चलता है। किसी भी सर्वर पर कुछ भी नहीं भेजा जाता है। यह पृष्ठ लोड होने के बाद भी ऑफ़लाइन काम करता है।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>क्या TofuPass कुछ भी ट्रैक करता है?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>नहीं कोई एनालिटिक्स, कोई कुकी नहीं, कोई ट्रैकिंग पिक्सेल नहीं। पहले स्थान पर एकत्रित करने के लिए कोई खाता प्रणाली और कोई डेटा नहीं है।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>क्या मुझे पासवर्ड मैनेजर का भी उपयोग करना चाहिए?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>बिल्कुल। एक पासवर्ड मैनेजर एक सबसे अच्छा सुरक्षा उन्नयन है जो अधिकांश लोग कर सकते हैं। <strong>बिटवार्डन</strong> (free, open-source) और <strong>1पासवर्ड</strong> दोनों महान हैं। TofuPass पासवर्ड उत्पन्न करता है <em>में</em> आपका प्रबंधक</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Technical -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-yellow">तकनीकी</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>क्या RNG TofuPass का उपयोग करता है?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Web Crypto API का <code>crypto.getRandomValues()</code> - एक CSPRNG हर आधुनिक ब्राउज़र में बनाया गया, वही मानक बैंकिंग और एन्क्रिप्शन में उपयोग किया जाता है।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>वहाँ एक API है?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>हाँ। नि: शुल्क, आवश्यकता नहीं है। <code>GET tofupass.com/api/password</code> एकल पासवर्ड के लिए, <code>GET tofupass.com/api/passphrase?count=4</code> एक passphrase के लिए। देखें <a href="/hi/api/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">API डॉक्स</a> विवरण के लिए।</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>मुझे अक्सर पासवर्ड कैसे बदलना चाहिए?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>जब आपको लगता है कि एक समझौता किया गया है। NIST मजबूर रोटेशन के खिलाफ सिफारिश करता है - यह कमजोर, पूर्वानुमान पैटर्न को प्रोत्साहित करता है। मजबूत, अद्वितीय पासवर्ड का उपयोग करें और उन्हें तब बदल दें जब आपको एक शेड्यूल पर नहीं होना चाहिए।</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>

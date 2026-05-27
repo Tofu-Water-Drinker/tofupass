@@ -2,6 +2,96 @@
 layout: base.njk
 title: TofuPassの理由 - TofuPass
 pageKey: why
-backgroundDecor: leaves
+extraFonts:
+- https://fonts.bunny.net/css?family=caveat:700
+extraCss:
+- /assets/css/why.css
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">TofuPassの理由</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">覚えやすい単語、信頼できるランダム性、ブラウザ内だけで完結する生成。</p></article></main>
+
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">なぜ? <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">長い観察の短いバージョン。</p>
+      </div>
+
+      <article class="why-article">
+
+        <!-- Section 1 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-pink">問題</div>
+          <h2>パスワードは、セキュリティを維持しないで生きることができます。</h2>
+          <p>すでに素晴らしいパスワードジェネレーターがあります。 たとえば、DinoPassは、パスワードの作成をシンプルかつアプローチ可能にします。 長年使っていた。</p>
+          <p>しかし、私はITで働いています。 そして、私は見たパターンはツールの欠如ではありませんでした - それは何が起こったのか <em>アフター</em> パスワードをお持ちの方 それらはそれを再使用し、それを簡素化するか、またはモニターにそれをテープで留めます。</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#FFD166]/25" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 2 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-yellow">トリガー</div>
+          <h2>小さい摩擦、大きい結果。</h2>
+          <p>パスワードが摩擦しきい値を渡る瞬間、人々は働きを停止します <em>お問い合わせ</em> それは働き始めます <em>周辺エリア</em> お問い合わせ トリガーは常に同じです。</p>
+          <div class="why-grid">
+            <div class="why-grid-item">多大なる資本金</div>
+            <div class="why-grid-item">Unfamiliarシンボル</div>
+            <div class="why-grid-item">長いランダムな文字列</div>
+            <div class="why-grid-item">キャラクター置換</div>
+          </div>
+        </section>
+
+        <!-- Sticky note -->
+        <div class="sticky-note-wrap">
+          <div class="sticky-note">
+            <div class="sticky-note-tape"></div>
+            <p class="sticky-note-text">P @ssw0rd123 からのツイート</p>
+            <p class="sticky-note-sub">- 作業メール</p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-green">アプローチ</div>
+          <h2>カオス上の構造。</h2>
+          <p>TofuPassは、最大ランダム性ではなく、読みやすいパターンに焦点を当てています。 ファミリア語のチャンク、共通記号、短い番号。 パスワードは次のようになります。</p>
+          <div class="why-examples">
+            <span>ハッピーコアラ!73</span>
+            <span>ダンスKoalaRiver!73</span>
+            <span>WindyMonitorブライトリーフ#88</span>
+          </div>
+          <p>壊れない - しかし、本物的に使用可能。 フードの下には、すべては暗号化されたランダム性を使用してブラウザで生成されます。 アカウントなし、分析なし、デバイスを離れません。 代わりにきれいな長時間の秘密が必要な場合は、 <a href="/ja/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">パスフレーズ発電機</a> その仕事にはあります。</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 4 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-blue">フィット</div>
+          <h2>代替品ではありません。 橋。</h2>
+          <p>パスワード マネジャーを使用して、すべての人にとって長いランダムな文字列を使用している場合 - 素晴らしい。 それは理想的です。 TofuPassは残りの時間のために存在します:あなたが本当の使用のために十分に強い何かを必要とするとき、覚えるのは簡単、そしてあなたが誰を信頼する必要はありません十分にプライベート。</p>
+          <div class="pull-quote pull-quote-green">
+            シンプルなパスワードが使われます。 使用されるパスワードは一意にとどまります。 ユニークなパスワードは、人々を安全に保ちます。
+          </div>
+        </section>
+
+      </article>
+
+      <!-- CTA -->
+      <div class="text-center mt-14">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          TofuPassを試す
+        </a>
+      </div>
+    </div>
+  </main>

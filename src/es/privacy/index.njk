@@ -2,14 +2,198 @@
 layout: base.njk
 title: Privacidad - TofuPass
 pageKey: privacy
+extraCss:
+- /assets/css/privacy.css
 backgroundDecor: leaves
 ---
 
-<main class="relative z-10 pt-28 pb-20 px-4">
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Privacidad</h1>
-    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">Tus contraseñas son tuyas. TofuPass no usa analíticas, no muestra anuncios y no vende datos personales.</p>
-    <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed mb-5">El generador principal crea contraseñas en tu navegador con Web Crypto. TofuPass no recibe las contraseñas que generas ahí.</p>
-    <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed">El probador de filtraciones usa k-anonimato con Have I Been Pwned: solo se envía un prefijo de 5 caracteres del hash SHA-1, y la comparación ocurre en tu dispositivo.</p>
-  </article>
-</main>
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-black text-[#4A3728] dark:text-[#F0E6D8] mb-3"><span class="gradient-text">Privacidad</span> Política</h1>
+        <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-sm">Última actualización: 23 de marzo de 2026</p>
+      </div>
+
+      <!-- Commitment banner -->
+      <div class="mb-8 rounded-2xl p-6 border-2 border-[#6BBF59]/20" style="background: rgba(107,191,89,0.05);">
+        <div class="flex items-start gap-4">
+          <div class="text-[#6BBF59]"><span class="inline-icon text-3xl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20v-8"></path><path d="M12 12c0-4-2.5-7-7-7 0 4.5 3 7 7 7Z"></path><path d="M12 12c0-4 2.5-7 7-7 0 4.5-3 7-7 7Z"></path></svg></span></div>
+          <div>
+            <div class="font-bold text-[#6BBF59] text-base mb-2">Nuestro compromiso de privacidad</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass fue construido sobre un principio simple: <strong class="text-[#4A3728] dark:text-[#F0E6D8]">tus contraseñas te pertenecen</strong>. No se ejecutan análisis, se sirven anuncios, o se venden datos personales. La privacidad no es una característica. Es la fundación.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 1: Our Commitment -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#6BBF59]/10 border border-[#6BBF59]/20 text-[#6BBF59]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">1. Nuestro compromiso</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">No hay datos. Sin rastreo. Sin compromisos.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass está diseñado para minimizar la recopilación de datos y mantener la generación de contraseñas local siempre que sea posible. La mayoría de las características básicas funcionan completamente en su navegador, y donde se requiere una solicitud de red, esta política explica exactamente lo que se envía y por qué.</p>
+        <p class="text-[#8B7355]/70 dark:text-[#B8A890]/70 text-sm leading-relaxed mt-4">TofuPass es propiedad y operado por Matthew Johnson, también conocido públicamente como TofuWater.</p>
+      </div>
+
+      <!-- Section 2: What We Don't Collect -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-5">
+          <div class="icon-wrap bg-[#FF7A7A]/10 border border-[#FF7A7A]/20 text-[#FF7A7A]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 8.5 15.5 15.5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">2. Lo que no recogemos</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">La lista corta: todo.</p>
+          </div>
+        </div>
+        <ul class="no-list">
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Contraseñas del generador principal</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">Generado localmente en su navegador. No enviado a los servidores TofuPass.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Cuentas y perfiles</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">No hay registros, logins, perfiles de usuario o identificadores basados en la cuenta.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Análisis</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">No Google Analytics, Plausible, Fathom o cualquier script de seguimiento.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Publicidad</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">No hay redes de anuncios. No hay publicidad dirigida. No hay seguimiento monetizado.</div>
+            </div>
+          </li>
+          <li>
+            <span class="inline-icon text-[#FF7A7A] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7 17 17"></path><path d="M17 7 7 17"></path></svg></span>
+            <div>
+              <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Información personal</div>
+              <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">No hay nombres, correos electrónicos, cuentas o información de identificación requerida o recogida.</div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Section 3: How It Works -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#9B6DD7]/10 border border-[#9B6DD7]/20 text-[#9B6DD7]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6z"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">3. Cómo funciona</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Generación local, honesta API.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <div class="how-card">
+            <div class="text-xs font-bold text-[#6BBF59] uppercase tracking-widest mb-2">Sitio web</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">El generador principal de contraseñas crea contraseñas en su navegador usando el Web Crypto API. TofuPass no recibe las contraseñas que genera en esa página. Después de cargar la página, la generación funciona fuera de línea.</p>
+          </div>
+          <div class="how-card">
+            <div class="text-xs font-bold text-[#9B6DD7] uppercase tracking-widest mb-2">API</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">El público API genera contraseñas y contraseñas del servidor con un RNG criptográfico. Los valores generados se devuelven en la respuesta y no se almacenan intencionalmente después de la entrega. El API también expone contadores agregados a través de <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 font-mono">/api/stats</code>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4: Third-Party Requests -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#5B9FD6]/10 border border-[#5B9FD6]/20 text-[#5B9FD6]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 5h12l2 2v12H5z"></path><path d="M8 5v6h8V5"></path><path d="M9 17h6"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">4. Solicitudes de terceros</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Usado con moderación y explicado claramente.</p>
+          </div>
+        </div>
+        <div class="space-y-4">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Algunas páginas solicitan activos o servicios de terceros como parte de la entrega normal de páginas. Estos proveedores pueden recibir datos de solicitud técnica como su dirección IP, metadatos del navegador y encabezados estándar HTTP cuando su navegador carga esos recursos.</p>
+          <ul class="no-list">
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Stress Comprobaciones de incumplimiento de un semestre</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">El Stress Tester envía sólo los primeros 5 caracteres del hash SHA-1 de su contraseña a la <a href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Have I Been Pwned rango API</a>. Su contraseña completa y el hash completo permanecen en su dispositivo, y la coincidencia se hace localmente.</div>
+              </div>
+            </li>
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Fuentes y bibliotecas de primera línea</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">El sitio actualmente carga algunos activos de proveedores como <a href="https://fonts.bunny.net/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Bunny Fonts</a>, <a href="https://tailwindcss.com/docs/installation/play-cdn" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">CDN de Tailwind</a>, y <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">jsDelivr</a>/<a href="https://alpinejs.dev/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Alpine.js</a>. Carga esos activos pueden crear solicitudes estándar del navegador a esos proveedores.</div>
+              </div>
+            </li>
+            <li>
+              <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
+              <div>
+                <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Proveedores de infraestructura</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">TofuPass se entrega a través de infraestructura como <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Cloudflare</a>, que puede procesar metadatos de conexión para proporcionar protección de caché, seguridad y abuso.</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Section 5: Local Browser Features -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#E6A800]/10 border border-[#E6A800]/20 text-[#E6A800]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">5. Características del explorador local</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Clipboard y procesamiento en el navegador solamente.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass puede copiar contraseñas generadas o fragmentos de código a su portapapeles cuando haga clic en los controles de copia. Esa acción es manejada por su navegador en su dispositivo. El Stress Tester compute contraseña hashes localmente antes de hacer cualquier solicitud k-anonymity.</p>
+      </div>
+
+      <!-- Section 6: Cookies And Tracking -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#FF7A7A]/10 border border-[#FF7A7A]/20 text-[#FF7A7A]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"></circle><path d="M8.5 8.5 15.5 15.5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">6. Cookies y seguimiento</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">No hay cookies de análisis de TofuPass.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass no utiliza análisis de primera mano, cookies publicitarias o píxeles de seguimiento. Los proveedores de terceros involucrados en la entrega de activos o infraestructura pueden utilizar sus propias cookies o mecanismos de registro de acuerdo con sus políticas.</p>
+      </div>
+
+      <!-- Section 7: Security -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#E6A800]/10 border border-[#E6A800]/20 text-[#E6A800]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">7. Seguridad</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Defensa en profundidad.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Todas las páginas se sirven sobre HTTPS. TofuPass utiliza la criptografía moderna del navegador para la generación local y depende de las protecciones de infraestructura como Cloudflare para la disponibilidad y seguridad de bordes.</p>
+      </div>
+
+      <!-- Section 8: Contact -->
+      <div class="section-card rounded-2xl p-7 mb-5">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#6BBF59]/10 border border-[#6BBF59]/20 text-[#6BBF59]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"></rect><path d="m5 8 7 5 7-5"></path></svg></span></div>
+          <div>
+            <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">8. Contacto</h2>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">¿Preguntas? Somos fáciles de alcanzar.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Si tiene alguna pregunta sobre esta política de privacidad o cómo TofuPass maneja sus datos, email <span class="text-[#6BBF59] font-semibold">hola indicada en</span>.</p>
+      </div>
+
+    </div>
+  </main>

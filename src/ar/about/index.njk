@@ -2,6 +2,203 @@
 layout: base.njk
 title: حول - TofuPass
 pageKey: about
-backgroundDecor: leaves
+extraCss:
+- /assets/css/about.css
+headScripts:
+- https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">حول</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">ينشئ TofuPass كلمات مرور قوية وقابلة للتذكر داخل متصفحك مباشرة.</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">حول <span class="font-black">Tofu<span class="text-[#6BBF59]">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">كل شيء قد تريد معرفته</p>
+      </div>
+
+      <!-- Section: About TofuPass -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-green">بشأن TofuPass</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>ما هو TofuPass؟</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>مولّد كلمة سرّ مُركّز على الخصوصيّة يُنشئ كلمات سرّ قوية ومُذكّرة تماماً في مصفّحتك. لا خادم يرى ما تولده</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>لماذا يسمى TofuPass؟</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>مقبضى هو "زكس كي 2 كيز" لذا كان "زى كيز" الخيار الواضح حقيقة أنّه يبدو أنّه كان حادثاً سعيداً أزعم الآن أنّه كان متعمداً</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>من صنع هذا؟</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>أنا - Matthew, a.k.a. TofuWater. موظف تقني في مكتب (ديسك) ليلاً لقد بنيت (زكس كيز) لأنني أردت مولداً لكلمات السر يمكنني الثقة وتسليمه للمستعملين دون تردد</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 4 ? null : 4">
+            <span>هل هو مجاني؟ كيف تجني المال؟</span>
+            <span class="faq-icon" :class="open === 4 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 4" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>حر تماماً أنا لا أجني المال منه لا إعلانات، لا أقساط ولا بيانات للبيع إنه مشروع شغف أديره في خسارة سعيدة</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 5 ? null : 5">
+            <span>هل (زكس كيز) مصدر مفتوح؟</span>
+            <span class="faq-icon" :class="open === 5 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 5" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>أجل، كلاهما نصفه الموقع هو HTML، CSS، و JavaScript على <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">GitHub</a>والخلفية <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">خادم API</a> الذي يَقُودُ <code>/api/*</code> عام أيضاً كلاهما تحت <strong>GNU GPL v3</strong>حتى تتمكن من مراجعة حسابات بالضبط ما يجري في جهازك <em>و</em> ما يحدث على الخادم، الشوكة إما واحدة، وتعديلها - طالما أن شوكة الخاص بك يبقى مفتوح المصدر تحت نفس الترخيص. قوائم الكلمات المشفّرة للواجهة تبقى خاصة للحفاظ على نواتج كلمة السر أقل قابلية للتنبؤ بها، لكن منطق الجيل <code>crypto.getRandomValues()</code> - واضح تماما.</p>
+            <p class="mt-3">The <strong>TofuPass</strong> الاسم والرمز Miso mascot (tofu, alert, and hot artwork) <strong>جميع الحقوق المحجوزة</strong> وليس مشمولاً بالجيش الشعبي. أنت مرحب بك لتفتيش الشفرة فقط أحضر العلامة التجارية الخاصة بك</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: How It Works -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-purple">كيف يعمل</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>كيف يعمل توليد كلمة السر؟</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>TofuPass combines curated word lists with numbers and symbols using <code>crypto.getRandomValues()</code> عشوائي حقيقي <span class="text-[#FF7A7A] font-bold">سرقة</span> كلمة + كلمة + رمز + رقم <span class="text-[#6BBF59] font-bold">Firm</span> تضيف كلمة ثالثة <span class="text-[#E6A800] font-bold">Firm</span> يضيف كلمة رابعة للنسخة الأعلى بينما يحافظ على نفس شكل كلمة السر</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>ما مدى أمن كلمات السر؟</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>ويحتفظ كل مستوى بنفس الهيكل الصديق - أي الكلمات المرسملة، والرمز المشترك، ورقم اثنين من الأرقام - ثم يزيد من القوة بإضافة كلمات أكثر عشوائية. لأسرار أقل بكثير، إستخدم المكرس <a href="/ar/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">التصاريح</a> الصفحة</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>لماذا الكلمات بدلا من الشخصيات العشوائية؟</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p><code>DancingKoalaRiver!73</code> أسهل بكثير من التذكر <code>j2#Xp9$k</code> وفي حين أن معظم أشكال الطلب لا تزال تلبي رأس المال والرمز وقواعد الرقم. عندما يتذكر الناس كلمة سرّ، هم أقل احتمال لإعادة استخدامها.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Security & Privacy -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-pink">الأمن</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>هل تولد كلمات السر بأمان؟</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>نعم كل شيء يسير محلياً في جهازك لا شيء يرسل إلى أي خادم حتى أنه يعمل خارجاً بمجرد تحميل الصفحة</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>هل تتعقب (زكس كيز) أي شيء؟</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>لا لا محللين، لا بسكويت، لا بيكسلز تتبع. لا يوجد نظام حساب ولا بيانات لجمعها في المقام الأول</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>هل أستخدم مدير كلمة المرور أيضاً؟</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>بالتأكيد مدير كلمة المرور هو أفضل تحسين أمني يمكن أن يحققه معظم الناس <strong>Bitwarden</strong> (مجانية ومفتوحة المصدر) <strong>1 - كلمة</strong> كلاهما رائع TofuPass تولد كلمات سر لوضع <em>في</em> مديرك</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Technical -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-yellow">التقنية</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>ما الذي يستخدمه (زكس كيز)؟</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Web Crypto API <code>crypto.getRandomValues()</code> - a CSPRNG built into every modern browser, the same standard used in banking and encryption.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>هَلْ هناك a API؟</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>نعم حر، لا حاجة إلى أي وقت. <code>GET tofupass.com/api/password</code> لكلمة سر واحدة <code>GET tofupass.com/api/passphrase?count=4</code> من أجل تمرير انظر <a href="/ar/api/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">API docs</a> للتفاصيل</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>كم مرة يجب أن أغير كلمات السر؟</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>فقط عندما تَعتقدُ واحد كَانَ معرض للخطر. NIST recommends against forced circulation - it encourages weak, predictable patterns. استخدم كلمات سر قوية فريدة وغيّرها عندما تحتاج إلى، ليس على جدول زمني.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>

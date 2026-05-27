@@ -3,11 +3,11 @@ layout: base.njk
 title: Frases de senha - TofuPass
 pageKey: passphrases
 extraCss:
-  - /assets/css/passphrases.css
+- /assets/css/passphrases.css
 pageScripts:
-  - /assets/js/passphrases-pt-br.js
-  - /assets/js/wordlists-pt-br.js
-  - /assets/js/passphrases.js
+- /assets/js/passphrases-pt-br.js
+- /assets/js/wordlists-pt-br.js
+- /assets/js/passphrases.js
 backgroundDecor: leaves
 ---
 
@@ -17,29 +17,29 @@ backgroundDecor: leaves
     <div class="max-w-5xl mx-auto">
       <section class="passphrase-stage">
         <div class="passphrase-copy">
-          <img src="/excited.png" alt="Miso animado" class="w-20 h-20 mb-5 mascot-glow" />
-          <p class="passphrase-kicker">Segredos longos e legíveis</p>
-          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Frases</h1>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Segredos longos e fáceis de digitar para lugares onde comprimento é bem-vindo e lembrar importa mais do que cumprir regras estranhas de símbolos.</p>
-          <div class="passphrase-example" aria-hidden="true">lua-tigre-nuvem-rio</div>
+          <img src="/excited.png" alt="Miso parece animado" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">Longos segredos legíveis</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Frases-passe</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Segredos longos e de baixa fricção para lugares onde o comprimento é bem-vindo e memorizabilidade importa mais do que cumprir regras de símbolos exigentes.</p>
+          <div class="passphrase-example" aria-hidden="true">flor-tigre-folha-nevoeiro</div>
         </div>
 
         <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
           <div class="passphrase-tool-head">
             <div>
               <p class="passphrase-kicker">Gerador</p>
-              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Frase nova</h2>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Frase- senha fresca</h2>
             </div>
             <span class="passphrase-badge" id="passphraseCountBadge">4 palavras</span>
           </div>
 
           <button type="button" id="passphrasePanel" class="passphrase-panel">
             <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">Gerando...</output>
-            <span id="passphraseHint" class="passphrase-hint">Clique para copiar a frase</span>
+            <span id="passphraseHint" class="passphrase-hint">Clique na frase- senha para copiar</span>
           </button>
 
           <div class="passphrase-actions">
-            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Gerar nova frase</button>
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Gerar nova frase- senha</button>
             <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
               <span class="ui-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
@@ -48,7 +48,7 @@ backgroundDecor: leaves
             </button>
           </div>
 
-          <div class="passphrase-controls" aria-label="Opções de frase">
+          <div class="passphrase-controls" aria-label="Opções da frase- senha">
             <div>
               <div class="control-label">Palavras</div>
               <div class="segmented-control" data-control="count">
@@ -69,9 +69,9 @@ backgroundDecor: leaves
             </div>
 
             <div>
-              <div class="control-label">Maiúsculas</div>
+              <div class="control-label">Processo</div>
               <div class="segmented-control" data-control="case">
-                <button type="button" data-case="lower" aria-pressed="true">minúsculas</button>
+                <button type="button" data-case="lower" aria-pressed="true">mais baixo</button>
                 <button type="button" data-case="title" aria-pressed="false">Título</button>
               </div>
             </div>
@@ -79,14 +79,14 @@ backgroundDecor: leaves
         </div>
       </section>
 
-      <section class="passphrase-notes" aria-label="Guia de frases">
+      <section class="passphrase-notes" aria-label="Orientação da frase- senha">
         <div class="note-strip note-strip-green">
           <div class="note-icon ui-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </div>
           <div>
-            <h2>Use frases quando comprimento é permitido.</h2>
-            <p>Elas funcionam muito bem para senhas mestras, Wi-Fi, códigos de dispositivos, frases de recuperação que você precisa digitar à mão e qualquer lugar que aceite espaços ou separadores.</p>
+            <h2>Usar as frases- senha quando o comprimento for permitido.</h2>
+            <p>Eles brilham para senhas mestre cofre, senhas Wi-Fi, códigos de acesso do dispositivo, frases de recuperação que você precisa digitar à mão, e qualquer lugar que aceita espaços ou separadores.</p>
           </div>
         </div>
 
@@ -95,8 +95,8 @@ backgroundDecor: leaves
             <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
           </div>
           <div>
-            <h2>Use Firme ou Extra firme para formulários exigentes.</h2>
-            <p>Quando um site exige maiúsculas, símbolo e números, o gerador principal inclui esses requisitos em cada senha Suave, Firme e Extra firme.</p>
+            <h2>Use Firme ou Extra Firme para formulários exigentes.</h2>
+            <p>Quando um site exige capitais, um símbolo e números, o gerador principal mantém esses requisitos em todas as senhas Soft, Firm e Extra Firm.</p>
           </div>
         </div>
       </section>

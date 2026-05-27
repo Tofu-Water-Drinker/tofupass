@@ -3,11 +3,102 @@ layout: base.njk
 title: Парольные фразы - TofuPass
 pageKey: passphrases
 extraCss:
-  - /assets/css/passphrases.css
+- /assets/css/passphrases.css
 pageScripts:
-  - /assets/js/passphrases-ru.js
-  - /assets/js/wordlists-ru.js
-  - /assets/js/passphrases.js
+- /assets/js/passphrases-ru.js
+- /assets/js/wordlists-ru.js
+- /assets/js/passphrases.js
 backgroundDecor: leaves
 ---
-<div class="passphrase-band" aria-hidden="true"></div><main class="relative z-10 pt-24 pb-20 px-4"><div class="max-w-5xl mx-auto"><section class="passphrase-stage"><div class="passphrase-copy"><img src="/excited.png" alt="Miso" class="w-20 h-20 mb-5 mascot-glow" /><p class="passphrase-kicker">Длинные читаемые секреты</p><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Парольные фразы</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Длинные секреты для мест, где разрешена длина.</p><div class="passphrase-example" aria-hidden="true">alpha-beta-gamma-delta</div></div><div class="passphrase-tool" aria-labelledby="passphraseToolTitle"><div class="passphrase-tool-head"><div><p class="passphrase-kicker">Generator</p><h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Новая фраза</h2></div><span class="passphrase-badge" id="passphraseCountBadge">4 слов</span></div><button type="button" id="passphrasePanel" class="passphrase-panel"><output id="passphraseDisplay" class="passphrase-display" aria-live="polite">...</output><span id="passphraseHint" class="passphrase-hint">Нажмите, чтобы скопировать</span></button><div class="passphrase-actions"><button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Создать новую фразу</button><button type="button" id="passphraseCopy" class="passphrase-copy-btn">Copy</button></div><div class="passphrase-controls" aria-label="Options"><div><div class="control-label">слов</div><div class="segmented-control" data-control="count"><button type="button" data-count="4" aria-pressed="true">4</button><button type="button" data-count="5" aria-pressed="false">5</button><button type="button" data-count="6" aria-pressed="false">6</button><button type="button" data-count="8" aria-pressed="false">8</button></div></div><div><div class="control-label">Separator</div><div class="segmented-control" data-control="separator"><button type="button" data-separator="-" aria-pressed="true">-</button><button type="button" data-separator=" " aria-pressed="false">space</button><button type="button" data-separator="." aria-pressed="false">.</button></div></div><div><div class="control-label">Case</div><div class="segmented-control" data-control="case"><button type="button" data-case="lower" aria-pressed="true">lower</button><button type="button" data-case="title" aria-pressed="false">Title</button></div></div></div></div></section></div></main>
+
+  <div class="passphrase-band" aria-hidden="true"></div>
+
+  <main class="relative z-10 pt-24 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <section class="passphrase-stage">
+        <div class="passphrase-copy">
+          <img src="/excited.png" alt="Miso в восторге" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">Читать длинные секреты</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Пасфразы</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Длинные секреты с меньшим трением для мест, где длина приветствуется, а запоминаемость важнее, чем соблюдение правил суетливого символа.</p>
+          <div class="passphrase-example" aria-hidden="true">цветущий-тигр-лист-туман</div>
+        </div>
+
+        <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
+          <div class="passphrase-tool-head">
+            <div>
+              <p class="passphrase-kicker">генератор</p>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Свежие фразы</h2>
+            </div>
+            <span class="passphrase-badge" id="passphraseCountBadge">4 слова</span>
+          </div>
+
+          <button type="button" id="passphrasePanel" class="passphrase-panel">
+            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">Генерировать...</output>
+            <span id="passphraseHint" class="passphrase-hint">Нажмите Passphrase для копирования</span>
+          </button>
+
+          <div class="passphrase-actions">
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Создайте новую фразу</button>
+            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
+              <span class="ui-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </span>
+              Копия
+            </button>
+          </div>
+
+          <div class="passphrase-controls" aria-label="Варианты перефразирования">
+            <div>
+              <div class="control-label">Слова</div>
+              <div class="segmented-control" data-control="count">
+                <button type="button" data-count="4" aria-pressed="true">4</button>
+                <button type="button" data-count="5" aria-pressed="false">5</button>
+                <button type="button" data-count="6" aria-pressed="false">6</button>
+                <button type="button" data-count="8" aria-pressed="false">8</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">Разделитель</div>
+              <div class="segmented-control" data-control="separator">
+                <button type="button" data-separator="-" aria-pressed="true">-</button>
+                <button type="button" data-separator=" " aria-pressed="false">пространство</button>
+                <button type="button" data-separator="." aria-pressed="false">.</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">Дело</div>
+              <div class="segmented-control" data-control="case">
+                <button type="button" data-case="lower" aria-pressed="true">ниже</button>
+                <button type="button" data-case="title" aria-pressed="false">Название</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="passphrase-notes" aria-label="Руководство по перефразированию">
+        <div class="note-strip note-strip-green">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </div>
+          <div>
+            <h2>Используйте фразы, когда разрешена длина.</h2>
+            <p>Они сияют для паролей мастера хранилища, паролей Wi-Fi, паролей устройств, паролей восстановления, которые вам нужно ввести вручную, и любого места, которое принимает пробелы или разделители.</p>
+          </div>
+        </div>
+
+        <div class="note-strip note-strip-yellow">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
+          </div>
+          <div>
+            <h2>Используйте фирму или дополнительную фирму для придирчивых форм.</h2>
+            <p>Когда сайт требует капиталов, символов и цифр, основной генератор сохраняет эти требования в каждом пароле Soft, Firm и Extra Firm.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>

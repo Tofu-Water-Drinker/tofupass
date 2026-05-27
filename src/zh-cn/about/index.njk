@@ -2,6 +2,203 @@
 layout: base.njk
 title: 关于 - TofuPass
 pageKey: about
-backgroundDecor: leaves
+extraCss:
+- /assets/css/about.css
+headScripts:
+- https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">关于</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">TofuPass 直接在浏览器中创建强而好记的密码。</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">关于 <span class="font-black">Tofu<span class="text-[#6BBF59]">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">所有你可能想知道的东西。</p>
+      </div>
+
+      <!-- Section: About TofuPass -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-green">关于TofuPass</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>TofuPass是什么?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>一个专注隐私的密码生成器,可以完全在您的浏览器中创建强烈的,令人难忘的密码. 任何服务器都不会看到你生成的东西。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>为什么叫TofuPass?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>我的手柄是"TofuWater",所以"TofuPass"是显而易见的选择. 听起来像是"艰难的路过" 是个愉快的意外 我现在声称是故意的</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>是谁造的?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>我 - Matthew, a.k.aTofuWater. 服务台技术员白天,网络安全工程师晚上。 我建造了TofuPass,因为我想要一个密码生成器,我可以毫不犹豫地信任和手交给终端用户.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 4 ? null : 4">
+            <span>免费吗? 你怎么赚钱的?</span>
+            <span class="faq-icon" :class="open === 4 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 4" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>完全免费。 我不从中赚钱。 没有广告,没有溢价等级,没有数据可以出售. 这是一个激情项目 我运行在 一个快乐的损失。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 5 ? null : 5">
+            <span>TofuPass开源吗?</span>
+            <span class="faq-icon" :class="open === 5 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 5" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>是的,两个一半。 该网站的HTML、CSS和JavaScript已打开 <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">GitHub</a>后端 <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">API 服务器</a> 权力 <code>/api/*</code> 也是公开的 两者都在 <strong>GNU GPL v3</strong>,因此您可以审核浏览器中运行的精确内容 <em>和</em> 在服务器上会发生什么,叉子或者一个, 并修改它 - 只要你的叉子保持开源 在同一许可证下。 前端整理的单词列表是保密的,以降低密码输出的可预测性,但生成逻辑 - 包括使用 <code>crypto.getRandomValues()</code> - 完全可见。</p>
+            <p class="mt-3">那个 <strong>TofuPass</strong> Miso吉祥物(豆腐、警示和兴奋的艺术品) <strong>版权所有</strong> 并且没有被GPL覆盖. 欢迎您将代码叉开 - 只要带来自己的品牌和吉祥物 当你出版。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: How It Works -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-purple">如何运作</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>密码生成如何工作?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>TofuPass 将拼写词表与数字和符号结合使用 <code>crypto.getRandomValues()</code> 为了真正的随机性。 <span class="text-[#FF7A7A] font-bold">软</span> =字+字+符号+数字. <span class="text-[#6BBF59] font-bold">企业</span> 增加三字. <span class="text-[#E6A800] font-bold">特别公司</span> 在保留同一可读密码形状的同时,为更高 en添加第四个字块.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>密码有多安全?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>每一级都保持相同的友好结构——资本字,通用符号,二位数——然后通过增加更多的随机字块来增强强度. 对于较长的小写秘密,请使用专用 <a href="/zh-cn/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">密码句</a> 页面。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>为什么用文字代替随机字符?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p><code>DancingKoalaRiver!73</code> 很容易记得 <code>j2#Xp9$k</code> 同时也满足了资本,符号,和数字规则 大多数形成需求。 当人们实际上可以记得一个密码时,他们就更不可能再使用它.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Security & Privacy -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-pink">安全和隐私</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>在线生成密码安全吗?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>对 浏览器里所有东西都在当地运行 没有寄出到任何服务器 。 页面一旦加载,它甚至可以下线.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>TofuPass追踪到什么了吗?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>没有 没有分析 没有饼干 没有跟踪像素 最初没有账户系统,也没有数据可以收集.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>我也该用密码管理器吗?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>当然 密码管理器是大多数人能做的最好的安全升级. <strong>比图</strong> (免费、开源)和 <strong>1 口语</strong> 两者都是伟大的。 TofuPass生成要放置的密码 <em>输入</em> 你的经理</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Technical -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-yellow">技术</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>TofuPass用什么RNG?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Web Crypto API <code>crypto.getRandomValues()</code> - 一个CSPRNG,在每一个现代浏览器中, 同样的标准在银行和加密。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>有没有APIZ?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>对 免费,不需要认证。 <code>GET tofupass.com/api/password</code> 只有一个密码, <code>GET tofupass.com/api/passphrase?count=4</code> 为密码句。 见 <a href="/zh-cn/api/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">API文件</a> 详细情况。</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>我多久换一次密码?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>只有在你认为有人被泄露的时候 NIST建议反对强制轮换——它鼓励软弱,可预测的模式. 使用强大的,独特的密码,并在需要的时候更改,而不是在时间表上更改.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>

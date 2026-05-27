@@ -2,14 +2,96 @@
 layout: base.njk
 title: Por qué TofuPass - TofuPass
 pageKey: why
-backgroundDecor: leaves
+extraFonts:
+- https://fonts.bunny.net/css?family=caveat:700
+extraCss:
+- /assets/css/why.css
 ---
 
-<main class="relative z-10 pt-28 pb-20 px-4">
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Por qué TofuPass</h1>
-    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">Las contraseñas imposibles de usar no se mantienen seguras. La gente las reutiliza, las acorta o las deja en lugares peligrosos.</p>
-    <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed mb-5">TofuPass usa bloques de palabras, un símbolo común y un número corto para crear algo que cumple muchas reglas sin sentirse como ruido aleatorio.</p>
-    <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed">No reemplaza a un administrador de contraseñas. Lo complementa: genera secretos fuertes para guardar ahí, o frases largas cuando el sitio lo permite.</p>
-  </article>
-</main>
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">¿Por qué? <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">La versión corta de una observación larga.</p>
+      </div>
+
+      <article class="why-article">
+
+        <!-- Section 1 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-pink">El problema</div>
+          <h2>Las contraseñas con las que la gente no puede vivir no se mantengan seguras.</h2>
+          <p>Ya hay grandes generadores de contraseña. DinoPass, por ejemplo, hace que la creación de contraseña sea sencilla y accesible. Lo usé yo mismo durante años.</p>
+          <p>Pero trabajo en él. Y el patrón que seguía viendo no era una falta de herramientas - fue lo que pasó <em>después</em> La gente tiene su contraseña. Lo reutilizarían, lo simplificarían o lo grabarían en su monitor.</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#FFD166]/25" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 2 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-yellow">El gatillo</div>
+          <h2>Pequeña fricción, grandes consecuencias.</h2>
+          <p>En el momento en que una contraseña cruza un umbral de fricción, la gente deja de trabajar <em>con</em> y empezar a trabajar <em>alrededor</em> Es. Los desencadenantes son siempre los mismos:</p>
+          <div class="why-grid">
+            <div class="why-grid-item">Demasiados capitales</div>
+            <div class="why-grid-item">símbolos desconocidos</div>
+            <div class="why-grid-item">Long random strings</div>
+            <div class="why-grid-item">Sustituciones de carácter</div>
+          </div>
+        </section>
+
+        <!-- Sticky note -->
+        <div class="sticky-note-wrap">
+          <div class="sticky-note">
+            <div class="sticky-note-tape"></div>
+            <p class="sticky-note-text">¡P@ssw0rd123!</p>
+            <p class="sticky-note-sub">- correo electrónico de trabajo</p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-green">El enfoque</div>
+          <h2>Estructura sobre el caos.</h2>
+          <p>TofuPass se centra en patrones legibles en lugar de aleatoriedad máxima. Palabras familiares, un símbolo común, un número corto. Tienes contraseñas como:</p>
+          <div class="why-examples">
+            <span>HappyKoala!73</span>
+            <span>DancingKoalaRiver!73</span>
+            <span>WindyMonitorBrightLeaf#88</span>
+          </div>
+          <p>No irrompible, pero realmente usable. Y bajo la capucha, todo sigue generando en su navegador usando aleatoriedad criptográfica. Sin cuentas, sin análisis, nada deja tu dispositivo. Cuando quieres un secreto limpio de forma larga, el <a href="/es/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">generador de contraseña</a> está ahí para ese trabajo.</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 4 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-blue">El ajuste</div>
+          <h2>No un reemplazo. Un puente.</h2>
+          <p>Si estás usando un administrador de contraseñas con cadenas aleatorias largas para todo - genial. Es ideal. TofuPass existe para el resto del tiempo: cuando usted necesita algo lo suficientemente fuerte para el uso real, lo suficientemente simple para recordar, y lo suficientemente privado que usted no tiene que confiar en nadie.</p>
+          <div class="pull-quote pull-quote-green">
+            Las contraseñas simples se usan. Las contraseñas usadas son únicas. Las contraseñas únicas mantienen a la gente segura.
+          </div>
+        </section>
+
+      </article>
+
+      <!-- CTA -->
+      <div class="text-center mt-14">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          Prueba TofuPass
+        </a>
+      </div>
+    </div>
+  </main>

@@ -3,11 +3,102 @@ layout: base.njk
 title: Frasa sandi - TofuPass
 pageKey: passphrases
 extraCss:
-  - /assets/css/passphrases.css
+- /assets/css/passphrases.css
 pageScripts:
-  - /assets/js/passphrases-id.js
-  - /assets/js/wordlists-id.js
-  - /assets/js/passphrases.js
+- /assets/js/passphrases-id.js
+- /assets/js/wordlists-id.js
+- /assets/js/passphrases.js
 backgroundDecor: leaves
 ---
-<div class="passphrase-band" aria-hidden="true"></div><main class="relative z-10 pt-24 pb-20 px-4"><div class="max-w-5xl mx-auto"><section class="passphrase-stage"><div class="passphrase-copy"><img src="/excited.png" alt="Miso" class="w-20 h-20 mb-5 mascot-glow" /><p class="passphrase-kicker">Rahasia panjang yang mudah dibaca</p><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Frasa sandi</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Rahasia panjang untuk tempat yang menerima panjang ekstra.</p><div class="passphrase-example" aria-hidden="true">alpha-beta-gamma-delta</div></div><div class="passphrase-tool" aria-labelledby="passphraseToolTitle"><div class="passphrase-tool-head"><div><p class="passphrase-kicker">Generator</p><h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Frasa baru</h2></div><span class="passphrase-badge" id="passphraseCountBadge">4 kata</span></div><button type="button" id="passphrasePanel" class="passphrase-panel"><output id="passphraseDisplay" class="passphrase-display" aria-live="polite">...</output><span id="passphraseHint" class="passphrase-hint">Klik untuk menyalin</span></button><div class="passphrase-actions"><button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Buat frasa baru</button><button type="button" id="passphraseCopy" class="passphrase-copy-btn">Copy</button></div><div class="passphrase-controls" aria-label="Options"><div><div class="control-label">kata</div><div class="segmented-control" data-control="count"><button type="button" data-count="4" aria-pressed="true">4</button><button type="button" data-count="5" aria-pressed="false">5</button><button type="button" data-count="6" aria-pressed="false">6</button><button type="button" data-count="8" aria-pressed="false">8</button></div></div><div><div class="control-label">Separator</div><div class="segmented-control" data-control="separator"><button type="button" data-separator="-" aria-pressed="true">-</button><button type="button" data-separator=" " aria-pressed="false">space</button><button type="button" data-separator="." aria-pressed="false">.</button></div></div><div><div class="control-label">Case</div><div class="segmented-control" data-control="case"><button type="button" data-case="lower" aria-pressed="true">lower</button><button type="button" data-case="title" aria-pressed="false">Title</button></div></div></div></div></section></div></main>
+
+  <div class="passphrase-band" aria-hidden="true"></div>
+
+  <main class="relative z-10 pt-24 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <section class="passphrase-stage">
+        <div class="passphrase-copy">
+          <img src="/excited.png" alt="Miso tampak bersemangat" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">Dapat diterima rahasia panjang</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Frasa sandi</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Panjang, kecil - gesekan rahasia untuk tempat di mana panjang disambut dan kenangan lebih penting daripada pertemuan fussy aturan simbol.</p>
+          <div class="passphrase-example" aria-hidden="true">bloom- tiger- Tinggalkan - kabut</div>
+        </div>
+
+        <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
+          <div class="passphrase-tool-head">
+            <div>
+              <p class="passphrase-kicker">Generator</p>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Frasa sandi segar</h2>
+            </div>
+            <span class="passphrase-badge" id="passphraseCountBadge">4 kata</span>
+          </div>
+
+          <button type="button" id="passphrasePanel" class="passphrase-panel">
+            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">Menghasilkan...</output>
+            <span id="passphraseHint" class="passphrase-hint">Klik passphrase untuk menyalin</span>
+          </button>
+
+          <div class="passphrase-actions">
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Buat Frasa Sandi Baru</button>
+            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
+              <span class="ui-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </span>
+              Salin
+            </button>
+          </div>
+
+          <div class="passphrase-controls" aria-label="Opsi sandi">
+            <div>
+              <div class="control-label">Kata</div>
+              <div class="segmented-control" data-control="count">
+                <button type="button" data-count="4" aria-pressed="true">4</button>
+                <button type="button" data-count="5" aria-pressed="false">5</button>
+                <button type="button" data-count="6" aria-pressed="false">6</button>
+                <button type="button" data-count="8" aria-pressed="false">8</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">Pemisah</div>
+              <div class="segmented-control" data-control="separator">
+                <button type="button" data-separator="-" aria-pressed="true">-</button>
+                <button type="button" data-separator=" " aria-pressed="false">spasi</button>
+                <button type="button" data-separator="." aria-pressed="false">.</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">Case</div>
+              <div class="segmented-control" data-control="case">
+                <button type="button" data-case="lower" aria-pressed="true">lebih rendah</button>
+                <button type="button" data-case="title" aria-pressed="false">Judul</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="passphrase-notes" aria-label="Panduan sandi">
+        <div class="note-strip note-strip-green">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </div>
+          <div>
+            <h2>Gunakan pasfrasa ketika panjang diijinkan.</h2>
+            <p>Mereka bersinar untuk password master lemari besi, password Wi- Fi, passcode perangkat, frasa pemulihan Anda perlu mengetik dengan tangan, dan tempat apapun yang menerima spasi atau pemisah.</p>
+          </div>
+        </div>
+
+        <div class="note-strip note-strip-yellow">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
+          </div>
+          <div>
+            <h2>Gunakan Firma atau Firma Ekstra untuk bentuk pemilih.</h2>
+            <p>Ketika sebuah situs menuntut kapitals, simbol, dan nomor, generator utama terus mereka persyaratan dibangun ke dalam setiap Soft, Firm, dan Extra Firm password.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>

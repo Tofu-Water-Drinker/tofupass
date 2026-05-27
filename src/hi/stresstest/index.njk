@@ -3,10 +3,132 @@ layout: base.njk
 title: पासवर्ड परीक्षक - TofuPass
 pageKey: stresstest
 extraCss:
-  - /assets/css/stresstest.css
+- /assets/css/stresstest.css
 pageScripts:
-  - /assets/js/stresstest-hi.js
-  - /assets/js/stresstest.js
+- /assets/js/stresstest-hi.js
+- /assets/js/stresstest.js
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><div class="max-w-xl mx-auto"><div class="text-center mb-10"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]"><span class="gradient-text">पासवर्ड परीक्षक</span></h1><p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-sm mx-auto">कंप्यूटर आपका पासवर्ड तोड़ने में कितना समय लेगा?</p></div><div class="main-card glass rounded-3xl p-6 sm:p-8 mb-6"><div class="mb-6"><label class="block text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest mb-2">आपका पासवर्ड</label><input id="password" type="password" placeholder="विश्लेषण के लिए पासवर्ड दर्ज करें..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" class="pw-input" /><div class="flex items-center justify-between mt-2"><button onclick="toggleVisibility()" id="visBtn" class="text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 hover:text-[#4A3728] dark:hover:text-[#F0E6D8] transition-colors flex items-center gap-1"><span id="visIcon">👁</span> <span id="visText">Show</span></button><div id="char-count" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40"></div></div></div><div class="mb-6"><div class="flex items-center justify-between mb-2"><label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest">Strength</label><span id="strength-label" class="strength-label text-[#8B7355]/50 dark:text-[#B8A890]/50 bg-[#6BBF59]/5 dark:bg-[#7DD668]/10">Waiting</span></div><div class="meter-track"><div id="meter-fill"></div></div></div><div class="mb-6"><label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest" for="hardware">हमलावर हार्डवेयर</label><select id="hardware" class="hw-select"><option value="1e9">GPU (1B/s)</option><option value="1e10">Gaming PC (10B/s)</option><option value="1e12">Cloud cluster (1T/s)</option><option value="1e14">Nation-state (100T/s)</option></select></div><div class="mb-6 text-center py-6 border-y-2 border-[#6BBF59]/8 dark:border-[#7DD668]/12"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">अनुमानित क्रैक समय</div><div id="time-display">Not yet</div><div id="scanning-text" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40 mt-2 h-4"></div></div><div id="breach-card"><div class="flex items-start gap-3"><div class="text-2xl">🚨</div><div><div class="font-bold text-[#FF7A7A] text-sm mb-1">Breach</div><p id="breach-text" class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 text-sm leading-relaxed"></p></div></div></div></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><div class="stat-box"><div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-length">0</div><div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Length</div></div><div class="stat-box"><div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-pool">0</div><div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Pool</div></div><div class="stat-box"><div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-entropy">0</div><div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Entropy</div></div></div></div></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-10">
+        <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]"><span class="gradient-text">तनाव</span> परीक्षक</h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-sm mx-auto">आपके पासवर्ड को क्रैक करने में कितना समय लगता है? क्या यह पहले से ही लीक हो चुका है?</p>
+      </div>
+
+      <!-- MAIN CARD -->
+      <div class="main-card glass rounded-3xl p-6 sm:p-8 mb-6">
+
+        <!-- Password Input -->
+        <div class="mb-6">
+          <label class="block text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest mb-2">आपका पासवर्ड</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="विश्लेषण करने के लिए एक पासवर्ड दर्ज करें ..."
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            class="pw-input"
+          />
+          <div class="flex items-center justify-between mt-2">
+            <button onclick="toggleVisibility()" id="visBtn"
+              class="text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 hover:text-[#4A3728] dark:hover:text-[#F0E6D8] transition-colors flex items-center gap-1">
+              <span id="visIcon">👁</span> <span id="visText">प्रदर्शन</span>
+            </button>
+            <div id="char-count" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40"></div>
+          </div>
+        </div>
+
+        <!-- Strength Meter -->
+        <div class="mb-6">
+          <div class="flex items-center justify-between mb-2">
+            <label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest">शक्ति</label>
+            <span id="strength-label" class="strength-label text-[#8B7355]/50 dark:text-[#B8A890]/50 bg-[#6BBF59]/5 dark:bg-[#7DD668]/10">प्रतीक्षा</span>
+          </div>
+          <div class="meter-track">
+            <div id="meter-fill"></div>
+          </div>
+        </div>
+
+        <!-- Hardware Select -->
+        <div class="mb-6">
+          <div class="flex items-center gap-2 mb-2">
+            <label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest" for="hardware">हमलावर हार्डवेयर</label>
+            <div class="tooltip-wrap">
+              <button class="w-4 h-4 rounded-full bg-[#6BBF59]/10 dark:bg-[#7DD668]/15 text-[#8B7355] dark:text-[#B8A890] text-xs flex items-center justify-center hover:bg-[#6BBF59]/20 dark:hover:bg-[#7DD668]/25 transition-colors">?</button>
+              <div class="tooltip-content">
+                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">हमला गति</strong> यह दर्शाता है कि हार्डवेयर प्रति सेकंड कितने पासवर्ड अनुमान लगा सकता है। आधुनिक जीपीयू ऑफ़लाइन डेटाबेस के खिलाफ प्रति सेकंड अरबों हैश का परीक्षण कर सकते हैं।
+              </div>
+            </div>
+          </div>
+          <select id="hardware" class="hw-select">
+            <option value="1e9">उपभोक्ता GPU (1 अरब / सेकंड)</option>
+            <option value="1e10">उच्च अंत गेमिंग पीसी (10 अरब / सेकंड)</option>
+            <option value="1e12">बॉटनेट / क्लाउड क्लस्टर (1 ट्रिलियन / सेकंड)</option>
+            <option value="1e14">राष्ट्र-राज्य हार्डवेयर (100 ट्रिलियन / सेकंड)</option>
+          </select>
+        </div>
+
+        <!-- Time Display -->
+        <div class="mb-6 text-center py-6 border-y-2 border-[#6BBF59]/8 dark:border-[#7DD668]/12">
+          <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">अनुमानित क्रैक टाइम</div>
+          <div id="time-display">अभी तक नहीं</div>
+          <div id="scanning-text" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40 mt-2 h-4"></div>
+        </div>
+
+        <!-- Breach Alert -->
+        <div id="breach-card">
+          <div class="flex items-start gap-3">
+            <div class="text-2xl">🚨</div>
+            <div>
+              <div class="font-bold text-[#FF7A7A] text-sm mb-1">डेटा ब्रेच में पाया गया</div>
+              <p id="breach-text" class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 text-sm leading-relaxed"></p>
+              <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-xs mt-2">तुरंत इस पासवर्ड का उपयोग करना बंद करें। ऊपर एक नया जनरेट करें।</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- How it works / Privacy note -->
+      <div class="glass rounded-2xl p-5 mb-6">
+        <div class="flex items-start gap-3">
+          <div class="text-xl mt-0.5">
+            <div class="tooltip-wrap">
+              🔑
+              <div class="tooltip-content" style="left: 0; transform: none;">
+                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">K-Anonymity</strong>केवल आपके पासवर्ड के पहले 5 अक्षरों को Have I Been Pwned को भेजा जाता है। पूर्ण हैश और आपका वास्तविक पासवर्ड कभी भी आपके डिवाइस को छोड़ नहीं देता है। API उस उपसर्ग के साथ सभी हैश लौटाता है और मिलान स्थानीय रूप से किया जाता है।
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">100% निजी ब्रीच चेक</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">ब्रीच डिटेक्शन का उपयोग करता है <strong class="text-[#4A3728] dark:text-[#F0E6D8]">K-Anonymity</strong> Have I Been Pwned आपका वास्तविक पासवर्ड कभी संचारित नहीं होता है। केवल 5-character hash prefix भेजा जाता है। अधिक जानने के लिए कुंजी आइकन होवर करें।</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div class="stat-box">
+          <div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-length">0</div>
+          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">वर्ण</div>
+        </div>
+        <div class="stat-box">
+          <div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-pool">0</div>
+          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">पूल का आकार</div>
+        </div>
+        <div class="stat-box">
+          <div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-entropy">0</div>
+          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Entropy के बिट्स</div>
+        </div>
+      </div>
+
+    </div>
+  </main>

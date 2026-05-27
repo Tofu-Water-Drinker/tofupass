@@ -2,6 +2,180 @@
 layout: base.njk
 title: Guide - TofuPass
 pageKey: good
+extraCss:
+- /assets/css/good.css
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Guide</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">Un générateur pensé pour un usage réel : mots mémorables, hasard fiable, rien ne quitte votre navigateur.</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Les <span class="gradient-text">Assez bon</span> Secret</h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">Un guide honnête pour la sécurité des mots de passe, sans la peur-mongering.</p>
+      </div>
+
+      <!-- Section 1: The Hard Truth -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-pink" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 4 20 19H4z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 9v4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17h.01" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">La dure vérité</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed text-base mb-5">
+          Avec suffisamment de temps et de puissance de calcul, tout mot de passe peut éventuellement être fissuré. La serrure de votre porte d'entrée peut aussi être choisie, mais ça ne veut pas dire que les serrures sont inutiles.
+        </p>
+        <div class="callout-strip callout-strip-yellow">
+          <p class="text-[#4A3728] dark:text-[#F0E6D8] font-bold text-base leading-relaxed">Le vrai but ? Être <span class="text-[#E6A800]">trop cher pour s'embêter avec</span>.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">Les attaquants ne ciblent pas les individus à la main. Ils utilisent des outils automatisés contre des millions de comptes simultanément. Si cracher votre mot de passe prendrait des siècles sur le matériel moderne, vous êtes en sécurité dans la pratique.</p>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 2: The Formula -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-purple" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 8h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">La formule</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed mb-6">La résistance du mot de passe se résume à une équation:</p>
+
+        <div class="formula-display mb-8 text-center">
+          <div class="text-3xl sm:text-4xl font-black mb-2">
+            <span class="text-[#FF7A7A]">Résistance</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 mx-3">=</span>
+            <span class="text-[#9B6DD7]">Piscine</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 text-2xl mx-2">^</span>
+            <span class="text-[#5B9FD6]">Longueur</span>
+          </div>
+          <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-sm font-mono">combinaisons = caractère set size ^ mot de passe longueur</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 sm:gap-12 mb-6">
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#FF7A7A]">26</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">Cas inférieur</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#E6A800]">62</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ Supérieur + Nombres</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#6BBF59]">95</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ Symboles</div>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Chaque caractère supplémentaire <em>multiplies</em> les combinaisons totales. TofuPass s'appuie sur des morceaux de mots lisibles parce qu'ajouter un autre mot aléatoire est généralement plus facile à vivre que d'ajouter plus de chaos.</p>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 3: Two Recipes -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-yellow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M6 7h12" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 12h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 17h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">Deux recettes qui fonctionnent</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+          <!-- Standard Password -->
+          <div class="recipe-strip recipe-strip-pink">
+            <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-3">Mot de passe standard</div>
+            <div class="font-mono text-[#FF7A7A] font-bold text-lg mb-4 break-all">DanserKoalaRiver!73</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Lettres de cas mixtes</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Symbole commun</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Numéros de piste</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Trois mots lisibles</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> Idéal pour une utilisation quotidienne</li>
+            </ul>
+          </div>
+
+          <!-- Passphrase -->
+          <div class="recipe-strip recipe-strip-green">
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase mb-3">Phrase de passe</div>
+            <div class="font-mono text-[#6BBF59] font-bold text-lg mb-4 break-all">Feuille fleurissante-tiger-cosmique-feuille</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 4 mots au hasard</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Hyphène séparé</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Meilleur quand la longueur est permise</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Facile à taper</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> Meilleur pour les voûtes de mémoire</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 4: Three Golden Rules -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M8 4h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 4a2 2 0 0 0-2 2v12a2 2 0 1 0 0-4h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">Trois règles d'or</h2>
+        </div>
+        <div class="space-y-10">
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-pink">1</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Allez-y.</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">La longueur compte plus que la complexité. Une phrase de passe de 20 caractères a plus d'entropie qu'un mot de passe "complexe" de 8 caractères avec des symboles. Visez au moins 12 caractères pour les comptes standard, 20+ pour les comptes sensibles.</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-green">2</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Rester au hasard</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Les humains sont terribles au hasard. Nous gravitons vers les modèles, les dates et les mots que nous aimons. Utilisez un outil comme TofuPass pour générer des mots de passe vraiment aléatoires. Les listes de mots sont curées pour éviter les modèles prévisibles.</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-yellow">3</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Vérifier la base de données</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Même un mot de passe fort est sans valeur s'il apparaît dans une violation de données. Utilisez notre <a href="/fr/stresstest/" class="text-[#E6A800] hover:text-[#C28D00] underline underline-offset-2 decoration-[#E6A800]/30 hover:decoration-[#E6A800] transition-colors font-bold">Testeur de stress</a> pour vérifier si votre mot de passe apparaît dans la base de données d'HaveIBeenPwned de milliards d'identifiants compromis, en utilisant en privé k-Anonymity.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="text-center pt-4">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          Générer un mot de passe sécurisé
+        </a>
+      </div>
+
+    </div>
+  </main>

@@ -2,6 +2,203 @@
 layout: base.njk
 title: О проекте - TofuPass
 pageKey: about
-backgroundDecor: leaves
+extraCss:
+- /assets/css/about.css
+headScripts:
+- https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">О проекте</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">TofuPass создаёт сильные и запоминающиеся пароли прямо в браузере.</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">О нас <span class="font-black">Tofu<span class="text-[#6BBF59]">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">Все, что вы хотели бы знать.</p>
+      </div>
+
+      <!-- Section: About TofuPass -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-green">Обсуждение TofuPass</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>Что такое TofuPass?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Генератор паролей, ориентированный на конфиденциальность, который создает сильные, запоминающиеся пароли полностью в вашем браузере. Ни один сервер не видит, что вы создаете.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>Почему он называется TofuPass?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Моя ручка - "TofuWater", так что "TofuPass" был очевидным выбором. Тот факт, что это звучит как "Тяжёлый перевал" был счастливой случайностью, которую я теперь называю преднамеренной.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>Кто это построил?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Я - Matthew, также известный как TofuWater. Технический специалист службы днем, специалист по кибербезопасности ночью. Я создал TofuPass, потому что мне нужен был генератор паролей, которому я мог бы доверять конечным пользователям без колебаний.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 4 ? null : 4">
+            <span>Это бесплатно? Как ты зарабатываешь деньги?</span>
+            <span class="faq-icon" :class="open === 4 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 4" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Абсолютно бесплатно. Я не зарабатываю на этом деньги. Нет рекламы, нет премиум-уровня, нет данных для продажи. Это страстный проект, который я запускаю с большой потерей.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 5 ? null : 5">
+            <span>TofuPass с открытым исходным кодом?</span>
+            <span class="faq-icon" :class="open === 5 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 5" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Да — обе половины. HTML, CSS и JavaScript сайта включены <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">GitHub</a>и бэкэнд <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">Сервер API</a> полномочия <code>/api/*</code> Он тоже публичный. Оба находятся под <strong>GNU GPL v3</strong>Таким образом, вы можете проверить, что именно работает в вашем браузере. <em>и</em> Что происходит на сервере, вилка или один, и изменить его - пока ваш вилка остается открытым исходным кодом по той же лицензии. Списки слов в интерфейсе держатся в секрете, чтобы сделать вывод пароля менее предсказуемым, но логика генерации - включая использование <code>crypto.getRandomValues()</code> - полностью видна.</p>
+            <p class="mt-3">The <strong>TofuPass</strong> Имя и талисман Miso (тофу, бдительность и возбужденные работы) <strong>Все права защищены</strong> и не подпадает под действие GPL. Вы можете развязать код - просто приведите свой собственный брендинг и талисман, когда вы публикуете.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: How It Works -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-purple">Как это работает</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>Как работает генерация паролей?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>TofuPass объединяет список слов с цифрами и символами <code>crypto.getRandomValues()</code> Для истинной случайности. <span class="text-[#FF7A7A] font-bold">мягкий</span> = Слово + Слово + символ + число. <span class="text-[#6BBF59] font-bold">фирма</span> Добавить третье слово. <span class="text-[#E6A800] font-bold">Дополнительная фирма</span> Добавляет четвертый фрагмент слова для более высокой энтропии, сохраняя при этом ту же читаемую форму пароля.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>Насколько безопасны пароли?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Каждый уровень сохраняет одну и ту же дружественную структуру - заглавные слова, общий символ и двузначное число - затем увеличивает силу, добавляя больше случайных фрагментов слов. Для длинных секретов, используйте выделенные <a href="/ru/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">Пасфразы</a> Страница.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>Почему слова вместо случайных символов?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p><code>DancingKoalaRiver!73</code> Гораздо легче вспомнить, чем <code>j2#Xp9$k</code> В то же время, все еще удовлетворяя требованиям капитала, символа и числа, большинство форм спроса. Когда люди действительно могут запомнить пароль, они с меньшей вероятностью будут использовать его повторно.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Security & Privacy -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-pink">Безопасность и конфиденциальность</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>Безопасно ли генерировать пароли в Интернете?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Да. Все работает локально в вашем браузере. Ничего не отправляется на сервер. Он даже работает в автономном режиме после загрузки страницы.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>TofuPass что-нибудь отслеживает?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Нет. Никакой аналитики, никаких файлов cookie, никаких пикселей отслеживания. Нет системы учета и нет данных для сбора в первую очередь.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>Стоит ли использовать менеджер паролей?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Абсолютно. Менеджер паролей является лучшим обновлением безопасности, которое может сделать большинство людей. <strong>Битвард</strong> (бесплатно, с открытым исходным кодом) и <strong>1 Пароль</strong> Оба великолепны. TofuPass генерирует пароли для ввода <em>в</em> Твой менеджер.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="faq-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section: Technical -->
+      <section class="faq-section" x-data="{open: null}">
+        <div class="faq-section-label faq-label-yellow">Технический</div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 1 ? null : 1">
+            <span>Что такое RNG TofuPass?</span>
+            <span class="faq-icon" :class="open === 1 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 1" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Web Crypto API <code>crypto.getRandomValues()</code> CSPRNG встроен в каждый современный браузер, тот же стандарт, который используется в банковском деле и шифровании.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 2 ? null : 2">
+            <span>Есть ли API?</span>
+            <span class="faq-icon" :class="open === 2 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 2" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Да. Бесплатно, аут не требуется. <code>GET tofupass.com/api/password</code> для одного пароля, <code>GET tofupass.com/api/passphrase?count=4</code> Для пароля. Видишь? <a href="/ru/api/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">API Документы</a> Для деталей.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-trigger" @click="open = open === 3 ? null : 3">
+            <span>Как часто нужно менять пароли?</span>
+            <span class="faq-icon" :class="open === 3 ? 'rotate-45' : ''">+</span>
+          </button>
+          <div class="faq-answer" x-show="open === 3" x-cloak x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0">
+            <p>Только когда вы думаете, что кто-то был скомпрометирован. NIST рекомендует против принудительной ротации — она поощряет слабые, предсказуемые закономерности. Используйте надежные, уникальные пароли и меняйте их, когда это необходимо, а не по расписанию.</p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>

@@ -2,6 +2,96 @@
 layout: base.njk
 title: Почему TofuPass - TofuPass
 pageKey: why
-backgroundDecor: leaves
+extraFonts:
+- https://fonts.bunny.net/css?family=caveat:700
+extraCss:
+- /assets/css/why.css
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Почему TofuPass</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">Генератор для реального использования: запоминающиеся слова, надёжная случайность, ничего не покидает браузер.</p></article></main>
+
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+      <div class="text-center mb-14">
+        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Почему <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">Короткая версия длинного наблюдения.</p>
+      </div>
+
+      <article class="why-article">
+
+        <!-- Section 1 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-pink">Проблема</div>
+          <h2>Пароли, с которыми люди не могут жить, не остаются в безопасности.</h2>
+          <p>Уже есть отличные генераторы паролей. Например, DinoPass делает создание пароля простым и доступным. Я использовал его сам в течение многих лет.</p>
+          <p>Но я работаю в IT. И модель, которую я продолжал видеть, не была недостатком инструментов - это то, что произошло. <em>после</em> Люди получили свой пароль. Они повторно использовали его, упрощали или записывали на монитор.</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#FFD166]/25" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 2 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-yellow">Триггер</div>
+          <h2>Маленькие трения, большие последствия.</h2>
+          <p>В тот момент, когда пароль пересекает порог трения, люди перестают работать. <em>с</em> и начать работать <em>вокруг</em> Это. Триггеры всегда одинаковы:</p>
+          <div class="why-grid">
+            <div class="why-grid-item">Слишком много столиц</div>
+            <div class="why-grid-item">Незнакомые символы</div>
+            <div class="why-grid-item">Длинные случайные строки</div>
+            <div class="why-grid-item">Характерные замены</div>
+          </div>
+        </section>
+
+        <!-- Sticky note -->
+        <div class="sticky-note-wrap">
+          <div class="sticky-note">
+            <div class="sticky-note-tape"></div>
+            <p class="sticky-note-text">P@ssw0rd123!</p>
+            <p class="sticky-note-sub">Рабочая электронная почта</p>
+          </div>
+        </div>
+
+        <!-- Section 3 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-green">Подход</div>
+          <h2>Структура над хаосом.</h2>
+          <p>TofuPass фокусируется на читаемых шаблонах вместо максимальной случайности. Знакомые куски слов, общий символ, короткое число. Вы получаете пароли, такие как:</p>
+          <div class="why-examples">
+            <span>Счастливчик!73</span>
+            <span>Танцующий рейвер!73</span>
+            <span>WindyMonitorBrightLeaf#88</span>
+          </div>
+          <p>Не неуязвимые, но действительно полезные. А под капотом все еще генерируется в вашем браузере с помощью криптографической случайности. Никаких учетных записей, никакой аналитики, ничто не покидает ваше устройство. Если вы хотите получить чистый секрет длинной формы, <a href="/ru/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">генератор паролей</a> Есть для этой работы.</p>
+        </section>
+
+        <!-- Divider -->
+        <div class="why-divider" aria-hidden="true">
+          <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+
+        <!-- Section 4 -->
+        <section class="why-section">
+          <div class="why-section-label why-label-blue">подходящий</div>
+          <h2>Не замена. Мост.</h2>
+          <p>Если вы используете менеджер паролей с длинными случайными строками для всего - отлично. Это идеально. TofuPass существует в остальное время: когда вам нужно что-то достаточно сильное для реального использования, достаточно простое для запоминания и достаточно личное, чтобы вам не приходилось никому доверять.</p>
+          <div class="pull-quote pull-quote-green">
+            Используются простые пароли. Используемые пароли остаются уникальными. Уникальные пароли защищают людей.
+          </div>
+        </section>
+
+      </article>
+
+      <!-- CTA -->
+      <div class="text-center mt-14">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          Попробуйте TofuPass
+        </a>
+      </div>
+    </div>
+  </main>

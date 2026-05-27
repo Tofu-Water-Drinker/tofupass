@@ -2,6 +2,180 @@
 layout: base.njk
 title: 指南 - TofuPass
 pageKey: good
+extraCss:
+- /assets/css/good.css
 backgroundDecor: leaves
 ---
-<main class="relative z-10 pt-28 pb-20 px-4"><article class="max-w-3xl mx-auto"><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">指南</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-8">为真实使用而设计：可记忆词语、可靠随机性，生成过程不离开浏览器。</p></article></main>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">那个 <span class="gradient-text">够了</span> 机密</h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">一个诚实的密码安全指南,没有恐惧。</p>
+      </div>
+
+      <!-- Section 1: The Hard Truth -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-pink" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 4 20 19H4z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 9v4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17h.01" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">困难的真相</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed text-base mb-5">
+          只要有足够的时间和计算能力,任何密码最终都会被破解. 你前门的锁也可以选 但这并不代表锁是没用的
+        </p>
+        <div class="callout-strip callout-strip-yellow">
+          <p class="text-[#4A3728] dark:text-[#F0E6D8] font-bold text-base leading-relaxed">真正的目标? 成为 <span class="text-[#E6A800]">太贵了</span>.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">攻击者不会用手攻击个人. 他们同时对数百万个账户使用自动化工具。 如果破解密码 需要几个世纪的现代硬件 你就安全了</p>
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 2: The Formula -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-purple" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 8h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">公式</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed mb-6">密码强度归结为一个方程式:</p>
+
+        <div class="formula-display mb-8 text-center">
+          <div class="text-3xl sm:text-4xl font-black mb-2">
+            <span class="text-[#FF7A7A]">强度</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 mx-3">=</span>
+            <span class="text-[#9B6DD7]">池头</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 text-2xl mx-2">^</span>
+            <span class="text-[#5B9FD6]">长度</span>
+          </div>
+          <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-sm font-mono">组合=字符 set 大小 ^ 密码 长度</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 sm:gap-12 mb-6">
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#FF7A7A]">26</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">小写</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#E6A800]">62</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ 上加数</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#6BBF59]">95</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ 符号</div>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">每个额外的字符 <em>乘数</em> 总组合。 TofuPass 倚靠可读的单词块,因为添加另一个随机单词通常比添加更多的混沌更容易生活.</p>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 3: Two Recipes -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-yellow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M6 7h12" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 12h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 17h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">两道道具</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+          <!-- Standard Password -->
+          <div class="recipe-strip recipe-strip-pink">
+            <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-3">标准密码</div>
+            <div class="font-mono text-[#FF7A7A] font-bold text-lg mb-4 break-all">跳舞科阿拉里弗! 73号!</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 混合案件字母</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 通用符号</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 跟踪数字</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 三个可以读的词</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> 每日使用量大</li>
+            </ul>
+          </div>
+
+          <!-- Passphrase -->
+          <div class="recipe-strip recipe-strip-green">
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase mb-3">密码句</div>
+            <div class="font-mono text-[#6BBF59] font-bold text-lg mb-4 break-all">开花的虎形圆叶</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 4个随机词</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 连接分离</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 允许长度时最好</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 易于键入</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> 最好的内存金库</li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 4: Three Golden Rules -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M8 4h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 4a2 2 0 0 0-2 2v12a2 2 0 1 0 0-4h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">三金规则</h2>
+        </div>
+        <div class="space-y-10">
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-pink">1</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">高龙</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">长度比复杂性更重要。 一个20字符的全小写密码比一个带有符号的8字符的"复合"密码有较多的 en. 瞄准标准账户至少12个字符, 20+敏感账户。</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-green">2</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">保持随机</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">人类是可怕的随机。 我们向模式,日期,和我们喜欢的词语倾斜。 使用像TofuPass这样的工具生成真正的随机密码. 单词列表是为了避免可预测的模式而整理的.</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-yellow">3</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">检查数据库</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">如果一个强大的密码出现在数据破损中,它就毫无意义。 用我们的 <a href="/zh-cn/stresstest/" class="text-[#E6A800] hover:text-[#C28D00] underline underline-offset-2 decoration-[#E6A800]/30 hover:decoration-[#E6A800] transition-colors font-bold">压力测试器</a> 检查您的密码是否出现在 HaveIBeenPwned 的数十亿个失密证书数据库中, 私自使用 k- 匿名 。</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="text-center pt-4">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          生成安全密码
+        </a>
+      </div>
+
+    </div>
+  </main>

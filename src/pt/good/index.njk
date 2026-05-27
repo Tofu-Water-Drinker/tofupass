@@ -2,29 +2,180 @@
 layout: base.njk
 title: Guia de senhas - TofuPass
 pageKey: good
+extraCss:
+- /assets/css/good.css
 backgroundDecor: leaves
 ---
 
-<main class="relative z-10 pt-28 pb-20 px-4">
-  <article class="max-w-3xl mx-auto">
-    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Guia rápido</h1>
-    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-10">Uma boa senha deve ser única, longa o suficiente e fácil de guardar em um gerenciador de senhas.</p>
+  <!-- CONTENT -->
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
 
-    <div class="space-y-8">
-      <section>
-        <h2 class="text-2xl font-black mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Use uma senha diferente em cada conta.</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed">A reutilização é o grande risco: se um site vaza, atacantes testam a mesma senha em e-mail, bancos, redes e trabalho.</p>
+      <!-- Header -->
+      <div class="text-center mb-16">
+        <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">A <span class="gradient-text">Bom o suficiente</span> Segredo</h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">Um guia honesto para a segurança das senhas, sem o medo.</p>
+      </div>
+
+      <!-- Section 1: The Hard Truth -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-pink" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M12 4 20 19H4z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 9v4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 17h.01" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">A dura verdade</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed text-base mb-5">
+          Dado o tempo suficiente e poder de computação, qualquer senha pode eventualmente ser rachada. A fechadura da porta da frente também pode ser arrombada, mas isso não significa que as fechaduras sejam inúteis.
+        </p>
+        <div class="callout-strip callout-strip-yellow">
+          <p class="text-[#4A3728] dark:text-[#F0E6D8] font-bold text-base leading-relaxed">O verdadeiro objectivo? Seja <span class="text-[#E6A800]">muito caro para se preocupar com</span>.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">Os atacantes não atacam indivíduos à mão. Eles executam ferramentas automatizadas contra milhões de contas simultaneamente. Se quebrar sua senha levaria séculos em hardware moderno, você está seguro na prática.</p>
+        </div>
       </section>
 
-      <section>
-        <h2 class="text-2xl font-black mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Guarde-as em um gerenciador.</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed">TofuPass gera segredos memoráveis; um gerenciador como Bitwarden ou 1Password ajuda você a guardá-los sem depender da memória.</p>
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 2: The Formula -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-5">
+          <div class="section-dot section-dot-purple" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><rect x="5" y="4" width="14" height="16" rx="2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></rect><path d="M8 8h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 12h2" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">A Fórmula</h2>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed mb-6">A força da senha resume-se a uma equação:</p>
+
+        <div class="formula-display mb-8 text-center">
+          <div class="text-3xl sm:text-4xl font-black mb-2">
+            <span class="text-[#FF7A7A]">Dosagem</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 mx-3">=</span>
+            <span class="text-[#9B6DD7]">Piscina</span>
+            <span class="text-[#8B7355]/30 dark:text-[#B8A890]/30 text-2xl mx-2">^</span>
+            <span class="text-[#5B9FD6]">Comprimento</span>
+          </div>
+          <p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-sm font-mono">combinações = caractere set size ^ password length</p>
+        </div>
+
+        <div class="flex flex-wrap justify-center gap-8 sm:gap-12 mb-6">
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#FF7A7A]">26</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">Minúsculas</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#E6A800]">62</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ Superior + Núms</div>
+          </div>
+          <div class="text-center">
+            <div class="font-black text-3xl text-[#6BBF59]">95</div>
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-1 font-semibold uppercase tracking-wider">+ Símbolos</div>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Cada carácter extra <em>multiplicações</em> As combinações totais. TofuPass se apoia em blocos de palavras legíveis porque adicionar outra palavra aleatória é geralmente mais fácil de se viver do que adicionar mais caos.</p>
       </section>
 
-      <section>
-        <h2 class="text-2xl font-black mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Troque uma senha quando houver motivo.</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Você não precisa trocá-las por calendário. Troque se suspeitar de comprometimento, se aparecer em um vazamento ou se a compartilhou sem querer.</p>
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#E6A800]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 3: Two Recipes -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-yellow" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M6 7h12" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 12h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M6 17h8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">Duas receitas que funcionam</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+
+          <!-- Standard Password -->
+          <div class="recipe-strip recipe-strip-pink">
+            <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-3">Senha Padrão</div>
+            <div class="font-mono text-[#FF7A7A] font-bold text-lg mb-4 break-all">DançandoKoalaRiver!73</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Letras mistas</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Símbolo comum</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Números de seguimento</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Três palavras legíveis</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#FF7A7A] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> Ótimo para uso diário</li>
+            </ul>
+          </div>
+
+          <!-- Passphrase -->
+          <div class="recipe-strip recipe-strip-green">
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase mb-3">Frase- senha</div>
+            <div class="font-mono text-[#6BBF59] font-bold text-lg mb-4 break-all">folha-de-flor-tigre-cosmic</div>
+            <ul class="space-y-2 text-sm text-[#8B7355]">
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> 4 palavras aleatórias</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Hífen separado</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Melhor quando o comprimento é permitido</li>
+              <li class="flex items-start gap-2"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span> Fácil de escrever</li>
+              <li class="flex items-start gap-2 mt-3 font-semibold"><span class="inline-icon text-[#6BBF59] mt-0.5" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h13"></path><path d="m14 7 5 5-5 5"></path></svg></span> Melhor para cofres de memória</li>
+            </ul>
+          </div>
+
+        </div>
       </section>
+
+      <!-- Divider -->
+      <div class="flex justify-center mb-16">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none" aria-hidden="true">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Section 4: Three Golden Rules -->
+      <section class="mb-16">
+        <div class="flex items-center gap-3 mb-8">
+          <div class="section-dot section-dot-blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24" class="w-5 h-5"><path d="M8 4h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H8" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path><path d="M8 4a2 2 0 0 0-2 2v12a2 2 0 1 0 0-4h10" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          </div>
+          <h2 class="text-xl font-extrabold text-[#4A3728] dark:text-[#F0E6D8]">Três Regras de Ouro</h2>
+        </div>
+        <div class="space-y-10">
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-pink">1</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Ir Longo</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">O comprimento é mais do que complexidade. Uma frase-passe de 20 caracteres tem mais entropia do que uma senha "complexa" de 8 caracteres com símbolos. Mire em pelo menos 12 caracteres para contas padrão, 20+ para as sensíveis.</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-green">2</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Manter Aleatório</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Os humanos são terríveis ao acaso. Gravitamos para padrões, datas e palavras de que gostamos. Use uma ferramenta como TofuPass para gerar senhas verdadeiramente aleatórias. As listas de palavras são curadoras para evitar padrões previsíveis.</p>
+            </div>
+          </div>
+
+          <div class="rule-open flex items-start gap-5">
+            <div class="rule-num rule-num-yellow">3</div>
+            <div>
+              <div class="font-extrabold text-base mb-2 text-[#4A3728]">Verificar a Base de Dados</div>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Mesmo uma senha forte é inútil se apareceu em uma violação de dados. Usar o nosso <a href="/pt/stresstest/" class="text-[#E6A800] hover:text-[#C28D00] underline underline-offset-2 decoration-[#E6A800]/30 hover:decoration-[#E6A800] transition-colors font-bold">Teste de Estresse</a> para verificar se sua senha aparece no banco de dados do HaveIBeenPwned de bilhões de credenciais comprometidas, em particular usando k-Anônimo.</p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <div class="text-center pt-4">
+        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
+        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+          Gerar uma Senha Segura
+        </a>
+      </div>
+
     </div>
-  </article>
-</main>
+  </main>

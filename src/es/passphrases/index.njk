@@ -3,11 +3,11 @@ layout: base.njk
 title: Frases de contraseña - TofuPass
 pageKey: passphrases
 extraCss:
-  - /assets/css/passphrases.css
+- /assets/css/passphrases.css
 pageScripts:
-  - /assets/js/passphrases-es-mx.js
-  - /assets/js/wordlists-es-mx.js
-  - /assets/js/passphrases.js
+- /assets/js/passphrases-es-mx.js
+- /assets/js/wordlists-es-mx.js
+- /assets/js/passphrases.js
 backgroundDecor: leaves
 ---
 
@@ -17,38 +17,38 @@ backgroundDecor: leaves
     <div class="max-w-5xl mx-auto">
       <section class="passphrase-stage">
         <div class="passphrase-copy">
-          <img src="/excited.png" alt="Miso emocionado" class="w-20 h-20 mb-5 mascot-glow" />
-          <p class="passphrase-kicker">Secretos largos y legibles</p>
-          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Frases</h1>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Secretos largos y fáciles de escribir para lugares donde se permite longitud y recordar importa más que cumplir reglas raras de símbolos.</p>
-          <div class="passphrase-example" aria-hidden="true">luna-taco-nube-rio</div>
+          <img src="/excited.png" alt="Miso se ve excitado" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">Secretos largos legibles</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Passphrases</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Secretos largos, de menor fricción para lugares donde la longitud es bienvenida y la memorabilidad importa más que cumplir reglas fusibles del símbolo.</p>
+          <div class="passphrase-example" aria-hidden="true">flor-tiger-leaf-fog</div>
         </div>
 
         <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
           <div class="passphrase-tool-head">
             <div>
               <p class="passphrase-kicker">Generador</p>
-              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Frase nueva</h2>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Frase fresca</h2>
             </div>
             <span class="passphrase-badge" id="passphraseCountBadge">4 palabras</span>
           </div>
 
           <button type="button" id="passphrasePanel" class="passphrase-panel">
             <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">Generando...</output>
-            <span id="passphraseHint" class="passphrase-hint">Haz clic para copiar la frase</span>
+            <span id="passphraseHint" class="passphrase-hint">Haga clic en contraseña para copiar</span>
           </button>
 
           <div class="passphrase-actions">
-            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Generar nueva frase</button>
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Generar nueva contraseña</button>
             <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
               <span class="ui-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
               </span>
-              Copiar
+              Copiado
             </button>
           </div>
 
-          <div class="passphrase-controls" aria-label="Opciones de frase">
+          <div class="passphrase-controls" aria-label="Opciones de contraseña">
             <div>
               <div class="control-label">Palabras</div>
               <div class="segmented-control" data-control="count">
@@ -69,9 +69,9 @@ backgroundDecor: leaves
             </div>
 
             <div>
-              <div class="control-label">Mayúsculas</div>
+              <div class="control-label">Caso</div>
               <div class="segmented-control" data-control="case">
-                <button type="button" data-case="lower" aria-pressed="true">minúsculas</button>
+                <button type="button" data-case="lower" aria-pressed="true">inferior</button>
                 <button type="button" data-case="title" aria-pressed="false">Título</button>
               </div>
             </div>
@@ -79,14 +79,14 @@ backgroundDecor: leaves
         </div>
       </section>
 
-      <section class="passphrase-notes" aria-label="Guía de frases">
+      <section class="passphrase-notes" aria-label="Orientación sobre la contraseña">
         <div class="note-strip note-strip-green">
           <div class="note-icon ui-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
           </div>
           <div>
-            <h2>Usa frases cuando se permite longitud.</h2>
-            <p>Funcionan muy bien para contraseñas maestras, Wi-Fi, códigos de dispositivos, frases de recuperación que tienes que escribir a mano y cualquier lugar que acepte espacios o separadores.</p>
+            <h2>Utilice las contraseñas cuando se permite la longitud.</h2>
+            <p>Brillan para contraseñas maestras de bóveda, contraseñas Wi-Fi, contraseñas de dispositivo, frases de recuperación que necesita escribir a mano, y cualquier lugar que acepte espacios o separadores.</p>
           </div>
         </div>
 
@@ -95,8 +95,8 @@ backgroundDecor: leaves
             <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
           </div>
           <div>
-            <h2>Usa Firme o Extra firme para formularios exigentes.</h2>
-            <p>Cuando un sitio exige mayúsculas, símbolo y números, el generador principal incluye esos requisitos en cada contraseña Suave, Firme y Extra firme.</p>
+            <h2>Use Firma o Firma Extra para formas exigentes.</h2>
+            <p>Cuando un sitio exige capitales, un símbolo y números, el generador principal mantiene esos requisitos incorporados en cada contraseña de Soft, Firm y Extra Firm.</p>
           </div>
         </div>
       </section>

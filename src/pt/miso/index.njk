@@ -2,14 +2,88 @@
 layout: base.njk
 title: Miso - TofuPass
 pageKey: miso
-backgroundDecor: leaves
+extraFonts:
+- https://fonts.bunny.net/css?family=caveat:400,700
+extraCss:
+- /assets/css/miso.css
+backgroundDecor: blobs
 ---
 
-<main class="relative z-10 pt-28 pb-20 px-4">
-  <article class="max-w-3xl mx-auto text-center">
-    <img src="/tofu.png" alt="Miso, o mascote do TofuPass" class="w-32 h-32 mx-auto mb-6 mascot-glow" />
-    <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Miso</h1>
-    <p class="text-[#8B7355] dark:text-[#B8A890] text-lg leading-relaxed mb-5">Miso é o pequeno guardião de tofu do TofuPass. Ele não guarda suas senhas, não as envia a lugar nenhum e não mexe nas suas coisas.</p>
-    <p class="text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Ele só aparece para fazer criar senhas seguras parecer um pouco menos frio.</p>
-  </article>
-</main>
+  <!-- HERO -->
+  <div class="relative z-10 pt-28 pb-4 px-4 text-center">
+    <div class="flex justify-center mb-5">
+      <div class="mascot-ring">
+        <img src="/excited.png" alt="Miso o mascote TofuPass" class="mascot-hero w-[11rem] h-[11rem] relative z-10" />
+      </div>
+    </div>
+    <h1 class="text-5xl sm:text-7xl font-black mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Eu sou... <span class="gradient-text">Miso!</span></h1>
+    <p class="miso-kicker">O teu guardião de segurança macio e mole</p>
+  </div>
+
+  <!-- CONTENT -->
+  <main class="relative z-10 pb-20 px-4">
+    <div class="max-w-3xl mx-auto">
+
+      <!-- Origin blob -->
+      <div class="miso-blob-section miso-blob-green">
+        <h2>Um pouco de tofu com um grande trabalho.</h2>
+        <p>Miso é um pequeno espírito tofu que apareceu um dia nos cantos acolhedores da internet e decidiu ficar. Ninguém lhe pediu para guardar senhas. Começou a fazê-lo, em silêncio, como um gato reclama um raio de sol.</p>
+        <p>Ele foi nomeado por um humano gentil chamado Mikallie, e ele acha que isso é parte do porque ele se tornou tão bom. Seu aniversário cai em 4 de maio - também conhecido como Dia Mundial da Senha. Coincidência? Miso diz que não.</p>
+      </div>
+
+      <!-- Moods blob -->
+      <div class="miso-blob-section miso-blob-pink" style="border-radius: 55% 45% 42% 58% / 48% 55% 45% 52%;">
+        <h2>Três caras, um tofu.</h2>
+        <p>O Miso não diz muito, mas a cara dele diz tudo.</p>
+        <div class="moods-grid">
+          <div class="mood-item">
+            <img src="/tofu.png" alt="Miso parece calmo" class="mood-img" />
+            <div class="mood-name mood-name-green">Calma.</div>
+            <p class="mood-desc">Estado padrão. Está tudo bem. O Miso está a vigiar com um pequeno sorriso e bochechas rosadas. Está tudo bem.</p>
+          </div>
+          <div class="mood-item">
+            <img src="/excited.png" alt="Miso parece animado" class="mood-img" />
+            <div class="mood-name mood-name-yellow">Animado</div>
+            <p class="mood-desc">Você copiou uma senha! Ou gerou algo muito bom. Os olhos do Miso abrem-se e ele mexe-se um pouco. Ele está orgulhoso de ti.</p>
+          </div>
+          <div class="mood-item">
+            <img src="/alert.png" alt="Alerta visual Miso" class="mood-img" />
+            <div class="mood-name mood-name-pink">Alerta</div>
+            <p class="mood-desc">Algo precisa de atenção. Talvez uma atualização de política, talvez você está spam-clique gerar. O ponto de exclamação aparece. Miso está em causa.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Personality blob -->
+      <div class="miso-blob-section miso-blob-yellow" style="border-radius: 45% 55% 58% 42% / 52% 48% 50% 50%;">
+        <h2>Suave em personalidade, firme em proteção.</h2>
+        <p>Miso acredita que a segurança deve se sentir quente e fácil de entender. Ele não fala alto. Ele não é vistoso. Ele só faz com que as coisas fiquem protegidas enquanto passas o teu dia.</p>
+        <p>Ele é o tipo de amigo que se lembra das suas preferências, mas nunca as partilha com ninguém. Que é exactamente o que um guardião da senha deve ser.</p>
+        <div class="fun-facts">
+          <div class="fun-fact"><span class="fun-fact-label">Cor</span><span class="fun-fact-value">Cogumelos verdes</span></div>
+          <div class="fun-fact"><span class="fun-fact-label">Lanche</span><span class="fun-fact-value">Sementes de sésamo torrado</span></div>
+          <div class="fun-fact"><span class="fun-fact-label">Hobby</span><span class="fun-fact-value">Coletando palavras seguras</span></div>
+          <div class="fun-fact"><span class="fun-fact-label">Medo</span><span class="fun-fact-value">Senhas fracas e sopa quente</span></div>
+          <div class="fun-fact"><span class="fun-fact-label">Sonho</span><span class="fun-fact-value">Zero senhas de notas pegajosas</span></div>
+          <div class="fun-fact"><span class="fun-fact-label">Canção</span><span class="fun-fact-value">União Marconi - Sem Peso</span></div>
+        </div>
+      </div>
+
+      <!-- Letter blob -->
+      <div class="miso-blob-section miso-blob-purple" style="border-radius: 50% 50% 45% 55% / 55% 45% 52% 48%;">
+        <h2>Uma nota da Miso.</h2>
+        <div class="miso-letter">
+          <div class="miso-letter-stamp">Miso Post</div>
+          <div class="miso-letter-body">
+            <p>Olá, amigo.</p>
+            <p>Sei que as senhas podem parecer esmagadoras. Muitas regras, muitos avisos, muitos "não faças isto".</p>
+            <p>Mas não tem de ser assim. Uma boa senha aleatória e um lugar seguro para mantê-la - isso é realmente tudo que você precisa.</p>
+            <p>Estarei aqui quando precisares de mim. A vigiar silenciosamente, como sempre.</p>
+            <p>Fiquem seguros, fiquem confortáveis,</p>
+            <p class="miso-letter-sign">Miso</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>

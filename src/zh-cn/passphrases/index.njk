@@ -3,11 +3,102 @@ layout: base.njk
 title: 密码短语 - TofuPass
 pageKey: passphrases
 extraCss:
-  - /assets/css/passphrases.css
+- /assets/css/passphrases.css
 pageScripts:
-  - /assets/js/passphrases-zh-cn.js
-  - /assets/js/wordlists-zh-cn.js
-  - /assets/js/passphrases.js
+- /assets/js/passphrases-zh-cn.js
+- /assets/js/wordlists-zh-cn.js
+- /assets/js/passphrases.js
 backgroundDecor: leaves
 ---
-<div class="passphrase-band" aria-hidden="true"></div><main class="relative z-10 pt-24 pb-20 px-4"><div class="max-w-5xl mx-auto"><section class="passphrase-stage"><div class="passphrase-copy"><img src="/excited.png" alt="Miso" class="w-20 h-20 mb-5 mascot-glow" /><p class="passphrase-kicker">长而易读的秘密</p><h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">密码短语</h1><p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">适合允许较长密码的位置，输入更轻松。</p><div class="passphrase-example" aria-hidden="true">alpha-beta-gamma-delta</div></div><div class="passphrase-tool" aria-labelledby="passphraseToolTitle"><div class="passphrase-tool-head"><div><p class="passphrase-kicker">Generator</p><h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">新短语</h2></div><span class="passphrase-badge" id="passphraseCountBadge">4 个词</span></div><button type="button" id="passphrasePanel" class="passphrase-panel"><output id="passphraseDisplay" class="passphrase-display" aria-live="polite">...</output><span id="passphraseHint" class="passphrase-hint">点击复制</span></button><div class="passphrase-actions"><button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">生成新短语</button><button type="button" id="passphraseCopy" class="passphrase-copy-btn">Copy</button></div><div class="passphrase-controls" aria-label="Options"><div><div class="control-label">个词</div><div class="segmented-control" data-control="count"><button type="button" data-count="4" aria-pressed="true">4</button><button type="button" data-count="5" aria-pressed="false">5</button><button type="button" data-count="6" aria-pressed="false">6</button><button type="button" data-count="8" aria-pressed="false">8</button></div></div><div><div class="control-label">Separator</div><div class="segmented-control" data-control="separator"><button type="button" data-separator="-" aria-pressed="true">-</button><button type="button" data-separator=" " aria-pressed="false">space</button><button type="button" data-separator="." aria-pressed="false">.</button></div></div><div><div class="control-label">Case</div><div class="segmented-control" data-control="case"><button type="button" data-case="lower" aria-pressed="true">lower</button><button type="button" data-case="title" aria-pressed="false">Title</button></div></div></div></div></section></div></main>
+
+  <div class="passphrase-band" aria-hidden="true"></div>
+
+  <main class="relative z-10 pt-24 pb-20 px-4">
+    <div class="max-w-5xl mx-auto">
+      <section class="passphrase-stage">
+        <div class="passphrase-copy">
+          <img src="/excited.png" alt="Miso看起来很兴奋" class="w-20 h-20 mb-5 mascot-glow" />
+          <p class="passphrase-kicker">可读长期机密</p>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">密码句</h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">对于欢迎长度和可纪念性的地方来说, 长期、低调的秘密比满足粗糙的符号规则更重要。</p>
+          <div class="passphrase-example" aria-hidden="true">开花老虎叶雾</div>
+        </div>
+
+        <div class="passphrase-tool" aria-labelledby="passphraseToolTitle">
+          <div class="passphrase-tool-head">
+            <div>
+              <p class="passphrase-kicker">发电机</p>
+              <h2 id="passphraseToolTitle" class="text-xl font-black text-[#4A3728] dark:text-[#F0E6D8]">新的密码句</h2>
+            </div>
+            <span class="passphrase-badge" id="passphraseCountBadge">4个字</span>
+          </div>
+
+          <button type="button" id="passphrasePanel" class="passphrase-panel">
+            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">正在生成...</output>
+            <span id="passphraseHint" class="passphrase-hint">点击密码句复制</span>
+          </button>
+
+          <div class="passphrase-actions">
+            <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">生成新密码句</button>
+            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
+              <span class="ui-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </span>
+              复制
+            </button>
+          </div>
+
+          <div class="passphrase-controls" aria-label="密码句选项">
+            <div>
+              <div class="control-label">单词</div>
+              <div class="segmented-control" data-control="count">
+                <button type="button" data-count="4" aria-pressed="true">4</button>
+                <button type="button" data-count="5" aria-pressed="false">5</button>
+                <button type="button" data-count="6" aria-pressed="false">6</button>
+                <button type="button" data-count="8" aria-pressed="false">8</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">分隔符</div>
+              <div class="segmented-control" data-control="separator">
+                <button type="button" data-separator="-" aria-pressed="true">-</button>
+                <button type="button" data-separator=" " aria-pressed="false">空间</button>
+                <button type="button" data-separator="." aria-pressed="false">.</button>
+              </div>
+            </div>
+
+            <div>
+              <div class="control-label">大小写</div>
+              <div class="segmented-control" data-control="case">
+                <button type="button" data-case="lower" aria-pressed="true">下调</button>
+                <button type="button" data-case="title" aria-pressed="false">标题</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="passphrase-notes" aria-label="密码句指导">
+        <div class="note-strip note-strip-green">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          </div>
+          <div>
+            <h2>允许长度时使用密码句 。</h2>
+            <p>它们为保险库主密码,Wi-Fi密码,设备密码,恢复语句提供亮度,你需要手键,以及任何接受空格或分离器的地方.</p>
+          </div>
+        </div>
+
+        <div class="note-strip note-strip-yellow">
+          <div class="note-icon ui-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path></svg>
+          </div>
+          <div>
+            <h2>使用Firm或Extra Firm进行挑剔形式。</h2>
+            <p>当一个站点需要首都、符号和数字时,主要发电机将这些要求保存在每一个Soft、Firm和Extra Firm密码中。</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>

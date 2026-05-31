@@ -1,0 +1,147 @@
+---
+layout: base.njk
+noindex: true
+title: छात्र सुरक्षा ट्यूटोरियल - TofuPass
+description: पासवर्ड स्वच्छता, फ़िशिंग, MFA, साझा उपकरणों और खाता वसूली के लिए छह
+  छात्र-अनुकूल सुरक्षा प्रश्नोत्तरी। कोई लेखा और कोई जमा परिणाम नहीं।
+pageKey: students
+extraCss:
+- /assets/css/student-test.css
+pageScripts:
+- /assets/js/student-test-hi.js
+- /assets/js/student-test.js
+lang: hi
+---
+
+
+  <main class="student-test-page">
+    <section class="student-test-hero" aria-labelledby="studentTestTitle">
+      <div class="student-test-wrap">
+        <div class="student-test-intro">
+          <img src="/excited.png" alt="" class="student-test-mascot" aria-hidden="true" />
+          <p class="student-test-kicker">सुरक्षा प्रशिक्षण</p>
+          <h1 id="studentTestTitle">छात्र सुरक्षा ट्यूटोरियल</h1>
+          <p class="student-test-lede">पासवर्ड, फ़िशिंग, दो-फैक्टर कोड, साझा कंप्यूटर, रिकवरी और क्या करना है जब कोई खाता असुरक्षित महसूस करता है, तो क्या करना है।</p>
+          <p class="student-test-facts">6 quizzes · 85% to pass · कोई जमा परिणाम नहीं</p>
+        </div>
+
+        <section class="student-quiz-shell" aria-labelledby="quizTitle">
+          <div class="module-overview" aria-label="प्रश्नोत्तरी मॉड्यूल">
+            <div class="module-overview-head">
+              <p class="student-test-kicker quiz-kicker">ट्यूटोरियल प्रगति</p>
+              <strong id="moduleSummary">6 का 0</strong>
+            </div>
+            <div id="moduleGrid" class="module-grid"></div>
+          </div>
+
+          <div class="quiz-workspace">
+            <div class="quiz-topline">
+              <div>
+                <p id="quizKicker" class="student-test-kicker quiz-kicker">एक प्रश्नोत्तरी चुनें</p>
+                <h2 id="quizTitle">शुरू करने के लिए एक मॉड्यूल चुनें।</h2>
+              </div>
+              <span id="quizProgressLabel" class="quiz-progress-label" aria-live="polite">0</span>
+            </div>
+
+            <div class="quiz-progress" aria-hidden="true">
+              <span id="quizProgressBar"></span>
+            </div>
+
+            <div id="moduleIntro" class="module-intro">
+              <p id="moduleDescription">अपने पूरा होने के प्रमाण पत्र को अनलॉक करने के लिए कम से कम 85% के साथ सभी छह क्विज़ पास करें।</p>
+              <div class="quiz-actions">
+                <button type="button" id="quizStart" class="quiz-primary">प्रारंभ करें</button>
+              </div>
+            </div>
+
+            <div id="quizPanel" class="quiz-panel" hidden>
+              <p id="quizScenario" class="quiz-scenario"></p>
+              <h3 id="quizQuestion" class="quiz-question"></h3>
+              <div id="quizOptions" class="quiz-options" role="list"></div>
+              <div id="quizFeedback" class="quiz-feedback" aria-live="polite" hidden></div>
+
+              <div class="quiz-actions">
+                <button type="button" id="quizCheck" class="quiz-primary" disabled>उत्तर जाँच</button>
+                <button type="button" id="quizNext" class="quiz-secondary" hidden>अगला</button>
+              </div>
+            </div>
+
+            <div id="quizResults" class="quiz-results" hidden>
+              <div class="result-badge">
+                <span id="resultScore">0%</span>
+                <strong id="resultLabel">ध्यान रखें</strong>
+              </div>
+              <p id="resultMessage" class="result-message"></p>
+              <div id="resultReview" class="result-review" aria-label="उत्तर समीक्षा"></div>
+              <div class="quiz-actions">
+                <button type="button" id="quizRestart" class="quiz-primary">Retake Quiz</button>
+                <button type="button" id="quizNextModule" class="quiz-secondary">अगला</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="certificateSection" class="certificate-section" aria-labelledby="certificateTitle" hidden>
+      <div class="student-test-wrap">
+        <div class="certificate-head">
+          <div>
+            <p class="student-test-kicker student-test-kicker-blue">प्रमाणपत्र</p>
+            <h2 id="certificateTitle">प्रिंट करने योग्य प्रमाण पत्र अनलॉक करें।</h2>
+          </div>
+          <span id="certificateLockBadge" class="certificate-lock-badge">बंद करना</span>
+        </div>
+
+        <div id="certificatePanel" class="certificate-panel is-locked">
+          <div class="certificate-controls">
+            <label for="certificateName">छात्र का नाम</label>
+            <input id="certificateName" type="text" placeholder="प्रकार छात्र का नाम" disabled />
+            <button type="button" id="certificatePrint" class="quiz-primary" disabled>Print / Save PDF</button>
+          </div>
+
+          <article id="certificatePrintable" class="certificate-printable" aria-label="मुद्रण योग्य पूर्णता प्रमाणपत्र">
+            <div class="certificate-border">
+              <img src="/tofu.png" alt="" class="certificate-mascot" aria-hidden="true" />
+              <p class="certificate-kicker">TofuPass सुरक्षा ट्यूटोरियल</p>
+              <h3>प्रमाणपत्र</h3>
+              <p class="certificate-awarded">पुरस्कार</p>
+              <p id="certificateStudentName" class="certificate-name">छात्र का नाम</p>
+              <p class="certificate-copy">उत्तीर्ण ग्रेड के साथ सभी छह छात्र सुरक्षा क्विज़ को पूरा करने के लिए।</p>
+              <div class="certificate-grade-row">
+                <span id="certificateGrade">कुल मिलाकर ग्रेड: -</span>
+                <span id="certificateDate">तारीख: -</span>
+              </div>
+              <div id="certificateModules" class="certificate-modules"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="student-training-strip" aria-labelledby="trainingTitle">
+      <div class="student-test-wrap training-grid">
+        <div>
+          <p class="student-test-kicker student-test-kicker-blue">क्या quizzes कवर</p>
+          <h2 id="trainingTitle">दोहराने के लायक छह आदतें।</h2>
+        </div>
+        <div class="training-points">
+          <article>
+            <span>1</span>
+            <h3>मजबूत अद्वितीय पासवर्ड</h3>
+            <p>जब शब्द यादृच्छिक होते हैं तो पठनीय अभी भी मजबूत हो सकता है और हर खाता अलग होता है।</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>फ़िशिंग और MFA</h3>
+            <p>छात्र नकली साइन-इन को स्पॉट करते हैं और कोड, संकेत और पुनर्प्राप्ति कुंजी की रक्षा करते हैं।</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>साझा-डिवाइस सुरक्षा</h3>
+            <p>लॉग आउट, रिपोर्टिंग मुसीबत, और कक्षा उपकरणों पर सहेजे गए पासवर्ड से बचना।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>

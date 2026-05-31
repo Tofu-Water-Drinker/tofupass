@@ -1,0 +1,113 @@
+---
+layout: base.njk
+title: TofuPass pour les développeurs - TofuPass
+description: Mots de passe lisibles privés pour les démos, comptes de mise en scène,
+  tutoriels, tests locaux et workflows de développement non secrets.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: Pour les développeurs
+heroTitle: Démo mots de passe sans sprawl secret accidentel.
+lede: TofuPass est utile lorsque vous avez besoin d'identifiants lisibles pour les
+  démos, les utilisateurs de tests ensemencés, les réinitialisateurs, les tutoriels,
+  les applications locales ou les documents de support.
+mascot: /alert.png
+proof: Pas un remplacement pour les clés API ou la gestion des secrets de production.
+  Parfait pour les mots de passe humains.
+actions:
+- label: Générer un mot de passe
+  href: /fr/
+- label: Afficher l'API
+  href: /fr/api/
+useKicker: Ajustement du flux de travail de Dev
+useTitle: Pour les mots de passe, les humains doivent voir.
+useIntro: Le travail de développement a souvent besoin de références suffisamment
+  solides pour éviter les mauvais exemples mais suffisamment lisibles pour les démos,
+  les docs, l'AQ et les utilisateurs temporaires.
+checks:
+- Utilisez des mots de passe lisibles générés dans des tutoriels plutôt que des classiques
+  codés en dur.
+- Réinitialisez les utilisateurs de mise en scène ou d'AQ sans envoyer de chaînes
+  absurdes.
+- Gardez des secrets de production, des clés API et des jetons dans de vrais outils
+  de gestion secrète.
+workflowTitle: Plan d'utilisation du développeur
+workflow:
+- term: Démo
+  detail: Utilisez un mot de passe lisible qui peut être parlé ou dactylographié lors
+    d'une visite.
+- term: Staging
+  detail: Donnez aux utilisateurs de test des identifiants uniques au lieu de réutiliser
+    le même mot de passe partagé pour toujours.
+- term: Docteurs
+  detail: Afficher des exemples de mot de passe réalistes sans publier un titre de
+    créance en direct.
+playbookKicker: Livre de lecture du développeur
+playbookTitle: Gardez des exemples utiles sans normaliser les mauvais secrets.
+playbookIntro: TofuPass n'est pas pour les jetons de production. C'est pour les mots
+  de passe humains qui apparaissent dans les démos, les docs, l'AQ, le support et
+  les tests locaux.
+modeTitle: Quel mode correspond à la tâche de dev
+modeRows:
+- label: Souple
+  title: Démos jetées
+  copy: Utile quand un mot de passe apparaît à l'écran et sera jeté après le passage.
+- label: Entreprise
+  title: AQ et utilisateurs de mise en scène
+  copy: Par défaut lisible pour les utilisateurs ensemencés, les tests de soutien
+    et les références qu'un humain peut avoir besoin de taper.
+- label: Phrase
+  title: Exemples d'équipes partagées
+  copy: Utilisez des phrases de passe pour des exemples internes plus longs où la
+    lisibilité importe plus que la brièveté.
+scenarioTitle: Scénarios de développement
+scenarios:
+- label: Docteurs
+  title: Un tutoriel nécessite des références
+  copy: Afficher les exemples générés au lieu d'enseigner aux lecteurs à copier admin
+    et mot de passe.
+- label: QA
+  title: Les utilisateurs d'essai ont besoin de rotation
+  copy: Donnez à chaque utilisateur ensemencé un mot de passe unique et faites pivoter
+    les identifiants de mise en scène partagés sur un horaire.
+- label: Démo
+  title: Une promenade en direct arrive
+  copy: Utilisez un mot de passe lisible à l'écran et sûr à jeter après la session.
+apiPitchKicker: Ajustement de l'API
+apiPitchTitle: Besoin de mots de passe générés dans un script ou un flux de démo?
+apiPitchIntro: Utilisez l'API pour les docs, les données QA, la mise en scène ou les
+  démos où un mot de passe lisible par l'homme est utile. Gardez les secrets de production
+  dans la gestion des vrais secrets.
+apiPitchCta: Afficher la référence de l'API
+apiExampleLabel: Critère de mot de passe
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Retourne un seul mot de passe Firm en texte simple, avec support linguistique
+  optionnel.
+stripKicker: Hygiène des développeurs
+stripTitle: De meilleurs exemples font de meilleurs par défaut.
+stripItems:
+- title: Humain
+  copy: Utilisez TofuPass pour identifier les personnes doivent lire, taper ou réinitialiser.
+- title: temporaire
+  copy: Rotation de la démo et mise en place des mots de passe quand ils cessent d'être
+    temporaires.
+- title: Séparés
+  copy: Gardez les mots de passe générés loin des clés API, des jetons et des secrets
+    de production.
+lang: fr
+audiencePrefix: /fr
+apiHref: /fr/api/
+audienceNavLabel: Autres publics TofuPass
+audienceChooseKicker: Choisissez un autre emplacement
+audienceLabels:
+  teachers: Enseignants
+  helpdesk: Helpdesk
+  parents: Les parents
+  students: Élèves
+  homelab: Labo
+  developers: Développeurs
+---
+
+
+{% include "for-detail-content.njk" %}

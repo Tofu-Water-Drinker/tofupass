@@ -1,0 +1,148 @@
+---
+layout: base.njk
+noindex: true
+title: Tutorial für Studentensicherheit - TofuPass
+description: Sechs studentenfreundliche Sicherheitsquizzen für Passworthygiene, Phishing,
+  MFA, geteilte Geräte und Kontowiederherstellung. Keine Konten und keine vorgelegten
+  Ergebnisse.
+pageKey: students
+extraCss:
+- /assets/css/student-test.css
+pageScripts:
+- /assets/js/student-test-de.js
+- /assets/js/student-test.js
+lang: de
+---
+
+
+  <main class="student-test-page">
+    <section class="student-test-hero" aria-labelledby="studentTestTitle">
+      <div class="student-test-wrap">
+        <div class="student-test-intro">
+          <img src="/excited.png" alt="" class="student-test-mascot" aria-hidden="true" />
+          <p class="student-test-kicker">Sicherheitsschulung</p>
+          <h1 id="studentTestTitle">Tutorial für Studentensicherheit</h1>
+          <p class="student-test-lede">Sechs kurze Quizzen auf Passwörter, Phishing, Zwei-Faktor-Codes, geteilte Computer, Wiederherstellung und was zu tun, wenn ein Konto unsicher fühlt.</p>
+          <p class="student-test-facts">6 Quizzen · 85% bis Pass · Keine eingereichten Ergebnisse</p>
+        </div>
+
+        <section class="student-quiz-shell" aria-labelledby="quizTitle">
+          <div class="module-overview" aria-label="Quizmodule">
+            <div class="module-overview-head">
+              <p class="student-test-kicker quiz-kicker">Tutorialfortschritt</p>
+              <strong id="moduleSummary">0 von 6 weitergegeben</strong>
+            </div>
+            <div id="moduleGrid" class="module-grid"></div>
+          </div>
+
+          <div class="quiz-workspace">
+            <div class="quiz-topline">
+              <div>
+                <p id="quizKicker" class="student-test-kicker quiz-kicker">Wählen Sie ein Quiz</p>
+                <h2 id="quizTitle">Wählen Sie ein Modul zu beginnen.</h2>
+              </div>
+              <span id="quizProgressLabel" class="quiz-progress-label" aria-live="polite">0 von 7</span>
+            </div>
+
+            <div class="quiz-progress" aria-hidden="true">
+              <span id="quizProgressBar"></span>
+            </div>
+
+            <div id="moduleIntro" class="module-intro">
+              <p id="moduleDescription">Geben Sie alle sechs Quizzen mit mindestens 85%, um Ihr Abschlusszertifikat zu entsperren.</p>
+              <div class="quiz-actions">
+                <button type="button" id="quizStart" class="quiz-primary">Starten Sie Quiz</button>
+              </div>
+            </div>
+
+            <div id="quizPanel" class="quiz-panel" hidden>
+              <p id="quizScenario" class="quiz-scenario"></p>
+              <h3 id="quizQuestion" class="quiz-question"></h3>
+              <div id="quizOptions" class="quiz-options" role="list"></div>
+              <div id="quizFeedback" class="quiz-feedback" aria-live="polite" hidden></div>
+
+              <div class="quiz-actions">
+                <button type="button" id="quizCheck" class="quiz-primary" disabled>Antwort prüfen</button>
+                <button type="button" id="quizNext" class="quiz-secondary" hidden>Nächste</button>
+              </div>
+            </div>
+
+            <div id="quizResults" class="quiz-results" hidden>
+              <div class="result-badge">
+                <span id="resultScore">0%</span>
+                <strong id="resultLabel">Weiter üben</strong>
+              </div>
+              <p id="resultMessage" class="result-message"></p>
+              <div id="resultReview" class="result-review" aria-label="Antwortbewertung"></div>
+              <div class="quiz-actions">
+                <button type="button" id="quizRestart" class="quiz-primary">Retake Quiz</button>
+                <button type="button" id="quizNextModule" class="quiz-secondary">Nächster Quiz</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="certificateSection" class="certificate-section" aria-labelledby="certificateTitle" hidden>
+      <div class="student-test-wrap">
+        <div class="certificate-head">
+          <div>
+            <p class="student-test-kicker student-test-kicker-blue">Abschlusszeugnis</p>
+            <h2 id="certificateTitle">Entsperren Sie das bedruckbare Zertifikat.</h2>
+          </div>
+          <span id="certificateLockBadge" class="certificate-lock-badge">Gesperrt</span>
+        </div>
+
+        <div id="certificatePanel" class="certificate-panel is-locked">
+          <div class="certificate-controls">
+            <label for="certificateName">Name des Schülers</label>
+            <input id="certificateName" type="text" placeholder="Typ Schülername" disabled />
+            <button type="button" id="certificatePrint" class="quiz-primary" disabled>Print / Save PDF</button>
+          </div>
+
+          <article id="certificatePrintable" class="certificate-printable" aria-label="Bedrucktes Abschlusszeugnis">
+            <div class="certificate-border">
+              <img src="/tofu.png" alt="" class="certificate-mascot" aria-hidden="true" />
+              <p class="certificate-kicker">TofuPass Sicherheit Tutorial</p>
+              <h3>Abschlusszeugnis</h3>
+              <p class="certificate-awarded">Auszeichnungen</p>
+              <p id="certificateStudentName" class="certificate-name">Name des Schülers</p>
+              <p class="certificate-copy">für alle sechs Studenten Sicherheits-Quizen mit Passage Grade.</p>
+              <div class="certificate-grade-row">
+                <span id="certificateGrade">Gesamtnote: --</span>
+                <span id="certificateDate">Datum: --</span>
+              </div>
+              <div id="certificateModules" class="certificate-modules"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="student-training-strip" aria-labelledby="trainingTitle">
+      <div class="student-test-wrap training-grid">
+        <div>
+          <p class="student-test-kicker student-test-kicker-blue">Was die Quizzen decken</p>
+          <h2 id="trainingTitle">Sechs Gewohnheiten müssen wiederholen.</h2>
+        </div>
+        <div class="training-points">
+          <article>
+            <span>1</span>
+            <h3>Starke eindeutige Passwörter</h3>
+            <p>Lesbar kann immer noch stark sein, wenn die Wörter zufällig sind und jedes Konto anders ist.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Phishing und MFA</h3>
+            <p>Studenten Praxis, gefälschte Zeichen-Ins zu erkennen und Codes zu schützen, Aufforderungen und Wiederherstellungsschlüssel.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Sicherheit bei geteiltem Gerät</h3>
+            <p>Loggen, Meldeprobleme und vermeiden Sie gespeicherte Passwörter auf Klassenzimmergeräten.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>

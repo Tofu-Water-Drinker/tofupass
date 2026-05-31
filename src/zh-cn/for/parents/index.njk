@@ -1,0 +1,83 @@
+---
+layout: base.njk
+title: 家长豆腐-豆腐
+description: 以家庭友好的方式传授独特的密码,更安全的账户,更好的家庭密码习惯.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: parents
+kicker: 为父母
+heroTitle: 帮助家庭停止重用家庭密码.
+lede: TofuPass为家庭提供了简单的方法,为学校门户、游戏、流媒体、电子邮件和共享设备提供可读、独特的密码。
+mascot: /tofu.png
+proof: 没有签名, 没有跟踪, 也没有由 TofuPass 保存生成的密码 。
+actions:
+- label: 生成密码
+  href: /zh-cn/
+- label: 阅读指南
+  href: /zh-cn/good/
+useKicker: 家庭保障
+useTitle: 不讲课的更安全的习惯。
+useIntro: 目标不是让每个家庭成员都爱密码政策. 目标是使更安全的选择变得容易重复。
+checks:
+- 为每个重要账户制作不同的密码.
+- 帮助孩子们理解为什么名字,生日,宠物,以及团队都是可猜到的模式.
+- 在家族批准的密码管理器中设置长期密码,而不是一个注释或文本线索.
+workflowTitle: 家庭安置计划
+workflow:
+- term: 共享设备
+  detail: 在可能的情况下使用独有的登录,避免在共享浏览器中保存学校或银行密码.
+- term: 儿童账户
+  detail: 一起生成一个可读密码,然后保存到家人可以恢复的地方.
+- term: 父账户
+  detail: 使用更强的密码或密码,特别是电子邮件、银行和回收账户。
+playbookKicker: 家庭游戏本
+playbookTitle: 将密码清理变成家庭习惯.
+playbookIntro: 父母不需要安全讲稿。 他们需要几个可以重复的动作,让家庭账户不能分享同样的弱小秘密.
+modeTitle: 哪个模式适合账户
+modeRows:
+- label: 软
+  title: 低风险儿童工具
+  copy: 适合临时课堂或活动账户,这些账户将在以后监督并更改。
+- label: 企业
+  title: 每天的家庭账户
+  copy: 一个实际的默认 溪流,学校的门户,购物, 和账户的人实际类型。
+- label: 词组
+  title: 重要的回收账户
+  copy: 使用密码句用于电子邮件,银行,密码管理器,以及保护其他账户的任何东西.
+scenarioTitle: 家庭情况
+scenarios:
+- label: 学校
+  title: 门户季节又开始了
+  copy: 每个学校系统创建一个独特的密码,并存放在合适的成年人可以回收的地方.
+- label: 游戏
+  title: 一个孩子想要一个新的账户
+  copy: 使用设置来解释游戏密码为何不能匹配电子邮件或学校.
+- label: 清理
+  title: 家里的密码到处都是
+  copy: 从电子邮件和银行业务开始,然后一次替换一个重复使用的密码账户.
+stripKicker: 家庭密码习惯
+stripTitle: 让安全的东西可以重复。
+stripItems:
+- title: 分开
+  copy: 保持学校,游戏,电子邮件和金钱账户 共享一个密码。
+- title: 保存
+  copy: 内存不是一个密码管理器; 改用一个信任的地方 。
+- title: 实践
+  copy: 儿童准备打字和账户安全基本知识时使用学生安全测试.
+lang: zh-CN
+audiencePrefix: /zh-cn
+apiHref: /zh-cn/api/
+audienceNavLabel: 其他TofuPass观众
+audienceChooseKicker: 选择另一个投出
+audienceLabels:
+  teachers: 教师
+  helpdesk: 服务台
+  parents: 家长
+  students: 学生
+  homelab: 家园
+  developers: 开发者
+---
+
+
+{% include "for-detail-content.njk" %}

@@ -1,0 +1,90 @@
+---
+layout: base.njk
+title: HomelabsのTofuPass - 豆腐パス
+description: ルーター、NASボックス、ローカルサービス、VM、およびパーソナルインフラストラクチャ用の読み取り可能なユニークなパスワード。
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: homelabのビルダーのために
+heroTitle: あなたが自分で構築したサーバークローゼットのためのユニークな秘密。
+lede: TofuPassは、ホームラボの所有者が、ルーター、NASボックス、ダッシュボード、VM、ローカル管理者アカウント、および実験を横断してパスワードの再使用を回避するのに役立ちます。
+mascot: /tofu.png
+proof: ブラウザで実行し、オフラインで機能し、生成されたパスワードを収集しません。
+actions:
+- label: パスワードを生成する
+  href: /ja/
+- label: パスフレーズを作る
+  href: /ja/passphrases/
+useKicker: ラボフレンドリーなデフォルト
+useTitle: ラボが1つの秘密を共有できるように停止します。
+useIntro: Homelabsは横に成長します。 TofuPassは、一時的なサービスが永続的なインフラになる前に、素早くユニークなパスワードを提供します。
+checks:
+- ルーター、NAS管理者、ハイパーバイザー、およびパスワード マネジャーの特大企業またはパスフレーズを使用します。
+- すべてのダッシュボード、VM、およびローカルサービスに独自のクレデンシャルを与えます。
+- パスワードマネージャーまたはボルトで最終秘密を保存します。
+workflowTitle: Homelab シークレットプラン
+workflow:
+- term: コアギア
+  detail: ルータ、NAS、ハイパーバイザー、および回復アカウントの最も強力な実用モードを使用します。
+- term: ローカルアプリ
+  detail: ダッシュボード、データベース、コンテナ、テストサービスのユニークな資格情報を生成する。
+- term: ドキュメント
+  detail: パスワードマネージャで秘密を保存し、ライブパスワードの無料設定を続けます。
+playbookKicker: Homelab プレイブック
+playbookTitle: ラボのようにビルドすると、後で重要なようになります。
+playbookIntro: ほとんどのホームラボは実験として始まり、ゆっくりと個人的なインフラになります。 独自のパスワードは、その成長を1つの共有ブラスト半径に変換し続けます。
+modeTitle: サービスに合ったモード
+modeRows:
+- label: 会社案内
+  title: 一時的なダッシュボード
+  copy: ローカルツールやWeb UIが露出されていないが、まだユニークな資格情報に値するのに適しています。
+- label: ツイート
+  title: ネットワークとストレージ
+  copy: ルータ、NAS管理者、ハイパーバイザー、バックアップシステム、および広範なアクセスで何かのために余分な会社を使用して下さい。
+- label: フレーズ
+  title: 長生きしたボールトエントリ
+  copy: 長さが受け入れられるときにパスフレーズを使用して、週末のビルドを超えて生き残ることができる秘密を望む。
+scenarioTitle: ラボシナリオ
+scenarios:
+- label: ルーター
+  title: ネットワークコアがタッチされます
+  copy: デフォルトの資格情報を変更し、あまりにも多くの設定を変更する前に回復の詳細を保存します。
+- label: デバイス
+  title: 試験箱は恒久的になります
+  copy: サービスが実際のデータや実際のアクセスを保持し始めると、元のクイックパスワードを回転させます。
+- label: ドキュメント
+  title: セットアップノートはクリーンアップを必要とします
+  copy: ライブパスワードを管理者に移動し、アカウント名、URL、および回転日のみでメモを残します。
+apiPitchKicker: オートメーションフィット
+apiPitchTitle: セットアップスクリプトに便利です。
+apiPitchIntro: ラボスクリプトが読み取り可能なスターターパスワードまたはパスフレーズを必要とするときに API を使用して、マネージャーまたはボルトで最終シークレットを保存します。
+apiPitchCta: APIオプションを見る
+apiExampleLabel: パスフレーズエンドポイント
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: セットアップ後にあなたのボルトに移動できるハイフン化されたパスフレーズを返します。
+stripKicker: パーソナルインフラ
+stripTitle: ラボを後から扱います。
+stripItems:
+- title: アイソレート
+  copy: 1つのリークされたダッシュボードパスワードは、研究室の残りの部分を開くべきではありません。
+- title: アップグレード
+  copy: クイックパスワードからパスフレーズまたはvault生成された秘密に長距離サービスを移動する。
+- title: 回復する
+  copy: 実際に見つけることができるどこかで回復パスを私的、独特および貯えて下さい。
+lang: ja
+audiencePrefix: /ja
+apiHref: /ja/api/
+audienceNavLabel: その他のTofuPassの聴衆
+audienceChooseKicker: 別のピッチを選択
+audienceLabels:
+  teachers: 講師紹介
+  helpdesk: ヘルプデスク
+  parents: 両親
+  students: スタッフ
+  homelab: ホームラボ
+  developers: 開発者
+---
+
+
+{% include "for-detail-content.njk" %}

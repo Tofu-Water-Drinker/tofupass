@@ -1,0 +1,110 @@
+---
+layout: base.njk
+title: TofuPass para Homelabs - TofuPass
+description: Senhas únicas legíveis para roteadores, caixas NAS, serviços locais,
+  VMs e infraestrutura pessoal.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: Para construtores de laboratório
+heroTitle: Segredos únicos para o armário do servidor que construiu.
+lede: O TofuPass ajuda os proprietários do homelab a evitar a reutilização de senhas
+  em roteadores, caixas NAS, painéis, VMs, contas administrativas locais e experimentos.
+mascot: /tofu.png
+proof: Funciona no navegador, funciona bem offline e não coleta suas senhas geradas.
+actions:
+- label: Gerar uma senha
+  href: /pt/
+- label: Criar uma frase- senha
+  href: /pt/passphrases/
+useKicker: Predefinição amigável ao laboratório
+useTitle: Pára de deixar o laboratório partilhar um segredo.
+useIntro: Os laboratórios de casa crescem de lado. TofuPass dá-lhe senhas únicas rápidas
+  antes de serviços temporários tornar-se infraestrutura permanente.
+checks:
+- Use Extra Firm ou frases-passe para roteadores, administrador do NAS, hipervisores
+  e gerenciadores de senhas.
+- Dê a cada painel, VM e serviço local sua própria credencial.
+- Armazene segredos finais em seu gerenciador de senhas ou cofre, não em um README.
+workflowTitle: Plano secreto Homelab
+workflow:
+- term: Arte de base
+  detail: Use o modo prático mais forte para roteadores, NAS, hipervisores e contas
+    de recuperação.
+- term: Aplicações locais
+  detail: Gere credenciais únicas para painéis, bancos de dados, containers e serviços
+    de teste.
+- term: Documento
+  detail: Salve o segredo em um gerenciador de senhas e mantenha as notas de configuração
+    livres de senhas ao vivo.
+playbookKicker: Manual do laboratório em casa
+playbookTitle: Construir como o laboratório vai se tornar importante mais tarde.
+playbookIntro: A maioria dos laboratórios começa como experimentos e lentamente se
+  tornam infraestrutura pessoal. Senhas únicas impedem que esse crescimento se transforme
+  em um raio de explosão compartilhado.
+modeTitle: Qual o modo que se encaixa no serviço
+modeRows:
+- label: Firme
+  title: Painéis temporários
+  copy: Bom para ferramentas locais e UIs web que não são expostos, mas ainda merecem
+    credenciais únicas.
+- label: Extra
+  title: Rede e armazenamento
+  copy: Use Extra Firm para roteadores, administrador do NAS, hipervisores, sistemas
+    de backup e qualquer coisa com amplo acesso.
+- label: Frase
+  title: Entradas de cofres de longa duração
+  copy: Use frases-passe quando o comprimento é aceito e você quer um segredo que
+    pode sobreviver além de uma construção de fim de semana.
+scenarioTitle: Cenários laboratoriais
+scenarios:
+- label: Roteador
+  title: O núcleo da rede é tocado
+  copy: Substituir credenciais padrão e armazenar detalhes de recuperação antes de
+    alterar muitas configurações.
+- label: VM
+  title: Uma caixa de teste torna-se permanente
+  copy: Rodar a senha rápida original uma vez que o serviço começa a manter dados
+    reais ou acesso real.
+- label: Docs
+  title: As notas de configuração precisam de limpeza
+  copy: Mova senhas ao vivo para um gerenciador e deixe notas com nomes de contas,
+    URLs e datas de rotação apenas.
+apiPitchKicker: Ajuste de automação
+apiPitchTitle: Útil para scripts de configuração, não uma substituição de cofre.
+apiPitchIntro: Use a API quando um script de laboratório precisar de uma senha de
+  início legível ou frase-passe, então guarde o segredo final em seu gerenciador ou
+  cofre.
+apiPitchCta: Veja as opções da API
+apiExampleLabel: Ponto final da frase- senha
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: Devolve uma frase-passe hífenada que você pode mover para o seu cofre
+  após a configuração.
+stripKicker: Infra-estruturas pessoais
+stripTitle: Trate o laboratório como se fosse importar mais tarde.
+stripItems:
+- title: Isolar
+  copy: Uma senha do painel não deve abrir o resto do laboratório.
+- title: Actualização
+  copy: Mover serviços de longa duração de senhas rápidas para frases-passe ou segredos
+    gerados por cofres.
+- title: Recuperar
+  copy: Mantenha caminhos de recuperação privados, únicos e armazenados em algum lugar
+    que você possa realmente encontrar.
+lang: pt-BR
+audiencePrefix: /pt
+apiHref: /pt/api/
+audienceNavLabel: Outros públicos TofuPass
+audienceChooseKicker: Escolha outro campo
+audienceLabels:
+  teachers: Professores
+  helpdesk: Helpdesk
+  parents: Pais
+  students: Estudantes
+  homelab: Homelab
+  developers: Desenvolvedores
+---
+
+
+{% include "for-detail-content.njk" %}

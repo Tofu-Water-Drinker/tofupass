@@ -1,0 +1,100 @@
+---
+layout: base.njk
+title: TofuPass for Developers - TofuPass
+description: كلمات السر الخاصة القابلة للقراءة للكشف عن البيانات، وحسابات الاستدلال،
+  ودروس التعليم، والاختبارات المحلية، وتدفقات العمل الإنمائية غير السرية.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: للمطورين
+heroTitle: كلمات سر ديمو بدون سر عرضي
+lede: (TofuPass) مفيد عندما تحتاج لوثائق تفويض قابلة للقراءة لـ (المسرحيات) أو مستعملي
+  الاختبارات البذرية أو التلقيم أو التعليمات أو التطبيقات المحلية أو الوثائق الداعمة.
+mascot: /alert.png
+proof: ليس بديلاً لمفاتيح شركة API أو إدارة سرية الإنتاج. مثالية لكلمات المرور البشرية
+actions:
+- label: يولد كلمة سر
+  href: /ar/
+- label: مشاهدة API
+  href: /ar/api/
+useKicker: تدفق العمل
+useTitle: لكلمات السر يجب أن يراها البشر
+useIntro: وكثيراً ما يحتاج العمل الإنمائي إلى وثائق تفويض قوية بما يكفي لتجنب الأمثلة
+  السيئة، ولكن يمكن قراءتها بما يكفي بالنسبة للمسرحيات، والأطباء، ووكالة QA، والمستعملين
+  المؤقتين.
+checks:
+- استخدام كلمات سر قابلة للقراءة في التعليمات بدلاً من الكلاسيكيات المتشددة
+- إعادة توجيه التعبئة أو مستخدمي وكالة QA بدون البريد الإلكتروني هراءات حولها.
+- احتفظي بأسرار الإنتاج، ومفاتيح (آي بي آي) و(توكينز) في أدوات إدارة سرية حقيقية
+workflowTitle: خطة استخدام المطورين
+workflow:
+- term: Demo
+  detail: استخدم كلمة سر قابلة للقراءة يمكن النطق بها أو طباعتها أثناء سيرها
+- term: الطعن
+  detail: إعطاء مستعملي الاختبار وثائق تفويض فريدة بدلا من إعادة استخدام نفس كلمة
+    السر المشتركة إلى الأبد.
+- term: Docs
+  detail: تظهر أمثلة واقعية عن كلمة السر دون نشر إبداع حي.
+playbookKicker: دفتر اللعب
+playbookTitle: احتفظ بأمثلة مفيدة بدون تطبيع الأسرار السيئة
+playbookIntro: (TofuPass) ليس من أجل الإنتاج إنها لكلمات المرور البشرية التي تظهر
+  في الأفلام، والكتب، و QA، والدعم، والاختبارات المحلية.
+modeTitle: أيّ طريقة تلائم مهمّة دي في
+modeRows:
+- label: سرقة
+  title: مسرحيات الرمي
+  copy: مفيد عندما تظهر كلمة السر على الشاشة وسوف يتم التخلص منها بعد المسير
+- label: Firm
+  title: QA and staging users
+  copy: A readable default for seeded users, support testing, and accreditation a
+    human may need to type.
+- label: الصيغة
+  title: نماذج الأفرقة المشتركة
+  copy: Use passphrases for longer-lived internal examples where readability matters
+    more than brevity.
+scenarioTitle: السيناريوهات الإنمائية
+scenarios:
+- label: Docs
+  title: A tutorial needs accreditation
+  copy: وتمخض العرض عن أمثلة بدلاً من تعليم القارئين لتأليف الشعار وكلمة السر.
+- label: QA
+  title: يحتاج مستعملو الاختبارات إلى التناوب
+  copy: أعطِ كُلّ مستعمل بذرّة a كلمة سرّ فريدة ويُدوّنُ وثائقَ إعتماد مشتركةَ على
+    a جدول.
+- label: Demo
+  title: طريق مباشر قادم
+  copy: استخدم كلمة سر قابلة للقراءة على الشاشة وآمنة لترميها بعد الدورة
+apiPitchKicker: API fit
+apiPitchTitle: هل تريد أن تولد كلمات سر في نص أو تدفق؟
+apiPitchIntro: Use the API for docs, QA data, staging setup, or demos where a human-readable
+  password is useful. حفظ أسرار الإنتاج في إدارة سرية حقيقية.
+apiPitchCta: View API reference
+apiExampleLabel: نقطة نهاية كلمة السر
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: يُعيد كلمة سر واحدة فييرم باعتبارها نصاً سهلاً، بدعم لغة اختياري.
+stripKicker: النظافة الصحية للمطورين
+stripTitle: ومن الأمثلة الأفضل أن تؤدي إلى تقصير أفضل.
+stripItems:
+- title: الإنسان
+  copy: استخدام (TofuPass) لوثائق تفويض البشر يجب أن تقرأ أو تطبع أو تعيد
+- title: المؤقتة
+  copy: تناوب كلمة السر وسحبها عندما يتوقفون عن كونهم مؤقتين
+- title: منفصلة
+  copy: استمروا بتوليد كلمات السر بعيداً عن المفاتيح و الكسور و أسرار الإنتاج
+lang: ar
+audiencePrefix: /ar
+apiHref: /ar/api/
+audienceNavLabel: جمهور آخر من طوفو باس
+audienceChooseKicker: اختر ملعب آخر
+audienceLabels:
+  teachers: المعلمون
+  helpdesk: مكتب المساعدة
+  parents: الآباء
+  students: الطلاب
+  homelab: Homelab
+  developers: المطورون
+---
+
+
+{% include "for-detail-content.njk" %}

@@ -1,0 +1,97 @@
+---
+layout: base.njk
+noindex: true
+title: TofuPass pour les étudiants - TofuPass
+description: Hygiène des mots de passe, quiz de sécurité et certificat d'achèvement
+  imprimable.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: students
+kicker: Pour les étudiants
+heroTitle: Apprenez la sécurité du mot de passe sans être enseigné.
+lede: TofuPass associe une génération de mots de passe lisible avec un test de sécurité
+  étudiant couvrant les mots de passe, le phishing, le MFA, les appareils partagés,
+  la récupération et les problèmes de compte.
+mascot: /excited.png
+proof: Le test étudiant n'exige pas de comptes ni de résultats.
+actions:
+- label: Générer un mot de passe
+  href: /fr/
+useKicker: Formation des étudiants
+useTitle: Six courts quiz, un objectif pratique.
+useIntro: 'Les élèves peuvent pratiquer les décisions auxquelles ils sont confrontés
+  : faire des mots de passe uniques, repérer les fausses inscriptions, protéger les
+  codes et demander de l''aide lorsque quelque chose ne va pas.'
+checks:
+- Six questions-questionnaires ont porté sur le mot de passe et la sécurité des comptes.
+- La note de passage est de 85 pour cent pour chaque quiz.
+- L'achèvement déverrouille un certificat imprimable avec le nom et la note de l'élève.
+workflowTitle: Voie de sécurité des élèves
+workflow:
+- term: Apprendre
+  detail: Commencez par les bases de mot de passe et les sujets de sécurité du compte.
+- term: Pass
+  detail: Compléter les six quiz avec les notes de passage.
+- term: Imprimer
+  detail: Déverrouillez le certificat, tapez un nom et imprimez-le ou enregistrez-le
+    en format PDF.
+playbookKicker: Livre de lecture étudiant
+playbookTitle: Pratiquez ce qui se passe avant qu'un compte devienne bizarre.
+playbookIntro: La version étudiante se concentre sur les choix que les étudiants font
+  réellement, de la création de mots de passe à la reconnaissance quand une page ou
+  un message de connexion se sent off.
+modeTitle: Quel outil correspond à l'affectation
+modeRows:
+- label: Essai
+  title: Tutoriel de sécurité
+  copy: Utilisez le test étudiant pour vérifier l'hygiène du mot de passe, la sensibilisation
+    au phishing, les bases du MFA et les décisions de récupération.
+- label: Entreprise
+  title: Comptes scolaires personnels
+  copy: Générer des mots de passe uniques pour les comptes qui appartiennent à un
+    étudiant et ne doivent pas être partagés.
+- label: Phrase
+  title: Projets à long terme
+  copy: Utilisez des mots de passe pour les clubs, les portefeuilles ou les projets
+    où la longueur est permise et le secret dure.
+scenarioTitle: Scénarios étudiants
+scenarios:
+- label: Nouveau
+  title: Un nouvel outil de classe s'ouvre
+  copy: Faites un mot de passe unique au lieu de réutiliser celui du courriel, des
+    jeux ou de l'année dernière.
+- label: Phish
+  title: Un message demande une connexion
+  copy: Pause avant de vous connecter, vérifiez la source, et demandez à un adulte
+    de confiance quand quelque chose se sent urgent.
+- label: Problèmes
+  title: Un compte se sent dangereux
+  copy: Changez le mot de passe, signez d'autres séances lorsque c'est possible et
+    signalez-le à la bonne personne.
+stripKicker: Ce que les étudiants pratiquent
+stripTitle: Des habitudes de mot de passe qui apparaissent dans la vie réelle.
+stripItems:
+- title: Unique
+  copy: Un compte ne devrait pas déverrouiller chaque compte.
+- title: Suspicieux
+  copy: Les faux signes, les liens étranges et les messages urgents méritent une pause.
+- title: Récupération
+  copy: Lorsqu'un compte se sent dangereux, les élèves doivent savoir qui dire et
+    quoi changer.
+lang: fr
+audiencePrefix: /fr
+apiHref: /fr/api/
+audienceNavLabel: Autres publics TofuPass
+audienceChooseKicker: Choisissez un autre emplacement
+audienceLabels:
+  teachers: Enseignants
+  helpdesk: Helpdesk
+  parents: Les parents
+  students: Élèves
+  homelab: Labo
+  developers: Développeurs
+---
+
+
+{% include "for-detail-content.njk" %}

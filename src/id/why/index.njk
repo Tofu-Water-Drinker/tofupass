@@ -1,97 +1,14 @@
 ---
 layout: base.njk
-title: Mengapa TofuPass - TofuPass
+title: Mengapa TofuPass Ada - TofuPass
+description: TofuPass ada untuk momen handoff manusia ketika sandi perlu dibaca, diketik, diucapkan, diajarkan, direset, atau dibagikan sementara.
 pageKey: why
-extraFonts:
-- https://fonts.bunny.net/css?family=caveat:700
 extraCss:
 - /assets/css/why.css
+backgroundDecor: leaves
+lang: id
+permalink: /id/why/index.html
+whyLocale: id
 ---
 
-  <main class="relative z-10 pt-28 pb-20 px-4">
-    <div class="max-w-2xl mx-auto">
-      <div class="text-center mb-14">
-        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Mengapa <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span></h1>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">Versi pendek dari pengamatan panjang.</p>
-      </div>
-
-      <article class="why-article">
-
-        <!-- Section 1 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-pink">Masalahnya</div>
-          <h2>Kata sandi orang tidak bisa hidup dengan tidak tinggal aman.</h2>
-          <p>Sudah ada generator sandi yang bagus di luar sana. DinoPass, misalnya, membuat penciptaan sandi mudah dan mudah didekati. Aku menggunakannya sendiri selama bertahun-tahun.</p>
-          <p>Tapi aku bekerja di IT. Dan pola saya terus melihat bukan kurangnya alat - itu adalah apa yang terjadi <em>sesudah</em> orang mendapat password mereka. Mereka akan menggunakannya kembali, menyederhanakannya, atau merekamnya ke monitor mereka.</p>
-        </section>
-
-        <!-- Divider -->
-        <div class="why-divider" aria-hidden="true">
-          <svg class="w-36 h-3 text-[#FFD166]/25" viewBox="0 0 150 12" fill="none">
-            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <!-- Section 2 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-yellow">Pemicu</div>
-          <h2>Gesekan kecil, konsekuensi besar.</h2>
-          <p>Saat sandi melewati batas gesekan, orang-orang berhenti bekerja <em>dengan</em> itu dan mulai bekerja <em>sekitar</em> itu. Pemicu selalu sama:</p>
-          <div class="why-grid">
-            <div class="why-grid-item">Terlalu banyak modal</div>
-            <div class="why-grid-item">Simbol tidak dikenal</div>
-            <div class="why-grid-item">String random panjang</div>
-            <div class="why-grid-item">Penggantian karakter</div>
-          </div>
-        </section>
-
-        <!-- Sticky note -->
-        <div class="sticky-note-wrap">
-          <div class="sticky-note">
-            <div class="sticky-note-tape"></div>
-            <p class="sticky-note-text">P @ ssw0rd123!</p>
-            <p class="sticky-note-sub">- email kerja</p>
-          </div>
-        </div>
-
-        <!-- Section 3 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-green">Pendekatan</div>
-          <h2>Struktur atas kekacauan.</h2>
-          <p>TofuPass berfokus pada pola yang dapat dibaca bukannya acak maksimum. Kata chunks Familiar, simbol umum, nomor pendek. Anda mendapat kata sandi seperti:</p>
-          <div class="why-examples">
-            <span>HappyKoala!</span>
-            <span>DancingKoalaRiver!</span>
-            <span>WindyMonitorBrightLeaf # 88</span>
-          </div>
-          <p>Tidak bisa dipecahkan - tapi benar-benar dapat digunakan. Dan di bawah tudung, semuanya masih menghasilkan dalam browser Anda menggunakan acak kriptografi. Tidak ada akun, tidak ada analisis, tidak ada yang meninggalkan perangkat Anda. Ketika Anda ingin rahasia panjang bersih-bentuk sebagai gantinya, <a href="/id/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">generator passphrase</a> Apakah ada untuk pekerjaan itu.</p>
-        </section>
-
-        <!-- Divider -->
-        <div class="why-divider" aria-hidden="true">
-          <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
-            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <!-- Section 4 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-blue">Cocok</div>
-          <h2>Bukan pengganti. Sebuah jembatan.</h2>
-          <p>Jika Anda menggunakan manajer sandi dengan string acak panjang untuk segala sesuatu - besar. Itu ideal. TofuPass ada untuk sisa waktu: ketika Anda membutuhkan sesuatu yang cukup kuat untuk penggunaan nyata, cukup sederhana untuk diingat, dan cukup pribadi bahwa Anda tidak harus mempercayai siapa pun.</p>
-          <div class="pull-quote pull-quote-green">
-            Kata sandi sederhana bisa digunakan. Digunakan password tetap unik. Kata sandi unik membuat orang tetap aman.
-          </div>
-        </section>
-
-      </article>
-
-      <!-- CTA -->
-      <div class="text-center mt-14">
-        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
-        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
-          Coba TofuPass
-        </a>
-      </div>
-    </div>
-  </main>
+{% include "why-content.njk" %}

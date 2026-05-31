@@ -1,0 +1,110 @@
+---
+layout: base.njk
+title: TofuPass untuk Homelbs-TofuPass
+description: Kata sandi unik untuk router, kotak NAS, layanan lokal, VM, dan infrastruktur
+  pribadi.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: Untuk pembangun homelab
+heroTitle: Rahasia unik untuk lemari server yang kau buat sendiri.
+lede: TofuPass membantu pemilik homelab menghindari penggunaan ulang sandi di router,
+  NAS kotak, dasbor, VM, rekening admin lokal, dan eksperimen.
+mascot: /tofu.png
+proof: Berjalan dalam peramban, bekerja dengan baik offline, dan tidak mengumpulkan
+  password yang dihasilkan Anda.
+actions:
+- label: Buat sandi
+  href: /id/
+- label: Buat passphrase
+  href: /id/passphrases/
+useKicker: Buruh-friendly default
+useTitle: Berhenti membiarkan lab berbagi satu rahasia.
+useIntro: Homelabs tumbuh menyamping. TofuPass memberi Anda password unik yang cepat
+  sebelum layanan sementara menjadi infrastruktur permanen.
+checks:
+- Gunakan Extra Firma atau passphrase untuk router, admin NS, hypervisors, dan manajer
+  sandi.
+- Berikan setiap dashboard, VM, dan layanan lokal yang kredensial sendiri.
+- Simpan rahasia terakhir di manajer sandi atau lemari besi Anda, tidak dalam README.
+workflowTitle: Rencana rahasia Homelab
+workflow:
+- term: Perlengkapan inti
+  detail: Gunakan mode praktis terkuat untuk router, NAS, hypervisors, dan rekening
+    pemulihan.
+- term: Aplikasi lokal
+  detail: Hasilkan kredensial unik untuk dashboard, database, kontainer, dan layanan
+    tes.
+- term: Dokumen
+  detail: Simpan rahasia di manajer sandi dan simpan catatan setup bebas dari sandi
+    hidup.
+playbookKicker: Buku pedoman Homelab
+playbookTitle: Membangun seperti laboratorium akan menjadi penting nanti.
+playbookIntro: Kebanyakan homelabs mulai sebagai eksperimen dan perlahan-lahan menjadi
+  infrastruktur pribadi. Kata sandi unik mencegah pertumbuhan itu berubah menjadi
+  satu radius ledakan bersama.
+modeTitle: Mode mana yang cocok dengan layanan
+modeRows:
+- label: Firm
+  title: Papan dashboard sementara
+  copy: Baik untuk alat lokal dan web UIs yang tidak terkena tapi masih layak kredensial
+    unik.
+- label: Ekstra
+  title: Jaringan dan penyimpanan
+  copy: Gunakan Extra Firm untuk router, admin NAS, hypervisors, sistem cadangan,
+    dan apa pun dengan akses luas.
+- label: Frase
+  title: Entri lemari besi panjang-hidup
+  copy: Gunakan passphrase ketika panjang diterima dan Anda ingin rahasia yang dapat
+    bertahan hidup di luar membangun akhir pekan.
+scenarioTitle: Skenario Lab
+scenarios:
+- label: Router
+  title: Inti jaringan akan tersentuh
+  copy: Ganti kredensial baku dan simpan rincian pemulihan sebelum mengubah terlalu
+    banyak pengaturan.
+- label: VM
+  title: Sebuah kotak tes menjadi permanen
+  copy: Putar sandi cepat asli setelah layanan mulai memegang data nyata atau akses
+    nyata.
+- label: Dokumen
+  title: Penyiapan catatan perlu dibersihkan
+  copy: Pindahkan sandi hidup ke manajer dan tinggalkan catatan dengan nama akun,
+    URL, dan tanggal rotasi saja.
+apiPitchKicker: Cocok otomatis
+apiPitchTitle: Berguna untuk menyusun naskah, bukan pengganti lemari besi.
+apiPitchIntro: Gunakan API ketika skrip lab memerlukan sandi starter atau passphrase
+  yang dapat dibaca, lalu simpan rahasia terakhir di manajer atau lemari besi Anda.
+apiPitchCta: Lihat opsi API
+apiExampleLabel: Frasa sandi titik akhir
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: Mengembalikan sebuah passphrase hyphenated Anda dapat pindah ke lemari
+  besi setelah pengaturan.
+stripKicker: Infrastruktur pribadi
+stripTitle: Perlakukan laboratorium seperti itu mungkin penting nanti.
+stripItems:
+- title: Isolasi
+  copy: Satu password dashboard bocor seharusnya tidak membuka sisa lab.
+- title: Tingkatkan
+  copy: Pindahkan layanan lama-hidup dari password cepat ke passphrase atau rahasia
+    valts-dihasilkan.
+- title: Pulihkan
+  copy: Menjaga jalur pemulihan pribadi, unik, dan disimpan di suatu tempat Anda benar-benar
+    dapat menemukan.
+lang: id
+audiencePrefix: /id
+apiHref: /id/api/
+audienceNavLabel: Penonton TofuPass lainnya
+audienceChooseKicker: Pilih pitch lain
+audienceLabels:
+  teachers: Guru
+  helpdesk: Meja bantuan
+  parents: Orangtua
+  students: Siswa
+  homelab: Homelab
+  developers: Pengembang
+---
+
+
+{% include "for-detail-content.njk" %}

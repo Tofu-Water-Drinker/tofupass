@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: TofuPass - Безопасные и запоминающиеся пароли
-description: Создавайте запоминающиеся пароли на русском прямо в браузере.
+title: TofuPass - читаемые пароли для реальных передач
+description: Генерируйте дружелюбные privacy-first пароли, которые легче произносить, вводить, объяснять, сбрасывать или временно передавать. Без аккаунтов, рекламы и аналитики.
 pageKey: home
 extraCss:
 - /assets/css/home.css
@@ -13,7 +13,9 @@ backgroundDecor: leaves
 showAnnouncement: true
 eleventyExcludeFromCollections: true
 permalink: /ru/index.html
+lang: ru
 ---
+
 
   <!-- COLORFUL TOP BAND -->
   <div class="hero-band" aria-hidden="true"></div>
@@ -28,8 +30,8 @@ permalink: /ru/index.html
         <div class="generator-card p-6 sm:p-8 relative">
           <!-- Mascot + tagline -->
           <div class="flex flex-col items-center mb-5">
-            <a href="/ru/miso/" class="mascot-wrap" aria-label="Обсуждение Miso">
-              <img id="generatorMascot" src="/tofu.png" alt="Miso талисман TofuPass" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
+            <a href="/ru/miso/" class="mascot-wrap" aria-label="Познакомьтесь с Miso">
+              <img id="generatorMascot" src="/tofu.png" alt="талисман TofuPass" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
               <span id="mascotSparks" class="mascot-sparks" aria-hidden="true">
                 <span class="mascot-spark mascot-spark-1"></span>
                 <span class="mascot-spark mascot-spark-2"></span>
@@ -40,7 +42,6 @@ permalink: /ru/index.html
             </a>
             <p class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355]/50 dark:text-[#B8A890]/50">Нажмите, чтобы создать · Нажмите, чтобы скопировать</p>
           </div>
-
           <!-- Password Display -->
           <button type="button" onclick="copyPassword()" id="passwordPanel"
             class="password-panel w-full px-5 py-5 mb-5 min-h-[72px] flex flex-col items-center justify-center text-center">
@@ -84,9 +85,9 @@ permalink: /ru/index.html
               <circle cx="12" cy="12" r="1.5"></circle>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">мягкий</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Простой и сладкий</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">2 слова + символ + число<br/>Например. <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">Счастливчик!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">Soft</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Проще всего вводить</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Лучше всего для временных, одноразовых или низкорисковых задач.<br/>2 слова + символ + число<br/>Например: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">HappyKoala!73</span></p>
         </div>
 
         <!-- Firm -->
@@ -98,11 +99,11 @@ permalink: /ru/index.html
             </svg>
           </div>
           <div class="flex items-center gap-2 mb-1">
-            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">фирма</div>
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">Firm</div>
             <span class="text-xs text-[#6BBF59] font-bold">рекомендованный</span>
           </div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Сильный и полезный</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">3 слова + символ + число<br/>Например. <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">Танцующий рейвер!73</span></p>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Стандартная передача</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Начните здесь для большинства сбросов, поддержки, классов и семейной помощи.<br/>3 слова + символ + число<br/>Например: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaRiver!73</span></p>
         </div>
 
         <!-- Extra Firm -->
@@ -115,15 +116,12 @@ permalink: /ru/index.html
               <rect x="4" y="15" width="16" height="4" rx="1.5"></rect>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">Дополнительная фирма</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Пароль высокой энтропии</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">4 слова + символ + число<br/>Например. <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">Танцующий КоалаКосмический Река!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">Extra Firm</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Для более долгого срока</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Используйте, когда учетные данные важнее и сайт принимает более длинный пароль.<br/>4 слова + символ + число<br/>Например: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaCosmicRiver!73</span></p>
         </div>
 
         </div>
-
-        <p class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-3 font-semibold">Создан для сладкого места между безопасностью и удобством использования, при этом все поколение остается на вашем устройстве.</p>
-
         <a href="#why-tofupass" class="scroll-cue" aria-label="Прокрутите вниз, чтобы узнать больше">
           <span class="scroll-cue-icon ui-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
@@ -136,12 +134,12 @@ permalink: /ru/index.html
     </div>
   </main>
 
-  <!-- FEATURES SECTION (open layout, no cards) -->
+  <!-- LIGHTWEIGHT CONTEXT SECTION (open layout, no cards) -->
   <section id="why-tofupass" class="relative z-10 pt-16 pb-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Что делает <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span> разные?</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">Генератор паролей, построенный вокруг удобства использования в реальном мире, достоверной случайности и шаблонов, с которыми люди могут работать.</p>
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Генератор паролей для неловких моментов.</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">Генераторы браузера и менеджеров паролей отлично работают, когда все делает автозаполнение. TofuPass нужен для звонка со сбросом, классной распечатки, наклейки Wi-Fi, экрана роутера, семейной настройки или демо, где человеку нужно прочитать и ввести секрет.</p>
       </div>
       <div class="features-open grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
 
@@ -153,8 +151,8 @@ permalink: /ru/index.html
               <path d="M8 11V8a4 4 0 1 1 8 0v3" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Безопасность без театра</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Использует браузер <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code> Поэтому случайность реальна, а не декоративна.</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Читаемость по замыслу</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Понятные рецепты на основе слов, символ и короткое число делают пароли проще для произнесения, ввода, проверки и передачи, не обучая слабым привычкам.</p>
         </div>
 
         <!-- Feature 2 -->
@@ -164,8 +162,8 @@ permalink: /ru/index.html
               <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Предназначен для людей</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Пароли на основе слов легче вводить и запоминать, что означает меньшее повторное использование, меньшее упрощение и меньше липких заметок.</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Приватность по умолчанию</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Веб-генератор работает в браузере через <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code>. Без аккаунтов, рекламы и аналитики, и TofuPass не хранит сгенерированные пароли.</p>
         </div>
 
         <!-- Feature 3 -->
@@ -177,8 +175,8 @@ permalink: /ru/index.html
               <path d="M9 14h4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Ясные, последовательные шаблоны</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Soft, Firm и Extra Firm сохраняют знакомый шаблон заглавных слов, общий символ и короткое число, поэтому вы всегда знаете, что получаете.</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Создан для работы вместе с менеджером</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass создает пароль для передачи человеку. Настоящий менеджер паролей должен хранить долгосрочные секреты, выполнять автозаполнение и защищать повседневные аккаунты.</p>
         </div>
       </div>
     </div>
@@ -194,7 +192,7 @@ permalink: /ru/index.html
         </svg>
       </div>
 
-      <img src="/excited.png" alt="Miso в восторге" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
+      <img src="/excited.png" alt="Мисо в восторге" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
       <h2 class="text-2xl sm:text-3xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">У вас уже есть пароль?</h2>
       <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-8 max-w-md mx-auto font-medium leading-relaxed">Посмотрите, сколько времени потребуется, чтобы взломать и появились ли какие-либо известные утечки данных.</p>
       <a href="/ru/stresstest/" class="inline-block cta-btn relative z-10 px-8 py-4 rounded-2xl font-bold text-base text-white shadow-xl mb-6">
@@ -212,18 +210,18 @@ permalink: /ru/index.html
     <div class="phonetic-sheet-head">
       <div class="flex items-center justify-between mb-3">
         <span class="text-sm font-extrabold uppercase tracking-[0.12em] text-[#4A3728] dark:text-[#F0E6D8]">фонетический гид</span>
-        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="Близкий фонетический путеводитель">×</button>
+        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="Близкий фонетический путеводитель">&times;</button>
       </div>
       <div id="phoneticPasswordEcho" class="phonetic-pw-echo font-mono text-lg font-bold text-[#6BBF59] break-all text-center mb-3"></div>
       <div class="flex gap-2">
-        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="Военный телефонный справочник NATO">
+        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="Телефонный справочник НАТО">
           <span class="ui-icon phonetic-label-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <path d="M5 11a7 7 0 0 1 14 0"></path>
               <path d="M7 11v2a5 5 0 0 0 10 0v-2"></path>
               <path d="M4 11h16"></path>
             </svg>
-          </span>NATO
+          </span>НАТО
         </button>
         <button id="tabKid" class="tab-btn" onclick="setPhoneticMode('kid')" aria-selected="false" aria-label="Детский фонетический гид">
           <span class="ui-icon phonetic-label-icon" aria-hidden="true">

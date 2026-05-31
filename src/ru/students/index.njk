@@ -1,0 +1,148 @@
+---
+layout: base.njk
+noindex: true
+title: Студенческая безопасность - TofuPass
+description: Шесть викторин безопасности для студентов для гигиены паролей, фишинга,
+  MFA, общих устройств и восстановления учетной записи. Никаких счетов и представленных
+  результатов.
+pageKey: students
+extraCss:
+- /assets/css/student-test.css
+pageScripts:
+- /assets/js/student-test-ru.js
+- /assets/js/student-test.js
+lang: ru
+---
+
+
+  <main class="student-test-page">
+    <section class="student-test-hero" aria-labelledby="studentTestTitle">
+      <div class="student-test-wrap">
+        <div class="student-test-intro">
+          <img src="/excited.png" alt="" class="student-test-mascot" aria-hidden="true" />
+          <p class="student-test-kicker">Подготовка по вопросам безопасности</p>
+          <h1 id="studentTestTitle">Студенческая безопасность Учебник</h1>
+          <p class="student-test-lede">Шесть коротких викторин на пароли, фишинг, двухфакторные коды, общие компьютеры, восстановление и что делать, когда учетная запись чувствует себя небезопасно.</p>
+          <p class="student-test-facts">6 викторин · 85% для прохождения · Нет представленных результатов</p>
+        </div>
+
+        <section class="student-quiz-shell" aria-labelledby="quizTitle">
+          <div class="module-overview" aria-label="Модули Quiz">
+            <div class="module-overview-head">
+              <p class="student-test-kicker quiz-kicker">Учебный прогресс</p>
+              <strong id="moduleSummary">0 из 6 прошедших</strong>
+            </div>
+            <div id="moduleGrid" class="module-grid"></div>
+          </div>
+
+          <div class="quiz-workspace">
+            <div class="quiz-topline">
+              <div>
+                <p id="quizKicker" class="student-test-kicker quiz-kicker">Выбери викторину</p>
+                <h2 id="quizTitle">Выберите модуль для начала.</h2>
+              </div>
+              <span id="quizProgressLabel" class="quiz-progress-label" aria-live="polite">0 из 7</span>
+            </div>
+
+            <div class="quiz-progress" aria-hidden="true">
+              <span id="quizProgressBar"></span>
+            </div>
+
+            <div id="moduleIntro" class="module-intro">
+              <p id="moduleDescription">Пройдите все шесть викторин с минимум 85%, чтобы разблокировать сертификат завершения.</p>
+              <div class="quiz-actions">
+                <button type="button" id="quizStart" class="quiz-primary">Начать игру</button>
+              </div>
+            </div>
+
+            <div id="quizPanel" class="quiz-panel" hidden>
+              <p id="quizScenario" class="quiz-scenario"></p>
+              <h3 id="quizQuestion" class="quiz-question"></h3>
+              <div id="quizOptions" class="quiz-options" role="list"></div>
+              <div id="quizFeedback" class="quiz-feedback" aria-live="polite" hidden></div>
+
+              <div class="quiz-actions">
+                <button type="button" id="quizCheck" class="quiz-primary" disabled>Проверить ответ</button>
+                <button type="button" id="quizNext" class="quiz-secondary" hidden>Следующий</button>
+              </div>
+            </div>
+
+            <div id="quizResults" class="quiz-results" hidden>
+              <div class="result-badge">
+                <span id="resultScore">0%</span>
+                <strong id="resultLabel">Продолжайте практиковать</strong>
+              </div>
+              <p id="resultMessage" class="result-message"></p>
+              <div id="resultReview" class="result-review" aria-label="Ответить на вопрос"></div>
+              <div class="quiz-actions">
+                <button type="button" id="quizRestart" class="quiz-primary">Скачать Quiz</button>
+                <button type="button" id="quizNextModule" class="quiz-secondary">Следующий Quiz</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="certificateSection" class="certificate-section" aria-labelledby="certificateTitle" hidden>
+      <div class="student-test-wrap">
+        <div class="certificate-head">
+          <div>
+            <p class="student-test-kicker student-test-kicker-blue">Свидетельство о завершении</p>
+            <h2 id="certificateTitle">Разблокируйте печатный сертификат.</h2>
+          </div>
+          <span id="certificateLockBadge" class="certificate-lock-badge">Запертый</span>
+        </div>
+
+        <div id="certificatePanel" class="certificate-panel is-locked">
+          <div class="certificate-controls">
+            <label for="certificateName">Студенческая фамилия</label>
+            <input id="certificateName" type="text" placeholder="Тип студенческого имени" disabled />
+            <button type="button" id="certificatePrint" class="quiz-primary" disabled>Print / Save PDF</button>
+          </div>
+
+          <article id="certificatePrintable" class="certificate-printable" aria-label="Печатный сертификат завершения">
+            <div class="certificate-border">
+              <img src="/tofu.png" alt="" class="certificate-mascot" aria-hidden="true" />
+              <p class="certificate-kicker">TofuPass Safety Учебник</p>
+              <h3>Сертификат о завершении</h3>
+              <p class="certificate-awarded">Присуждается</p>
+              <p id="certificateStudentName" class="certificate-name">Студенческая фамилия</p>
+              <p class="certificate-copy">для завершения всех шести студенческих викторин безопасности с проходными оценками.</p>
+              <div class="certificate-grade-row">
+                <span id="certificateGrade">Общий класс: -</span>
+                <span id="certificateDate">Дата:</span>
+              </div>
+              <div id="certificateModules" class="certificate-modules"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="student-training-strip" aria-labelledby="trainingTitle">
+      <div class="student-test-wrap training-grid">
+        <div>
+          <p class="student-test-kicker student-test-kicker-blue">Что покрывают викторины</p>
+          <h2 id="trainingTitle">Шесть привычек, которые стоит повторить</h2>
+        </div>
+        <div class="training-points">
+          <article>
+            <span>1</span>
+            <h3>Сильные уникальные пароли</h3>
+            <p>Читаемый все еще может быть сильным, когда слова случайны, и каждая учетная запись отличается.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Фишинг и MFA</h3>
+            <p>Студенты практикуют обнаружение поддельных входов и защиту кодов, подсказок и ключей восстановления.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Безопасность совместного устройства</h3>
+            <p>Выходить из системы, сообщать о проблемах и избегать сохраненных паролей на устройствах класса.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>

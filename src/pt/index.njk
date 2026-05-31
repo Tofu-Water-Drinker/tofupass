@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: TofuPass - Senhas seguras e fáceis
-description: Gere senhas memoráveis em português, diretamente no seu navegador.
+title: TofuPass - senhas legíveis para entregas reais
+description: Gere senhas amigáveis e privacy-first que são mais fáceis de falar, digitar, ensinar, redefinir ou compartilhar temporariamente. Sem contas, anúncios ou analytics.
 pageKey: home
 extraCss:
 - /assets/css/home.css
@@ -13,7 +13,9 @@ backgroundDecor: leaves
 showAnnouncement: true
 eleventyExcludeFromCollections: true
 permalink: /pt/index.html
+lang: pt-BR
 ---
+
 
   <!-- COLORFUL TOP BAND -->
   <div class="hero-band" aria-hidden="true"></div>
@@ -29,7 +31,7 @@ permalink: /pt/index.html
           <!-- Mascot + tagline -->
           <div class="flex flex-col items-center mb-5">
             <a href="/pt/miso/" class="mascot-wrap" aria-label="Conheça Miso">
-              <img id="generatorMascot" src="/tofu.png" alt="Miso o mascote TofuPass" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
+              <img id="generatorMascot" src="/tofu.png" alt="Miso, o mascote TofuPass" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
               <span id="mascotSparks" class="mascot-sparks" aria-hidden="true">
                 <span class="mascot-spark mascot-spark-1"></span>
                 <span class="mascot-spark mascot-spark-2"></span>
@@ -40,7 +42,6 @@ permalink: /pt/index.html
             </a>
             <p class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355]/50 dark:text-[#B8A890]/50">Toque em para gerar · Clique para copiar</p>
           </div>
-
           <!-- Password Display -->
           <button type="button" onclick="copyPassword()" id="passwordPanel"
             class="password-panel w-full px-5 py-5 mb-5 min-h-[72px] flex flex-col items-center justify-center text-center">
@@ -84,9 +85,9 @@ permalink: /pt/index.html
               <circle cx="12" cy="12" r="1.5"></circle>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">Suave</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Simples e doce</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">2 palavras + símbolo + número<br/>Por exemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">Feliz Koala!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">Soft</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Mais fácil de digitar</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Melhor para usos temporários, descartáveis ou de baixo risco.<br/>2 palavras + símbolo + número<br/>Por exemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">HappyKoala!73</span></p>
         </div>
 
         <!-- Firm -->
@@ -98,11 +99,11 @@ permalink: /pt/index.html
             </svg>
           </div>
           <div class="flex items-center gap-2 mb-1">
-            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">Firme</div>
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">Firm</div>
             <span class="text-xs text-[#6BBF59] font-bold">Recomendado</span>
           </div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Forte &amp; utilizável</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">3 palavras + símbolo + número<br/>Por exemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DançandoKoalaRiver!73</span></p>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Entrega padrão</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Comece aqui para a maioria dos resets, suporte, sala de aula e família.<br/>3 palavras + símbolo + número<br/>Por exemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaRiver!73</span></p>
         </div>
 
         <!-- Extra Firm -->
@@ -115,15 +116,12 @@ permalink: /pt/index.html
               <rect x="4" y="15" width="16" height="4" rx="1.5"></rect>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">Extra Firme</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Senha de Alta Entropia</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">4 palavras + símbolo + número<br/>Por exemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DançandoKoalaCosmicRiver!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">Extra Firm</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Mais duradoura</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Use quando a credencial importa mais e o site aceita uma senha mais longa.<br/>4 palavras + símbolo + número<br/>Por exemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaCosmicRiver!73</span></p>
         </div>
 
         </div>
-
-        <p class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-3 font-semibold">Construído para o ponto entre segurança e usabilidade, com toda a geração permanecendo em seu dispositivo.</p>
-
         <a href="#why-tofupass" class="scroll-cue" aria-label="Role para baixo para saber mais">
           <span class="scroll-cue-icon ui-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
@@ -136,12 +134,12 @@ permalink: /pt/index.html
     </div>
   </main>
 
-  <!-- FEATURES SECTION (open layout, no cards) -->
+  <!-- LIGHTWEIGHT CONTEXT SECTION (open layout, no cards) -->
   <section id="why-tofupass" class="relative z-10 pt-16 pb-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">O que faz <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span> Diferente?</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">Um gerador de senha construído em torno da usabilidade do mundo real, aleatoriedade confiável e padrões com os quais as pessoas podem realmente trabalhar.</p>
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Um gerador de senhas para as partes complicadas.</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">Geradores do navegador e de gerenciadores de senhas são ótimos quando o preenchimento automático resolve tudo. O TofuPass é para a chamada de redefinição, a folha de sala de aula, a etiqueta do Wi-Fi, a tela do roteador, a configuração da família ou a demonstração em que uma pessoa precisa ler e digitar o segredo.</p>
       </div>
       <div class="features-open grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
 
@@ -153,8 +151,8 @@ permalink: /pt/index.html
               <path d="M8 11V8a4 4 0 1 1 8 0v3" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Segurança sem teatro</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Usa o navegador <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code> Então a aleatoriedade é real, não decorativa.</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Legível de propósito</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Receitas claras baseadas em palavras, com um símbolo e um número curto, tornam as senhas mais fáceis de falar, digitar, conferir e entregar sem ensinar maus hábitos.</p>
         </div>
 
         <!-- Feature 2 -->
@@ -164,8 +162,8 @@ permalink: /pt/index.html
               <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Projetado para os humanos</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Senhas baseadas em palavras são mais fáceis de digitar e lembrar, o que significa menos reutilização, menos simplificação e menos notas pegajosas.</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Privado por padrão</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">O gerador web roda no seu navegador com <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code>. Sem contas, sem anúncios, sem analytics e sem senhas geradas armazenadas pelo TofuPass.</p>
         </div>
 
         <!-- Feature 3 -->
@@ -177,8 +175,8 @@ permalink: /pt/index.html
               <path d="M9 14h4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Padrões claros e consistentes</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Soft, Firm, e Extra Firm cada um manter o padrão de capital-palavra familiar, um símbolo comum, e um número curto, para que você sempre sabe o que você está recebendo.</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">Feito para usar junto com um gerenciador</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">O TofuPass cria a senha de entrega. Um gerenciador de senhas real deve guardar segredos de longo prazo, cuidar do preenchimento automático e proteger suas contas do dia a dia.</p>
         </div>
       </div>
     </div>
@@ -198,7 +196,7 @@ permalink: /pt/index.html
       <h2 class="text-2xl sm:text-3xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Já tem uma senha?</h2>
       <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-8 max-w-md mx-auto font-medium leading-relaxed">Ver quanto tempo levaria para quebrar e se apareceu em alguma violação de dados conhecida.</p>
       <a href="/pt/stresstest/" class="inline-block cta-btn relative z-10 px-8 py-4 rounded-2xl font-bold text-base text-white shadow-xl mb-6">
-        Abrir testador de estresse
+        Open Stress Tester
       </a>
       <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm font-semibold">
         Prefere frases longas legíveis? <a href="/pt/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 decoration-[#6BBF59]/30 hover:decoration-[#6BBF59] transition-colors font-bold">Abrir o gerador de frase- senha</a>
@@ -212,11 +210,11 @@ permalink: /pt/index.html
     <div class="phonetic-sheet-head">
       <div class="flex items-center justify-between mb-3">
         <span class="text-sm font-extrabold uppercase tracking-[0.12em] text-[#4A3728] dark:text-[#F0E6D8]">Guia fonético</span>
-        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="Fechar guia fonético">×</button>
+        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="Fechar guia fonético">&times;</button>
       </div>
       <div id="phoneticPasswordEcho" class="phonetic-pw-echo font-mono text-lg font-bold text-[#6BBF59] break-all text-center mb-3"></div>
       <div class="flex gap-2">
-        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="Guia fonético militar NATO">
+        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="Guia fonético militar da NATO">
           <span class="ui-icon phonetic-label-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <path d="M5 11a7 7 0 0 1 14 0"></path>

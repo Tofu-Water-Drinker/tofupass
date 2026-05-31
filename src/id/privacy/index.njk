@@ -1,11 +1,13 @@
 ---
 layout: base.njk
-title: Privasi - TofuPass
+title: Kebijakan Privasi - TofuPass
 pageKey: privacy
 extraCss:
 - /assets/css/privacy.css
 backgroundDecor: leaves
+lang: id
 ---
+
 
   <!-- CONTENT -->
   <main class="relative z-10 pt-28 pb-20 px-4">
@@ -101,11 +103,11 @@ backgroundDecor: leaves
         <div class="space-y-4">
           <div class="how-card">
             <div class="text-xs font-bold text-[#6BBF59] uppercase tracking-widest mb-2">Situs web</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Generator sandi utama membuat sandi dalam peramban Anda menggunakan Web Crypto API. TofuPass tidak menerima password yang anda buat di halaman itu. Setelah halaman dimuat, generasi bekerja offline.</p>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Generator sandi utama menciptakan sandi dalam peramban Anda menggunakan API Crypto Web. TofuPass tidak menerima sandi yang Anda buat di halaman itu. Setelah halaman dimuat, generasi bekerja offline.</p>
           </div>
           <div class="how-card">
             <div class="text-xs font-bold text-[#9B6DD7] uppercase tracking-widest mb-2">API</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Masyarakat API menghasilkan password dan passphrases server- sisi menggunakan kriptografi aman RNG. Nilai yang dihasilkan dikembalikan dalam respon dan tidak sengaja disimpan setelah pengiriman. API juga mengekspos kumpulan counter melalui <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 font-mono">/api/stats</code>.</p>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">API publik menghasilkan password dan passphrase server- side menggunakan cryptographically aman RNG. Nilai yang dihasilkan dikembalikan dalam respon dan tidak sengaja disimpan setelah pengiriman. API juga mengekspos kumpulan counter melalui <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 font-mono">/api/stats</code>.</p>
           </div>
         </div>
       </div>
@@ -126,7 +128,7 @@ backgroundDecor: leaves
               <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
               <div>
                 <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Stres Tester cek pelanggaran</div>
-                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">The Stress Temter hanya mengirimkan 5 karakter pertama dari kata sandi Anda SHA-1 hash ke <a href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Have I Been Pwned jangkauan API</a>. Sandi lengkap dan hash lengkap Anda tetap pada perangkat Anda, dan pencocokan dilakukan secara lokal.</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">The Stress Temter hanya mengirimkan 5 karakter pertama dari kata sandi Anda SHA-1 hash ke <a href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Apakah aku pernah bermain API</a>. Sandi lengkap dan hash lengkap Anda tetap pada perangkat Anda, dan pencocokan dilakukan secara lokal.</div>
               </div>
             </li>
             <li>
@@ -140,7 +142,7 @@ backgroundDecor: leaves
               <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
               <div>
                 <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Penyedia struktur</div>
-                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">TofuPass dikirim melalui infrastruktur seperti <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Cloudflare</a>, yang dapat memproses metadata koneksi untuk menyediakan caching, keamanan, dan perlindungan penyalahgunaan.</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">TofuPass dikirim melalui infrastruktur seperti <a href="https://www.cloudflare.com/" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Suar Awan</a>, yang dapat memproses metadata koneksi untuk menyediakan caching, keamanan, dan perlindungan penyalahgunaan.</div>
               </div>
             </li>
           </ul>
@@ -168,7 +170,7 @@ backgroundDecor: leaves
             <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Tidak ada kue analitik dari TofuPass.</p>
           </div>
         </div>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass tidak menggunakan analisis partai pertama, kue iklan, atau pixel pelacakan. Penyedia pihak tiga puluh yang terlibat dalam pengiriman aset atau infrastruktur dapat menggunakan cookie atau mekanisme penebangan sesuai dengan kebijakan mereka.</p>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass tidak menggunakan analisis pihak pertama, kue iklan, atau pixel pelacakan. Penyedia pihak tiga puluh yang terlibat dalam pengiriman aset atau infrastruktur dapat menggunakan cookie atau mekanisme penebangan sesuai dengan kebijakan mereka.</p>
       </div>
 
       <!-- Section 7: Security -->
@@ -180,7 +182,7 @@ backgroundDecor: leaves
             <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Pertahanan di kedalaman.</p>
           </div>
         </div>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Semua halaman disajikan di atas HTTPS. TofuPass menggunakan kriptografi peramban modern untuk generasi lokal dan bergantung pada perlindungan infrastruktur seperti Cloudflare untuk ketersediaan dan keamanan tepi.</p>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Semua halaman disajikan di atas HTTPS. TofuPass menggunakan kriptografi peramban modern untuk generasi lokal dan mengandalkan perlindungan infrastruktur seperti Cloudflare untuk ketersediaan dan keamanan tepi.</p>
       </div>
 
       <!-- Section 8: Contact -->
@@ -192,7 +194,7 @@ backgroundDecor: leaves
             <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Pertanyaan? Kita mudah dijangkau.</p>
           </div>
         </div>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau bagaimana TofuPass menangani data Anda, email <span class="text-[#6BBF59] font-semibold">halo &lt; at &gt; tofuwater.com</span>.</p>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Jika Anda memiliki pertanyaan tentang kebijakan privasi ini atau bagaimana TofuPass menangani data Anda, email <span class="text-[#6BBF59] font-semibold">halo &lt; at &gt; TofuWater.com</span>.</p>
       </div>
 
     </div>

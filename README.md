@@ -1,19 +1,23 @@
 # TofuPass
 
-A privacy-focused, client-side password generator. Everything runs in your browser — no server ever sees what you generate.
+Readable passwords for real-world handoffs.
+
+TofuPass makes strong, readable passwords for the moments password managers are awkward: helpdesk resets, Wi-Fi credentials, classroom setup, family tech support, device logins, demos, and other places where random character soup is painful to type, say, teach, or hand off.
+
+Use your password manager for most passwords. Use TofuPass when a password needs to be read, typed, spoken, taught, printed, reset, or shared temporarily. TofuPass does not store, sync, autofill, manage, or remember passwords.
 
 **Live site:** [tofupass.com](https://tofupass.com)
 **API backend:** [tofupass-api](https://github.com/Tofu-Water-Drinker/tofupass-api) (separate repo)
 
 ## What it does
 
-- Generates memorable passwords using curated word lists + `crypto.getRandomValues()` (the Web Crypto CSPRNG)
-- Three password tiers: Soft (two capped words + symbol + two digits), Firm (three capped words + symbol + two digits), Extra Firm (four capped word chunks + symbol + two digits)
+- Generates readable passwords in the browser using curated word lists + `crypto.getRandomValues()` (the Web Crypto CSPRNG)
+- Three web generator tiers: Soft (2 capped words + symbol + two digits), Firm (3 capped words + symbol + two digits), Extra Firm (4 capped words + symbol + two digits)
 - Dedicated passphrase generator for long readable word sequences
 - Includes a **Stress Tester** that checks passwords against Have I Been Pwned using k-Anonymity (only a 5-char hash prefix leaves your device)
-- Offers a free **[API](https://github.com/Tofu-Water-Drinker/tofupass-api)** for programmatic generation — no auth, no rate-limit drama
+- Offers a free **[API](https://github.com/Tofu-Water-Drinker/tofupass-api)** for server-side programmatic generation. The API returns generated values in the response and should not be described as on-device generation.
 
-No accounts. No analytics. No cookies. No tracking pixels. Works offline once loaded.
+No accounts. No ads. No analytics. No tracking pixels. The web generator works locally in your browser after the page loads.
 
 ## Tech stack
 
@@ -88,6 +92,8 @@ The macOS build is currently unsigned/not notarized. That is fine for internal t
 ## A note on the word lists
 
 The curated word lists used on the production site are **intentionally kept private** to keep password outputs less predictable. They are not distributed with this repo. A minimal stub lives at `assets/js/wordlists.sample.js` that clones use automatically — the generator will work out of the box, it'll just draw from a smaller pool.
+
+The current private English production list has 848 adjective entries and 3,344 noun entries, with 3,991 unique words across both pools. The public API, offline build, and translated generators use separately maintained word lists, so do not reuse the English browser-generator count for those surfaces unless they are regenerated too.
 
 If you want bigger lists, drop in your own `assets/js/wordlists.js` (same shape as the sample: `adjectives`, `nouns`, `specials` arrays on `window`). The real file is gitignored so your local copy won't leak into commits.
 

@@ -1,0 +1,112 @@
+---
+layout: base.njk
+title: TofuPass para desarrolladores - TofuPass
+description: contraseñas legibles privadas para demos, cuentas de estancamiento, tutoriales,
+  pruebas locales y flujos de trabajo de desarrollo no secretos.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: Para desarrolladores
+heroTitle: contraseñas de demostración sin esguince secreto accidental.
+lede: TofuPass es útil cuando necesitas credenciales legibles para demos, usuarios
+  de pruebas de semillas, restablecimientos de montaje, tutoriales, aplicaciones locales
+  o docs de soporte.
+mascot: /alert.png
+proof: No es un reemplazo para claves de API o gestión secreta de producción. Perfecto
+  para contraseñas humanas.
+actions:
+- label: Generar una contraseña
+  href: /es/
+- label: Ver la API
+  href: /es/api/
+useKicker: Dev workflow fit
+useTitle: Para contraseñas los humanos tienen que ver.
+useIntro: El trabajo de desarrollo a menudo necesita credenciales lo suficientemente
+  fuertes para evitar malos ejemplos pero lo suficientemente legibles para demos,
+  docs, QA y usuarios temporales.
+checks:
+- Utilice contraseñas generadas legibles en tutoriales en lugar de clásicos codificados.
+- Reiniciar el estancamiento o los usuarios de QA sin enviar por correo electrónico
+  cuerdas sin sentido.
+- Mantenga secretos de producción, claves de API y fichas en la gestión secreta real.
+workflowTitle: Plan de uso de desarrolladores
+workflow:
+- term: Demo
+  detail: Utilice una contraseña legible que se puede hablar o escribir durante un
+    recorrido.
+- term: Staging
+  detail: Dar a los usuarios de pruebas credenciales únicas en lugar de reutilizar
+    la misma contraseña compartida para siempre.
+- term: Docs
+  detail: Mostrar ejemplos de contraseña realistas sin publicar una credencial en
+    vivo.
+playbookKicker: Developer playbook
+playbookTitle: Mantenga ejemplos útiles sin normalizar los secretos malos.
+playbookIntro: TofuPass no es para fichas de producción. Es para las contraseñas humanas
+  que aparecen en demos, docs, QA, soporte y pruebas locales.
+modeTitle: Que modo se ajusta a la tarea dev
+modeRows:
+- label: Suave
+  title: Demos de lanzamiento
+  copy: Útil cuando una contraseña aparece en pantalla y será descartada después de
+    la pasarela.
+- label: Firma
+  title: QA y usuarios de estadificación
+  copy: Un defecto legible para usuarios de semillas, pruebas de soporte y credenciales
+    que un humano puede necesitar escribir.
+- label: Frase
+  title: Ejemplos de equipo compartido
+  copy: Utilice las contraseñas para ejemplos internos más largos donde la legibilidad
+    importa más que la brevedad.
+scenarioTitle: Situaciones de desarrollo
+scenarios:
+- label: Docs
+  title: Un tutorial necesita credenciales
+  copy: Mostrar ejemplos generados en lugar de enseñar lectores a copiar administración
+    y contraseña.
+- label: QA
+  title: Los usuarios de pruebas necesitan rotación
+  copy: Dar a cada usuario semilla una contraseña única y rotar credenciales compartidas
+    en un horario.
+- label: Demo
+  title: Un paseo en vivo está llegando
+  copy: Utilice una contraseña que se puede leer en pantalla y seguro para tirar después
+    de la sesión.
+apiPitchKicker: API fit
+apiPitchTitle: ¿Necesita contraseñas generadas en un script o flujo de demostración?
+apiPitchIntro: Utilice la API para docs, datos de QA, configuración de estadificación
+  o demos donde una contraseña legible por humanos es útil. Mantenga secretos de producción
+  en gestión secreta real.
+apiPitchCta: Ver referencia de API
+apiExampleLabel: Punto final de contraseña
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Devuelve una contraseña legible generada del lado del servidor como texto plano, con soporte opcional
+  de lenguaje.
+stripKicker: Higiene para desarrolladores
+stripTitle: Mejores ejemplos hacen mejores defectos.
+stripItems:
+- title: Human
+  copy: Use TofuPass para credenciales que los humanos necesitan leer, escribir o
+    restablecer.
+- title: Personal temporario
+  copy: Rotar demo y establecer contraseñas cuando dejan de ser temporales.
+- title: Separación
+  copy: Mantenga contraseñas generadas lejos de las claves de API, tokens y secretos
+    de producción.
+lang: es-MX
+audiencePrefix: /es
+apiHref: /es/api/
+audienceNavLabel: Otros públicos TofuPass
+audienceChooseKicker: Elija otro lanzamiento
+audienceLabels:
+  teachers: Profesores
+  helpdesk: Helpdesk
+  parents: Padres
+  students: Estudiantes
+  homelab: Homelab
+  developers: Desarrolladores
+---
+
+
+{% include "for-detail-content.njk" %}

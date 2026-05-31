@@ -1,11 +1,13 @@
 ---
 layout: base.njk
-title: Privacidad - TofuPass
+title: Política de privacidad - TofuPass
 pageKey: privacy
 extraCss:
 - /assets/css/privacy.css
 backgroundDecor: leaves
+lang: es-MX
 ---
+
 
   <!-- CONTENT -->
   <main class="relative z-10 pt-28 pb-20 px-4">
@@ -23,7 +25,7 @@ backgroundDecor: leaves
           <div class="text-[#6BBF59]"><span class="inline-icon text-3xl" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20v-8"></path><path d="M12 12c0-4-2.5-7-7-7 0 4.5 3 7 7 7Z"></path><path d="M12 12c0-4 2.5-7 7-7 0 4.5-3 7-7 7Z"></path></svg></span></div>
           <div>
             <div class="font-bold text-[#6BBF59] text-base mb-2">Nuestro compromiso de privacidad</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass fue construido sobre un principio simple: <strong class="text-[#4A3728] dark:text-[#F0E6D8]">tus contraseñas te pertenecen</strong>. No se ejecutan análisis, se sirven anuncios, o se venden datos personales. La privacidad no es una característica. Es la fundación.</p>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPas fue construido sobre un principio simple: <strong class="text-[#4A3728] dark:text-[#F0E6D8]">tus contraseñas te pertenecen</strong>. No se ejecutan análisis, se sirven anuncios, o se venden datos personales. La privacidad no es una característica. Es la fundación.</p>
           </div>
         </div>
       </div>
@@ -95,17 +97,17 @@ backgroundDecor: leaves
           <div class="icon-wrap bg-[#9B6DD7]/10 border border-[#9B6DD7]/20 text-[#9B6DD7]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1 1 0 0 0 .2 1.1l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1 1 0 0 0-1.1-.2 1 1 0 0 0-.6.9V20a2 2 0 1 1-4 0v-.2a1 1 0 0 0-.6-.9 1 1 0 0 0-1.1.2l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1 1 0 0 0 .2-1.1 1 1 0 0 0-.9-.6H4a2 2 0 1 1 0-4h.2a1 1 0 0 0 .9-.6 1 1 0 0 0-.2-1.1l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1 1 0 0 0 1.1.2 1 1 0 0 0 .6-.9V4a2 2 0 1 1 4 0v.2a1 1 0 0 0 .6.9 1 1 0 0 0 1.1-.2l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1 1 0 0 0-.2 1.1 1 1 0 0 0 .9.6H20a2 2 0 1 1 0 4h-.2a1 1 0 0 0-.9.6z"></path></svg></span></div>
           <div>
             <h2 class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">3. Cómo funciona</h2>
-            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Generación local, honesta API.</p>
+            <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">Generación local, API honesta.</p>
           </div>
         </div>
         <div class="space-y-4">
           <div class="how-card">
             <div class="text-xs font-bold text-[#6BBF59] uppercase tracking-widest mb-2">Sitio web</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">El generador principal de contraseñas crea contraseñas en su navegador usando el Web Crypto API. TofuPass no recibe las contraseñas que genera en esa página. Después de cargar la página, la generación funciona fuera de línea.</p>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">El generador de contraseñas principal crea contraseñas en su navegador usando la API de Crypto Web. TofuPass no recibe las contraseñas que generas en esa página. Después de cargar la página, la generación funciona fuera de línea.</p>
           </div>
           <div class="how-card">
             <div class="text-xs font-bold text-[#9B6DD7] uppercase tracking-widest mb-2">API</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">El público API genera contraseñas y contraseñas del servidor con un RNG criptográfico. Los valores generados se devuelven en la respuesta y no se almacenan intencionalmente después de la entrega. El API también expone contadores agregados a través de <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 font-mono">/api/stats</code>.</p>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">La API pública genera contraseñas y contraseñas del lado del servidor usando un RNG criptográficomente seguro. Los valores generados se devuelven en la respuesta y no se almacenan intencionalmente después de la entrega. La API también expone contadores agregados a través de <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 font-mono">/api/stats</code>.</p>
           </div>
         </div>
       </div>
@@ -126,7 +128,7 @@ backgroundDecor: leaves
               <span class="inline-icon text-[#5B9FD6] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 12h14"></path></svg></span>
               <div>
                 <div class="text-[#4A3728]/85 dark:text-[#F0E6D8]/85 text-sm font-semibold">Stress Comprobaciones de incumplimiento de un semestre</div>
-                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">El Stress Tester envía sólo los primeros 5 caracteres del hash SHA-1 de su contraseña a la <a href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">Have I Been Pwned rango API</a>. Su contraseña completa y el hash completo permanecen en su dispositivo, y la coincidencia se hace localmente.</div>
+                <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs mt-0.5">El Stress Tester envía sólo los primeros 5 caracteres del hash SHA-1 de su contraseña a la <a href="https://haveibeenpwned.com/API/v3#SearchingPwnedPasswordsByRange" target="_blank" rel="noopener noreferrer" class="text-[#5B9FD6] hover:text-[#5B9FD6]/80 underline underline-offset-2">He estado Pwned rango API</a>. Su contraseña completa y el hash completo permanecen en su dispositivo, y la coincidencia se hace localmente.</div>
               </div>
             </li>
             <li>
@@ -168,7 +170,7 @@ backgroundDecor: leaves
             <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-sm mt-0.5">No hay cookies de análisis de TofuPass.</p>
           </div>
         </div>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass no utiliza análisis de primera mano, cookies publicitarias o píxeles de seguimiento. Los proveedores de terceros involucrados en la entrega de activos o infraestructura pueden utilizar sus propias cookies o mecanismos de registro de acuerdo con sus políticas.</p>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass no utiliza análisis de primera persona, cookies publicitarias o píxeles de seguimiento. Los proveedores de terceros involucrados en la entrega de activos o infraestructura pueden utilizar sus propias cookies o mecanismos de registro de acuerdo con sus políticas.</p>
       </div>
 
       <!-- Section 7: Security -->

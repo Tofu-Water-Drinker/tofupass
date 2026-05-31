@@ -82,6 +82,19 @@
   font-size: 0.95rem;
   line-height: 1.85;
 }
+.faq-support-link {
+  display: inline-block;
+  margin-top: 0.65rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.22em;
+  transition: color 0.2s ease;
+}
+.faq-support-link:hover {
+  color: #6BBF59;
+}
 .faq-answer strong {
   color: var(--text-primary);
 }

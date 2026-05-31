@@ -1,0 +1,99 @@
+---
+layout: base.njk
+title: TofuPass pour les enseignants - TofuPass
+description: Génération de mots de passe en salle de classe, leçons de mots de passe
+  pour étudiants et outils privés pour enseignants.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: teachers
+kicker: Pour les enseignants
+heroTitle: Mots de passe étudiants qui survivent à la première période.
+lede: TofuPass aide les classes à créer des mots de passe solides et lisibles sans
+  comptes étudiants, annonces, suivi ou une autre application à gérer.
+mascot: /excited.png
+proof: Des cours rapides, des journées de labo, des clubs et des récupérations de
+  "J'ai oublié mon login".
+actions:
+- label: Générer un mot de passe
+  href: /fr/
+useKicker: Prêt pour les cours
+useTitle: Des conseils de sécurité que les étudiants peuvent utiliser.
+useIntro: Un générateur de mot de passe devrait rendre le choix plus sûr se sentir
+  naturel, pas transformer une connexion de cinq minutes en un détour complet de leçon.
+checks:
+- Demandez aux élèves de générer un mot de passe unique par compte au lieu de réutiliser
+  un favori.
+- Utilisez des mots de passe pour les voûtes de classe, les projets de fabricant,
+  ou tout ce qui a une durée de vie plus longue.
+- Montrez pourquoi la lecture n'a pas à signifier faible.
+workflowTitle: Plan du mot de passe en classe
+workflow:
+- term: Connexion rapide
+  detail: Des travaux souples pour des outils de classe de courte durée où la vitesse
+    compte.
+- term: Compte étudiant
+  detail: L'entreprise est le choix par défaut pour les comptes scolaires quotidiens.
+- term: Projet partagé
+  detail: Les mots de passe sont meilleurs quand le secret a besoin d'une durée de
+    vie plus longue.
+playbookKicker: Manuel de classe
+playbookTitle: Utilisez TofuPass avant, pendant et après la configuration du compte.
+playbookIntro: TofuPass fonctionne mieux quand il devient une partie de la routine
+  de classe au lieu d'un tour de mot de passe unique.
+modeTitle: Quel mode correspond au moment
+modeRows:
+- label: Souple
+  title: Outils de classe courte
+  copy: Bon pour les sites temporaires, les activités d'une journée et les outils
+    les étudiants changeront après la première connexion.
+- label: Entreprise
+  title: Comptes d ' étudiants
+  copy: Un meilleur défaut pour les comptes scolaires car il ajoute une structure
+    sans devenir impossible à taper.
+- label: Phrase
+  title: Clubs et projets
+  copy: Utilisez des mots de passe quand un secret de projet partagé doit durer plus
+    longtemps et plusieurs personnes peuvent le taper.
+scenarioTitle: Scénarios utiles en classe
+scenarios:
+- label: Jour de laboratoire
+  title: Tout le monde a besoin d'un compte maintenant
+  copy: Générer des mots de passe de départ lisibles et utiliser le moment pour expliquer
+    des mots de passe uniques.
+- label: Club
+  title: Un outil partagé a besoin de soins
+  copy: Utilisez une phrase de passe et décidez qui possède la rotation, le stockage
+    et la récupération avant que le projet ne soit occupé.
+- label: Réinitialiser
+  title: Un étudiant a oublié la connexion
+  copy: Créez un nouveau mot de passe, faites-le changer et rappelez-leur où le nouveau
+    doit être stocké.
+stripKicker: Petit plan de leçon
+stripTitle: Trois habitudes à répéter.
+stripItems:
+- title: Unique
+  copy: Un compte reçoit un mot de passe, surtout lorsque l'école, les jeux et les
+    e-mails se sentent tous connectés.
+- title: Longue
+  copy: Mots lisibles chunks battre les mots de passe courts avec des substitutions
+    prévisibles.
+- title: Enregistrer
+  copy: TofuPass crée le secret; un gestionnaire de mot de passe aide les étudiants
+    à le garder.
+lang: fr
+audiencePrefix: /fr
+apiHref: /fr/api/
+audienceNavLabel: Autres publics TofuPass
+audienceChooseKicker: Choisissez un autre emplacement
+audienceLabels:
+  teachers: Enseignants
+  helpdesk: Helpdesk
+  parents: Les parents
+  students: Élèves
+  homelab: Labo
+  developers: Développeurs
+---
+
+
+{% include "for-detail-content.njk" %}

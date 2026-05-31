@@ -1,0 +1,143 @@
+  <main class="for-page for-detail-page for-{{ roleKey }}">
+    {% set audiencePrefix = audiencePrefix | default('') %}
+    {% set audienceLabels = audienceLabels | default({
+      helpdesk: 'Helpdesk/MSP',
+      teachers: 'Teachers',
+      parents: 'Parents',
+      homelab: 'Homelab',
+      developers: 'Developers'
+    }) %}
+    {% set audienceNavLabel = audienceNavLabel | default('Other TofuPass audiences') %}
+    {% set audienceChooseKicker = audienceChooseKicker | default('Choose another pitch') %}
+    {% set audienceApiHref = apiHref | default('/api/') %}
+    <section class="for-hero for-detail-hero" aria-labelledby="forDetailTitle">
+      <div class="for-wrap for-detail-hero-grid">
+        <div class="for-intro">
+          <img src="{{ mascot }}" alt="" class="for-mascot" aria-hidden="true" />
+          <p class="for-kicker">{{ kicker }}</p>
+          <h1 id="forDetailTitle">{{ heroTitle }}</h1>
+          <p class="for-lede">{{ lede }}</p>
+          <div class="for-actions">
+            {% for action in actions %}
+            <a href="{{ action.href }}" class="{% if loop.first %}for-primary{% else %}for-secondary{% endif %}">{{ action.label }}</a>
+            {% endfor %}
+          </div>
+          <p class="for-proof">{{ proof }}</p>
+        </div>
+
+        <nav class="for-mini-nav" aria-label="{{ audienceNavLabel }}">
+          <p class="for-kicker for-kicker-blue">{{ audienceChooseKicker }}</p>
+          <a href="{{ audiencePrefix }}/for/helpdesk/"{% if roleKey == "helpdesk" %} aria-current="page"{% endif %}>{{ audienceLabels.helpdesk }}</a>
+          <a href="{{ audiencePrefix }}/for/teachers/"{% if roleKey == "teachers" %} aria-current="page"{% endif %}>{{ audienceLabels.teachers }}</a>
+          <a href="{{ audiencePrefix }}/for/parents/"{% if roleKey == "parents" %} aria-current="page"{% endif %}>{{ audienceLabels.parents }}</a>
+          <a href="{{ audiencePrefix }}/for/homelab/"{% if roleKey == "homelab" %} aria-current="page"{% endif %}>{{ audienceLabels.homelab }}</a>
+          <a href="{{ audiencePrefix }}/for/developers/"{% if roleKey == "developers" %} aria-current="page"{% endif %}>{{ audienceLabels.developers }}</a>
+        </nav>
+      </div>
+    </section>
+
+    <section class="for-detail" aria-labelledby="forUseTitle">
+      <div class="for-wrap for-detail-grid">
+        <section class="for-copy-block" aria-labelledby="forUseTitle">
+          <p class="for-kicker for-kicker-yellow">{{ useKicker }}</p>
+          <h2 id="forUseTitle">{{ useTitle }}</h2>
+          <p>{{ useIntro }}</p>
+          <ul class="for-checks">
+            {% for check in checks %}
+            <li>{{ check }}</li>
+            {% endfor %}
+          </ul>
+        </section>
+
+        <section class="for-workflow" aria-label="{{ workflowTitle }}">
+          <div class="for-workflow-top">{{ workflowTitle }}</div>
+          {% if sample %}
+          <div class="for-password-sample">{{ sample }}</div>
+          {% endif %}
+          <dl>
+            {% for row in workflow %}
+            <div>
+              <dt>{{ row.term }}</dt>
+              <dd>{{ row.detail }}</dd>
+            </div>
+            {% endfor %}
+          </dl>
+        </section>
+      </div>
+    </section>
+
+    <section class="for-playbook" aria-labelledby="forPlaybookTitle">
+      <div class="for-wrap">
+        <div class="for-section-head for-section-head-wide">
+          <p class="for-kicker for-kicker-yellow">{{ playbookKicker }}</p>
+          <h2 id="forPlaybookTitle">{{ playbookTitle }}</h2>
+          <p>{{ playbookIntro }}</p>
+        </div>
+
+        <div class="for-playbook-grid">
+          <section class="for-playbook-list" aria-labelledby="forModeTitle">
+            <h3 id="forModeTitle">{{ modeTitle }}</h3>
+            <div class="for-mode-list">
+              {% for mode in modeRows %}
+              <article>
+                <span>{{ mode.label }}</span>
+                <strong>{{ mode.title }}</strong>
+                <p>{{ mode.copy }}</p>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+
+          <section class="for-playbook-list" aria-labelledby="forScenarioTitle">
+            <h3 id="forScenarioTitle">{{ scenarioTitle }}</h3>
+            <div class="for-mode-list">
+              {% for scenario in scenarios %}
+              <article>
+                <span>{{ scenario.label }}</span>
+                <strong>{{ scenario.title }}</strong>
+                <p>{{ scenario.copy }}</p>
+              </article>
+              {% endfor %}
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+
+    {% if apiPitchTitle %}
+    <section class="for-api-push" aria-labelledby="forApiTitle">
+      <div class="for-wrap for-api-grid">
+        <div>
+          <p class="for-kicker for-kicker-blue">{{ apiPitchKicker }}</p>
+          <h2 id="forApiTitle">{{ apiPitchTitle }}</h2>
+          <p>{{ apiPitchIntro }}</p>
+          <a href="{{ audienceApiHref }}" class="for-secondary">{{ apiPitchCta | default("View API reference") }}</a>
+        </div>
+
+        <div class="for-api-example" aria-label="{{ apiExampleLabel | default("API example") }}">
+          <span>{{ apiExampleLabel | default("API example") }}</span>
+          <code>{{ apiExample }}</code>
+          <p>{{ apiExampleNote }}</p>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="for-strip" aria-labelledby="forStripTitle">
+      <div class="for-wrap for-strip-grid">
+        <div>
+          <p class="for-kicker for-kicker-blue">{{ stripKicker }}</p>
+          <h2 id="forStripTitle">{{ stripTitle }}</h2>
+        </div>
+        <div class="for-role-list">
+          {% for item in stripItems %}
+          <article>
+            <span>{{ loop.index }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.copy }}</p>
+          </article>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+  </main>

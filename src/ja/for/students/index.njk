@@ -1,0 +1,82 @@
+---
+layout: base.njk
+noindex: true
+title: 学生のための豆腐パス - TofuPass
+description: 学生フレンドリーなパスワード衛生、セキュリティクイズ、および印刷可能な完了証明書。
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: students
+kicker: 学生向け
+heroTitle: 講演のないパスワードの安全性を学びます。
+lede: TofuPassは、パスワード、フィッシング、MFA、共有デバイス、回復、アカウントのトラブルをカバーする学生の安全テストで読みやすいパスワード生成をペアリングします。
+mascot: /excited.png
+proof: 学生テストでは、アカウントや結果を提出する必要はありません。
+actions:
+- label: パスワードを生成する
+  href: /ja/
+useKicker: 学生研修
+useTitle: 6つの短いクイズ、1つの実用的な目標。
+useIntro: '学生は実際に直面する決定を実践することができます: ユニークなパスワードを作る, 偽のサインインを発見, コードを保護します, 何かが間違って感じるとき助けを求める.'
+checks:
+- パスワードとアカウントの安全性に焦点を当てた6つのクイズトピック。
+- 等級を渡すことは各クイズのための85パーセントです。
+- 生徒の名前とグレードで印刷可能な証明書のロックを解除します。
+workflowTitle: 学生安全パス
+workflow:
+- term: 学びます
+  detail: パスワードの基本とアカウントの安全トピックから始めましょう。
+- term: Pass
+  detail: 合格グレードで6つのクイズをすべて完了します。
+- term: プリント
+  detail: 証明書のロックを解除し、名前を入力し、PDFとして印刷または保存します。
+playbookKicker: 学生プレイブック
+playbookTitle: アカウントが奇妙な前に何が起こるかを練習します。
+playbookIntro: 学生バージョンは、実際にパスワードを作成するから、サインインページやメッセージが消えているときに認識する選択肢の学生に焦点を当てています。
+modeTitle: どのツールが割り当てに合うか
+modeRows:
+- label: テスト
+  title: 安全チュートリアル
+  copy: 生徒のテストを使用して、パスワード衛生、フィッシング意識、MFA基本、および回復決定を確認します。
+- label: 会社案内
+  title: パーソナルスクールアカウント
+  copy: 1人の学生に所属するアカウントのユニークなパスワードを生成し、共有しないでください。
+- label: フレーズ
+  title: 長期プロジェクト
+  copy: クラブ、ポートフォリオ、または長さが許され、秘密が続くプロジェクトにパスフレーズを使用します。
+scenarioTitle: 学生のシナリオ
+scenarios:
+- label: ニュース
+  title: 新しいクラスのツールが開きます
+  copy: 電子メール、ゲーム、または昨年の1つを再利用する代わりに、ユニークなパスワードを作成します。
+- label: フィッシュ
+  title: ログインを求めるメッセージ
+  copy: サインインする前に、ソースをチェックし、何かが緊急に感じているときに信頼できる大人の質問をしてください。
+- label: トラブル
+  title: アカウントは安全でない感じです
+  copy: パスワードを変更し、他のセッションに署名し、正しい人に報告します。
+stripKicker: 学生の練習
+stripTitle: 実際の生活の中で表示されるパスワード習慣。
+stripItems:
+- title: ユニーク
+  copy: 1つのアカウントは、すべてのアカウントをロック解除しないでください。
+- title: スパイシー
+  copy: サインイン、奇妙なリンク、および緊急メッセージは一時停止に値します。
+- title: バックアップ
+  copy: アカウントが安全でないと感じた場合、生徒は誰に伝え、何が変化するかを知る必要があります。
+lang: ja
+audiencePrefix: /ja
+apiHref: /ja/api/
+audienceNavLabel: その他のTofuPassの聴衆
+audienceChooseKicker: 別のピッチを選択
+audienceLabels:
+  teachers: 講師紹介
+  helpdesk: ヘルプデスク
+  parents: 両親
+  students: スタッフ
+  homelab: ホームラボ
+  developers: 開発者
+---
+
+
+{% include "for-detail-content.njk" %}

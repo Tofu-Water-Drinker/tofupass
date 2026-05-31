@@ -31,15 +31,63 @@
 {% set localizedNav = [
   { key: 'home', label: m.home, href: m.prefix + '/' },
   { key: 'passphrases', label: m.passphrases, href: m.prefix + '/passphrases/' },
-  { key: 'stresstest', label: m.stresstest, href: m.prefix + '/stresstest/' },
-  { key: 'good', label: m.good, href: m.prefix + '/good/' },
-  { key: 'api', label: m.api, href: m.prefix + '/api/' }
+  { key: 'stresstest', label: m.stresstest, href: m.prefix + '/stresstest/' }
 ] %}
+{% set localizedFooterMeta = {
+  en: { for: 'For', support: 'Support', social: 'Social links' },
+  es: { for: 'Para', support: 'Apoyar', social: 'Redes sociales' },
+  pt: { for: 'Para', support: 'Apoiar', social: 'Redes sociais' },
+  fr: { for: 'Pour', support: 'Soutenir', social: 'Liens sociaux' },
+  de: { for: 'Für', support: 'Unterstützen', social: 'Social Links' },
+  ja: { for: '対象別', support: 'サポート', social: 'ソーシャルリンク' },
+  'zh-cn': { for: '适用场景', support: '支持', social: '社交链接' },
+  ar: { for: 'للجميع', support: 'الدعم', social: 'روابط اجتماعية' },
+  id: { for: 'Untuk', support: 'Dukung', social: 'Tautan sosial' },
+  hi: { for: 'के लिए', support: 'समर्थन', social: 'सोशल लिंक' },
+  ru: { for: 'Для кого', support: 'Поддержать', social: 'Социальные ссылки' }
+} %}
+{% set fm = localizedFooterMeta[currentLang] | default(localizedFooterMeta.en) %}
+{% set localizedSnackSupportLabel = {
+  en: 'Buy Miso a snack',
+  es: 'Cómprale un snack a Miso',
+  pt: 'Compre um lanche para a Miso',
+  fr: 'Offrir un snack à Miso',
+  de: 'Miso einen Snack spendieren',
+  ja: 'Misoにおやつを買う',
+  'zh-cn': '给 Miso 买点零食',
+  ar: 'اشترِ وجبة خفيفة لـ Miso',
+  id: 'Belikan Miso camilan',
+  hi: 'Miso के लिए snack खरीदें',
+  ru: 'Купить Miso перекус'
+} %}
+{% set snackSupportLabel = localizedSnackSupportLabel[currentLang] | default(localizedSnackSupportLabel.en) %}
+{% set localizedTrustLine = {
+  en: 'Open source · No accounts · No ads · No analytics · Browser generator runs locally · Use with a password manager',
+  es: 'Código abierto · Sin cuentas · Sin anuncios · Sin analíticas · El generador web funciona localmente · Úsalo con un gestor de contraseñas',
+  pt: 'Código aberto · Sem contas · Sem anúncios · Sem analytics · O gerador web roda localmente · Use com um gerenciador de senhas',
+  fr: 'Code ouvert · Sans compte · Sans pub · Sans analytics · Le générateur web fonctionne localement · À utiliser avec un gestionnaire de mots de passe',
+  de: 'Open Source · Keine Konten · Keine Werbung · Keine Analytics · Der Webgenerator läuft lokal · Mit einem Passwort-Manager verwenden',
+  ja: 'オープンソース · アカウント不要 · 広告なし · 分析なし · Web生成はローカルで動作 · パスワードマネージャーと一緒に使用',
+  'zh-cn': '开源 · 无账户 · 无广告 · 无分析 · 网页生成器在本地运行 · 与密码管理器配合使用',
+  ar: 'مفتوح المصدر · بلا حسابات · بلا إعلانات · بلا تحليلات · يعمل مولد الويب محليا · استخدمه مع مدير كلمات مرور',
+  id: 'Sumber terbuka · Tanpa akun · Tanpa iklan · Tanpa analytics · Generator web berjalan lokal · Gunakan bersama pengelola sandi',
+  hi: 'ओपन सोर्स · कोई खाते नहीं · कोई विज्ञापन नहीं · कोई analytics नहीं · वेब जनरेटर स्थानीय रूप से चलता है · पासवर्ड मैनेजर के साथ उपयोग करें',
+  ru: 'Открытый код · Без аккаунтов · Без рекламы · Без аналитики · Веб-генератор работает локально · Используйте с менеджером паролей'
+} %}
+{% set trustLine = localizedTrustLine[currentLang] | default(localizedTrustLine.en) %}
 {% set localizedFooter = [
+  { key: 'good', label: m.good, href: m.prefix + '/good/' },
+  { key: 'api', label: m.api, href: m.prefix + '/api/' },
   { key: 'about', label: m.about, href: m.prefix + '/about/' },
-  { key: 'why', label: m.why, href: m.prefix + '/why/' },
+  { key: 'for', label: fm.for, href: m.prefix + '/for/' },
   { key: 'privacy', label: m.privacy, href: m.prefix + '/privacy/' },
   { key: 'source', label: m.source, href: 'https://github.com/Tofu-Water-Drinker/tofupass', external: true }
+] %}
+{% set defaultFooterSocialLinks = [
+  { key: 'support', label: snackSupportLabel, href: 'https://ko-fi.com/tofupass', external: true, icon: 'kofi' },
+  { key: 'bluesky', label: 'Follow TofuPass on Bluesky', href: 'https://bsky.app/profile/tofupass.com', external: true, icon: 'bluesky' },
+  { key: 'x', label: 'X', href: 'https://x.com/TofuPass', external: true, icon: 'x' },
+  { key: 'linkedin', label: 'LinkedIn', href: 'https://www.linkedin.com/company/tofupass/', external: true, icon: 'linkedin' }
 ] %}
 <html lang="{{ lang | default(m.lang) }}" dir="{{ m.dir }}">
 <head>
@@ -47,6 +95,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ title }}</title>
   {% if description %}<meta name="description" content="{{ description }}" />{% endif %}
+  <meta property="og:title" content="{{ title }}" />
+  {% if description %}<meta property="og:description" content="{{ description }}" />{% endif %}
+  <meta property="og:site_name" content="TofuPass" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="{{ title }}" />
+  {% if description %}<meta name="twitter:description" content="{{ description }}" />{% endif %}
+  {# TODO(pwa): TofuPass does not currently ship a manifest or service worker. Add both before describing the web site as installable. #}
   {% if noindex %}<meta name="robots" content="noindex, nofollow" />{% endif %}
   <link rel="icon" href="/favicon.ico" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -128,7 +184,14 @@
         </button>
         <div class="language-switcher" data-language-switcher>
           <label class="sr-only" for="languageSelect">{{ m.label }}</label>
-          <select id="languageSelect" class="language-select" data-language-select aria-label="{{ m.label }}">
+          <button type="button" class="language-button" data-language-button aria-haspopup="listbox" aria-expanded="false" aria-label="{{ m.label }}">
+            <span class="language-globe" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18"></path><path d="M12 3a13.8 13.8 0 0 1 0 18"></path><path d="M12 3a13.8 13.8 0 0 0 0 18"></path></svg>
+            </span>
+            <span class="language-current" data-language-current>EN</span>
+            <span class="language-caret" aria-hidden="true"></span>
+          </button>
+          <select id="languageSelect" class="language-select" data-language-select aria-label="{{ m.label }}" tabindex="-1" aria-hidden="true">
             <option value="en"{% if currentLang == 'en' %} selected{% endif %}>EN</option>
             <option value="es"{% if currentLang == 'es' %} selected{% endif %}>ES</option>
             <option value="pt"{% if currentLang == 'pt' %} selected{% endif %}>PT</option>
@@ -141,6 +204,41 @@
             <option value="hi"{% if currentLang == 'hi' %} selected{% endif %}>HI</option>
             <option value="ru"{% if currentLang == 'ru' %} selected{% endif %}>RU</option>
           </select>
+          <div class="language-menu" data-language-menu role="listbox" aria-label="{{ m.label }}" hidden>
+            <button type="button" class="language-option" data-language-option data-language-code="en" role="option" aria-selected="{% if currentLang == 'en' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">EN</span><span class="language-option-name">English</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="es" role="option" aria-selected="{% if currentLang == 'es' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">ES</span><span class="language-option-name">Español</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="pt" role="option" aria-selected="{% if currentLang == 'pt' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">PT</span><span class="language-option-name">Português</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="fr" role="option" aria-selected="{% if currentLang == 'fr' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">FR</span><span class="language-option-name">Français</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="de" role="option" aria-selected="{% if currentLang == 'de' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">DE</span><span class="language-option-name">Deutsch</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="ja" role="option" aria-selected="{% if currentLang == 'ja' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">JA</span><span class="language-option-name">日本語</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="zh-cn" role="option" aria-selected="{% if currentLang == 'zh-cn' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">ZH</span><span class="language-option-name">简体中文</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="ar" role="option" aria-selected="{% if currentLang == 'ar' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">AR</span><span class="language-option-name">العربية</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="id" role="option" aria-selected="{% if currentLang == 'id' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">ID</span><span class="language-option-name">Indonesia</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="hi" role="option" aria-selected="{% if currentLang == 'hi' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">HI</span><span class="language-option-name">हिन्दी</span>
+            </button>
+            <button type="button" class="language-option" data-language-option data-language-code="ru" role="option" aria-selected="{% if currentLang == 'ru' %}true{% else %}false{% endif %}">
+              <span class="language-option-code">RU</span><span class="language-option-name">Русский</span>
+            </button>
+          </div>
         </div>
         <button class="nav-toggle md:hidden" type="button" aria-expanded="false" aria-label="{{ navToggleLabel | default(m.menu) }}" data-nav-toggle>
           <span class="nav-toggle-icon" aria-hidden="true">
@@ -155,27 +253,64 @@
 
   {{ content | safe }}
 
-  <footer class="relative z-10 py-8 px-4 border-t-2 border-[#8BC34A]/10 dark:border-[#8BC34A]/15">
-    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <span class="text-[#8B7355]/40 dark:text-[#B8A890]/40 text-xs">{{ footerTagline | default(m.tagline) }}</span>
-      <div class="flex flex-wrap justify-center gap-1">
-        {% set defaultFooterLinks = [
-          { key: "about", label: "About", href: "/about/" },
-          { key: "why", label: "Why TofuPass", href: "/why/" },
-          { key: "privacy", label: "Privacy", href: "/privacy/" },
-          { key: "source", label: "Source", href: "https://github.com/Tofu-Water-Drinker/tofupass", external: true }
-        ] %}
-        {% set footerLinks = footerNavItems | default(localizedFooter if isLocalized else defaultFooterLinks) %}
-        {% for link in footerLinks %}
-          {% if not loop.first %}<span class="text-[#8B7355]/25 dark:text-[#B8A890]/25 text-xs py-1.5">&middot;</span>{% endif %}
-          {% if link.key == pageKey %}
-            <a href="{{ link.href }}" class="text-[#4A3728] dark:text-[#F0E6D8] text-xs px-3 py-1.5 rounded-lg bg-[#6BBF59]/8 border-2 border-[#6BBF59]/15 dark:border-[#7DD668]/20 transition-all font-semibold">{{ link.label }}</a>
-          {% else %}
-            <a href="{{ link.href }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %} class="text-[#8B7355] dark:text-[#B8A890] hover:text-[#6BBF59] text-xs px-3 py-1.5 rounded-lg hover:bg-[#6BBF59]/5 dark:hover:bg-[#7DD668]/10 transition-all font-semibold">{{ link.label }}</a>
-          {% endif %}
-        {% endfor %}
+  <footer class="site-footer relative z-10 px-4 border-t-2 border-[#8BC34A]/10 dark:border-[#8BC34A]/15">
+    <div class="footer-shell max-w-6xl mx-auto">
+      <div class="footer-primary">
+        <div class="footer-links">
+          {% set defaultFooterLinks = [
+            { key: "good", label: "Guide", href: "/good/" },
+            { key: "api", label: "API", href: "/api/" },
+            { key: "about", label: "About", href: "/about/" },
+            { key: "for", label: "For", href: "/for/" },
+            { key: "privacy", label: "Privacy", href: "/privacy/" },
+            { key: "source", label: "Source", href: "https://github.com/Tofu-Water-Drinker/tofupass", external: true }
+          ] %}
+          {% set footerLinks = footerNavItems | default(localizedFooter if isLocalized else defaultFooterLinks) %}
+          {% for link in footerLinks %}
+            {% if link.key == pageKey %}
+              <a href="{{ link.href }}" class="footer-link is-active">{{ link.label }}</a>
+            {% else %}
+              <a href="{{ link.href }}"{% if link.external %} target="_blank" rel="noopener noreferrer"{% endif %} class="footer-link">{{ link.label }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
-      <p class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs footer-credit">{{ m.made }} <span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 20-7-7a4.5 4.5 0 0 1 6.4-6.3L12 7.3l.6-.6A4.5 4.5 0 0 1 19 13z"></path></svg></span> {{ m.by }} <a href="https://tofuwater.com/" target="_blank" rel="noopener noreferrer">TofuWater</a></p>
+      <p class="footer-trust">{{ trustLine }}</p>
+      <div class="footer-meta">
+        <p class="footer-credit">{{ m.made }} <span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 20-7-7a4.5 4.5 0 0 1 6.4-6.3L12 7.3l.6-.6A4.5 4.5 0 0 1 19 13z"></path></svg></span> {{ m.by }} <a href="https://tofuwater.com/" target="_blank" rel="noopener noreferrer">TofuWater</a></p>
+        {% set footerSocialLinks = footerSocialItems | default(defaultFooterSocialLinks) %}
+        {% if footerSocialLinks and footerSocialLinks.length %}
+        <span class="footer-meta-divider" aria-hidden="true">|</span>
+        <div class="footer-social-links" aria-label="{{ fm.social }}">
+          {% for social in footerSocialLinks %}
+            {% if social.href %}
+            <a href="{{ social.href }}"{% if social.external %} target="_blank" rel="noopener noreferrer"{% endif %} class="footer-social-link{% if social.icon == 'kofi' %} footer-support-link{% endif %}" aria-label="{{ social.label }}" title="{{ social.label }}">
+            {% else %}
+            <span class="footer-social-link{% if social.icon == 'kofi' %} footer-support-link{% endif %} is-disabled" role="img" aria-label="{{ social.label }}" title="{{ social.label }}">
+            {% endif %}
+              {% if social.icon == 'kofi' %}
+                <span>{{ social.label }}</span>
+              {% elif social.icon == 'bluesky' %}
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 10.8C10.91 8.69 7.95 4.75 5.2 2.81 2.57.94 1.56 1.27.9 1.57.14 1.91 0 3.08 0 3.77c0 .69.38 5.65.62 6.48.82 2.74 3.71 3.66 6.38 3.21-4.59.78-5.44 3.36-3.06 5.93 4.52 4.69 6.5-1.18 7.01-2.68.09-.27.14-.4.22-.4s.13.13.22.4c.51 1.5 2.48 7.36 7.01 2.68 2.38-2.58 1.53-5.16-3.06-5.93 2.67.45 5.57-.47 6.38-3.21.25-.83.62-5.79.62-6.48 0-.69-.14-1.86-.9-2.2-.66-.3-1.66-.62-4.3 1.24-2.75 1.94-5.71 5.88-6.8 7.99Z"></path></svg>
+              {% elif social.icon == 'x' %}
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3.2 3h4.6l4.7 6.2L17.9 3h3.2l-7.2 8.2L21.5 21h-4.6l-5.2-6.8L5.7 21H2.5l7.7-8.8L3.2 3Zm4 2.2h-.8l11.4 13.6h.9L7.2 5.2Z"></path></svg>
+              {% elif social.icon == 'linkedin' %}
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.2 8.7h3.1v10H5.2v-10Zm1.5-4.9a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6Zm3.6 4.9h3v1.4c.4-.8 1.5-1.6 3.1-1.6 3.3 0 3.9 2.2 3.9 5v5.2h-3.1v-4.6c0-1.1 0-2.5-1.5-2.5s-1.8 1.2-1.8 2.4v4.7h-3.1v-10Z"></path></svg>
+              {% else %}
+                <span aria-hidden="true">{{ social.label | first }}</span>
+              {% endif %}
+            {% if social.href %}
+            </a>
+            {% else %}
+            </span>
+            {% endif %}
+            {% if social.icon == 'kofi' and not loop.last %}
+            <span class="footer-social-divider" aria-hidden="true">|</span>
+            {% endif %}
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
     </div>
   </footer>
 

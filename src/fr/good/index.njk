@@ -1,11 +1,13 @@
 ---
 layout: base.njk
-title: Guide - TofuPass
+title: Le bon secret - Guide de sécurité TofuPass
 pageKey: good
 extraCss:
 - /assets/css/good.css
 backgroundDecor: leaves
+lang: fr
 ---
+
 
   <!-- CONTENT -->
   <main class="relative z-10 pt-28 pb-20 px-4">
@@ -77,6 +79,11 @@ backgroundDecor: leaves
           </div>
         </div>
         <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Chaque caractère supplémentaire <em>multiplies</em> les combinaisons totales. TofuPass s'appuie sur des morceaux de mots lisibles parce qu'ajouter un autre mot aléatoire est généralement plus facile à vivre que d'ajouter plus de chaos.</p>
+        <div class="callout-strip callout-strip-yellow mt-6">
+          <p class="text-[#4A3728] dark:text-[#F0E6D8] font-bold text-base leading-relaxed">Le générateur web anglais actuel dispose d’un plus grand ensemble révisé.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">Il utilise 845 choix d’adjectifs uniques et 3 187 choix de noms uniques. Le mode Soft compte maintenant environ 5,8 milliards de sorties exactes possibles une fois le symbole, le nombre à deux chiffres et la position du symbole inclus. Firm et Extra Firm montent beaucoup plus haut en ajoutant davantage d’emplacements de mots aléatoires.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-2 leading-relaxed">Cette note concerne le générateur web anglais. L’API, la version hors ligne et les listes traduites sont maintenues séparément.</p>
+        </div>
       </section>
 
       <!-- Divider -->
@@ -172,7 +179,7 @@ backgroundDecor: leaves
       <!-- CTA -->
       <div class="text-center pt-4">
         <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
-        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
+        <a href="/fr/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
           Générer un mot de passe sécurisé
         </a>
       </div>

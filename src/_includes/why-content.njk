@@ -1,0 +1,72 @@
+{% set why = whyContent[whyLocale or 'en'] %}
+
+  <main class="relative z-10 pt-28 pb-20 px-4">
+    <article class="why-article max-w-3xl mx-auto" aria-labelledby="whyTitle">
+      <div class="text-center mb-12">
+        <img src="/tofu.png" alt="" class="w-16 h-16 mx-auto mb-5 mascot-glow" aria-hidden="true" />
+        <p class="why-section-label why-label-green">{{ why.label }}</p>
+        <h1 id="whyTitle" class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">{{ why.title }}</h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-bold leading-relaxed">{{ why.description }}</p>
+      </div>
+
+      <section class="why-section">
+        <span class="why-section-label why-label-yellow">{{ why.gapLabel }}</span>
+        <h2>{{ why.gapTitle }}</h2>
+        {% for paragraph in why.gapCopy %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+      </section>
+
+      <div class="why-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <section class="why-section">
+        <span class="why-section-label why-label-blue">{{ why.useLabel }}</span>
+        <h2>{{ why.useTitle }}</h2>
+        <div class="why-grid">
+          {% for item in why.useCases %}
+            <div class="why-grid-item">{{ item }}</div>
+          {% endfor %}
+        </div>
+        <p>{{ why.useCopy }}</p>
+      </section>
+
+      <div class="why-divider" aria-hidden="true">
+        <svg class="w-36 h-3 text-[#5B9FD6]/15" viewBox="0 0 150 12" fill="none">
+          <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <section class="why-section">
+        <span class="why-section-label why-label-pink">{{ why.middleLabel }}</span>
+        <h2>{{ why.middleTitle }}</h2>
+        <p>{{ why.middleCopy[0] }}</p>
+        <div class="why-examples" aria-label="{{ why.examplesLabel }}">
+          <span>DancingKoalaRiver!73</span>
+          <span>VibrantStampSash!88</span>
+          <span>DancingKoalaCosmicRiver!73</span>
+        </div>
+        <p>{{ why.middleCopy[1] }}</p>
+      </section>
+
+      <blockquote class="pull-quote pull-quote-green">
+        {{ why.quote }}
+      </blockquote>
+
+      <section class="why-section pt-8">
+        <span class="why-section-label why-label-green">{{ why.honestLabel }}</span>
+        <h2>{{ why.honestTitle }}</h2>
+        {% for paragraph in why.honestCopy %}
+          <p>{{ paragraph }}</p>
+        {% endfor %}
+      </section>
+
+      <div class="text-center pt-8">
+        <a href="{{ why.ctaHref }}" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">{{ why.cta }}</a>
+        <p class="text-[#8B7355]/70 dark:text-[#B8A890]/70 text-sm mt-5 font-bold">{{ why.secondaryPrefix }} <a href="{{ why.secondaryHref }}" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2">{{ why.secondaryLink }}</a>.</p>
+      </div>
+    </article>
+  </main>

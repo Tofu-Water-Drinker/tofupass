@@ -1,0 +1,79 @@
+---
+layout: base.njk
+title: TofuPass for Helpdesk and MSP Teams - TofuPass
+description: Readable, privacy-first password generation for helpdesk and MSP resets, first logins, and over-the-phone credentials.
+pageKey: for
+extraCss:
+  - /assets/css/for.css
+roleKey: helpdesk
+kicker: For helpdesk and MSP teams
+heroTitle: Reset passwords people can actually type.
+lede: TofuPass gives service desks and MSPs readable, policy-shaped passwords for first logins, account recovery, and all those "can you spell that again?" moments.
+mascot: /alert.png
+proof: Not a password manager. No accounts. No analytics. Web generator passwords stay on the device.
+actions:
+  - label: Generate a password
+    href: /
+  - label: Offline version
+    href: /Offline/tofupass-offline.html
+useKicker: The reset desk fit
+useTitle: Built for the handoff, not the lab demo.
+useIntro: Strong passwords are only useful if the person on the other end can receive them, type them, and move on with their day. Use TofuPass for the handoff, then require a change or storage in the approved manager.
+checks:
+  - Great for temporary passwords that must be changed at first sign-in.
+  - Useful when you need to read a password aloud or paste it into a ticket note briefly.
+  - Simple enough for a stressed caller without training them into weak habits.
+  - Use your password manager or IAM tooling for long-term storage, autofill, and ownership.
+workflowTitle: Account recovery handoff
+sample: RiverMisoCloud!42
+workflow:
+  - term: Say it
+    detail: River, Miso, Cloud, exclamation point, four two.
+  - term: Confirm it
+    detail: Capital R, capital M, capital C. No spaces.
+  - term: Close it
+    detail: Have them change it at first login and save the new one in their manager.
+playbookKicker: Reset playbook
+playbookTitle: Reduce mistakes during the busiest part of the ticket.
+playbookIntro: The point is not just generation. The point is a cleaner handoff that lowers repeats, typos, and insecure workarounds.
+modeTitle: Which mode fits the reset
+modeRows:
+  - label: Soft
+    title: Very short-lived handoffs
+    copy: Easiest to type. Use only for low-risk temporary passwords that are changed immediately after first login.
+  - label: Firm
+    title: Standard account recovery
+    copy: Recommended default for ordinary reset flows while still being practical to read over a call.
+  - label: Extra Firm
+    title: Admin and setup work
+    copy: Stronger option when the password may live beyond the first handoff and the target accepts the length.
+scenarioTitle: Service desk scenarios
+scenarios:
+  - label: Phone
+    title: Caller has to type it live
+    copy: Pick a readable password, say the words first, then confirm capitals, numbers, and symbols.
+  - label: Ticket
+    title: Password must be pasted briefly
+    copy: Keep the temporary secret short-lived and close the ticket only after first-login change is confirmed.
+  - label: Onboard
+    title: New hire setup
+    copy: Generate a starter password, hand it off through the approved channel, and point them to a manager.
+apiPitchKicker: Internal tooling
+apiPitchTitle: Add readable temporary passwords to approved reset tools.
+apiPitchIntro: The API can fit service desk scripts or internal reset tooling where a readable password is generated for a short handoff. Keep policy, logging, expiration, and first-login change requirements in your own system.
+apiPitchCta: Open API reference
+apiExampleLabel: Reset helper
+apiExample: "curl https://tofupass.com/api/password"
+apiExampleNote: Returns one readable server-side password. Your workflow should handle expiration and required change.
+stripKicker: Queue-friendly security
+stripTitle: The reset script gets shorter.
+stripItems:
+  - title: Readable
+    copy: Word chunks are easier to hear, repeat, and verify than random character soup.
+  - title: Policy-shaped
+    copy: Soft, Firm, and Extra Firm include capitals, numbers, and common symbols by default.
+  - title: Private
+    copy: Generation happens in the browser, so reset work does not create a logging problem.
+---
+
+{% include "for-detail-content.njk" %}

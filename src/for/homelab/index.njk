@@ -1,0 +1,79 @@
+---
+layout: base.njk
+title: TofuPass for Homelabs - TofuPass
+description: Readable unique passwords for routers, NAS boxes, local services, VMs, and personal infrastructure.
+pageKey: for
+extraCss:
+  - /assets/css/for.css
+roleKey: homelab
+kicker: For homelab builders
+heroTitle: Unique secrets for the server closet you built yourself.
+lede: TofuPass helps homelab owners avoid password reuse across routers, NAS boxes, dashboards, VMs, local admin accounts, and experiments.
+mascot: /tofu.png
+proof: Runs in the browser, works after loading, and does not collect your generated passwords.
+actions:
+  - label: Generate a password
+    href: /
+  - label: Make a passphrase
+    href: /passphrases/
+useKicker: Lab-friendly defaults
+useTitle: Stop letting the lab share one secret.
+useIntro: Homelabs grow sideways. TofuPass gives you quick unique passwords before temporary services become permanent infrastructure.
+checks:
+  - Use Extra Firm or passphrases for routers, NAS admin, hypervisors, and password managers.
+  - Give every dashboard, VM, and local service its own credential.
+  - Store final secrets in your password manager or vault, not in a README.
+  - Use TofuPass for setup and handoff, not as a place to store the lab's secrets.
+workflowTitle: Homelab secret plan
+sample: QuietRouterCedar!64
+workflow:
+  - term: Core gear
+    detail: Use the strongest practical mode for routers, NAS, hypervisors, and recovery accounts.
+  - term: Local apps
+    detail: Generate unique credentials for dashboards, databases, containers, and test services.
+  - term: Document
+    detail: Save the secret in a password manager and keep setup notes free of live passwords.
+playbookKicker: Homelab playbook
+playbookTitle: Build like the lab will become important later.
+playbookIntro: Most homelabs start as experiments and slowly become personal infrastructure. Unique passwords keep that growth from turning into one shared blast radius.
+modeTitle: Which mode fits the service
+modeRows:
+  - label: Firm
+    title: Temporary dashboards
+    copy: Recommended default for local tools and web UIs that are not exposed but still deserve unique credentials.
+  - label: Extra Firm
+    title: Network and storage
+    copy: Stronger option for routers, NAS admin, hypervisors, backup systems, and anything with broad access.
+  - label: Phrase
+    title: Long-lived vault entries
+    copy: Use passphrases when length is accepted and you want a secret that can survive beyond a weekend build.
+scenarioTitle: Lab scenarios
+scenarios:
+  - label: Router
+    title: The network core gets touched
+    copy: Replace default credentials and store recovery details before changing too many settings.
+  - label: VM
+    title: A test box becomes permanent
+    copy: Rotate the original quick password once the service starts holding real data or real access.
+  - label: Docs
+    title: Setup notes need cleanup
+    copy: Move live passwords into a manager and leave notes with account names, URLs, and rotation dates only.
+apiPitchKicker: Automation fit
+apiPitchTitle: Useful for setup scripts, not a vault replacement.
+apiPitchIntro: Use the API when a lab script needs a readable starter password or passphrase, then store the final secret in your manager or vault.
+apiPitchCta: See API options
+apiExampleLabel: Passphrase endpoint
+apiExample: "curl https://tofupass.com/api/passphrase?count=5"
+apiExampleNote: Returns a hyphenated passphrase you can move into your vault after setup.
+stripKicker: Personal infrastructure
+stripTitle: Treat the lab like it might matter later.
+stripItems:
+  - title: Isolate
+    copy: One leaked dashboard password should not open the rest of the lab.
+  - title: Upgrade
+    copy: Move long-lived services from quick passwords to passphrases or vault-generated secrets.
+  - title: Recover
+    copy: Keep recovery paths private, unique, and stored somewhere you can actually find.
+---
+
+{% include "for-detail-content.njk" %}

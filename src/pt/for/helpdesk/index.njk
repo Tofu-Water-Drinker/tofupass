@@ -1,0 +1,107 @@
+---
+layout: base.njk
+title: TofuPass for Helpdesk Teams - TofuPass
+description: Geração de senhas privada legível para resets de helpdesk, logins iniciais
+  e credenciais por telefone.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: helpdesk
+kicker: Para equipes de helpdesk
+heroTitle: Reiniciar senhas que as pessoas podem digitar.
+lede: TofuPass dá mesas de serviço legíveis, senhas políticas para primeiro logins,
+  recuperação de conta, e todos aqueles "você pode soletrar isso novamente?" momentos.
+mascot: /alert.png
+proof: Não há contas. Sem análise. Nenhuma senha gerada sai do dispositivo.
+actions:
+- label: Gerar uma senha
+  href: /pt/
+- label: Versão desligada
+  href: /Offline/tofupass-offline.html
+useKicker: O ajuste de mesa
+useTitle: Construído para a entrega, não para a demonstração do laboratório.
+useIntro: Senhas fortes só são úteis se a pessoa do outro lado puder recebê-las, digitá-las
+  e seguir em frente com seu dia.
+checks:
+- Ótimo para senhas temporárias que devem ser alteradas no primeiro login.
+- Útil quando você precisa ler uma senha em voz alta ou colá-la em uma nota de ticket
+  brevemente.
+- Simples o suficiente para um chamador estressado sem treiná-los em hábitos fracos.
+workflowTitle: Transferência da recuperação da conta
+sample: RioMisoCloud!42
+workflow:
+- term: Diz.
+  detail: Rio, Miso, Nuvem, ponto de exclamação, quatro dois.
+- term: Confirmar
+  detail: Capital R, capital M, capital C. Sem espaços.
+- term: Fecha-a.
+  detail: Faça com que eles mudem no início do login e salvem o novo em seu gerenciador.
+playbookKicker: Reiniciar playbook
+playbookTitle: Reduza os erros durante a parte mais movimentada do bilhete.
+playbookIntro: A questão não é apenas a geração. O ponto é uma entrega mais limpa
+  que reduz repetições, erros de digitação e inseguras.
+modeTitle: Qual o modo que se encaixa na reinicialização
+modeRows:
+- label: Suave
+  title: Entregas de curta duração
+  copy: Útil para senhas temporárias de baixo risco que são alteradas imediatamente
+    após o primeiro login.
+- label: Firme
+  title: Recuperação de contas padrão
+  copy: Forte o suficiente para os fluxos de reset comuns enquanto ainda é prático
+    ler sobre uma chamada.
+- label: Extra
+  title: Trabalhos de administração e configuração
+  copy: Use Extra Firm ou senhas quando a senha pode viver além da primeira entrega.
+scenarioTitle: Cenários de mesa de serviço
+scenarios:
+- label: Telefone
+  title: A chamada tem de digitá-lo ao vivo
+  copy: Escolha uma senha legível, diga as palavras primeiro, depois confirme maiúsculas,
+    números e símbolos.
+- label: Bilhete
+  title: A senha deve ser colada brevemente
+  copy: Mantenha o segredo temporário de curta duração e feche o ticket somente após
+    a primeira mudança de login ser confirmada.
+- label: A bordo
+  title: Nova configuração de contratação
+  copy: Gere uma senha inicial, passe-a pelo canal aprovado e aponte-a para um gestor.
+apiPitchKicker: Ferramentas internas
+apiPitchTitle: Adicione senhas temporárias legíveis para ferramentas de reset aprovadas.
+apiPitchIntro: A API pode caber scripts de mesa de serviço ou redefinir ferramentas
+  internas onde uma senha legível é gerada para uma transferência curta. Mantenha
+  os requisitos de mudança de política, registro, expiração e primeiro login em seu
+  próprio sistema.
+apiPitchCta: Abrir referência da API
+apiExampleLabel: Repor o helper
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Retorna uma senha legível gerada no servidor. Seu fluxo de trabalho deve lidar com
+  a expiração e mudança necessária.
+stripKicker: Segurança em fila
+stripTitle: O script de reset fica mais curto.
+stripItems:
+- title: Readable
+  copy: Os pedaços de palavras são mais fáceis de ouvir, repetir e verificar do que
+    a sopa de caracteres aleatórios.
+- title: Forma de política
+  copy: Soft, Firm e Extra Firm incluem maiúsculas, números e símbolos comuns por
+    padrão.
+- title: Privado
+  copy: A geração acontece no navegador, então o trabalho de reset não cria um problema
+    de registro.
+lang: pt-BR
+audiencePrefix: /pt
+apiHref: /pt/api/
+audienceNavLabel: Outros públicos TofuPass
+audienceChooseKicker: Escolha outro campo
+audienceLabels:
+  teachers: Professores
+  helpdesk: Helpdesk
+  parents: Pais
+  students: Estudantes
+  homelab: Homelab
+  developers: Desenvolvedores
+---
+
+
+{% include "for-detail-content.njk" %}

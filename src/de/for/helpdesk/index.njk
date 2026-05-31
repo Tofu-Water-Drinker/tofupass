@@ -1,0 +1,110 @@
+---
+layout: base.njk
+title: TofuPass für Helpdesk Teams - TofuPass
+description: Lesbare, private Passwort-Generation für Helpdesk-Resets, erste Logins
+  und Über-the-Telefon-Anmeldeinformationen.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: helpdesk
+kicker: Für Helpdesk Teams
+heroTitle: Passwörter zurücksetzen Menschen können tatsächlich tippen.
+lede: TofuPass gibt Service-Desks lesbare, richtlinienfreundliche Passwörter für erste
+  Logins, Kontowiederherstellung und all diese "Kannst du das wieder buchstabieren?"
+  Momente.
+mascot: /alert.png
+proof: Keine Konten. Keine Analytik. Kein generiertes Passwort verlässt das Gerät.
+actions:
+- label: Kennwort generieren
+  href: /de/
+- label: Offline-Version
+  href: /Offline/tofupass-offline.html
+useKicker: Der Reset Schreibtisch passt
+useTitle: Erbaut für den Handoff, nicht die Labordemo.
+useIntro: Starke Passwörter sind nur nützlich, wenn die Person auf dem anderen Ende
+  sie empfangen, tippen und mit ihrem Tag fortfahren kann.
+checks:
+- Ideal für temporäre Passwörter, die beim ersten Sign-in geändert werden müssen.
+- Nützlich, wenn Sie ein Passwort laut lesen oder in eine Ticketnote einfügen müssen.
+- Einfach genug für einen betonten Anrufer, ohne sie in schwache Gewohnheiten zu trainieren.
+workflowTitle: Kontorückforderung Handoff
+sample: RiverMisoCloud!42
+workflow:
+- term: Sag es.
+  detail: Fluss, Miso, Wolke, Ausrufpunkt, vier zwei.
+- term: Bestätigen Sie es
+  detail: Hauptstadt R, Hauptstadt M, Hauptstadt C. Keine Plätze.
+- term: Schließen Sie es
+  detail: Lassen Sie sie es beim ersten Login ändern und die neue in ihrem Manager
+    speichern.
+playbookKicker: Zurück zur Übersicht
+playbookTitle: Verringern Sie Fehler während des verkehrsreichsten Teils des Tickets.
+playbookIntro: Der Punkt ist nicht nur die Generation. Der Punkt ist ein sauberer
+  Handoff, der Wiederholungen, Typos und unsichere Workarounds senkt.
+modeTitle: Welcher Modus passt zum Reset
+modeRows:
+- label: Weich
+  title: Sehr kurze Handausflüge
+  copy: Nützlich für risikoarme temporäre Passwörter, die unmittelbar nach dem ersten
+    Login geändert werden.
+- label: Fichte
+  title: Standardkonto Erholung
+  copy: Stark genug für gewöhnliche Rücksetzen fließt, während noch praktisch, um
+    über einen Anruf zu lesen.
+- label: Extra
+  title: Admin- und Setuparbeiten
+  copy: Verwenden Sie Extra Firm oder Passphrasen, wenn das Passwort über die erste
+    Ausgabe hinausleben kann.
+scenarioTitle: Service Schreibtischszenarien
+scenarios:
+- label: Telefon
+  title: Caller muss es live eingeben
+  copy: Wählen Sie ein lesbares Passwort, sagen Sie die Wörter zuerst, bestätigen
+    Sie dann Kapital, Zahlen und Symbole.
+- label: Ticket
+  title: Passwort muss kurz eingefügt werden
+  copy: Halten Sie das temporäre Geheimnis kurzlebig und schließen Sie das Ticket
+    erst nach der ersten Änderung bestätigt.
+- label: an Bord
+  title: Neue Einstellung
+  copy: Erstellen Sie ein Starter-Passwort, geben Sie es durch den genehmigten Kanal,
+    und zeigen Sie sie an einen Manager.
+apiPitchKicker: Innenwerkzeug
+apiPitchTitle: Fügen Sie lesbare temporäre Passwörter zu genehmigten Reset-Tools hinzu.
+apiPitchIntro: Die API kann Service-Desk-Skripte oder internes Reset-Tooling anpassen,
+  wo ein lesbares Passwort für einen kurzen Handoff generiert wird. Halten Sie Politik,
+  Protokollierung, Ablauf und First-Login Änderung Anforderungen in Ihrem eigenen
+  System.
+apiPitchCta: Open API Referenz
+apiExampleLabel: Zurücksetzen Hilfe
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Gibt ein lesbares serverseitiges Passwort zurück. Ihr Workflow sollte mit Ablauf
+  und erforderlichen Änderungen umgehen.
+stripKicker: Queue-freundliche Sicherheit
+stripTitle: Das Reset-Skript wird kürzer.
+stripItems:
+- title: lesbar
+  copy: Word-Chunks sind einfacher zu hören, zu wiederholen und zu überprüfen als
+    zufällige Zeichen Suppe.
+- title: Politisch
+  copy: Soft, Firm und Extra Firm enthalten Kapital, Zahlen und gemeinsame Symbole
+    standardmäßig.
+- title: Privatpersonen
+  copy: Generation passiert im Browser, so dass Reset-Arbeit kein Protokollierungsproblem
+    schafft.
+lang: de
+audiencePrefix: /de
+apiHref: /de/api/
+audienceNavLabel: Andere TofuPass Publikum
+audienceChooseKicker: Wählen Sie eine andere Tonhöhe
+audienceLabels:
+  teachers: Lehrer
+  helpdesk: Hilfe
+  parents: Eltern
+  students: Studenten
+  homelab: Homelab
+  developers: Entwickler
+---
+
+
+{% include "for-detail-content.njk" %}

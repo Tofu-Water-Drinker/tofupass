@@ -1,97 +1,14 @@
 ---
 layout: base.njk
-title: Pourquoi TofuPass - TofuPass
+title: Pourquoi TofuPass existe - TofuPass
+description: TofuPass existe pour les moments de transmission humaine où un mot de passe doit être lu, saisi, prononcé, enseigné, réinitialisé ou partagé temporairement.
 pageKey: why
-extraFonts:
-- https://fonts.bunny.net/css?family=caveat:700
 extraCss:
 - /assets/css/why.css
+backgroundDecor: leaves
+lang: fr
+permalink: /fr/why/index.html
+whyLocale: fr
 ---
 
-  <main class="relative z-10 pt-28 pb-20 px-4">
-    <div class="max-w-2xl mx-auto">
-      <div class="text-center mb-14">
-        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Pourquoi <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span></h1>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">La version courte d'une longue observation.</p>
-      </div>
-
-      <article class="why-article">
-
-        <!-- Section 1 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-pink">Le problème</div>
-          <h2>Les mots de passe ne peuvent pas vivre avec ne pas rester en sécurité.</h2>
-          <p>Il y a déjà de bons générateurs de mots de passe. DinoPass, par exemple, rend la création de mot de passe simple et accessible. Je l'ai utilisé moi-même pendant des années.</p>
-          <p>Mais je travaille dans l'informatique. Et le modèle que je voyais n'était pas un manque d'outils - c'était ce qui s'est passé <em>après</em> Les gens ont leur mot de passe. Ils la réutiliseraient, la simplifieraient ou l'enregistreraient sur leur moniteur.</p>
-        </section>
-
-        <!-- Divider -->
-        <div class="why-divider" aria-hidden="true">
-          <svg class="w-36 h-3 text-[#FFD166]/25" viewBox="0 0 150 12" fill="none">
-            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <!-- Section 2 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-yellow">Le déclencheur</div>
-          <h2>Petit frottement, grandes conséquences.</h2>
-          <p>Au moment où un mot de passe franchit un seuil de friction, les gens cessent de travailler <em>avec</em> et commence à travailler <em>autour</em> Ça. Les déclencheurs sont toujours les mêmes :</p>
-          <div class="why-grid">
-            <div class="why-grid-item">Trop de capitales</div>
-            <div class="why-grid-item">Symboles non familiaux</div>
-            <div class="why-grid-item">De longues chaînes aléatoires</div>
-            <div class="why-grid-item">Substitutions de caractères</div>
-          </div>
-        </section>
-
-        <!-- Sticky note -->
-        <div class="sticky-note-wrap">
-          <div class="sticky-note">
-            <div class="sticky-note-tape"></div>
-            <p class="sticky-note-text">P@ssw0rd123 !</p>
-            <p class="sticky-note-sub">- courriel de travail</p>
-          </div>
-        </div>
-
-        <!-- Section 3 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-green">L'approche</div>
-          <h2>Structure sur le chaos.</h2>
-          <p>TofuPass se concentre sur les motifs lisibles au lieu de la randomité maximale. Des morceaux de mots familiers, un symbole commun, un nombre court. Vous obtenez des mots de passe comme:</p>
-          <div class="why-examples">
-            <span>HappyKoala!73</span>
-            <span>DanserKoalaRiver!73</span>
-            <span>WindyMonitorBrightLeaf#88</span>
-          </div>
-          <p>Pas incassable, mais vraiment utilisable. Et sous le capot, tout génère toujours dans votre navigateur en utilisant le hasard cryptographique. Aucun compte, aucune analyse, rien ne laisse votre appareil. Lorsque vous voulez un secret de forme longue propre à la place, <a href="/fr/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">Générateur de mots de passe</a> est là pour ce travail.</p>
-        </section>
-
-        <!-- Divider -->
-        <div class="why-divider" aria-hidden="true">
-          <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
-            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <!-- Section 4 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-blue">L'ajustement</div>
-          <h2>Pas un remplacement. Un pont.</h2>
-          <p>Si vous utilisez un gestionnaire de mots de passe avec de longues chaînes aléatoires pour tout - super. C'est idéal. TofuPass existe pour le reste du temps: quand vous avez besoin de quelque chose de suffisamment fort pour une utilisation réelle, assez simple à retenir, et assez privé que vous n'avez à faire confiance à personne.</p>
-          <div class="pull-quote pull-quote-green">
-            Les mots de passe simples sont utilisés. Les mots de passe utilisés restent uniques. Des mots de passe uniques protègent les gens.
-          </div>
-        </section>
-
-      </article>
-
-      <!-- CTA -->
-      <div class="text-center mt-14">
-        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
-        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
-          Essayez TofuPass
-        </a>
-      </div>
-    </div>
-  </main>
+{% include "why-content.njk" %}

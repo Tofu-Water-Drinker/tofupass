@@ -1,0 +1,463 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TofuPass API Guide</title>
+  <style>
+    @page {
+      size: Letter;
+      margin: 0.45in;
+    }
+
+    :root {
+      --paper: #fffaf3;
+      --surface: #ffffff;
+      --ink: #4b382a;
+      --muted: #846f56;
+      --soft: #f3eadb;
+      --green: #6BBF59;
+      --pink: #FF7A7A;
+      --yellow: #FFD166;
+      --purple: #9B6DD7;
+      --blue: #5B9FD6;
+      --line: rgba(107, 191, 89, 0.2);
+      --code: #f8f8ef;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Avenir Next", "Nunito", "Helvetica Neue", Arial, sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.45;
+      print-color-adjust: exact;
+      -webkit-print-color-adjust: exact;
+    }
+
+    body {
+      padding: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin: 0;
+    }
+
+    code,
+    pre {
+      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+    }
+
+    .sheet {
+      position: relative;
+      min-height: 10in;
+      overflow: hidden;
+      border: 2px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffefd 0%, var(--surface) 42%, #fff9ef 100%);
+    }
+
+    .sheet::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 90% 5%, rgba(255, 122, 122, 0.15), transparent 20%),
+        radial-gradient(circle at 8% 10%, rgba(107, 191, 89, 0.14), transparent 18%),
+        linear-gradient(90deg, rgba(107, 191, 89, 0.05) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(107, 191, 89, 0.05) 1px, transparent 1px);
+      background-size: auto, auto, 18px 18px, 18px 18px;
+    }
+
+    .content {
+      position: relative;
+      z-index: 1;
+      padding: 0.34in;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 0.25in;
+      align-items: start;
+      padding-bottom: 0.22in;
+      border-bottom: 2px solid var(--line);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.08in;
+      margin-bottom: 0.12in;
+      color: var(--ink);
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .brand img {
+      width: 0.34in;
+      height: 0.34in;
+    }
+
+    .brand span span {
+      color: var(--green);
+    }
+
+    .kicker {
+      color: var(--green);
+      font-size: 7.6pt;
+      font-weight: 900;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 0.05in;
+      font-size: 30pt;
+      line-height: 0.98;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      max-width: 5.6in;
+      margin-top: 0.12in;
+      color: var(--muted);
+      font-size: 10.4pt;
+    }
+
+    .meta {
+      min-width: 1.65in;
+      padding: 0.12in;
+      border: 1.5px solid var(--line);
+      border-radius: 14px;
+      background: rgba(107, 191, 89, 0.06);
+      color: var(--muted);
+      font-size: 8pt;
+    }
+
+    .meta strong {
+      display: block;
+      margin-bottom: 0.03in;
+      color: var(--ink);
+      font-size: 8.4pt;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1.55fr 1fr 1.1fr 1.55fr;
+      margin: 0.18in 0;
+      border-top: 1.5px solid var(--line);
+      border-bottom: 1.5px solid var(--line);
+    }
+
+    .fact {
+      min-height: 0.72in;
+      padding: 0.1in 0.12in;
+      border-right: 1px solid var(--line);
+      background: transparent;
+    }
+
+    .fact:first-child {
+      padding-left: 0;
+    }
+
+    .fact:last-child {
+      padding-right: 0;
+      border-right: none;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 0.035in;
+      color: var(--muted);
+      font-size: 6.9pt;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .value {
+      display: block;
+      color: var(--ink);
+      font-size: 8.6pt;
+      font-weight: 900;
+      overflow-wrap: anywhere;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.15in;
+    }
+
+    .section {
+      margin-top: 0.16in;
+      page-break-inside: avoid;
+    }
+
+    .wide {
+      grid-column: 1 / -1;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 0.08in;
+      margin-bottom: 0.08in;
+      font-size: 13pt;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .method {
+      display: inline-flex;
+      align-items: center;
+      height: 0.24in;
+      padding: 0 0.08in;
+      border: 1px solid rgba(107, 191, 89, 0.3);
+      border-radius: 8px;
+      background: rgba(107, 191, 89, 0.1);
+      color: var(--green);
+      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+      font-size: 7pt;
+      font-weight: 900;
+    }
+
+    .card {
+      padding: 0.14in;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.66);
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 8.8pt;
+    }
+
+    .code {
+      margin-top: 0.08in;
+      padding: 0.1in 0.12in;
+      border: 1.5px solid rgba(139, 195, 74, 0.16);
+      border-radius: 8px;
+      background: var(--code);
+      color: var(--ink);
+      font-size: 7.4pt;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.045in;
+      margin-top: 0.08in;
+    }
+
+    .chip {
+      padding: 0.025in 0.07in;
+      border: 1px solid rgba(155, 109, 215, 0.25);
+      border-radius: 6px;
+      background: rgba(155, 109, 215, 0.07);
+      color: var(--ink);
+      font-family: "SFMono-Regular", "Menlo", "Consolas", monospace;
+      font-size: 7.1pt;
+      font-weight: 800;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 0.08in;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 10px;
+      font-size: 7.6pt;
+    }
+
+    th,
+    td {
+      padding: 0.055in 0.065in;
+      border: 1px solid rgba(107, 191, 89, 0.16);
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      color: var(--muted);
+      font-size: 6.7pt;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    td code {
+      color: var(--purple);
+      font-weight: 900;
+    }
+
+    .note {
+      margin-top: 0.18in;
+      padding: 0.13in;
+      border: 1.5px solid rgba(255, 122, 122, 0.18);
+      border-radius: 8px;
+      background: rgba(255, 122, 122, 0.06);
+      page-break-inside: avoid;
+    }
+
+    .note h3 {
+      margin-bottom: 0.045in;
+      color: var(--pink);
+      font-size: 10.4pt;
+      font-weight: 900;
+    }
+
+    .note p {
+      color: var(--muted);
+      font-size: 8.6pt;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.2in;
+      margin-top: 0.18in;
+      padding-top: 0.12in;
+      border-top: 1.5px solid var(--line);
+      color: var(--muted);
+      font-size: 7.6pt;
+    }
+  </style>
+</head>
+<body>
+  <div class="sheet">
+    <div class="content">
+      <header class="hero">
+        <div>
+          <div class="brand">
+            <img src="../../tofu.png" alt="" />
+            <span>Tofu<span>Pass</span></span>
+          </div>
+          <div class="kicker">Printable API guide</div>
+          <h1>Use the TofuPass API</h1>
+          <p class="subtitle">Generate friendly passwords and passphrases from a tiny open source API. Responses are plain text for generation endpoints and JSON for discovery and stats.</p>
+        </div>
+        <aside class="meta">
+          <strong>Last updated</strong>
+          May 27, 2026<br /><br />
+          <strong>Source</strong>
+          github.com/Tofu-Water-Drinker/tofupass-api
+        </aside>
+      </header>
+
+      <section class="facts" aria-label="Quick facts">
+        <div class="fact">
+          <span class="label">Base URL</span>
+          <code class="value">https://tofupass.com/api</code>
+        </div>
+        <div class="fact">
+          <span class="label">Authentication</span>
+          <span class="value">None</span>
+        </div>
+        <div class="fact">
+          <span class="label">Generation type</span>
+          <span class="value">text/plain</span>
+        </div>
+        <div class="fact">
+          <span class="label">Language default</span>
+          <span class="value">English, code en</span>
+        </div>
+      </section>
+
+      <main class="grid">
+        <section class="section card">
+          <h2><span class="method">GET</span> /api/password</h2>
+          <p>Returns one server-side generated readable password. The current API password format is two friendly words, one special character, and a two-digit number. This endpoint is separate from the web generator's Soft, Firm, and Extra Firm recipes.</p>
+          <table>
+            <thead>
+              <tr><th>Param</th><th>Default</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>lang</code></td><td><code>en</code></td><td>Optional supported language code.</td></tr>
+            </tbody>
+          </table>
+          <pre class="code">curl https://tofupass.com/api/password
+# -> !HappyTiger83
+
+fetch('https://tofupass.com/api/password')
+  .then(res => res.text())</pre>
+        </section>
+
+        <section class="section card">
+          <h2><span class="method">GET</span> /api/passphrase</h2>
+          <p>Returns a hyphen-separated passphrase made from unique words in the selected word list.</p>
+          <table>
+            <thead>
+              <tr><th>Param</th><th>Default</th><th>Notes</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>count</code></td><td><code>4</code></td><td>Integer from 4 to 30.</td></tr>
+              <tr><td><code>lang</code></td><td><code>en</code></td><td>Optional supported language code.</td></tr>
+            </tbody>
+          </table>
+          <pre class="code">curl "https://tofupass.com/api/passphrase?count=6&lang=fr"
+# -> ocean-lanterne-sourire-jardin-cuivre-lune</pre>
+        </section>
+
+        <section class="section card">
+          <h2><span class="method">GET</span> /api/languages</h2>
+          <p>Use this endpoint to build language pickers or validate client-side settings.</p>
+          <pre class="code">curl https://tofupass.com/api/languages
+# -> {"default":"en","supported":["en","es","pt","fr","de","ja","zh-cn","ar","id","hi","ru"]}</pre>
+          <div class="chips">
+            <span class="chip">en</span><span class="chip">es</span><span class="chip">pt</span><span class="chip">fr</span><span class="chip">de</span><span class="chip">ja</span><span class="chip">zh-cn</span><span class="chip">ar</span><span class="chip">id</span><span class="chip">hi</span><span class="chip">ru</span>
+          </div>
+        </section>
+
+        <section class="section card">
+          <h2><span class="method">GET</span> /api/stats</h2>
+          <p>Returns in-memory counters. They reset when the server restarts and do not contain personal data.</p>
+          <pre class="code">curl https://tofupass.com/api/stats
+# -> {"generated_passwords":1234,"generated_passphrases":567,"total_api_calls":1801}</pre>
+        </section>
+
+        <section class="section card wide">
+          <h2>Rate limits and errors</h2>
+          <p>The live generation endpoints allow 1 generation request per second, a burst cushion of 10, and 1,000 generation requests per hour. Requests above those limits return a retry hint.</p>
+          <table>
+            <thead>
+              <tr><th>Status</th><th>Where</th><th>Plain-text body</th><th>Useful headers</th></tr>
+            </thead>
+            <tbody>
+              <tr><td><code>200</code></td><td>All endpoints</td><td>Generated value or JSON payload</td><td><code>Content-Type</code></td></tr>
+              <tr><td><code>400</code></td><td><code>/api/passphrase</code></td><td><code>count must be between 4 and 30</code></td><td>None required</td></tr>
+              <tr><td><code>429</code></td><td>Generation endpoints</td><td><code>too many requests; please slow down</code></td><td><code>Retry-After</code>, <code>X-RateLimit-Limit</code>, <code>X-RateLimit-Remaining-Hour</code></td></tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+
+      <section class="note">
+        <h3>API privacy</h3>
+        <p>Generated passwords and passphrases are created in real time with Node's crypto.randomInt. TofuPass does not log generated secrets, persist them to disk, or transmit them beyond the immediate API response.</p>
+      </section>
+
+      <footer class="footer">
+        <span>Source: github.com/Tofu-Water-Drinker/tofupass-api</span>
+        <span>GPL v3 code. TofuPass name and mascot remain brand assets.</span>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

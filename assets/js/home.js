@@ -21,12 +21,12 @@
       "A tidy little secret, just for you.",
       "Now that's a handsome password.",
       "Crispy choice. I approve.",
-      "Another deliciously secure one.",
+      "Another nicely readable one.",
       "That password is looking extra firm.",
       "I squished my best for that one.",
       "Strong, cute, and ready to copy.",
       "That one should travel well.",
-      "Freshly pressed and nicely secure.",
+      "Freshly pressed and ready to hand off.",
       "A very respectable little password.",
       "That one has main-character energy.",
       "I gave that one an extra bounce.",
@@ -43,10 +43,10 @@
       "Clipboard delivery complete.",
       "A tasteful blend of charm and entropy.",
       "That one is serving pure confidence.",
-      "Soft face, strong password.",
+      "Soft face, readable password.",
       "Miso made this one with care.",
       "That one feels lucky.",
-      "A lovely little wall of security.",
+      "A lovely little stack of words.",
       "That password has excellent manners.",
       "A premium tofu selection.",
       "That one has sparkle and discipline.",
@@ -54,13 +54,13 @@
       "A nimble secret for a nimble mind.",
       "That password is tidy in all the right ways.",
       "You have good taste in secrets.",
-      "That one is snug, secure, and stylish.",
+      "That one is snug, tidy, and stylish.",
       "A charming choice for the clipboard.",
-      "That password has real staying power.",
+      "That password has tidy structure.",
       "I seasoned that one just right.",
       "Another excellent harvest from the entropy garden.",
-      "That one is ready for the big leagues.",
-      "A very huggable fortress of a password.",
+      "That one is ready for the clipboard.",
+      "A very tidy little password.",
       "That secret came out extra polished.",
       "A clean copy with excellent vibes.",
       "I feel great about that one."
@@ -303,9 +303,12 @@
         return;
       }
 
-      details.forEach((item) => {
+      list.setAttribute('role', 'list');
+      details.forEach((item, index) => {
         const row = document.createElement('div');
         row.className = `phonetic-item phonetic-item-${item.tone}`;
+        row.setAttribute('role', 'listitem');
+        row.setAttribute('aria-label', `${item.char}, ${item.word}, ${item.detail}`);
         row.innerHTML = `
           <span class="phonetic-char">${item.char}</span>
           <span class="phonetic-arrow" aria-hidden="true">→</span>
@@ -326,8 +329,6 @@
       lastFocusedElement = document.activeElement;
       syncPasswordEcho();
       renderPhoneticGuide();
-      const panel = document.getElementById('passwordPanel');
-      if (panel) panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
       const drawer = document.getElementById('phoneticDrawer');
       const backdrop = document.getElementById('phoneticBackdrop');
       const trigger = document.getElementById('phoneticBtn');
@@ -335,7 +336,7 @@
       if (backdrop) backdrop.classList.add('active');
       drawer.setAttribute('aria-hidden', 'false');
       trigger.setAttribute('aria-expanded', 'true');
-      drawer.querySelector('[data-close]').focus();
+      drawer.querySelector('[data-close]').focus({ preventScroll: true });
     }
     function closePhoneticGuide() {
       const drawer = document.getElementById('phoneticDrawer');
@@ -345,7 +346,7 @@
       if (backdrop) backdrop.classList.remove('active');
       drawer.setAttribute('aria-hidden', 'true');
       trigger.setAttribute('aria-expanded', 'false');
-      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus();
+      if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') lastFocusedElement.focus({ preventScroll: true });
     }
     function togglePhoneticGuide() {
       const drawer = document.getElementById('phoneticDrawer');

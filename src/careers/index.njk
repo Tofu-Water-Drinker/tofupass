@@ -1,0 +1,23 @@
+---
+permalink: /careers/index.html
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="refresh" content="0; url=/for/" />
+  <link rel="canonical" href="/for/" />
+  <title>Careers moved to For - TofuPass</title>
+</head>
+<body>
+  <p>TofuPass career pages moved to <a href="/for/">TofuPass For</a>.</p>
+  <script>
+    var params = new URLSearchParams(location.search);
+    var industry = params.get('industry');
+    var map = { education: '/for/teachers/', teachers: '/for/teachers/', helpdesk: '/for/helpdesk/' };
+    location.replace(map[industry] || '/for/');
+  </script>
+</body>
+</html>

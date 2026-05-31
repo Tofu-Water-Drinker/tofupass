@@ -1,0 +1,108 @@
+---
+layout: base.njk
+title: TofuPass untuk Tim Helpdesk - TofuPass
+description: Dapat dicapai, generasi sandi pribadi untuk reset bantuan, login pertama,
+  dan over- the- ponsel kredensial.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: helpdesk
+kicker: Untuk tim bantuan
+heroTitle: Reset kata sandi orang dapat benar-benar mengetik.
+lede: TofuPass memberikan layanan yang dapat dibaca, sandi poly- ramah untuk log masuk
+  pertama, pemulihan akun, dan semua orang "bisa Anda mengeja itu lagi?" saat-saat.
+mascot: /alert.png
+proof: Tidak ada rekening. Tidak ada analisis. Tak ada kata sandi yang dihasilkan
+  yang meninggalkan perangkat.
+actions:
+- label: Buat sandi
+  href: /id/
+- label: Versi Offline
+  href: /Offline/tofupass-offline.html
+useKicker: Meja reset cocok
+useTitle: Dibangun untuk handoff, bukan untuk demo lab.
+useIntro: Sandi yang kuat hanya berguna jika orang di ujung lain dapat menerima mereka,
+  mengetiknya, dan melanjutkan hidup mereka.
+checks:
+- Besar untuk password sementara yang harus diubah pada tanda pertama-in.
+- Berguna ketika Anda perlu membaca sandi dengan keras atau menempelkannya ke dalam
+  catatan tiket sebentar.
+- Cukup sederhana untuk penelepon stres tanpa melatih mereka menjadi kebiasaan lemah.
+workflowTitle: Pembaharuan akun
+sample: RiverMisoCloud!
+workflow:
+- term: Katakan
+  detail: Sungai, Miso, Cloud, tanda seru, empat dua.
+- term: Konfirmasi
+  detail: Ibu kota R, ibukota M, ibukota C. Tidak ada ruang.
+- term: Tutup
+  detail: Suruh mereka ganti dulu dan simpan yang baru di manajer mereka.
+playbookKicker: Atur Ulang Buku Putar
+playbookTitle: Mengurangi kesalahan selama bagian tersibuk tiket.
+playbookIntro: Intinya bukan hanya generasi. Intinya adalah handoff bersih yang menurunkan
+  mengulangi, typos, dan tidak aman solusi.
+modeTitle: Mode mana yang cocok dengan reset
+modeRows:
+- label: Soft
+  title: Handoff yang sangat pendek.
+  copy: Berguna bagi sandi sementara berisiko rendah yang segera diubah setelah log
+    masuk pertama.
+- label: Firm
+  title: Pemulihan akun standar
+  copy: Cukup kuat untuk reset biasa mengalir sementara masih praktis untuk membaca
+    atas panggilan.
+- label: Ekstra
+  title: Admin dan pekerjaan setup
+  copy: Gunakan Extra Firma atau passphrase ketika sandi dapat hidup di luar handoff
+    pertama.
+scenarioTitle: Skenario meja layanan
+scenarios:
+- label: Telepon
+  title: Caller harus mengetik secara langsung
+  copy: Pilih kata sandi yang dapat dibaca, ucapkan kata-kata pertama, kemudian konfirmasi
+    huruf, nomor, dan simbol.
+- label: Tiket
+  title: Sandi harus ditempelkan sebentar
+  copy: Menjaga rahasia sementara pendek-hidup dan menutup tiket hanya setelah perubahan
+    pertama-login dikonfirmasi.
+- label: Onboard
+  title: Pengaturan sewa baru
+  copy: Buat kata sandi starter, serahkan melalui saluran yang disetujui, dan arahkan
+    mereka ke manajer.
+apiPitchKicker: Internal tooling
+apiPitchTitle: Tambahkan sandi sementara yang dapat dibaca ke alat-alat yang disetujui.
+apiPitchIntro: API dapat memuat skrip meja layanan atau tata ulang internal yang tooling
+  dimana sandi dapat dibaca dihasilkan untuk handoff singkat. Simpan kebijakan, log,
+  kedaluwarsa, dan persyaratan perubahan login pertama dalam sistem Anda sendiri.
+apiPitchCta: Buka referensi API
+apiExampleLabel: Reset helper
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Mengembalikan satu sandi mudah dibaca yang dibuat di server. Aliran kerja Anda harus
+  menangani kedaluwarsa dan perubahan yang diperlukan.
+stripKicker: Antrian - keamanan ramah
+stripTitle: Naskah reset akan lebih pendek.
+stripItems:
+- title: Dapat dibaca
+  copy: Potongan kata lebih mudah untuk mendengar, ulangi, dan verifikasi dari sup
+    karakter acak.
+- title: Policy- berbentuk
+  copy: Soft, Firm, dan Extra Firm termasuk kapitals, nomor, dan simbol umum secara
+    baku.
+- title: Pribadi
+  copy: Generasi terjadi di peramban, jadi pekerjaan ulang tidak membuat masalah penebangan.
+lang: id
+audiencePrefix: /id
+apiHref: /id/api/
+audienceNavLabel: Penonton TofuPass lainnya
+audienceChooseKicker: Pilih pitch lain
+audienceLabels:
+  teachers: Guru
+  helpdesk: Meja bantuan
+  parents: Orangtua
+  students: Siswa
+  homelab: Homelab
+  developers: Pengembang
+---
+
+
+{% include "for-detail-content.njk" %}

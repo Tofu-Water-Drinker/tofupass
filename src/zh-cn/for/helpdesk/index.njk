@@ -1,0 +1,91 @@
+---
+layout: base.njk
+title: 服务台团队的豆腐塑料 - 豆腐塑料
+description: 可读,用于帮助台重置的私人密码生成,首个登录,以及手机过关证书.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: helpdesk
+kicker: 服务台小组
+heroTitle: 重置密码 。
+lede: TofuPass为服务台提供可读、方便政策的密码, 用于第一个登录、账户恢复,
+mascot: /alert.png
+proof: 没有帐户。 无分析. 没有生成密码离开设备 。
+actions:
+- label: 生成密码
+  href: /zh-cn/
+- label: 离线版本
+  href: /Offline/tofupass-offline.html
+useKicker: 重新设置的办公桌
+useTitle: 是为交接而建的 不是实验室演示
+useIntro: 坚固的密码只有在另一端的人能够接收,输入,并随着他们的一天的到来时才有用.
+checks:
+- 对初始登录时必须更改的临时密码来说, 效果很好 。
+- 当您需要大声读出密码或将其粘贴到票单上时有用。
+- 对一个有压力的呼叫者来说 很简单 却不训练他们习以为常
+workflowTitle: 账户回收移交
+sample: (原始内容存档于2018-07-21). RiverMisoCloud! 42
+workflow:
+- term: 说呀
+  detail: 河,弥索,云,叹,四二.
+- term: 确认
+  detail: 首都R,首都M,首都C. 无空间.
+- term: 关上它
+  detail: 让他们在初始登录时更改, 并保存新的管理器 。
+playbookKicker: 重置游戏本
+playbookTitle: 减少最繁忙的罚单期间的错误.
+playbookIntro: 重点不仅仅是一代人。 重点是更清洁的交接,减少重复、打字和不安全的工作。
+modeTitle: 哪个模式适合重置
+modeRows:
+- label: 软
+  title: 非常短暂的交割
+  copy: 用于第一次登录后立即更改的低风险临时密码 。
+- label: 企业
+  title: 标准账户回收
+  copy: 足够坚固,可以让普通的重置流量同时仍然实用,可以在呼叫中读取.
+- label: 额外
+  title: 管理和设置工作
+  copy: 当密码可能活在第一手发之后时,请使用Extra Firm或密码句。
+scenarioTitle: 服务台设想
+scenarios:
+- label: 电话
+  title: 呼叫者必须输入它直播
+  copy: 选择一个可读的密码,先说词,然后确认首都,数字,和符号.
+- label: 车票
+  title: 密码必须简短粘贴
+  copy: 保留临时秘密短时间,仅在一号线变更确认后才关闭车票.
+- label: 上载
+  title: 新雇用机构
+  copy: 生成启动密码,通过批准的通道交接,指向管理者.
+apiPitchKicker: 内部工具
+apiPitchTitle: 在批准的重置工具中添加可读临时密码.
+apiPitchIntro: API可以安装服务台脚本或内部重置工具,其中生成一个可读密码进行短交接. 将政策,记录,到期,以及首个登录更改要求保留在自己的系统中.
+apiPitchCta: 打开 API 引用
+apiExampleLabel: 重设助手
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: 生成一个临时公司密码。 您的工作流程应该处理到期和需要的更改。
+stripKicker: 队列安全
+stripTitle: 重置的脚本会缩短.
+stripItems:
+- title: 可读
+  copy: 字块比随机字符汤更容易听,重复,验证.
+- title: 政策形状
+  copy: 软型、坚固型和特大公司默认包括首都、数字和通用符号。
+- title: 私营
+  copy: 生成发生在浏览器中,因此重置工作不会造成日志问题.
+lang: zh-CN
+audiencePrefix: /zh-cn
+apiHref: /zh-cn/api/
+audienceNavLabel: 其他TofuPass观众
+audienceChooseKicker: 选择另一个投出
+audienceLabels:
+  teachers: 教师
+  helpdesk: 服务台
+  parents: 家长
+  students: 学生
+  homelab: 家园
+  developers: 开发者
+---
+
+
+{% include "for-detail-content.njk" %}

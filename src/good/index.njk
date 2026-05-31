@@ -30,7 +30,7 @@ backgroundDecor: leaves
         </p>
         <div class="callout-strip callout-strip-yellow">
           <p class="text-[#4A3728] dark:text-[#F0E6D8] font-bold text-base leading-relaxed">The real goal? Be <span class="text-[#E6A800]">too expensive to bother with</span>.</p>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">Attackers don't target individuals by hand. They run automated tools against millions of accounts simultaneously. If cracking your password would take centuries on modern hardware, you're safe in practice.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">Attackers usually run automated tools against large password dumps. If cracking your password would take centuries on modern hardware, you are in much better shape than someone using short, reused, or predictable passwords.</p>
         </div>
       </section>
 
@@ -77,6 +77,11 @@ backgroundDecor: leaves
           </div>
         </div>
         <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Every extra character <em>multiplies</em> the total combinations. TofuPass leans on readable word chunks because adding another random word is usually easier to live with than adding more chaos.</p>
+        <div class="callout-strip callout-strip-yellow mt-6">
+          <p class="text-[#4A3728] dark:text-[#F0E6D8] font-bold text-base leading-relaxed">The current English web generator has a bigger reviewed pool.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mt-2 leading-relaxed">It draws from 845 unique adjective choices and 3,187 unique noun choices. Soft mode now has about 5.8 billion possible exact outputs once the symbol, two-digit number, and symbol placement are included. Firm and Extra Firm climb much higher by adding more random word slots.</p>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-xs mt-2 leading-relaxed">This note is for the English browser generator. API, offline, and translated word lists are maintained separately.</p>
+        </div>
       </section>
 
       <!-- Divider -->
@@ -162,7 +167,7 @@ backgroundDecor: leaves
             <div class="rule-num rule-num-yellow">3</div>
             <div>
               <div class="font-extrabold text-base mb-2 text-[#4A3728]">Check the Database</div>
-              <p class="text-[#8B7355] text-sm leading-relaxed">Even a strong password is worthless if it appeared in a data breach. Use our <a href="/stresstest/" class="text-[#E6A800] hover:text-[#C28D00] underline underline-offset-2 decoration-[#E6A800]/30 hover:decoration-[#E6A800] transition-colors font-bold">Stress Tester</a> to check if your password shows up in HaveIBeenPwned's database of billions of compromised credentials, privately using k-Anonymity.</p>
+              <p class="text-[#8B7355] text-sm leading-relaxed">Even a strong password needs attention if it appeared in a data breach. Use our <a href="/stresstest/" class="text-[#E6A800] hover:text-[#C28D00] underline underline-offset-2 decoration-[#E6A800]/30 hover:decoration-[#E6A800] transition-colors font-bold">Stress Tester</a> to check Have I Been Pwned with a privacy-preserving k-anonymity request.</p>
             </div>
           </div>
 

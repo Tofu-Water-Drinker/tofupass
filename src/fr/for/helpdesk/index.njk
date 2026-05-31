@@ -1,0 +1,113 @@
+---
+layout: base.njk
+title: TofuPass pour les équipes d'assistance - TofuPass
+description: Une génération de mots de passe privé lisible pour réinitialiser le helpdesk,
+  les premières connexions et les identifiants par téléphone.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: helpdesk
+kicker: Pour les équipes d'assistance
+heroTitle: Réinitialisez les mots de passe que les gens peuvent effectivement taper.
+lede: TofuPass donne des bureaux de service lisibles, des mots de passe conviviaux
+  pour les premiers logins, la récupération de compte, et tous ces "pouvez-vous épeler
+  cela à nouveau?" moments.
+mascot: /alert.png
+proof: Pas de comptes. Pas d'analyse. Aucun mot de passe généré ne quitte l'appareil.
+actions:
+- label: Générer un mot de passe
+  href: /fr/
+- label: Version hors ligne
+  href: /Offline/tofupass-offline.html
+useKicker: L'ajustement du bureau de réinitialisation
+useTitle: Construit pour la remise, pas la démo de laboratoire.
+useIntro: Les mots de passe forts ne sont utiles que si la personne de l'autre bout
+  peut les recevoir, les taper et passer à autre chose.
+checks:
+- Idéal pour les mots de passe temporaires qui doivent être changés à la première
+  connexion.
+- Utile quand vous avez besoin de lire un mot de passe à haute voix ou de le coller
+  dans une note de billet brièvement.
+- Assez simple pour un appelant stressé sans les entraîner à des habitudes faibles.
+workflowTitle: Remise du recouvrement des comptes
+sample: RiverMisoCloud!42
+workflow:
+- term: Dis-le.
+  detail: Rivière, Miso, Nuage, point d'exclamation, quatre-deux.
+- term: Confirmez-le
+  detail: Capital R, capital M, capital C. Pas d'espace.
+- term: Ferme-la.
+  detail: Demandez-leur de le changer au début de la connexion et d'enregistrer le
+    nouveau dans leur gestionnaire.
+playbookKicker: Réinitialiser le playbook
+playbookTitle: Réduire les erreurs pendant la partie la plus occupée du billet.
+playbookIntro: Ce n'est pas seulement une génération. Le point est une poignée plus
+  propre qui réduit les répétitions, les typos et les solutions de rechange non sécurisées.
+modeTitle: Quel mode correspond à la réinitialisation
+modeRows:
+- label: Souple
+  title: Remises très courtes
+  copy: Utile pour les mots de passe temporaires à faible risque qui sont modifiés
+    immédiatement après la première connexion.
+- label: Entreprise
+  title: Recouvrement standard des comptes
+  copy: Assez fort pour réinitialiser les flux ordinaires tout en étant pratique à
+    lire sur un appel.
+- label: Extra
+  title: Travaux d'administration et de configuration
+  copy: Utilisez Extra Firm ou passphrases lorsque le mot de passe peut vivre au-delà
+    de la première remise.
+scenarioTitle: Scénarios des services
+scenarios:
+- label: Téléphone
+  title: L'appelant doit le taper en direct
+  copy: Choisissez un mot de passe lisible, dites d'abord les mots, puis validez les
+    majuscules, les chiffres et les symboles.
+- label: Billet
+  title: Le mot de passe doit être collé brièvement
+  copy: Gardez le secret temporaire de courte durée et fermez le billet seulement
+    après confirmation du changement de première connexion.
+- label: à bord
+  title: Nouvelle configuration de location
+  copy: Générer un mot de passe de démarrage, le distribuer par le canal approuvé,
+    et les diriger vers un gestionnaire.
+apiPitchKicker: Outils internes
+apiPitchTitle: Ajouter des mots de passe temporaires lisibles aux outils de réinitialisation
+  approuvés.
+apiPitchIntro: L'API peut s'adapter aux scripts du bureau de service ou à l'outil
+  de réinitialisation interne où un mot de passe lisible est généré pour une courte
+  remise. Conservez la politique, l'enregistrement, l'expiration et les exigences
+  de changement de première connexion dans votre propre système.
+apiPitchCta: Ouvrir la référence de l'API
+apiExampleLabel: Réinitialiser l'aide
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Génére un mot de passe temporaire de la firme. Votre workflow devrait
+  gérer l'expiration et les changements requis.
+stripKicker: Sécurité conviviale
+stripTitle: Le script de réinitialisation est plus court.
+stripItems:
+- title: Livrable
+  copy: Les morceaux de mots sont plus faciles à entendre, à répéter et à vérifier
+    que la soupe de caractère aléatoire.
+- title: Forme politique
+  copy: Soft, Firm et Extra Firm comprennent des capitaux, des chiffres et des symboles
+    communs par défaut.
+- title: Privé
+  copy: Génération se produit dans le navigateur, de sorte que réinitialiser le travail
+    ne crée pas un problème de journalisation.
+lang: fr
+audiencePrefix: /fr
+apiHref: /fr/api/
+audienceNavLabel: Autres publics TofuPass
+audienceChooseKicker: Choisissez un autre emplacement
+audienceLabels:
+  teachers: Enseignants
+  helpdesk: Helpdesk
+  parents: Les parents
+  students: Élèves
+  homelab: Labo
+  developers: Développeurs
+---
+
+
+{% include "for-detail-content.njk" %}

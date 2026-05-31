@@ -1,0 +1,148 @@
+---
+layout: base.njk
+noindex: true
+title: Tutorial Keselamatan Siswa - TofuPass
+description: Enam siswa - kuis keamanan ramah untuk kebersihan password, phishing,
+  MFA, perangkat bersama, dan pemulihan akun. Tidak ada akun dan tidak ada hasil yang
+  dimasukkan.
+pageKey: students
+extraCss:
+- /assets/css/student-test.css
+pageScripts:
+- /assets/js/student-test-id.js
+- /assets/js/student-test.js
+lang: id
+---
+
+
+  <main class="student-test-page">
+    <section class="student-test-hero" aria-labelledby="studentTestTitle">
+      <div class="student-test-wrap">
+        <div class="student-test-intro">
+          <img src="/excited.png" alt="" class="student-test-mascot" aria-hidden="true" />
+          <p class="student-test-kicker">Pelatihan keamanan</p>
+          <h1 id="studentTestTitle">Tutorial Keselamatan Siswa</h1>
+          <p class="student-test-lede">Enam kuis singkat pada password, phishing, dua kode faktor, komputer bersama, pemulihan, dan apa yang harus dilakukan ketika akun merasa tidak aman.</p>
+          <p class="student-test-facts">6 kuis 85% untuk lulus</p>
+        </div>
+
+        <section class="student-quiz-shell" aria-labelledby="quizTitle">
+          <div class="module-overview" aria-label="Modul kuis">
+            <div class="module-overview-head">
+              <p class="student-test-kicker quiz-kicker">Kemajuan tutorial</p>
+              <strong id="moduleSummary">0 dari 6 berlalu</strong>
+            </div>
+            <div id="moduleGrid" class="module-grid"></div>
+          </div>
+
+          <div class="quiz-workspace">
+            <div class="quiz-topline">
+              <div>
+                <p id="quizKicker" class="student-test-kicker quiz-kicker">Pilih kuis</p>
+                <h2 id="quizTitle">Pilih modul untuk memulai.</h2>
+              </div>
+              <span id="quizProgressLabel" class="quiz-progress-label" aria-live="polite">0 dari 7</span>
+            </div>
+
+            <div class="quiz-progress" aria-hidden="true">
+              <span id="quizProgressBar"></span>
+            </div>
+
+            <div id="moduleIntro" class="module-intro">
+              <p id="moduleDescription">Pass semua enam kuis dengan setidaknya 85% untuk membuka sertifikat penyelesaian Anda.</p>
+              <div class="quiz-actions">
+                <button type="button" id="quizStart" class="quiz-primary">Mulai Quiz</button>
+              </div>
+            </div>
+
+            <div id="quizPanel" class="quiz-panel" hidden>
+              <p id="quizScenario" class="quiz-scenario"></p>
+              <h3 id="quizQuestion" class="quiz-question"></h3>
+              <div id="quizOptions" class="quiz-options" role="list"></div>
+              <div id="quizFeedback" class="quiz-feedback" aria-live="polite" hidden></div>
+
+              <div class="quiz-actions">
+                <button type="button" id="quizCheck" class="quiz-primary" disabled>Periksa Jawaban</button>
+                <button type="button" id="quizNext" class="quiz-secondary" hidden>Berikutnya</button>
+              </div>
+            </div>
+
+            <div id="quizResults" class="quiz-results" hidden>
+              <div class="result-badge">
+                <span id="resultScore">0%</span>
+                <strong id="resultLabel">Terus berlatih</strong>
+              </div>
+              <p id="resultMessage" class="result-message"></p>
+              <div id="resultReview" class="result-review" aria-label="Ulasan jawaban"></div>
+              <div class="quiz-actions">
+                <button type="button" id="quizRestart" class="quiz-primary">Ambil kembali Quiz</button>
+                <button type="button" id="quizNextModule" class="quiz-secondary">Quiz Berikutnya</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="certificateSection" class="certificate-section" aria-labelledby="certificateTitle" hidden>
+      <div class="student-test-wrap">
+        <div class="certificate-head">
+          <div>
+            <p class="student-test-kicker student-test-kicker-blue">Sertifikat penyelesaian</p>
+            <h2 id="certificateTitle">Buka sertifikat yang dapat dicetak.</h2>
+          </div>
+          <span id="certificateLockBadge" class="certificate-lock-badge">Terkunci</span>
+        </div>
+
+        <div id="certificatePanel" class="certificate-panel is-locked">
+          <div class="certificate-controls">
+            <label for="certificateName">Nama siswa</label>
+            <input id="certificateName" type="text" placeholder="Tipe nama mahasiswa" disabled />
+            <button type="button" id="certificatePrint" class="quiz-primary" disabled>Print / Save PDF</button>
+          </div>
+
+          <article id="certificatePrintable" class="certificate-printable" aria-label="Sertifikat pelengkapan yang dapat dicetak">
+            <div class="certificate-border">
+              <img src="/tofu.png" alt="" class="certificate-mascot" aria-hidden="true" />
+              <p class="certificate-kicker">Tutorial Keselamatan TofuPass</p>
+              <h3>Sertifikat Penyelesaian</h3>
+              <p class="certificate-awarded">Diberikan ke</p>
+              <p id="certificateStudentName" class="certificate-name">Nama Mahasiswa</p>
+              <p class="certificate-copy">untuk menyelesaikan enam ujian keamanan mahasiswa dengan lulus nilai.</p>
+              <div class="certificate-grade-row">
+                <span id="certificateGrade">Kelas atas: -</span>
+                <span id="certificateDate">Tanggal: --</span>
+              </div>
+              <div id="certificateModules" class="certificate-modules"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="student-training-strip" aria-labelledby="trainingTitle">
+      <div class="student-test-wrap training-grid">
+        <div>
+          <p class="student-test-kicker student-test-kicker-blue">Apa quiz meliputi</p>
+          <h2 id="trainingTitle">Enam kebiasaan yang layak diulang.</h2>
+        </div>
+        <div class="training-points">
+          <article>
+            <span>1</span>
+            <h3>Sandi unik yang kuat</h3>
+            <p>Dapat diandalkan masih bisa kuat ketika kata-kata acak dan setiap akun berbeda.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Filshing dan MFA</h3>
+            <p>Siswa berlatih melihat tanda palsu dan melindungi kode, surat perintah, dan kunci pemulihan.</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>Berbagi keselamatan perangkat</h3>
+            <p>Logging keluar, melaporkan masalah, dan menghindari password tersimpan di perangkat kelas.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>

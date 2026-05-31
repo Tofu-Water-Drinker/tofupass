@@ -1,0 +1,91 @@
+---
+layout: base.njk
+title: TofuPassのヘルプチームデスク - TofuPass
+description: ヘルプデスクのリセット、最初のログイン、および電話の認証のための読み取り可能なプライベートパスワード生成。
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: helpdesk
+kicker: ヘルプデスクチーム
+heroTitle: パスワードを再設定すると、実際に入力できます。
+lede: TofuPassは、サービスデスクの読みやすく、最初のログイン、アカウントの回復、そしてすべての "あなたは再びそれを綴ることができますか? 瞬間。
+mascot: /alert.png
+proof: アカウントはありません。 分析なし。 生成されたパスワードはデバイスを離れません。
+actions:
+- label: パスワードを生成する
+  href: /ja/
+- label: オフライン版
+  href: /Offline/tofupass-offline.html
+useKicker: リセットデスクフィット
+useTitle: ラボのデモではなく、手渡のために建てられました。
+useIntro: 他の人の端の人がそれらを受け取り、それらを入力し、自分の日に移動できる場合にのみ強力なパスワードが便利です。
+checks:
+- 最初のサインインで変更しなければならない一時的なパスワードに最適です。
+- パスワードを読んだり、それをチケットノートに簡単に貼り付ける必要があるときに便利です。
+- 弱い習慣にそれらを訓練しないで強調された発信者のために十分に簡単。
+workflowTitle: 口座回復ハンドオフ
+sample: リバーミソクラウド!42
+workflow:
+- term: お問い合わせ
+  detail: 河川, みそ, 雲, 除外点, 4 2
+- term: お問い合わせ
+  detail: 資本金 資本金 資本金 資本金 C. スペースなし
+- term: 閉じる
+  detail: 最初のログインで変更し、管理者に新しいものを保存します。
+playbookKicker: プレイブックのリセット
+playbookTitle: チケットのバスの部分の間違いを減らす。
+playbookIntro: ポイントは単なる世代ではありません。 点は、繰り返し、タイポス、および安全な回避策を下げるクリーナーハンドオフです。
+modeTitle: どのモードがリセットに合うか
+modeRows:
+- label: ソフト
+  title: 非常に短命ハンドオフ
+  copy: 最初のログイン直後に変更される低リスク一時パスワードに便利です。
+- label: 会社案内
+  title: 標準的なアカウントの回復
+  copy: 通常のリセットフローに十分な強度があり、コールを読み取りながら実用的です。
+- label: ツイート
+  title: 管理者とセットアップ作業
+  copy: パスワードが最初のハンドオフを超えて生きる場合、余分な会社またはパスフレーズを使用してください。
+scenarioTitle: サービスデスクのシナリオ
+scenarios:
+- label: 電話番号
+  title: ケーラーは、それが生きてタイプする必要があります
+  copy: 読みやすいパスワードを選択し、最初に単語を言うと、首都、数字、記号を確認します。
+- label: チケット
+  title: パスワードは簡単に貼り付ける必要があります
+  copy: 仮の秘密を短時間で保存し、初回ログイン変更後のみ終了します。
+- label: オンボード
+  title: 新規採用セットアップ
+  copy: 始動機のパスワードを生成し、承認されたチャネルをクリアし、管理者に割り当てます。
+apiPitchKicker: 内部ツーリング
+apiPitchTitle: 承認されたリセットツールに読みやすい一時パスワードを追加します。
+apiPitchIntro: API は、サービスデスクスクリプトや内部のリセットツールで、読みやすいパスワードが短いハンドオフに生成されます。 自分のシステムでポリシー、ロギング、満了、および最初のログイン変更要件を保持してください。
+apiPitchCta: API リファレンスを開く
+apiExampleLabel: リセットヘルパー
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: 1つの一時的なファームパスワードを生成します。 ワークフローは、有効期限と変更が必要である必要があります。
+stripKicker: キューフレンドリーなセキュリティ
+stripTitle: リセットスクリプトはより短くなります。
+stripItems:
+- title: 読みやすい
+  copy: 単語のチャンクは、ランダムなキャラのスープよりも聞き、繰り返し、確認しやすいです。
+- title: 方針形
+  copy: ソフト、ファーム、およびエクストラファームには、デフォルトで資本、数字、および共通記号が含まれます。
+- title: プライベート
+  copy: 生成はブラウザで行われますので、リセット作業はログの問題を作成しません。
+lang: ja
+audiencePrefix: /ja
+apiHref: /ja/api/
+audienceNavLabel: その他のTofuPassの聴衆
+audienceChooseKicker: 別のピッチを選択
+audienceLabels:
+  teachers: 講師紹介
+  helpdesk: ヘルプデスク
+  parents: 両親
+  students: スタッフ
+  homelab: ホームラボ
+  developers: 開発者
+---
+
+
+{% include "for-detail-content.njk" %}

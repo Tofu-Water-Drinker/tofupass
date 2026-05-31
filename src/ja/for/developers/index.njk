@@ -1,0 +1,90 @@
+---
+layout: base.njk
+title: 開発者向けTofuPass - TofuPass
+description: デモ、ステージングアカウント、チュートリアル、ローカルテスト、および非シークレット開発ワークフロー用のプライベートな読み取り可能なパスワード。
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: 開発者向け
+heroTitle: 偶然の秘密のスプロールのないデモパスワード。
+lede: TofuPassは、デモ、シードテストユーザー、ステージングリセット、チュートリアル、ローカルアプリ、またはドキュメントをサポートするための読みやすい認証が必要な場合に便利です。
+mascot: /alert.png
+proof: APIキーや生産秘密管理の代替ではありません。 人間向きのパスワードに最適です。
+actions:
+- label: パスワードを生成する
+  href: /ja/
+- label: APIを見る
+  href: /ja/api/
+useKicker: Dev ワークフロー フィット
+useTitle: パスワードの人間が確認しなければならない。
+useIntro: 開発作業は、多くの場合、悪い例を回避するのに十分である資格情報を必要とするが、デモ、ドキュメント、QA、および一時的なユーザーのために十分な読みやすい。
+checks:
+- 読みやすい生成されたパスワードは、ハードコードされた古典の代わりにチュートリアルで使用します。
+- 非密な文字列をメールせずに、ステージングまたはQAユーザーをリセットします。
+- 秘密管理ツールで生産秘密、APIキー、トークンを保持します。
+workflowTitle: 開発者向けプラン
+workflow:
+- term: デモデモ
+  detail: ウォークスルー中に話したり、入力したりできる読み取り可能なパスワードを使用します。
+- term: ステージング
+  detail: 同じ共有パスワードを永続的に再利用する代わりに、テストユーザー固有の資格情報を提供します。
+- term: ドキュメント
+  detail: ライブクレデンシャルを発行することなく、現実的なパスワード例を表示します。
+playbookKicker: 開発者 Playbook
+playbookTitle: 悪い秘密を正規化することなく、例を有用に保ちます。
+playbookIntro: TofuPass は生産トークンでは使用できません。 デモ、ドキュメント、QA、サポート、ローカルテストで表示する人向きのパスワードです。
+modeTitle: どのモードが dev タスクに適合するか
+modeRows:
+- label: ソフト
+  title: Throwawayデモ
+  copy: パスワードが画面上に表示され、ウォークスルー後に破棄されると便利です。
+- label: 会社案内
+  title: QAおよびステージングユーザー
+  copy: シードユーザー、サポートテスト、および資格情報のための既読のデフォルトは、人間はタイプする必要があるかもしれません。
+- label: フレーズ
+  title: チーム共有例
+  copy: 読みやすさが修正よりも重要である、より長く生きた内部例にパスフレーズを使用する。
+scenarioTitle: 開発シナリオ
+scenarios:
+- label: ドキュメント
+  title: チュートリアルでは資格情報が必要です
+  copy: リーダーを教える代わりに生成された例を表示して、管理者とパスワードをコピーします。
+- label: 品質保証
+  title: ユーザーが回転を必要とするテスト
+  copy: すべてのシードユーザに一意のパスワードを与え、共有ステージング認証をスケジュールに回転させます。
+- label: デモデモ
+  title: ライブ・ウォークスルーが来る
+  copy: 画面上で読みやすく、セッション後に捨てる安全なパスワードを使用してください。
+apiPitchKicker: API 適合
+apiPitchTitle: スクリプトまたはデモフローで生成されたパスワードが必要ですか?
+apiPitchIntro: ドキュメント、QAデータ、ステージング設定、または人読みパスワードが役立つデモの API を使用します。 生産の秘密を実際の秘密管理に保ちます。
+apiPitchCta: API リファレンスを見る
+apiExampleLabel: パスワードエンドポイント
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: 任意の言語サポートで、プレーンテキストとして単一のファームパスワードを返します。
+stripKicker: 開発者の衛生学
+stripTitle: より良い例は、より良いデフォルトを作る。
+stripItems:
+- title: ヒューマン
+  copy: TofuPass を使用して、認証担当者が読み、タイプ、またはリセットする必要があります。
+- title: スタッフ
+  copy: デモを回転させ、パスワードを一時停止させる。
+- title: ツイート
+  copy: 生成されたパスワードは、API キー、トークン、およびプロダクションシークレットから離れます。
+lang: ja
+audiencePrefix: /ja
+apiHref: /ja/api/
+audienceNavLabel: その他のTofuPassの聴衆
+audienceChooseKicker: 別のピッチを選択
+audienceLabels:
+  teachers: 講師紹介
+  helpdesk: ヘルプデスク
+  parents: 両親
+  students: スタッフ
+  homelab: ホームラボ
+  developers: 開発者
+---
+
+
+{% include "for-detail-content.njk" %}

@@ -1,0 +1,82 @@
+---
+layout: base.njk
+noindex: true
+title: 学生豆腐-豆腐
+description: 方便学生的密码卫生,安全测试,以及可打印的完成证书.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: students
+kicker: 学生
+heroTitle: 学习密码安全而不被训导.
+lede: TofuPass配对可读密码生成,学生安全测试覆盖密码,网易,MFA,共享设备,恢复,以及账户麻烦.
+mascot: /excited.png
+proof: 学生考试不需要说明或提交结果。
+actions:
+- label: 生成密码
+  href: /zh-cn/
+useKicker: 学生培训
+useTitle: 6个短考,1个实际目标.
+useIntro: 学生们可以实践他们实际面对的决定:制作独特的密码,发现假的签注,保护密码,在有感觉时寻求帮助.
+checks:
+- 6个考题侧重于密码和账户安全.
+- 每一次考试的通过分数是85%。
+- 完成解锁可打印的证书,并附有学生的姓名和成绩.
+workflowTitle: 学生安全之路
+workflow:
+- term: 学习
+  detail: 从密码基础和账户安全话题开始.
+- term: Pass
+  detail: 完成所有6次考试,成绩通过。
+- term: 打印
+  detail: 解锁证书,键入名称,并打印或保存为PDF.
+playbookKicker: 学生游戏本
+playbookTitle: 在账户变得怪异之前练习一下
+playbookIntro: 学生版本侧重于学生实际做出的选择,从创建密码到识别一个登录页面或消息感觉脱落时.
+modeTitle: 哪个工具适合任务
+modeRows:
+- label: 测试
+  title: 安全辅导
+  copy: 利用学生测试来检查密码卫生、钓鱼意识、外交部基本知识以及恢复决定。
+- label: 企业
+  title: 个人学校账户
+  copy: 生成属于一个学生且不应共享的账户的独有密码.
+- label: 词组
+  title: 长期项目
+  copy: 使用密码句来表示俱乐部,组合,或允许长度和秘密持续的项目.
+scenarioTitle: 学生情况
+scenarios:
+- label: 新设
+  title: 打开新的类工具
+  copy: 制作一个独特的密码, 而不是重用来自电子邮件、 游戏或去年的密码 。
+- label: 鸡尾酒
+  title: 信件请求登录
+  copy: 签到前暂停,检查来源,当有事情感到紧急时,再问一个信任的成年人.
+- label: 麻烦
+  title: 一个账户感觉不安全
+  copy: 更改密码, 尽可能在其他会话上签名, 并报告给合适的人 。
+stripKicker: 学生的实践
+stripTitle: 真实生活中出现的密码习惯.
+stripItems:
+- title: 独一无二
+  copy: 一个账户不应该打开每个账户。
+- title: 可疑
+  copy: 假的签入,奇怪的链接,和紧急消息都值得暂停.
+- title: 恢复
+  copy: 当一个账户感到不安全时,学生们应该知道要告诉谁,要改变什么.
+lang: zh-CN
+audiencePrefix: /zh-cn
+apiHref: /zh-cn/api/
+audienceNavLabel: 其他TofuPass观众
+audienceChooseKicker: 选择另一个投出
+audienceLabels:
+  teachers: 教师
+  helpdesk: 服务台
+  parents: 家长
+  students: 学生
+  homelab: 家园
+  developers: 开发者
+---
+
+
+{% include "for-detail-content.njk" %}

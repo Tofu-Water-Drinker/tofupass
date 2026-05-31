@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: TofuPass - सुरक्षित और याद रखने योग्य पासवर्ड
-description: अपने ब्राउज़र में हिंदी पासवर्ड बनाएँ।
+title: TofuPass - वास्तविक handoff के लिए पढ़ने योग्य पासवर्ड
+description: ऐसे दोस्ताना, privacy-first पासवर्ड बनाएं जिन्हें बोलना, टाइप करना, सिखाना, रीसेट करना या अस्थायी रूप से साझा करना आसान हो। कोई खाते, विज्ञापन या analytics नहीं।
 pageKey: home
 extraCss:
 - /assets/css/home.css
@@ -13,7 +13,9 @@ backgroundDecor: leaves
 showAnnouncement: true
 eleventyExcludeFromCollections: true
 permalink: /hi/index.html
+lang: hi
 ---
+
 
   <!-- COLORFUL TOP BAND -->
   <div class="hero-band" aria-hidden="true"></div>
@@ -28,7 +30,7 @@ permalink: /hi/index.html
         <div class="generator-card p-6 sm:p-8 relative">
           <!-- Mascot + tagline -->
           <div class="flex flex-col items-center mb-5">
-            <a href="/hi/miso/" class="mascot-wrap" aria-label="Miso">
+            <a href="/hi/miso/" class="mascot-wrap" aria-label="मिसो">
               <img id="generatorMascot" src="/tofu.png" alt="Miso TofuPass mascot" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
               <span id="mascotSparks" class="mascot-sparks" aria-hidden="true">
                 <span class="mascot-spark mascot-spark-1"></span>
@@ -40,7 +42,6 @@ permalink: /hi/index.html
             </a>
             <p class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355]/50 dark:text-[#B8A890]/50">टैप करने के लिए · क्लिक करें कॉपी</p>
           </div>
-
           <!-- Password Display -->
           <button type="button" onclick="copyPassword()" id="passwordPanel"
             class="password-panel w-full px-5 py-5 mb-5 min-h-[72px] flex flex-col items-center justify-center text-center">
@@ -84,9 +85,9 @@ permalink: /hi/index.html
               <circle cx="12" cy="12" r="1.5"></circle>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">शीतल</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">सरल और मीठा</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">2 शब्द + प्रतीक + संख्या<br/>उदाहरण <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">HappyKoala!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">Soft</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">टाइप करने में सबसे आसान</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Low-risk, temporary या throwaway uses के लिए सबसे अच्छा।<br/>2 शब्द + प्रतीक + संख्या<br/>उदाहरण <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">HappyKoala!73</span></p>
         </div>
 
         <!-- Firm -->
@@ -98,11 +99,11 @@ permalink: /hi/index.html
             </svg>
           </div>
           <div class="flex items-center gap-2 mb-1">
-            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">फर्म</div>
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">Firm</div>
             <span class="text-xs text-[#6BBF59] font-bold">अनुशंसित</span>
           </div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">मजबूत और उपयोगी</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">3 शब्द + प्रतीक + संख्या<br/>उदाहरण <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">नृत्यकोलारिवर!73</span></p>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Default handoff</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">अधिकतर reset, support, classroom और family handoffs के लिए यहीं से शुरू करें।<br/>3 शब्द + प्रतीक + संख्या<br/>उदाहरण <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaRiver!73</span></p>
         </div>
 
         <!-- Extra Firm -->
@@ -115,15 +116,12 @@ permalink: /hi/index.html
               <rect x="4" y="15" width="16" height="4" rx="1.5"></rect>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">अतिरिक्त फर्म</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">हाई-एंट्रोपी पासवर्ड</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">4 शब्द + प्रतीक + संख्या<br/>उदाहरण <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">नृत्यकोला कॉस्मिकरिवर!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">Extra Firm</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">लंबे समय के लिए</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">जब credential ज़्यादा important हो और site लंबा password स्वीकार करे।<br/>4 शब्द + प्रतीक + संख्या<br/>उदाहरण <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaCosmicRiver!73</span></p>
         </div>
 
         </div>
-
-        <p class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-3 font-semibold">सुरक्षा और प्रयोज्यता के बीच मीठे स्थान के लिए निर्मित, सभी पीढ़ी अपने डिवाइस पर रहने के साथ।</p>
-
         <a href="#why-tofupass" class="scroll-cue" aria-label="अधिक जानने के लिए नीचे स्क्रॉल करें">
           <span class="scroll-cue-icon ui-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
@@ -136,12 +134,12 @@ permalink: /hi/index.html
     </div>
   </main>
 
-  <!-- FEATURES SECTION (open layout, no cards) -->
+  <!-- LIGHTWEIGHT CONTEXT SECTION (open layout, no cards) -->
   <section id="why-tofupass" class="relative z-10 pt-16 pb-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">क्या बनाता है <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span> अलग?</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">एक पासवर्ड जनरेटर वास्तविक दुनिया उपयोगिता, भरोसेमंद यादृच्छिकता और पैटर्न लोगों के साथ वास्तव में काम कर सकते हैं के आसपास बनाया।</p>
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">असुविधाजनक पलों के लिए पासवर्ड जनरेटर।</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">Browser और password manager generators तब बढ़िया हैं जब autofill सब संभाल लेता है। TofuPass reset call, classroom handout, Wi-Fi label, router screen, family setup या demo के लिए है जहाँ किसी इंसान को secret पढ़ना और टाइप करना पड़ता है।</p>
       </div>
       <div class="features-open grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
 
@@ -153,8 +151,8 @@ permalink: /hi/index.html
               <path d="M8 11V8a4 4 0 1 1 8 0v3" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">थियेटर के बिना सुरक्षा</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">ब्राउज़र का उपयोग करता है <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code> इसलिए यादृच्छिकता वास्तविक है, सजावटी नहीं है।</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">जानबूझकर पढ़ने योग्य</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">शब्द-आधारित साफ recipes, एक symbol और छोटी संख्या पासवर्ड को बोलने, टाइप करने, जाँचने और hand off करने में आसान बनाते हैं, बिना कमजोर आदतें सिखाए।</p>
         </div>
 
         <!-- Feature 2 -->
@@ -164,8 +162,8 @@ permalink: /hi/index.html
               <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">मनुष्य के लिए बनाया गया</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">वर्ड-आधारित पासवर्ड टाइप करना और याद करना आसान है, जिसका मतलब कम पुन: उपयोग करना, कम सरलीकरण और कम चिपचिपा नोट्स है।</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">डिफ़ॉल्ट रूप से निजी</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Web generator आपके browser में <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code> के साथ चलता है। कोई accounts, ads, analytics नहीं, और TofuPass generated passwords को store नहीं करता।</p>
         </div>
 
         <!-- Feature 3 -->
@@ -177,8 +175,8 @@ permalink: /hi/index.html
               <path d="M9 14h4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">स्पष्ट, संगत पैटर्न</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">सॉफ्ट, फर्म और एक्स्ट्रा फर्म प्रत्येक परिचित पूंजी शब्द पैटर्न, एक आम प्रतीक और एक छोटी संख्या रखते हैं, इसलिए आपको हमेशा पता है कि आप क्या हो रहे हैं।</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">पासवर्ड मैनेजर के साथ काम करने के लिए बना</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass handoff password बनाता है। Long-term secrets को store करना, autofill संभालना और रोज़मर्रा के accounts की रक्षा करना असली password manager का काम है।</p>
         </div>
       </div>
     </div>
@@ -194,7 +192,7 @@ permalink: /hi/index.html
         </svg>
       </div>
 
-      <img src="/excited.png" alt="Miso उत्साहित" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
+      <img src="/excited.png" alt="Miso देख उत्साहित" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
       <h2 class="text-2xl sm:text-3xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">पहले से ही एक पासवर्ड है?</h2>
       <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-8 max-w-md mx-auto font-medium leading-relaxed">जब तक यह क्रैक हो जाता है और क्या यह किसी भी ज्ञात डेटा उल्लंघन में दिखाई देता है।</p>
       <a href="/hi/stresstest/" class="inline-block cta-btn relative z-10 px-8 py-4 rounded-2xl font-bold text-base text-white shadow-xl mb-6">
@@ -212,18 +210,18 @@ permalink: /hi/index.html
     <div class="phonetic-sheet-head">
       <div class="flex items-center justify-between mb-3">
         <span class="text-sm font-extrabold uppercase tracking-[0.12em] text-[#4A3728] dark:text-[#F0E6D8]">फोनेटिक गाइड</span>
-        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="बंद फोनेटिक गाइड">×</button>
+        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="बंद फोनेटिक गाइड">&times;</button>
       </div>
       <div id="phoneticPasswordEcho" class="phonetic-pw-echo font-mono text-lg font-bold text-[#6BBF59] break-all text-center mb-3"></div>
       <div class="flex gap-2">
-        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="सैन्य NATO ध्वन्यात्मक गाइड">
+        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="सैन्य नाटो फोनेटिक गाइड">
           <span class="ui-icon phonetic-label-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <path d="M5 11a7 7 0 0 1 14 0"></path>
               <path d="M7 11v2a5 5 0 0 0 10 0v-2"></path>
               <path d="M4 11h16"></path>
             </svg>
-          </span>NATO
+          </span>नाटो
         </button>
         <button id="tabKid" class="tab-btn" onclick="setPhoneticMode('kid')" aria-selected="false" aria-label="बच्चे के अनुकूल फोनेटिक गाइड">
           <span class="ui-icon phonetic-label-icon" aria-hidden="true">

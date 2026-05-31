@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Тестер паролей - TofuPass
+title: Тестер стресса - TofuPass
 pageKey: stresstest
 extraCss:
 - /assets/css/stresstest.css
@@ -8,7 +8,9 @@ pageScripts:
 - /assets/js/stresstest-ru.js
 - /assets/js/stresstest.js
 backgroundDecor: leaves
+lang: ru
 ---
+
 
   <!-- CONTENT -->
   <main class="relative z-10 pt-28 pb-20 px-4">
@@ -39,7 +41,7 @@ backgroundDecor: leaves
           <div class="flex items-center justify-between mt-2">
             <button onclick="toggleVisibility()" id="visBtn"
               class="text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 hover:text-[#4A3728] dark:hover:text-[#F0E6D8] transition-colors flex items-center gap-1">
-              <span id="visIcon">👁</span> <span id="visText">Показать</span>
+              <span id="visIcon">👁</span> <span id="visText">Шоу</span>
             </button>
             <div id="char-count" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40"></div>
           </div>
@@ -103,13 +105,13 @@ backgroundDecor: leaves
             <div class="tooltip-wrap">
               🔑
               <div class="tooltip-content" style="left: 0; transform: none;">
-                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-анонимность</strong>Только первые 5 символов хэша SHA-1 вашего пароля отправляются в Have I Been Pwned. Полный хэш и фактический пароль никогда не покидают устройство. API возвращает все хэши с этим префиксом, и сопоставление выполняется локально.
+                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-анонимность</strong>Только первые 5 символов хэша SHA-1 вашего пароля отправляются на Have I Been Pwned. Полный хэш и фактический пароль никогда не покидают устройство. API возвращает все хэши с этим префиксом, и сопоставление выполняется локально.
               </div>
             </div>
           </div>
           <div>
-            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">100% частная проверка</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">Использование обнаружения нарушений <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-анонимность</strong> С помощью Have I Been Pwned. Ваш фактический пароль никогда не передается. Отправляется только хеш-приставка из 5 символов. Нажмите на ключевую иконку, чтобы узнать больше.</p>
+            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">Проверка утечек с сохранением приватности</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">Использование обнаружения нарушений <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-анонимность</strong> Скачать Have I Been Pwned Ваш фактический пароль никогда не передается. Отправляется только хеш-приставка из 5 символов. Нажмите на ключевую иконку, чтобы узнать больше.</p>
           </div>
         </div>
       </div>

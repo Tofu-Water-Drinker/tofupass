@@ -1,0 +1,79 @@
+---
+layout: base.njk
+title: TofuPass for Developers - TofuPass
+description: Private readable passwords for demos, staging accounts, tutorials, local testing, and non-secret development workflows.
+pageKey: for
+extraCss:
+  - /assets/css/for.css
+roleKey: developers
+kicker: For developers
+heroTitle: Demo passwords without accidental secret sprawl.
+lede: TofuPass is useful when you need readable credentials for demos, seeded test users, staging resets, tutorials, local apps, or support docs.
+mascot: /alert.png
+proof: Not a replacement for API keys or production secret management. Perfect for human-facing passwords.
+actions:
+  - label: Generate a password
+    href: /
+  - label: View the API
+    href: /api/
+useKicker: Dev workflow fit
+useTitle: For passwords humans have to see.
+useIntro: Development work often needs credentials that are strong enough to avoid bad examples but readable enough for demos, docs, QA, and temporary users.
+checks:
+  - Use readable generated passwords in tutorials instead of hardcoded classics.
+  - Reset staging or QA users without emailing nonsense strings around.
+  - Keep production secrets, API keys, and tokens in real secret-management tooling.
+  - Use TofuPass for human-facing passwords, not for storing or rotating production secrets.
+workflowTitle: Developer use plan
+sample: DemoUserCedar!37
+workflow:
+  - term: Demo
+    detail: Use a readable password that can be spoken or typed during a walkthrough.
+  - term: Staging
+    detail: Give test users unique credentials instead of reusing the same shared password forever.
+  - term: Docs
+    detail: Show realistic password examples without publishing a live credential.
+playbookKicker: Developer playbook
+playbookTitle: Keep examples useful without normalizing bad secrets.
+playbookIntro: TofuPass is not for production tokens. It is for the human-facing passwords that show up in demos, docs, QA, support, and local testing.
+modeTitle: Which mode fits the dev task
+modeRows:
+  - label: Soft
+    title: Throwaway demos
+    copy: Easiest to type. Useful when a password appears on screen and will be discarded after the walkthrough.
+  - label: Firm
+    title: QA and staging users
+    copy: Recommended default for seeded users, support testing, and credentials a human may need to type.
+  - label: Extra Firm
+    title: Shared team examples
+    copy: Use Extra Firm or passphrases for longer-lived internal examples where readability matters more than brevity.
+scenarioTitle: Development scenarios
+scenarios:
+  - label: Docs
+    title: A tutorial needs credentials
+    copy: Show generated examples instead of teaching readers to copy admin and password.
+  - label: QA
+    title: Test users need rotation
+    copy: Give every seeded user a unique password and rotate shared staging credentials on a schedule.
+  - label: Demo
+    title: A live walkthrough is coming
+    copy: Use a password that is readable on screen and safe to throw away after the session.
+apiPitchKicker: API fit
+apiPitchTitle: Need generated passwords in a script or demo flow?
+apiPitchIntro: Use the API for docs, QA data, staging setup, or demos where a human-readable password is useful. Keep production secrets in real secret management.
+apiPitchCta: View API reference
+apiExampleLabel: Password endpoint
+apiExample: "curl https://tofupass.com/api/password"
+apiExampleNote: Returns one readable server-side password as plain text, with optional language support.
+stripKicker: Developer hygiene
+stripTitle: Better examples make better defaults.
+stripItems:
+  - title: Human
+    copy: Use TofuPass for credentials humans need to read, type, or reset.
+  - title: Temporary
+    copy: Rotate demo and staging passwords when they stop being temporary.
+  - title: Separate
+    copy: Keep generated passwords away from API keys, tokens, and production secrets.
+---
+
+{% include "for-detail-content.njk" %}

@@ -1,0 +1,147 @@
+---
+layout: base.njk
+noindex: true
+title: تعليم السلامة الطلابية - TofuPass
+description: ستة امتحانات أمنية ملائمة للطلاب لنظافة كلمة السر، والتلفيق، والمسح الضوئي،
+  والأجهزة المشتركة، واسترداد الحسابات. No accounts and no submitted results.
+pageKey: students
+extraCss:
+- /assets/css/student-test.css
+pageScripts:
+- /assets/js/student-test-ar.js
+- /assets/js/student-test.js
+lang: ar
+---
+
+
+  <main class="student-test-page">
+    <section class="student-test-hero" aria-labelledby="studentTestTitle">
+      <div class="student-test-wrap">
+        <div class="student-test-intro">
+          <img src="/excited.png" alt="" class="student-test-mascot" aria-hidden="true" />
+          <p class="student-test-kicker">التدريب الأمني</p>
+          <h1 id="studentTestTitle">تعليم سلامة الطلاب</h1>
+          <p class="student-test-lede">ستة امتحانات قصيرة على كلمات السر، والتلفزيون، ومدونات المفاعلين، والحواسيب المشتركة، والتعافي، وما العمل عندما يشعر الحساب بعدم الأمان.</p>
+          <p class="student-test-facts">6 امتحانات بنسبة 85 في المائة لمرورها</p>
+        </div>
+
+        <section class="student-quiz-shell" aria-labelledby="quizTitle">
+          <div class="module-overview" aria-label="وحدات كريز">
+            <div class="module-overview-head">
+              <p class="student-test-kicker quiz-kicker">التقدم في التعليم</p>
+              <strong id="moduleSummary">0 of 6 passed</strong>
+            </div>
+            <div id="moduleGrid" class="module-grid"></div>
+          </div>
+
+          <div class="quiz-workspace">
+            <div class="quiz-topline">
+              <div>
+                <p id="quizKicker" class="student-test-kicker quiz-kicker">اختر امتحان</p>
+                <h2 id="quizTitle">اختر وحدة للبدء</h2>
+              </div>
+              <span id="quizProgressLabel" class="quiz-progress-label" aria-live="polite">صفر من 7</span>
+            </div>
+
+            <div class="quiz-progress" aria-hidden="true">
+              <span id="quizProgressBar"></span>
+            </div>
+
+            <div id="moduleIntro" class="module-intro">
+              <p id="moduleDescription">مرر كل الامتحانات الستة مع ما لا يقل عن 85٪ لفتح شهادة إتمامك.</p>
+              <div class="quiz-actions">
+                <button type="button" id="quizStart" class="quiz-primary">البداية</button>
+              </div>
+            </div>
+
+            <div id="quizPanel" class="quiz-panel" hidden>
+              <p id="quizScenario" class="quiz-scenario"></p>
+              <h3 id="quizQuestion" class="quiz-question"></h3>
+              <div id="quizOptions" class="quiz-options" role="list"></div>
+              <div id="quizFeedback" class="quiz-feedback" aria-live="polite" hidden></div>
+
+              <div class="quiz-actions">
+                <button type="button" id="quizCheck" class="quiz-primary" disabled>رد</button>
+                <button type="button" id="quizNext" class="quiz-secondary" hidden>التالي</button>
+              </div>
+            </div>
+
+            <div id="quizResults" class="quiz-results" hidden>
+              <div class="result-badge">
+                <span id="resultScore">0%</span>
+                <strong id="resultLabel">استمر في التدريب</strong>
+              </div>
+              <p id="resultMessage" class="result-message"></p>
+              <div id="resultReview" class="result-review" aria-label="استعراض الإجابة"></div>
+              <div class="quiz-actions">
+                <button type="button" id="quizRestart" class="quiz-primary">Retake Quiz</button>
+                <button type="button" id="quizNextModule" class="quiz-secondary">كويز التالي</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="certificateSection" class="certificate-section" aria-labelledby="certificateTitle" hidden>
+      <div class="student-test-wrap">
+        <div class="certificate-head">
+          <div>
+            <p class="student-test-kicker student-test-kicker-blue">شهادة إتمام</p>
+            <h2 id="certificateTitle">افتحي شهادة الطباعة</h2>
+          </div>
+          <span id="certificateLockBadge" class="certificate-lock-badge">مقفلة</span>
+        </div>
+
+        <div id="certificatePanel" class="certificate-panel is-locked">
+          <div class="certificate-controls">
+            <label for="certificateName">اسم الطلاب</label>
+            <input id="certificateName" type="text" placeholder="اسم الطلبة" disabled />
+            <button type="button" id="certificatePrint" class="quiz-primary" disabled>Print / Save PDF</button>
+          </div>
+
+          <article id="certificatePrintable" class="certificate-printable" aria-label="شهادة إتمام مطبوعة">
+            <div class="certificate-border">
+              <img src="/tofu.png" alt="" class="certificate-mascot" aria-hidden="true" />
+              <p class="certificate-kicker">TofuPass Safety Tutorial</p>
+              <h3>شهادة الإنجاز</h3>
+              <p class="certificate-awarded">منحت</p>
+              <p id="certificateStudentName" class="certificate-name">اسم الطلبة</p>
+              <p class="certificate-copy">لإكمال جميع الامتحانات الأمنية للطلاب الستة بدرجات عابرة</p>
+              <div class="certificate-grade-row">
+                <span id="certificateGrade">الرتبة العامة:</span>
+                <span id="certificateDate">التاريخ:</span>
+              </div>
+              <div id="certificateModules" class="certificate-modules"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="student-training-strip" aria-labelledby="trainingTitle">
+      <div class="student-test-wrap training-grid">
+        <div>
+          <p class="student-test-kicker student-test-kicker-blue">ما تغطيه الامتحانات</p>
+          <h2 id="trainingTitle">ست عادات تستحق التكرار</h2>
+        </div>
+        <div class="training-points">
+          <article>
+            <span>1</span>
+            <h3>كلمات سر فريدة قوية</h3>
+            <p>ويمكن أن يظل القراءة قوية عندما تكون الكلمات عشوائية وكل حساب مختلف.</p>
+          </article>
+          <article>
+            <span>2</span>
+            <h3>Phishing and MFA</h3>
+            <p>الطلاب يتدربون على كشف الإشارات المزيفة وحماية الرموز والعجلات ومفاتيح التعافي</p>
+          </article>
+          <article>
+            <span>3</span>
+            <h3>السلامة المشتركة</h3>
+            <p>التسلل، الإبلاغ عن المشاكل، وتجنب حفظ كلمات السر على أجهزة الفصل.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>

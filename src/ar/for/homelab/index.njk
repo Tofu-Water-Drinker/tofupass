@@ -1,0 +1,106 @@
+---
+layout: base.njk
+title: TofuPass for Homelabs - TofuPass
+description: كلمات سر فريدة قابلة للقراءة للموجهين، وصناديق ناسا، والخدمات المحلية،
+  وأجهزة VMs، والهياكل الأساسية الشخصية.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: من أجل بناة المنازل
+heroTitle: أسرار فريدة لخزانة الخادم التي بنيتها بنفسك
+lede: (TofuPass) يساعد مالكي السلالم المنزلية على تجنب إعادة استخدام كلمة السر
+  عبر الموصلات، وصناديق ناسا، ولوحات الرماية، وحسابات الإشهار المحلية، والتجارب.
+mascot: /tofu.png
+proof: يركض في المصفح، يعمل بشكل جيد خارج الخط، ولا يَجْمعُ كلماتَ سرّكَ المولدةَ.
+actions:
+- label: يولد كلمة سر
+  href: /ar/
+- label: اصنعي تمرير
+  href: /ar/passphrases/
+useKicker: تقصير ودي في المختبرات
+useTitle: توقف عن السماح للمختبر بتشارك سر واحد
+useIntro: الأسر المعيشية تنمو جنباً إلى جنب (TofuPass) يعطيك كلمات سر فريدة بسرعة
+  قبل أن تصبح الخدمات المؤقتة هياكل أساسية دائمة
+checks:
+- Use extra Firm or passphrases for routers, NAS admin, hypervisors, and password
+  managers.
+- أعط كل لوح، و VM، وخدمة محلية له الإبداع الخاص.
+- تخزين الأسرار النهائية في مدير كلمة السر أو الخزنة، ليس في README.
+workflowTitle: خطة سرية
+workflow:
+- term: المعدات الأساسية
+  detail: Use the strongest practical mode for routers, NAS, hypervisors, and recovery
+    accounts.
+- term: التطبيقات المحلية
+  detail: توفير وثائق تفويض فريدة من نوعها لوحات التخزين وقواعد البيانات والحاويات
+    وخدمات الاختبار.
+- term: الوثيقة
+  detail: حفظ السر في مدير كلمة السر والاحتفاظ بسجلات مجانية من كلمات السر الحية.
+playbookKicker: Homelab playbook
+playbookTitle: بناء مثل المختبر سيصبح مهم في وقت لاحق.
+playbookIntro: معظم الألواح المنزلية تبدأ كتجربة وتصبح ببطئ البنية التحتية الشخصية
+  كلمات السر الوحيدة تمنع هذا النمو من التحول إلى نصف قطر واحد مشترك
+modeTitle: أي نمط يناسب الخدمة
+modeRows:
+- label: Firm
+  title: لوحات مظلة مؤقتة
+  copy: جيّد للأدوات المحلية والمواقع الشبكية غير المكشوفة ولكنها لا تزال تستحق وثائق
+    تفويض فريدة.
+- label: مبالغ إضافية
+  title: الشبكة والتخزين
+  copy: إستخدموا جهاز الإرسال الإضافي للموجهين، وإشارات ناسا، وأجهزة الإرسال الفائقة،
+    ونظم الدعم، و أي شيء ذو وصول واسع
+- label: الصيغة
+  title: القيود الطويلة الأمد
+  copy: استعملي المفاصل عندما يتم قبول الطول وتريدين سراً يمكنه البقاء بعيداً عن بناء
+    عطلة نهاية الأسبوع
+scenarioTitle: سيناريوهات المختبر
+scenarios:
+- label: Router
+  title: نواة الشبكة يتم لمسها
+  copy: يستعاض عن وثائق التفويض الافتراضية وتفاصيل استرداد المخزون قبل تغيير الكثير
+    من البيئات.
+- label: VM
+  title: صندوق الاختبار يصبح دائم
+  copy: ترجم كلمة السر السريع الأصلية بمجرد أن تبدأ الخدمة بحمل بيانات حقيقية أو وصول
+    حقيقي
+- label: Docs
+  title: إعداد الملاحظات تحتاج إلى تنظيف
+  copy: نقل كلمات السر الحية إلى مدير وترك مذكرات مع أسماء الحسابات، واليوران، ومواعيد
+    التناوب فقط.
+apiPitchKicker: التألق
+apiPitchTitle: مستعملة في إعداد النصوص وليس استبدال الخزينة
+apiPitchIntro: استعملي جهاز المعلومات المسبقة عن علم عندما يحتاج كتاب المعمل إلى كلمة
+  سر مبدئية قابلة للقراءة أو كلمة مرور ثم تخزين السر النهائي في مديرك أو قبوك
+apiPitchCta: See API options
+apiExampleLabel: نقطة النهاية
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: يَعُودُ a hyphenated تمريرة أنت يُمْكِنُ أَنْ تَنتقلَ إلى قبوِكَ بعد
+  التجهيزِ.
+stripKicker: الهياكل الأساسية الشخصية
+stripTitle: عالج المختبر كما لو أنه قد يهم فيما بعد.
+stripItems:
+- title: Isolate
+  copy: كلمة سر لوح مسرّب يجب أن لا تفتح بقية المختبر
+- title: أعلى
+  copy: نقل الخدمات الطويلة الأمد من كلمات السر السريع إلى السرقات أو الأسرار التي
+    تنتجها الخزنة.
+- title: Recover
+  copy: حافظ على طرق التعافي الخاصة، فريدة، ومخزنة في مكان ما يمكنك العثور عليه فعلا.
+lang: ar
+audiencePrefix: /ar
+apiHref: /ar/api/
+audienceNavLabel: جمهور آخر من طوفو باس
+audienceChooseKicker: اختر ملعب آخر
+audienceLabels:
+  teachers: المعلمون
+  helpdesk: مكتب المساعدة
+  parents: الآباء
+  students: الطلاب
+  homelab: Homelab
+  developers: المطورون
+---
+
+
+{% include "for-detail-content.njk" %}

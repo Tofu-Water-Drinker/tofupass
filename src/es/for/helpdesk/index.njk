@@ -1,0 +1,112 @@
+---
+layout: base.njk
+title: TofuPass for Helpdesk Teams - TofuPass
+description: Generación de contraseña privada para reiniciar helpdesk, primeros logins
+  y credenciales de teléfono.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: helpdesk
+kicker: Para los equipos de ayuda
+heroTitle: Reiniciar contraseñas que la gente puede escribir.
+lede: TofuPass ofrece escritorios de servicio legibles, contraseñas de política para
+  los primeros logins, recuperación de cuentas, y todos aquellos "puedes deletrear
+  eso de nuevo?" momentos.
+mascot: /alert.png
+proof: Sin cuentas. Sin análisis. Ninguna contraseña generada deja el dispositivo.
+actions:
+- label: Generar una contraseña
+  href: /es/
+- label: Versión en línea
+  href: /Offline/tofupass-offline.html
+useKicker: El escritorio del reset se ajusta
+useTitle: Construido para la entrega, no la demo del laboratorio.
+useIntro: Las contraseñas fuertes sólo son útiles si la persona en el otro extremo
+  puede recibirlas, escribirlas y seguir adelante con su día.
+checks:
+- Ideal para contraseñas temporales que deben cambiarse al inicio de sesión.
+- Útil cuando necesite leer una contraseña en voz alta o pegarla en una nota de entrada
+  brevemente.
+- Lo suficientemente simple para un llamador estresado sin entrenarlos en hábitos
+  débiles.
+workflowTitle: Paso de recuperación de cuentas
+sample: RiverMisoCloud!42
+workflow:
+- term: Dilo.
+  detail: Río, Miso, Cloud, punto de exclamación, cuatro dos.
+- term: Confirmarlo
+  detail: Capital R, capital M, capital C. No hay espacios.
+- term: Cierra.
+  detail: Que lo cambien al principio y guarden el nuevo en su manager.
+playbookKicker: Reset playbook
+playbookTitle: Reduzca los errores durante la parte más activa del ticket.
+playbookIntro: El punto no es sólo la generación. El punto es un desvío más limpio
+  que disminuye las repeticiones, los tipos y los inseguros.
+modeTitle: Que modo se ajusta al reseteo
+modeRows:
+- label: Suave
+  title: Pasos muy cortos
+  copy: Útil para contraseñas temporales de bajo riesgo que se cambian inmediatamente
+    después de la primera entrada.
+- label: Firma
+  title: Recuperación de la cuenta estándar
+  copy: Bastante fuerte para los flujos de reajuste ordinarios, mientras que sigue
+    siendo práctico leer sobre una llamada.
+- label: Extra
+  title: Admin and setup work
+  copy: Use Firma Extra o contraseñas cuando la contraseña pueda vivir más allá del
+    primer paso.
+scenarioTitle: Escenarios de recepción de servicios
+scenarios:
+- label: Teléfono
+  title: Caller tiene que escribirlo en vivo
+  copy: Elija una contraseña legible, diga las palabras primero, luego confirme capitales,
+    números y símbolos.
+- label: Entrada
+  title: La contraseña debe ser pegada brevemente
+  copy: Mantenga el secreto temporal de corta duración y cierre el ticket sólo después
+    de que se confirme el cambio de primer nivel.
+- label: A bordo
+  title: Nueva configuración de alquiler
+  copy: Generar una contraseña de inicio, entregarla a través del canal aprobado,
+    y señalarlas a un administrador.
+apiPitchKicker: Herramientas internas
+apiPitchTitle: Añadir contraseñas temporales legibles para herramientas de reinicio
+  aprobadas.
+apiPitchIntro: La API puede ajustar scripts de escritorio de servicio o herramientas
+  de reajuste interno donde se genera una contraseña legible para un corto margen.
+  Mantenga los requisitos de política, registro, vencimiento y cambio de primer nivel
+  en su propio sistema.
+apiPitchCta: Referencia de Open API
+apiExampleLabel: Reset helper
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Devuelve una contraseña legible generada del lado del servidor. Su flujo de trabajo debe manejar
+  la caducidad y el cambio requerido.
+stripKicker: Seguridad adaptada a las necesidades
+stripTitle: El script de reset se pone más corto.
+stripItems:
+- title: legible
+  copy: Los pedazos de palabras son más fáciles de escuchar, repetir y verificar que
+    la sopa de caracteres al azar.
+- title: En forma de política
+  copy: Firma suave, firme y extra incluye capitales, números y símbolos comunes por
+    defecto.
+- title: Privado
+  copy: La generación ocurre en el navegador, por lo que el trabajo de reset no crea
+    un problema de registro.
+lang: es-MX
+audiencePrefix: /es
+apiHref: /es/api/
+audienceNavLabel: Otros públicos TofuPass
+audienceChooseKicker: Elija otro lanzamiento
+audienceLabels:
+  teachers: Profesores
+  helpdesk: Helpdesk
+  parents: Padres
+  students: Estudiantes
+  homelab: Homelab
+  developers: Desarrolladores
+---
+
+
+{% include "for-detail-content.njk" %}

@@ -1,0 +1,104 @@
+---
+layout: base.njk
+title: TofuPass bagi Pengembang - TofuPass
+description: Sandi dapat dibaca pribadi bagi demos, akun pementasan, tutorial, pengujian
+  lokal, dan bukan-rahasia pengembangan mengalir.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: Untuk pengembang
+heroTitle: Password demo tanpa sebuah kebetulan rahasia.
+lede: TofuPass berguna ketika Anda memerlukan kredensial dapat dibaca untuk demos,
+  pengguna uji coba, penjumlahan reset, tutorial, aplikasi lokal, atau dukungan dokumen.
+mascot: /alert.png
+proof: Bukan pengganti kunci API atau manajemen rahasia produksi. Sempurna untuk manusia-menghadapi
+  password.
+actions:
+- label: Buat sandi
+  href: /id/
+- label: Lihat API
+  href: /id/api/
+useKicker: Dev aliran kerja cocok
+useTitle: Untuk manusia password harus melihat.
+useIntro: Pekerjaan pembangunan sering membutuhkan kredensial yang cukup kuat untuk
+  menghindari contoh buruk tapi cukup mudah dibaca bagi demos, docs, QA, dan pengguna
+  sementara.
+checks:
+- Gunakan password yang dapat dibaca dalam tutorial bukan hardcode klasik.
+- Reset pementasan atau pengguna QA tanpa e-mail string omong kosong di sekitar.
+- Simpan rahasia produksi, kunci API, dan token secara rahasia.
+workflowTitle: Pengembang menggunakan rencana
+workflow:
+- term: Demo
+  detail: Gunakan sandi yang dapat dibaca yang dapat dipakai atau diketik selama walkthrough.
+- term: Staging
+  detail: Berikan pengguna tes kredensial unik daripada menggunakan kembali sandi
+    yang sama selamanya.
+- term: Dokumen
+  detail: Tampilkan contoh sandi realistis tanpa menerbitkan kredensial hidup.
+playbookKicker: Buku pedoman Pengembang
+playbookTitle: Menjaga contoh berguna tanpa normalisasi rahasia buruk.
+playbookIntro: TofuPass bukan untuk token produksi. Hal ini untuk human- menghadapi
+  password yang muncul dalam demo, dokumen, QA, dukungan, dan pengujian lokal.
+modeTitle: Mode mana yang cocok dengan tugas dev
+modeRows:
+- label: Soft
+  title: Demo Throwaway
+  copy: Berguna ketika sandi muncul di layar dan akan dibuang setelah walkthrough.
+- label: Firm
+  title: QA dan pementasan pengguna
+  copy: Sebuah bawaan yang dapat dibaca bagi pengguna yang dicari, dukungan pengujian,
+    dan kredensial seorang manusia mungkin perlu mengetik.
+- label: Frase
+  title: Contoh tim bersama
+  copy: Gunakan passphrase untuk contoh internal yang hidup lama di mana kemampuan
+    baca lebih penting daripada singkat.
+scenarioTitle: Skenario pengembangan
+scenarios:
+- label: Dokumen
+  title: Tutorial membutuhkan kredensial
+  copy: Tampilkan contoh yang dihasilkan daripada mengajar pembaca untuk menyalin
+    admin dan kata sandi.
+- label: QA
+  title: Uji pengguna perlu rotasi
+  copy: Berikan setiap pengguna yang ditaburi kata sandi yang unik dan putar kredensial
+    pementasan bersama pada jadwal.
+- label: Demo
+  title: A live walkthrough is coming
+  copy: Gunakan sandi yang dapat dibaca di layar dan aman untuk dibuang setelah sesi.
+apiPitchKicker: Cocok API
+apiPitchTitle: Perlu password yang dihasilkan dalam aliran skrip atau demo?
+apiPitchIntro: Gunakan API untuk dokumen, data QA, penataan pengaturan, atau demos
+  dimana sandi yang mudah dibaca berguna. Menjaga rahasia produksi di manajemen rahasia
+  nyata.
+apiPitchCta: Lihat referensi API
+apiExampleLabel: Titik akhir sandi
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Mengembalikan satu sandi Firm sebagai teks biasa, dengan dukungan
+  bahasa opsional.
+stripKicker: Pengembang kebersihan
+stripTitle: Contoh yang lebih baik membuat default yang lebih baik.
+stripItems:
+- title: Manusia
+  copy: Gunakan TofuPass untuk kredensial manusia perlu membaca, tipe, atau reset.
+- title: Sementara
+  copy: Putar demo dan pementasan password ketika mereka berhenti menjadi sementara.
+- title: Pisahkan
+  copy: Jauhkan sandi yang dibuat dari kunci API, token, dan rahasia produksi.
+lang: id
+audiencePrefix: /id
+apiHref: /id/api/
+audienceNavLabel: Penonton TofuPass lainnya
+audienceChooseKicker: Pilih pitch lain
+audienceLabels:
+  teachers: Guru
+  helpdesk: Meja bantuan
+  parents: Orangtua
+  students: Siswa
+  homelab: Homelab
+  developers: Pengembang
+---
+
+
+{% include "for-detail-content.njk" %}

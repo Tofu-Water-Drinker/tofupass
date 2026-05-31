@@ -14,10 +14,9 @@
   Word lists below are copied from the public tofupass-api repo
   (https://github.com/Tofu-Water-Drinker/tofupass-api), also GPL v3.
   Generation logic mirrors assets/js/home.js to preserve existing behavior:
-    - Soft        : adjective + noun + 2-digit number   (lowercase)
-    - Firm        : Adjective + Noun + 2-digit number, with one symbol inserted
-                    at a random position among the three slots
-    - Extra Firm  : adjective-noun-adjective-noun (4-word hyphenated passphrase)
+    - Soft        : 2 capped words + symbol + 2-digit number
+    - Firm        : 3 capped words + symbol + 2-digit number
+    - Extra Firm  : 4 capped words + symbol + 2-digit number
 
   All randomness uses Web Crypto's getRandomValues — never Math.random.
   No network calls happen during password generation.
@@ -537,14 +536,14 @@
   <section class="stresstest" id="stresstestPanel">
     <details>
       <summary>
-        <span>Online breach &amp; strength check</span>
+        <span>Privacy-preserving breach &amp; strength check</span>
         <span class="online-pill" id="onlinePill"><span>Online-only</span></span>
       </summary>
       <div class="stresstest-body">
         <p class="muted">
           This check uses
           <a href="https://haveibeenpwned.com/Passwords" target="_blank" rel="noopener noreferrer">Have I Been Pwned</a>
-          via k-anonymity: only the first 5 characters of the SHA-1 hash leave your device. Your password itself never travels. Disabled when you're offline.
+          via k-anonymity: only the first 5 characters of the SHA-1 hash are sent to Have I Been Pwned. Your password itself is not sent. Disabled when you're offline.
         </p>
         <label class="field">
           <span class="field-label">Password to test</span>
@@ -569,7 +568,7 @@
   </section>
 
   <footer class="local-foot">
-    <span>Generated locally with <code>crypto.getRandomValues</code>. Nothing saved. Nothing sent.</span>
+    <span>Generated locally with <code>crypto.getRandomValues</code>. Nothing saved; breach checks only send a hash prefix.</span>
     <span class="version">Offline v1 &middot; GPL v3</span>
   </footer>
 
@@ -602,16 +601,23 @@
 
   // --- Mode descriptions (visible above the password) -------------------- //
   var modeDescriptions = {
-    soft:  'Two lowercase words plus a 2-digit number. Easy to remember.',
-    firm:  'Capitalized Word + Word + 2-digit number, with one symbol sprinkled in.',
-    extra: 'Four-word hyphenated passphrase. Long, friendly, very high entropy.'
+    soft:  '2 words + symbol + number. Easiest to type for low-risk temporary uses.',
+    firm:  '3 words + symbol + number. Recommended default for readable handoffs.',
+    extra: '4 words + symbol + number. Stronger when a longer password is accepted.'
   };
 
   // --- Cryptographic random helpers (matches home.js getSecureRandomInt) // //
   function getSecureRandomInt(max) {
-    if (!max || max <= 0) return 0;
+    if (!Number.isInteger(max) || max <= 0) {
+      throw new Error('max must be a positive integer');
+    }
     var buffer = new Uint32Array(1);
-    window.crypto.getRandomValues(buffer);
+    var limit = Math.floor(0x100000000 / max) * max;
+
+    do {
+      window.crypto.getRandomValues(buffer);
+    } while (buffer[0] >= limit);
+
     return buffer[0] % max;
   }
   function pick(list) { return list[getSecureRandomInt(list.length)]; }
@@ -619,28 +625,27 @@
 
   /**
    * generate(firmness) — produces a password string. Mirrors home.js exactly.
-   *   'soft'  -> adjective + noun + (10..99)
-   *   'firm'  -> capitalized adjective + capitalized noun + (10..99),
-   *              with one random special inserted at a random one of 4 slots
-   *   'extra' -> adj-noun-adj-noun (lowercase)
+   *   'soft'  -> adjective + noun + symbol + (10..99)
+   *   'firm'  -> adjective + noun + noun + symbol + (10..99)
+   *   'extra' -> adjective + noun + adjective + noun + symbol + (10..99)
    */
   function generate(firmness) {
-    var pwd;
-    if (firmness === 'soft') {
-      pwd = pick(adjectives) + pick(nouns) + (getSecureRandomInt(90) + 10);
-    } else if (firmness === 'firm') {
-      var adjective = cap(pick(adjectives));
-      var noun      = cap(pick(nouns));
-      var number    = String(getSecureRandomInt(90) + 10);
-      var special   = pick(specials);
-      var parts     = [adjective, noun, number];
-      var insertAt  = getSecureRandomInt(parts.length + 1);
+    function buildPassword(words) {
+      var number = String(getSecureRandomInt(90) + 10);
+      var special = pick(specials);
+      var parts = words.slice();
+      parts.push(number);
+      var insertAt = getSecureRandomInt(parts.length + 1);
       parts.splice(insertAt, 0, special);
-      pwd = parts.join('');
-    } else {
-      pwd = [pick(adjectives), pick(nouns), pick(adjectives), pick(nouns)].join('-');
+      return parts.join('');
     }
-    return pwd;
+
+    if (firmness === 'soft') {
+      return buildPassword([cap(pick(adjectives)), cap(pick(nouns))]);
+    } else if (firmness === 'firm') {
+      return buildPassword([cap(pick(adjectives)), cap(pick(nouns)), cap(pick(nouns))]);
+    }
+    return buildPassword([cap(pick(adjectives)), cap(pick(nouns)), cap(pick(adjectives)), cap(pick(nouns))]);
   }
 
   // --- DOM wiring -------------------------------------------------------- //
@@ -986,34 +991,32 @@
     }
     ok('getSecureRandomInt(7) stays in [0,7) over 5000 samples', inRange);
 
-    // Soft mode: lowercase letters then 2 digits
+    // Soft mode: 2 capped words, one symbol, and 2 digits
     var softOK = true;
     for (i = 0; i < 200; i++) {
       var s = generate('soft');
-      if (!/^[a-z]+\d{2}$/.test(s)) { softOK = false; break; }
+      var softWords = s.match(/[A-Z][a-z]+/g) || [];
+      if (softWords.length !== 2 || !/[!@#\$\?\*]/.test(s) || !/\d{2}/.test(s)) { softOK = false; break; }
     }
-    ok('soft mode matches /^[a-z]+\\d{2}$/', softOK);
+    ok('soft mode has 2 capped words + symbol + 2 digits', softOK);
 
-    // Firm mode: contains a special, contains an uppercase, contains 2 digits
+    // Firm mode: 3 capped words, one symbol, and 2 digits
     var firmOK = true;
     for (i = 0; i < 200; i++) {
       var f = generate('firm');
-      var hasSpecial = /[!@#\$\?\*]/.test(f);
-      var hasUpper   = /[A-Z]/.test(f);
-      var hasDigits  = /\d{2}/.test(f);
-      if (!(hasSpecial && hasUpper && hasDigits)) { firmOK = false; break; }
+      var firmWords = f.match(/[A-Z][a-z]+/g) || [];
+      if (firmWords.length !== 3 || !/[!@#\$\?\*]/.test(f) || !/\d{2}/.test(f)) { firmOK = false; break; }
     }
-    ok('firm mode has uppercase + symbol + 2 digits', firmOK);
+    ok('firm mode has 3 capped words + symbol + 2 digits', firmOK);
 
-    // Extra mode: 4 hyphenated lowercase tokens
+    // Extra mode: 4 capped words, one symbol, and 2 digits
     var extraOK = true;
     for (i = 0; i < 200; i++) {
       var x = generate('extra');
-      var parts = x.split('-');
-      if (parts.length !== 4) { extraOK = false; break; }
-      if (!parts.every(function (p) { return /^[a-z]+$/.test(p); })) { extraOK = false; break; }
+      var extraWords = x.match(/[A-Z][a-z]+/g) || [];
+      if (extraWords.length !== 4 || !/[!@#\$\?\*]/.test(x) || !/\d{2}/.test(x)) { extraOK = false; break; }
     }
-    ok('extra mode produces 4 lowercase hyphenated tokens', extraOK);
+    ok('extra mode has 4 capped words + symbol + 2 digits', extraOK);
 
     // Determinism / variety: 200 firms should not all be equal
     var s1 = generate('firm'), allSame = true;

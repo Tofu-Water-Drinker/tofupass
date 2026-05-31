@@ -2,54 +2,35 @@
   const storageKey = 'tofupass-language';
   const cookieName = 'tofupass_language';
   const supported = ['en', 'es', 'pt', 'fr', 'de', 'ja', 'zh-cn', 'ar', 'id', 'hi', 'ru'];
-  const routeMap = {
-    es: {
-      '/': '/es/',
-      '/passphrases/': '/es/passphrases/',
-      '/stresstest/': '/es/stresstest/',
-      '/good/': '/es/good/',
-      '/api/': '/es/api/',
-      '/about/': '/es/about/',
-      '/why/': '/es/why/',
-      '/privacy/': '/es/privacy/',
-      '/miso/': '/es/miso/',
-    },
-    pt: {
-      '/': '/pt/',
-      '/passphrases/': '/pt/passphrases/',
-      '/stresstest/': '/pt/stresstest/',
-      '/good/': '/pt/good/',
-      '/api/': '/pt/api/',
-      '/about/': '/pt/about/',
-      '/why/': '/pt/why/',
-      '/privacy/': '/pt/privacy/',
-      '/miso/': '/pt/miso/',
-    },
-    fr: {
-      '/': '/fr/', '/passphrases/': '/fr/passphrases/', '/stresstest/': '/fr/stresstest/', '/good/': '/fr/good/', '/api/': '/fr/api/', '/about/': '/fr/about/', '/why/': '/fr/why/', '/privacy/': '/fr/privacy/', '/miso/': '/fr/miso/',
-    },
-    de: {
-      '/': '/de/', '/passphrases/': '/de/passphrases/', '/stresstest/': '/de/stresstest/', '/good/': '/de/good/', '/api/': '/de/api/', '/about/': '/de/about/', '/why/': '/de/why/', '/privacy/': '/de/privacy/', '/miso/': '/de/miso/',
-    },
-    ja: {
-      '/': '/ja/', '/passphrases/': '/ja/passphrases/', '/stresstest/': '/ja/stresstest/', '/good/': '/ja/good/', '/api/': '/ja/api/', '/about/': '/ja/about/', '/why/': '/ja/why/', '/privacy/': '/ja/privacy/', '/miso/': '/ja/miso/',
-    },
-    'zh-cn': {
-      '/': '/zh-cn/', '/passphrases/': '/zh-cn/passphrases/', '/stresstest/': '/zh-cn/stresstest/', '/good/': '/zh-cn/good/', '/api/': '/zh-cn/api/', '/about/': '/zh-cn/about/', '/why/': '/zh-cn/why/', '/privacy/': '/zh-cn/privacy/', '/miso/': '/zh-cn/miso/',
-    },
-    ar: {
-      '/': '/ar/', '/passphrases/': '/ar/passphrases/', '/stresstest/': '/ar/stresstest/', '/good/': '/ar/good/', '/api/': '/ar/api/', '/about/': '/ar/about/', '/why/': '/ar/why/', '/privacy/': '/ar/privacy/', '/miso/': '/ar/miso/',
-    },
-    id: {
-      '/': '/id/', '/passphrases/': '/id/passphrases/', '/stresstest/': '/id/stresstest/', '/good/': '/id/good/', '/api/': '/id/api/', '/about/': '/id/about/', '/why/': '/id/why/', '/privacy/': '/id/privacy/', '/miso/': '/id/miso/',
-    },
-    hi: {
-      '/': '/hi/', '/passphrases/': '/hi/passphrases/', '/stresstest/': '/hi/stresstest/', '/good/': '/hi/good/', '/api/': '/hi/api/', '/about/': '/hi/about/', '/why/': '/hi/why/', '/privacy/': '/hi/privacy/', '/miso/': '/hi/miso/',
-    },
-    ru: {
-      '/': '/ru/', '/passphrases/': '/ru/passphrases/', '/stresstest/': '/ru/stresstest/', '/good/': '/ru/good/', '/api/': '/ru/api/', '/about/': '/ru/about/', '/why/': '/ru/why/', '/privacy/': '/ru/privacy/', '/miso/': '/ru/miso/',
-    },
-  };
+  const localizedRoutes = [
+    '/',
+    '/passphrases/',
+    '/stresstest/',
+    '/good/',
+    '/api/',
+    '/about/',
+    '/privacy/',
+    '/miso/',
+    '/why/',
+    '/for/',
+    '/for/teachers/',
+    '/for/helpdesk/',
+    '/for/parents/',
+    '/for/homelab/',
+    '/for/developers/',
+    '/teachers/',
+    '/helpdesk/',
+    '/careers/',
+  ];
+  const routeMap = {};
+
+  supported.filter((language) => language !== 'en').forEach((language) => {
+    routeMap[language] = {};
+    localizedRoutes.forEach((path) => {
+      routeMap[language][path] = `/${language}${path}`;
+    });
+  });
+
   const localePrefixes = supported.filter((language) => language !== 'en');
 
   function normalizePath(path) {
@@ -133,11 +114,96 @@
   }
 
   window.addEventListener('DOMContentLoaded', () => {
+    const switcher = document.querySelector('[data-language-switcher]');
     const select = document.querySelector('[data-language-select]');
     if (!select) return;
-    select.value = getCurrentLanguage();
+    const button = switcher ? switcher.querySelector('[data-language-button]') : null;
+    const menu = switcher ? switcher.querySelector('[data-language-menu]') : null;
+    const currentLabel = switcher ? switcher.querySelector('[data-language-current]') : null;
+    const options = menu ? Array.from(menu.querySelectorAll('[data-language-option]')) : [];
+
+    function setActiveLanguage(language) {
+      select.value = language;
+      if (currentLabel) {
+        currentLabel.textContent = select.options[select.selectedIndex].textContent;
+      }
+      options.forEach((option) => {
+        option.setAttribute('aria-selected', option.dataset.languageCode === language ? 'true' : 'false');
+      });
+    }
+
+    function closeMenu() {
+      if (!switcher || !button || !menu) return;
+      switcher.classList.remove('is-open');
+      button.setAttribute('aria-expanded', 'false');
+      menu.hidden = true;
+    }
+
+    function openMenu() {
+      if (!switcher || !button || !menu) return;
+      switcher.classList.add('is-open');
+      button.setAttribute('aria-expanded', 'true');
+      menu.hidden = false;
+    }
+
+    function focusOption(language) {
+      const option = options.find((item) => item.dataset.languageCode === language) || options[0];
+      if (option) option.focus();
+    }
+
+    setActiveLanguage(getCurrentLanguage());
+
     select.addEventListener('change', () => {
       goToLanguage(select.value);
+    });
+
+    if (!button || !menu || !options.length) return;
+
+    button.addEventListener('click', () => {
+      const isOpen = button.getAttribute('aria-expanded') === 'true';
+      if (isOpen) {
+        closeMenu();
+        return;
+      }
+      openMenu();
+    });
+
+    button.addEventListener('keydown', (event) => {
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      event.preventDefault();
+      openMenu();
+      focusOption(getCurrentLanguage());
+    });
+
+    options.forEach((option, index) => {
+      option.addEventListener('click', () => {
+        const language = option.dataset.languageCode;
+        if (!supported.includes(language)) return;
+        setActiveLanguage(language);
+        closeMenu();
+        goToLanguage(language);
+      });
+
+      option.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMenu();
+          button.focus();
+          return;
+        }
+        if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+        event.preventDefault();
+        const offset = event.key === 'ArrowDown' ? 1 : -1;
+        const nextIndex = (index + offset + options.length) % options.length;
+        options[nextIndex].focus();
+      });
+    });
+
+    document.addEventListener('click', (event) => {
+      if (!switcher.contains(event.target)) closeMenu();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
     });
   });
 })();

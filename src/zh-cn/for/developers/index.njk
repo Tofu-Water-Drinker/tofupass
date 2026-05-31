@@ -1,0 +1,90 @@
+---
+layout: base.njk
+title: 开发者的TofuPass - TofuPass
+description: 私人可读密码用于演示,中转账号,教程,本地测试,以及非秘密开发工作流程.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: 对于开发者
+heroTitle: 解密密码没有意外的秘密扩展。
+lede: 当您需要可读的演示、种子测试用户、中继器、教程、本地应用程序或支持文件时, TofuPass 非常有用。
+mascot: /alert.png
+proof: 不取代API密钥或生产秘密管理. 适合人类的密码
+actions:
+- label: 生成密码
+  href: /zh-cn/
+- label: 查看 API
+  href: /zh-cn/api/
+useKicker: 设计工作流程符合
+useTitle: 对于密码 人类必须看到。
+useIntro: 开发工作往往需要足够强的资质来避免不良例子,但足够读取演示,docs,QA,和临时用户.
+checks:
+- 在教程中使用可读生成的密码,而不是硬编码经典.
+- 重置中继器或QA 用户, 无需在周围发电子邮件。
+- 在真实的秘密管理工具中保留生产秘密,API密钥,以及令牌.
+workflowTitle: 开发者使用计划
+workflow:
+- term: 演示
+  detail: 使用可读密码,在行走过程中可以发声或输入.
+- term: 粘贴
+  detail: 给予测试用户独特的资质,而不是永远重用相同的共享密码.
+- term: 文档
+  detail: 显示现实的密码示例而不发布现场证书 。
+playbookKicker: 开发者游戏本
+playbookTitle: 保持实例的实用性而不使坏的秘密正常化.
+playbookIntro: TofuPass不是生产标志 以演示、文件、QA、支持和本地测试等形式出现。
+modeTitle: 哪种模式符合 dev 任务
+modeRows:
+- label: 软
+  title: 丢弃演示
+  copy: 当一个密码出现在屏幕上时有用, 并在通过后被丢弃 。
+- label: 企业
+  title: 质量保证和中转用户
+  copy: 种子用户的可读默认值、支持测试和人可能需要打字的证书。
+- label: 词组
+  title: 共享团队实例
+  copy: 使用密码句来表示寿命较长的可读性比简洁更重要的内部实例.
+scenarioTitle: 发展设想
+scenarios:
+- label: 文档
+  title: 教学需要证书
+  copy: 显示生成的例子而不是教读者复制管理员和密码 。
+- label: 质量保证
+  title: 测试用户需要旋转
+  copy: 给每个种子用户一个独特的密码,并在一个时刻表中旋转共享的中转权限 。
+- label: 演示
+  title: 现场直播即将到来
+  copy: 使用可以在屏幕上读取的密码,在会话结束后安全丢弃.
+apiPitchKicker: API 适应
+apiPitchTitle: 需要以脚本或演示流程生成密码吗 ?
+apiPitchIntro: 将 API 用于 docs 、 QA 数据、 中继设置, 或 演示 , 如果一个 人可读 的 密码 有用 。 在真实的秘密管理中保守生产秘密.
+apiPitchCta: 查看 API 引用
+apiExampleLabel: 密码端点
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: 返回一个服务器端生成的可读密码纯文本,并有可选的语言支持。
+stripKicker: 开发者卫生
+stripTitle: 更好的例子使默认更好。
+stripItems:
+- title: 人类
+  copy: 使用TofuPass作为证明,人类需要阅读,打字,或重置.
+- title: 临时
+  copy: 暂时停止时旋转演示和传送密码。
+- title: 分开
+  copy: 将生成的密码远离API密钥,令牌,以及制作机密.
+lang: zh-CN
+audiencePrefix: /zh-cn
+apiHref: /zh-cn/api/
+audienceNavLabel: 其他TofuPass观众
+audienceChooseKicker: 选择另一个投出
+audienceLabels:
+  teachers: 教师
+  helpdesk: 服务台
+  parents: 家长
+  students: 学生
+  homelab: 家园
+  developers: 开发者
+---
+
+
+{% include "for-detail-content.njk" %}

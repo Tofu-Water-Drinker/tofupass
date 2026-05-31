@@ -1,0 +1,114 @@
+---
+layout: base.njk
+title: TofuPass pour les labos - TofuPass
+description: Mots de passe uniques lisibles pour les routeurs, les boîtes NAS, les
+  services locaux, les VM et l'infrastructure personnelle.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: Pour les constructeurs de maisons
+heroTitle: Secrets uniques pour le placard du serveur que vous avez construit vous-même.
+lede: TofuPass aide les propriétaires de homelab à éviter la réutilisation des mots
+  de passe dans les routeurs, les boîtes NAS, les tableaux de bord, les VM, les comptes
+  administratifs locaux et les expériences.
+mascot: /tofu.png
+proof: Exécute dans le navigateur, fonctionne bien hors ligne, et ne recueille pas
+  vos mots de passe générés.
+actions:
+- label: Générer un mot de passe
+  href: /fr/
+- label: Faites une phrase de passe
+  href: /fr/passphrases/
+useKicker: Par défaut lab-friendly
+useTitle: Arrête de laisser le labo partager un secret.
+useIntro: Les labos poussent de côté. TofuPass vous donne rapidement des mots de passe
+  uniques avant que les services temporaires deviennent une infrastructure permanente.
+checks:
+- Utilisez Extra Firm ou passphrases pour les routeurs, l'administrateur NAS, les
+  hyperviseurs et les gestionnaires de mots de passe.
+- Donnez à chaque tableau de bord, VM et service local son propre titre.
+- Entreposez les secrets finaux dans votre gestionnaire de mot de passe ou dans votre
+  coffre, pas dans un README.
+workflowTitle: Plan secret Homelab
+workflow:
+- term: Équipement de base
+  detail: Utilisez le mode pratique le plus fort pour les routeurs, NAS, hyperviseurs
+    et comptes de récupération.
+- term: Applications locales
+  detail: Générer des identifiants uniques pour les tableaux de bord, les bases de
+    données, les conteneurs et les services d'essai.
+- term: Numéro
+  detail: Enregistrer le secret dans un gestionnaire de mots de passe et garder les
+    notes de configuration libres de mots de passe en direct.
+playbookKicker: Livre de lecture Homelab
+playbookTitle: Construire comme le labo deviendra important plus tard.
+playbookIntro: La plupart des labos commencent par des expériences et deviennent lentement
+  des infrastructures personnelles. Des mots de passe uniques empêchent cette croissance
+  de se transformer en un seul rayon d'explosion partagé.
+modeTitle: Quel mode convient au service
+modeRows:
+- label: Entreprise
+  title: Tableaux de bord temporaires
+  copy: Bon pour les outils locaux et les interfaces utilisateur web qui ne sont pas
+    exposés mais méritent toujours des références uniques.
+- label: Extra
+  title: Réseau et stockage
+  copy: Utilisez Extra Firm pour les routeurs, l'administration NAS, les hyperviseurs,
+    les systèmes de sauvegarde et tout ce qui a un large accès.
+- label: Phrase
+  title: Entrées de voûtes de longue durée
+  copy: Utilisez des mots de passe lorsque la longueur est acceptée et vous voulez
+    un secret qui peut survivre au-delà d'une construction de week-end.
+scenarioTitle: Scénarios de laboratoire
+scenarios:
+- label: Routeur
+  title: Le noyau du réseau est touché
+  copy: Remplacer les identifiants par défaut et stocker les détails de récupération
+    avant de changer trop de paramètres.
+- label: VM
+  title: Une boîte d'essai devient permanente
+  copy: Rotation du mot de passe rapide d'origine lorsque le service commence à détenir
+    des données réelles ou un accès réel.
+- label: Docteurs
+  title: Les notes de configuration doivent être nettoyées
+  copy: Déplacez les mots de passe en direct dans un gestionnaire et laissez des notes
+    avec les noms de compte, les URL et les dates de rotation seulement.
+apiPitchKicker: Coupe d'automatisation
+apiPitchTitle: Utile pour les scripts d'installation, pas pour le remplacement des
+  voûtes.
+apiPitchIntro: Utilisez l'API lorsqu'un script de laboratoire a besoin d'un mot de
+  passe ou d'une phrase de passe lisible, puis entreposez le secret final dans votre
+  gestionnaire ou chambre forte.
+apiPitchCta: Voir les options d'API
+apiExampleLabel: Fin de la phrase de passe
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: Retourne une phrase de passe hypnée que vous pouvez déplacer dans
+  votre chambre forte après l'installation.
+stripKicker: Infrastructures personnelles
+stripTitle: Traitez le labo comme si ça comptait plus tard.
+stripItems:
+- title: Isolé
+  copy: Un mot de passe du tableau de bord ne devrait pas ouvrir le reste du laboratoire.
+- title: Mise à jour
+  copy: Déplacer les services de longue durée des mots de passe rapides vers les mots
+    de passe ou les secrets générés par la voûte.
+- title: Récupérer
+  copy: Gardez des chemins de récupération privés, uniques, et stockés quelque part
+    que vous pouvez réellement trouver.
+lang: fr
+audiencePrefix: /fr
+apiHref: /fr/api/
+audienceNavLabel: Autres publics TofuPass
+audienceChooseKicker: Choisissez un autre emplacement
+audienceLabels:
+  teachers: Enseignants
+  helpdesk: Helpdesk
+  parents: Les parents
+  students: Élèves
+  homelab: Labo
+  developers: Développeurs
+---
+
+
+{% include "for-detail-content.njk" %}

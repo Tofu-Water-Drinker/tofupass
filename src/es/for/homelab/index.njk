@@ -1,0 +1,112 @@
+---
+layout: base.njk
+title: TofuPass para Homelabs - TofuPass
+description: contraseñas únicas legibles para routers, cajas NAS, servicios locales,
+  VMs e infraestructura personal.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: Para los constructores caseros
+heroTitle: Secretos únicos para el armario del servidor que construyó usted mismo.
+lede: TofuPas ayuda a los propietarios de placas a evitar la reutilización de contraseñas
+  a través de routers, cajas NAS, tableros de control, VMs, cuentas locales de administración
+  y experimentos.
+mascot: /tofu.png
+proof: Se ejecuta en el navegador, funciona bien fuera de línea, y no recopila sus
+  contraseñas generadas.
+actions:
+- label: Generar una contraseña
+  href: /es/
+- label: Hacer una contraseña
+  href: /es/passphrases/
+useKicker: Por defectos compatibles con el laboratorio
+useTitle: Deja que el laboratorio comparta un secreto.
+useIntro: Los pilares crecen de lado. TofuPass le da contraseñas únicas rápidas antes
+  de que los servicios temporales se conviertan en infraestructura permanente.
+checks:
+- Use Firma Extra o contraseñas para routers, administración NAS, hipervisores y gestores
+  de contraseña.
+- Dar cada dashboard, VM, y el servicio local su propia credencial.
+- Guarde secretos finales en su administrador de contraseñas o bóveda, no en un README.
+workflowTitle: Plan secreto de Homelab
+workflow:
+- term: Equipo básico
+  detail: Utilice el modo práctico más fuerte para los routers, NAS, hipervisores
+    y cuentas de recuperación.
+- term: Aplicaciones locales
+  detail: Generar credenciales únicas para los paneles, bases de datos, contenedores
+    y servicios de prueba.
+- term: Documento
+  detail: Guardar el secreto en un gestor de contraseñas y mantener las notas de configuración
+    libres de contraseñas en vivo.
+playbookKicker: Homelab playbook
+playbookTitle: Construir como el laboratorio será importante más tarde.
+playbookIntro: La mayoría de los homelabs comienzan como experimentos y se convierten
+  lentamente en infraestructura personal. Las contraseñas únicas impiden que ese crecimiento
+  se convierta en un radio de explosión compartido.
+modeTitle: Que modo se ajusta al servicio
+modeRows:
+- label: Firma
+  title: Paneles temporales
+  copy: Bien por herramientas locales y UIs web que no están expuestos pero todavía
+    merecen credenciales únicas.
+- label: Extra
+  title: Red y almacenamiento
+  copy: Use Firma Extra para routers, administración NAS, hipervisores, sistemas de
+    respaldo y cualquier cosa con amplio acceso.
+- label: Frase
+  title: Entradas de bóveda de larga duración
+  copy: Usa las contraseñas cuando se acepta la longitud y quieres un secreto que
+    pueda sobrevivir más allá de una construcción de fin de semana.
+scenarioTitle: Escenarios de laboratorio
+scenarios:
+- label: Router
+  title: El núcleo de red se toca
+  copy: Reemplaza las credenciales predeterminadas y almacena los detalles de recuperación
+    antes de cambiar demasiados ajustes.
+- label: VM
+  title: Una caja de prueba se vuelve permanente
+  copy: Rotar la contraseña rápida original una vez que el servicio comience a tener
+    datos reales o acceso real.
+- label: Docs
+  title: Las notas de configuración necesitan limpieza
+  copy: Mover contraseñas en vivo en un administrador y dejar notas con nombres de
+    cuenta, URLs y fechas de rotación solamente.
+apiPitchKicker: Ajuste de automatización
+apiPitchTitle: Útil para los scripts de configuración, no un reemplazo de bóveda.
+apiPitchIntro: Utilice la API cuando un script de laboratorio necesita una contraseña
+  de inicio legible o contraseña de transfrase, luego guardar el secreto final en
+  su gestor o bóveda.
+apiPitchCta: Ver opciones de API
+apiExampleLabel: Punto final Passphrase
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: Devuelve una contraseña hidratada que se puede mover a su bóveda después
+  de la configuración.
+stripKicker: Infraestructura personal
+stripTitle: Trate al laboratorio como si pudiera importar más tarde.
+stripItems:
+- title: Isolado
+  copy: Una contraseña de panel filtrado no debe abrir el resto del laboratorio.
+- title: Actualización
+  copy: Mueva los servicios de larga duración de contraseñas rápidas a transfrases
+    o secretos generados por bóveda.
+- title: Recuperar
+  copy: Mantener caminos de recuperación privados, únicos y almacenados en algún lugar
+    que realmente pueda encontrar.
+lang: es-MX
+audiencePrefix: /es
+apiHref: /es/api/
+audienceNavLabel: Otros públicos TofuPass
+audienceChooseKicker: Elija otro lanzamiento
+audienceLabels:
+  teachers: Profesores
+  helpdesk: Helpdesk
+  parents: Padres
+  students: Estudiantes
+  homelab: Homelab
+  developers: Desarrolladores
+---
+
+
+{% include "for-detail-content.njk" %}

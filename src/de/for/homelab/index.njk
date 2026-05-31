@@ -1,0 +1,112 @@
+---
+layout: base.njk
+title: TofuPass für Homelabs - TofuPass
+description: Lesbare einzigartige Passwörter für Router, NAS-Boxen, lokale Dienste,
+  VMs und persönliche Infrastruktur.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: Für Heimwerker
+heroTitle: Einzigartige Geheimnisse für den Serverschrank, den Sie selbst gebaut haben.
+lede: TofuPass hilft Homelab-Besitzer vermeiden Passwortwechsel über Router, NAS-Boxen,
+  Dashboards, VMs, lokale Admin-Konten und Experimente.
+mascot: /tofu.png
+proof: Runs im Browser, funktioniert gut offline und sammelt nicht Ihre generierten
+  Passwörter.
+actions:
+- label: Kennwort generieren
+  href: /de/
+- label: Machen Sie eine Passphrase
+  href: /de/passphrases/
+useKicker: Lab-freundliche Standardeinstellungen
+useTitle: Lass das Labor ein Geheimnis teilen.
+useIntro: Homelabs wachsen seitlich. TofuPass gibt Ihnen schnelle eindeutige Passwörter,
+  bevor temporäre Dienste dauerhafte Infrastruktur werden.
+checks:
+- Verwenden Sie Extra Firm oder Passphrasen für Router, NAS-Admin, Hypervisoren und
+  Passwort-Manager.
+- Geben Sie jedem Dashboard, VM und lokalen Service seinen eigenen Anmeldetag.
+- Speichern Sie die letzten Geheimnisse in Ihrem Passwort-Manager oder Tresor, nicht
+  in einem README.
+workflowTitle: Homelab geheimen Plan
+workflow:
+- term: Kerngetriebe
+  detail: Verwenden Sie den stärksten praktischen Modus für Router, NAS, Hypervisors
+    und Recovery-Konten.
+- term: Lokale Apps
+  detail: Erstellen Sie einzigartige Anmeldeinformationen für Dashboards, Datenbanken,
+    Container und Testdienste.
+- term: Dokument
+  detail: Speichern Sie das Geheimnis in einem Passwort-Manager und halten Sie Setup-Noten
+    frei von Live-Passwörtern.
+playbookKicker: Homelab playbook
+playbookTitle: Bauen, wie das Labor später wichtig wird.
+playbookIntro: Die meisten Homelabs beginnen als Experimente und werden langsam persönliche
+  Infrastruktur. Einzigartige Passwörter halten dieses Wachstum davon ab, in einen
+  gemeinsamen Strahlradius zu verwandeln.
+modeTitle: Welcher Modus passt zum Service
+modeRows:
+- label: Fichte
+  title: Temporäre Armaturenbretter
+  copy: Gut für lokale Werkzeuge und Web-UIs, die nicht exponiert, aber immer noch
+    verdienen einzigartige Anmeldeinformationen.
+- label: Extra
+  title: Netzwerk und Speicher
+  copy: Verwenden Sie Extra Firm für Router, NAS, Admins, Hypervisors, Backup-Systeme
+    und alles mit breitem Zugriff.
+- label: Phrasen
+  title: langlebige Tresoreinträge
+  copy: Verwenden Sie Passphrasen, wenn die Länge akzeptiert wird und Sie wollen ein
+    Geheimnis, das über einen Wochenendaufbau überleben kann.
+scenarioTitle: Laborszenarien
+scenarios:
+- label: Router
+  title: Der Netzwerkkern wird berührt
+  copy: Ersetzen Sie Standard-Anmeldeinformationen und speichern Sie Wiederherstellungsdetails,
+    bevor Sie zu viele Einstellungen ändern.
+- label: VM
+  title: Eine Testbox wird permanent
+  copy: Drehen Sie das ursprüngliche schnelle Passwort, sobald der Service beginnt,
+    echte Daten oder echten Zugriff zu halten.
+- label: Ärzte
+  title: Setup Notizen brauchen Aufräumung
+  copy: Verschieben Sie Live-Passwörter in einen Manager und hinterlassen Sie Noten
+    nur mit Kontonamen, URLs und Rotationsdaten.
+apiPitchKicker: Automatisierungstechnik
+apiPitchTitle: Nützlich für Setup-Skripte, kein Tresor-Ersatz.
+apiPitchIntro: Verwenden Sie die API, wenn ein Laborskript ein lesbares Starter-Passwort
+  oder Passphrase benötigt, dann speichern Sie das endgültige Geheimnis in Ihrem Manager
+  oder Tresor.
+apiPitchCta: Siehe API-Optionen
+apiExampleLabel: Passphrasen Endpunkt
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: Gibt eine hyphenierte Passphrase zurück, die Sie nach dem Setup in
+  Ihren Tresor bewegen können.
+stripKicker: Persönliche Infrastruktur
+stripTitle: Behandeln Sie das Labor wie später.
+stripItems:
+- title: Isolat
+  copy: Ein durchgesickertes Dashboard-Passwort sollte den Rest des Labors nicht öffnen.
+- title: Upgrade
+  copy: Verschieben Sie langlebige Dienste von schnellen Passwörtern zu Passphrasen
+    oder vaultgenerierten Geheimnissen.
+- title: Recover
+  copy: Halten Sie Erholungspfade privat, einzigartig und gespeichert irgendwo, wo
+    Sie tatsächlich finden können.
+lang: de
+audiencePrefix: /de
+apiHref: /de/api/
+audienceNavLabel: Andere TofuPass Publikum
+audienceChooseKicker: Wählen Sie eine andere Tonhöhe
+audienceLabels:
+  teachers: Lehrer
+  helpdesk: Hilfe
+  parents: Eltern
+  students: Studenten
+  homelab: Homelab
+  developers: Entwickler
+---
+
+
+{% include "for-detail-content.njk" %}

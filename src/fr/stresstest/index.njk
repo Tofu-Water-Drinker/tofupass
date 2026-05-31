@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: Test de mots de passe - TofuPass
+title: Testeur de stress - TofuPass
 pageKey: stresstest
 extraCss:
 - /assets/css/stresstest.css
@@ -8,7 +8,9 @@ pageScripts:
 - /assets/js/stresstest-fr.js
 - /assets/js/stresstest.js
 backgroundDecor: leaves
+lang: fr
 ---
+
 
   <!-- CONTENT -->
   <main class="relative z-10 pt-28 pb-20 px-4">
@@ -103,13 +105,13 @@ backgroundDecor: leaves
             <div class="tooltip-wrap">
               🔑
               <div class="tooltip-content" style="left: 0; transform: none;">
-                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-Anonymité</strong>: Seuls les 5 premiers caractères du hachage SHA-1 de votre mot de passe sont envoyés à Have I Been Pwned. Le hachage complet et votre mot de passe réel ne quittent jamais votre appareil. Le API retourne tous les hashes avec ce préfixe, et la correspondance est faite localement.
+                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-Anonymité</strong>: Seuls les 5 premiers caractères du hachage SHA-1 de votre mot de passe sont envoyés à Have I Been Pwned. Le hachage complet et votre mot de passe réel ne quittent jamais votre appareil. L'API retourne tous les hashes avec ce préfixe, et la correspondance est faite localement.
               </div>
             </div>
           </div>
           <div>
-            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">Vérification de la violation à 100%</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">Utilisations de détection de rupture <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-Anonymité</strong> via Have I Been Pwned. Votre mot de passe n'est jamais transmis. Seul un préfixe de hachage à 5 caractères est envoyé. Déplacez l'icône clé pour en savoir plus.</p>
+            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">Vérification des fuites respectueuse de la vie privée</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">Utilisations de détection de rupture <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-Anonymité</strong> Par l'intermédiaire d'Ave I Been Pwned. Votre mot de passe n'est jamais transmis. Seul un préfixe de hachage à 5 caractères est envoyé. Déplacez l'icône clé pour en savoir plus.</p>
           </div>
         </div>
       </div>

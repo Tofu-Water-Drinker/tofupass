@@ -1,91 +1,368 @@
 ---
 layout: base.njk
 title: Referência da API - TofuPass
+description: Gere senhas e senhas do TofuPass de uma API de código aberto pequena
+  com descoberta de linguagem, respostas de texto simples e limites de taxa de privacidade.
 pageKey: api
 extraCss:
-  - /assets/css/api.css
+- /assets/css/api.css
 pageScripts:
-  - /assets/js/api.js
+- /assets/js/api.js
 backgroundDecor: leaves
+lang: pt-BR
 ---
+
 
   <!-- CONTENT -->
   <main class="relative z-10 pt-28 pb-20 px-4">
-    <div class="max-w-3xl mx-auto">
-      <div class="mb-12">
-        <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API <span class="gradient-text">Referência</span></h1>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-xl">Acesso programático à geração de senhas do TofuPass. Sem chaves de API, sem drama de limite e sem conta.</p>
-      </div>
+    <div class="max-w-4xl mx-auto">
 
-      <div class="glass rounded-2xl p-5 mb-8 flex flex-col sm:flex-row sm:items-center gap-4">
-        <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs font-bold tracking-widest uppercase flex-shrink-0">URL base</div>
-        <div class="code-block flex-1 !p-3 !rounded-xl"><pre class="mono text-sm"><span class="tok-url">https://tofupass.com/api</span></pre></div>
-      </div>
-
-      <div class="glass rounded-2xl p-5 mb-8">
-        <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs font-bold tracking-widest uppercase mb-3">Suporte a idiomas</div>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed mb-4">A API usa inglês por padrão. Se você quiser senhas ou frases geradas com listas de palavras de outro idioma, adicione o parâmetro opcional <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code> à solicitação.</p>
-        <div class="code-block mb-4"><pre><span class="tok-comment"># Saída padrão em inglês</span>
-curl <span class="tok-url">https://tofupass.com/api/password</span>
-
-<span class="tok-comment"># Saída em português</span>
-curl <span class="tok-url">https://tofupass.com/api/password?lang=pt</span>
-
-<span class="tok-comment"># Frase em português</span>
-curl <span class="tok-url">https://tofupass.com/api/passphrase?count=4&amp;lang=pt</span></pre></div>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Códigos suportados: <code class="mono">en</code>, <code class="mono">es</code>, <code class="mono">pt</code>, <code class="mono">fr</code>, <code class="mono">de</code>, <code class="mono">ja</code>, <code class="mono">zh-cn</code>, <code class="mono">ar</code>, <code class="mono">id</code>, <code class="mono">hi</code>, <code class="mono">ru</code>. Se <code class="mono">lang</code> estiver ausente, vazio ou não for suportado, a API usa inglês.</p>
-      </div>
-
-      <div class="endpoint-card rounded-2xl mb-6 overflow-hidden">
-        <div class="px-6 py-5 border-b border-[#6BBF59]/10 flex items-center gap-3"><span class="method-get text-xs font-bold px-3 py-1 rounded-lg mono tracking-wide">GET</span><span class="mono text-[#4A3728]/80 dark:text-[#F0E6D8]/80 font-semibold text-sm sm:text-base">/api/password</span><span class="ml-auto text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs">Obter uma senha</span></div>
-        <div class="px-6 py-6">
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Retorna uma senha gerada criptograficamente no nível Firm. Nenhum parâmetro é obrigatório; adicione <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code> apenas quando quiser um idioma específico.</p>
-          <div class="mb-5"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">Parâmetros de consulta</div><div class="glass rounded-xl overflow-hidden"><div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-2 border-b border-[#6BBF59]/10 text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 font-semibold uppercase tracking-wider"><div>Nome</div><div>Tipo</div><div>Padrão</div><div>Descrição</div></div><div class="param-row grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-3 text-sm"><div class="mono text-[#9B6DD7]">lang</div><div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs pt-0.5">string</div><div class="mono text-[#E6A800] text-xs pt-0.5">en</div><div class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed pt-0.5">Código de idioma opcional para as palavras geradas</div></div></div></div>
-          <div class="mb-5"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Solicitação</div><div class="code-block"><button class="copy-code-btn" onclick="copyCode(this, 'curl https://tofupass.com/api/password')">Copiar</button><pre><span class="tok-comment"># Usando curl</span>
-curl <span class="tok-url">https://tofupass.com/api/password</span>
-
-<span class="tok-comment"># Palavras em português</span>
-curl <span class="tok-url">https://tofupass.com/api/password?lang=pt</span>
-
-<span class="tok-comment"># Usando JavaScript fetch</span>
-<span class="tok-key">const</span> res = <span class="tok-key">await</span> fetch(<span class="tok-str">'https://tofupass.com/api/password'</span>);
-<span class="tok-key">const</span> password = <span class="tok-key">await</span> res.text();
-<span class="tok-comment">// → "!HappyTiger83"</span></pre></div></div>
-          <div class="mb-5"><div class="flex items-center gap-2 mb-2"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest">Resposta</div><span class="status-200 text-xs px-2 py-0.5 rounded font-bold mono">200 OK</span></div><div class="code-block"><pre><span class="tok-str">!HappyTiger83</span></pre></div><p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-xs mt-2">Content-Type: text/plain</p></div>
+      <!-- Header -->
+      <div class="api-hero mb-10">
+        <div>
+          <div class="api-kicker">API de geração de senhas de código aberto</div>
+          <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">API <span class="gradient-text">Referência</span></h1>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl leading-relaxed">Acesso programático à geração de senhas e frases-senha do TofuPass. A API gera no servidor e retorna texto puro. Não é preciso conta nem chave de API, com descoberta de idiomas e limites de taxa que preservam a privacidade.</p>
+        </div>
+        <div class="api-hero-actions">
+          <a href="/assets/docs/tofupass-api-guide.pdf" class="api-action-link" target="_blank" rel="noopener noreferrer">
+            <span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M12 18v-6"></path><path d="m9 15 3 3 3-3"></path></svg></span>
+            PDF para impressão
+          </a>
+          <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" class="api-action-link secondary" target="_blank" rel="noopener noreferrer">
+            <span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg></span>
+            Origem
+          </a>
         </div>
       </div>
 
-      <div class="endpoint-card rounded-2xl mb-6 overflow-hidden">
-        <div class="px-6 py-5 border-b border-[#6BBF59]/10 flex items-center gap-3"><span class="method-get text-xs font-bold px-3 py-1 rounded-lg mono tracking-wide">GET</span><span class="mono text-[#4A3728]/80 dark:text-[#F0E6D8]/80 font-semibold text-sm sm:text-base">/api/passphrase</span><span class="ml-auto text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs">Obter uma frase</span></div>
-        <div class="px-6 py-6">
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Retorna uma frase separada por hífens gerada a partir de listas de palavras selecionadas. Controle a quantidade de palavras com <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">count</code> e escolha o idioma com <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code>.</p>
-          <div class="mb-5"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">Parâmetros de consulta</div><div class="glass rounded-xl overflow-hidden"><div class="grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-2 border-b border-[#6BBF59]/10 text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 font-semibold uppercase tracking-wider"><div>Nome</div><div>Tipo</div><div>Padrão</div><div>Descrição</div></div><div class="param-row grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-3 text-sm"><div class="mono text-[#9B6DD7]">count</div><div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs pt-0.5">integer</div><div class="mono text-[#E6A800] text-xs pt-0.5">4</div><div class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed pt-0.5">Número de palavras (4–30)</div></div><div class="param-row grid grid-cols-1 sm:grid-cols-4 gap-4 px-4 py-3 text-sm"><div class="mono text-[#9B6DD7]">lang</div><div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs pt-0.5">string</div><div class="mono text-[#E6A800] text-xs pt-0.5">en</div><div class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed pt-0.5">Código de idioma opcional para as palavras geradas</div></div></div></div>
-          <div class="mb-5"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Solicitação</div><div class="code-block"><button class="copy-code-btn" onclick="copyCode(this, 'curl https://tofupass.com/api/passphrase?count=4')">Copiar</button><pre><span class="tok-comment"># Padrão (4 palavras)</span>
-curl <span class="tok-url">https://tofupass.com/api/passphrase</span>
+      <!-- Quick facts -->
+      <div class="api-spec-row mb-10" aria-label="Fatos rápidos da API">
+        <div class="api-spec-item">
+          <span class="api-spec-label">URL base</span>
+          <code>https://tofupass.com/api</code>
+        </div>
+        <div class="api-spec-item">
+          <span class="api-spec-label">Auth</span>
+          <strong>Não exigido</strong>
+        </div>
+        <div class="api-spec-item">
+          <span class="api-spec-label">Respostas de geração</span>
+          <strong>text/plain, server-side</strong>
+        </div>
+        <div class="api-spec-item">
+          <span class="api-spec-label">Estatísticas e respostas linguísticas</span>
+          <strong>application/json</strong>
+        </div>
+      </div>
 
-<span class="tok-comment"># Quantidade personalizada</span>
+      <!-- Try it -->
+      <section class="api-section mb-8">
+        <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs font-bold tracking-widest uppercase mb-3">Início rápido</div>
+        <div class="code-block">
+          <button class="copy-code-btn" type="button" onclick="copyCode(this, 'curl https://tofupass.com/api/password')">Copiar</button>
+          <pre><span class="tok-comment"># Uma senha gerada</span>
+curl <span class="tok-url">https://tofupass.com/api/password</span>
+
+<span class="tok-comment">Frase de seis palavras</span>
 curl <span class="tok-url">https://tofupass.com/api/passphrase?count=6</span>
 
-<span class="tok-comment"># Palavras em português</span>
-curl <span class="tok-url">https://tofupass.com/api/passphrase?count=4&amp;lang=pt</span>
+<span class="tok-comment"># Descubra códigos de idioma suportados</span>
+curl <span class="tok-url">https://tofupass.com/api/languages</span></pre>
+        </div>
+      </section>
 
-<span class="tok-comment"># Usando JavaScript fetch</span>
-<span class="tok-key">const</span> res = <span class="tok-key">await</span> fetch(<span class="tok-str">'https://tofupass.com/api/passphrase?count=4'</span>);
-<span class="tok-key">const</span> phrase = <span class="tok-key">await</span> res.text();</pre></div></div>
-          <div><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Respostas</div><div class="space-y-3"><div><div class="flex items-center gap-2 mb-1.5"><span class="status-200 text-xs px-2 py-0.5 rounded font-bold mono">200 OK</span></div><div class="code-block"><pre><span class="tok-str">blooming-tiger-cosmic-leaf</span></pre></div></div><div><div class="flex items-center gap-2 mb-1.5"><span class="status-400 text-xs px-2 py-0.5 rounded font-bold mono">400 Bad Request</span><span class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-xs">count fora do intervalo (deve ser 4–30)</span></div><div class="code-block"><pre><span class="tok-str">count must be between 4 and 30</span></pre></div></div></div></div>
+      <!-- Languages -->
+      <section class="api-section mb-8">
+        <div class="flex flex-col sm:flex-row sm:items-start gap-4">
+          <div class="flex-1">
+            <div class="text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs font-bold tracking-widest uppercase mb-3">Suporte à linguagem</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed mb-4">O resultado da API é padrão em inglês. Adicionar o opcional <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code> parâmetro de consulta para gerar senhas ou frases-passe de outra lista de palavras de idioma suportada.</p>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Códigos suportados: <code class="mono">en</code>, <code class="mono">es</code>, <code class="mono">pt</code>, <code class="mono">fr</code>, <code class="mono">de</code>, <code class="mono">ja</code>, <code class="mono">zh-cn</code>, <code class="mono">ar</code>, <code class="mono">id</code>, <code class="mono">hi</code>, e <code class="mono">ru</code>. Se <code class="mono">lang</code> está faltando, em branco ou sem suporte, a API usa o inglês.</p>
+          </div>
+          <div class="api-mini-code">
+            <pre><span class="tok-comment"># Senha espanhola</span>
+curl <span class="tok-url">https://tofupass.com/api/password?lang=es</span>
+
+<span class="tok-comment">Frase-passe japonesa</span>
+curl <span class="tok-url">https://tofupass.com/api/passphrase?count=4&amp;lang=ja</span></pre>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENDPOINT 1: /api/password -->
+      <div class="endpoint-card mb-6 overflow-hidden">
+        <div class="endpoint-head">
+          <div class="endpoint-title">
+            <span class="method-get text-xs font-bold px-3 py-1 rounded-lg mono tracking-wide">GET</span>
+            <span class="mono text-[#4A3728]/80 dark:text-[#F0E6D8]/80 font-semibold text-sm sm:text-base">/api/password</span>
+          </div>
+          <span class="endpoint-desc">Obter uma senha</span>
+        </div>
+        <div class="px-6 py-6">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Retorna uma senha legível gerada no servidor. O formato atual da API é duas palavras amigáveis, um caractere especial e um número de dois dígitos, com maiúsculas e posição do símbolo aleatórias. Este endpoint é separado das receitas Soft, Firm e Extra Firm do gerador web.</p>
+
+          <div class="mb-5">
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">Parâmetros de Consulta</div>
+            <div class="param-table">
+              <div class="param-row param-head">
+                <div>Nome</div>
+                <div>Tipo</div>
+                <div>Padrão</div>
+                <div>Designação das mercadorias</div>
+              </div>
+              <div class="param-row">
+                <div class="mono text-[#9B6DD7]">lang</div>
+                <div>string</div>
+                <div class="mono text-[#E6A800]">en</div>
+                <div>Código de idioma opcional para palavras geradas</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Pedido</div>
+            <div class="code-block">
+              <button class="copy-code-btn" type="button" onclick="copyCode(this, 'curl https://tofupass.com/api/password')">Copiar</button>
+              <pre><span class="tok-comment"># Usando o cacho</span>
+curl <span class="tok-url">https://tofupass.com/api/password</span>
+
+<span class="tok-comment">Usando o JavaScript</span>
+<span class="tok-key">const</span> res = <span class="tok-key">await</span> fetch(<span class="tok-str">'https://tofupass.com/api/password'</span>);
+<span class="tok-key">const</span> password = <span class="tok-key">await</span> res.text();</pre>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Respostas</div>
+            <div class="space-y-3">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="status-200 text-xs px-2 py-0.5 rounded font-bold mono">200 OK</span>
+                  <span class="response-type">Content-Type: text/plain</span>
+                </div>
+                <div class="code-block">
+                  <pre><span class="tok-str">!HappyTiger83</span></pre>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="status-429 text-xs px-2 py-0.5 rounded font-bold mono">429 Too Many Requests</span>
+                  <span class="response-type">Includes Retry-After</span>
+                </div>
+                <div class="code-block">
+                  <pre><span class="tok-str">too many requests; please slow down</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="endpoint-card rounded-2xl mb-8 overflow-hidden">
-        <div class="px-6 py-5 border-b border-[#6BBF59]/10 flex items-center gap-3"><span class="method-get text-xs font-bold px-3 py-1 rounded-lg mono tracking-wide">GET</span><span class="mono text-[#4A3728]/80 dark:text-[#F0E6D8]/80 font-semibold text-sm sm:text-base">/api/stats</span><span class="ml-auto text-[#8B7355]/60 dark:text-[#B8A890]/60 text-xs">Estatísticas de uso</span></div>
-        <div class="px-6 py-6"><p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Retorna estatísticas agregadas de uso da API do TofuPass. São contadores gerais; nenhum dado de usuário ou sessão é rastreado.</p><div class="mb-5"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Solicitação</div><div class="code-block"><button class="copy-code-btn" onclick="copyCode(this, 'curl https://tofupass.com/api/stats')">Copiar</button><pre>curl <span class="tok-url">https://tofupass.com/api/stats</span></pre></div></div><div><div class="flex items-center gap-2 mb-2"><div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest">Resposta</div><span class="status-200 text-xs px-2 py-0.5 rounded font-bold mono">200 OK</span></div><div class="code-block"><pre>{
+      <!-- ENDPOINT 2: /api/passphrase -->
+      <div class="endpoint-card mb-6 overflow-hidden">
+        <div class="endpoint-head">
+          <div class="endpoint-title">
+            <span class="method-get text-xs font-bold px-3 py-1 rounded-lg mono tracking-wide">GET</span>
+            <span class="mono text-[#4A3728]/80 dark:text-[#F0E6D8]/80 font-semibold text-sm sm:text-base">/api/passphrase</span>
+          </div>
+          <span class="endpoint-desc">Obter uma frase- senha</span>
+        </div>
+        <div class="px-6 py-6">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Retorna uma frase- senha separada por hífen gerada a partir de palavras únicas na lista de palavras selecionada. Controlar a contagem de palavras com <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">count</code>, e escolher uma língua com <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code>.</p>
+
+          <div class="mb-5">
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-3">Parâmetros de Consulta</div>
+            <div class="param-table">
+              <div class="param-row param-head">
+                <div>Nome</div>
+                <div>Tipo</div>
+                <div>Padrão</div>
+                <div>Designação das mercadorias</div>
+              </div>
+              <div class="param-row">
+                <div class="mono text-[#9B6DD7]">count</div>
+                <div>integer</div>
+                <div class="mono text-[#E6A800]">4</div>
+                <div>Número de palavras únicas, de 4 a 30</div>
+              </div>
+              <div class="param-row">
+                <div class="mono text-[#9B6DD7]">lang</div>
+                <div>string</div>
+                <div class="mono text-[#E6A800]">en</div>
+                <div>Código de idioma opcional para palavras geradas</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Pedido</div>
+            <div class="code-block">
+              <button class="copy-code-btn" type="button" onclick="copyCode(this, 'curl https://tofupass.com/api/passphrase?count=4')">Copiar</button>
+              <pre><span class="tok-comment">Predefinição, 4 palavras</span>
+curl <span class="tok-url">https://tofupass.com/api/passphrase</span>
+
+<span class="tok-comment"># Contagem personalizada de palavras e linguagem</span>
+curl <span class="tok-url">https://tofupass.com/api/passphrase?count=6&amp;lang=fr</span>
+
+<span class="tok-comment">Buscar JavaScript</span>
+<span class="tok-key">const</span> res = <span class="tok-key">await</span> fetch(<span class="tok-str">'https://tofupass.com/api/passphrase?count=4'</span>);
+<span class="tok-key">const</span> phrase = <span class="tok-key">await</span> res.text();</pre>
+            </div>
+          </div>
+
+          <div>
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Respostas</div>
+            <div class="space-y-3">
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="status-200 text-xs px-2 py-0.5 rounded font-bold mono">200 OK</span>
+                  <span class="response-type">Content-Type: text/plain</span>
+                </div>
+                <div class="code-block">
+                  <pre><span class="tok-str">blooming-tiger-cosmic-leaf</span></pre>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="status-400 text-xs px-2 py-0.5 rounded font-bold mono">400 Bad Request</span>
+                  <span class="response-type">Contagem inválida</span>
+                </div>
+                <div class="code-block">
+                  <pre><span class="tok-str">count must be between 4 and 30</span></pre>
+                </div>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 mb-1.5">
+                  <span class="status-429 text-xs px-2 py-0.5 rounded font-bold mono">429 Too Many Requests</span>
+                  <span class="response-type">Includes Retry-After</span>
+                </div>
+                <div class="code-block">
+                  <pre><span class="tok-str">too many requests; please try again later</span></pre>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENDPOINT 3: /api/languages -->
+      <div class="endpoint-card mb-6 overflow-hidden">
+        <div class="endpoint-head">
+          <div class="endpoint-title">
+            <span class="method-get text-xs font-bold px-3 py-1 rounded-lg mono tracking-wide">GET</span>
+            <span class="mono text-[#4A3728]/80 dark:text-[#F0E6D8]/80 font-semibold text-sm sm:text-base">/api/languages</span>
+          </div>
+          <span class="endpoint-desc">Descubra idiomas</span>
+        </div>
+        <div class="px-6 py-6">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Retorna o idioma padrão e todos os códigos de idioma aceitos por <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">lang</code>. Use este endpoint ao construir um seletor de idioma ou validar uma integração cliente-lado.</p>
+
+          <div class="mb-5">
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Pedido</div>
+            <div class="code-block">
+              <button class="copy-code-btn" type="button" onclick="copyCode(this, 'curl https://tofupass.com/api/languages')">Copiar</button>
+              <pre>curl <span class="tok-url">https://tofupass.com/api/languages</span></pre>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest">Resposta</div>
+              <span class="status-200 text-xs px-2 py-0.5 rounded font-bold mono">200 OK</span>
+              <span class="response-type">Content-Type: application/json</span>
+            </div>
+            <div class="code-block">
+              <pre>{
+  <span class="tok-key">"default"</span>: <span class="tok-str">"en"</span>,
+  <span class="tok-key">"supported"</span>: [
+    <span class="tok-str">"en"</span>, <span class="tok-str">"es"</span>, <span class="tok-str">"pt"</span>, <span class="tok-str">"fr"</span>, <span class="tok-str">"de"</span>, <span class="tok-str">"ja"</span>,
+    <span class="tok-str">"zh-cn"</span>, <span class="tok-str">"ar"</span>, <span class="tok-str">"id"</span>, <span class="tok-str">"hi"</span>, <span class="tok-str">"ru"</span>
+  ]
+}</pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ENDPOINT 4: /api/stats -->
+      <div class="endpoint-card mb-8 overflow-hidden">
+        <div class="endpoint-head">
+          <div class="endpoint-title">
+            <span class="method-get text-xs font-bold px-3 py-1 rounded-lg mono tracking-wide">GET</span>
+            <span class="mono text-[#4A3728]/80 dark:text-[#F0E6D8]/80 font-semibold text-sm sm:text-base">/api/stats</span>
+          </div>
+          <span class="endpoint-desc">Estatísticas de utilização</span>
+        </div>
+        <div class="px-6 py-6">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-5 leading-relaxed">Retorna contadores agregados em memória para a API do TofuPass. Estes contadores reiniciam quando o servidor reinicia. Nenhuma senha, senhas, dados do usuário ou sessões geradas são rastreadas.</p>
+
+          <div class="mb-5">
+            <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Pedido</div>
+            <div class="code-block">
+              <button class="copy-code-btn" type="button" onclick="copyCode(this, 'curl https://tofupass.com/api/stats')">Copiar</button>
+              <pre>curl <span class="tok-url">https://tofupass.com/api/stats</span></pre>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest">Resposta</div>
+              <span class="status-200 text-xs px-2 py-0.5 rounded font-bold mono">200 OK</span>
+              <span class="response-type">Content-Type: application/json</span>
+            </div>
+            <div class="code-block">
+              <pre>{
   <span class="tok-key">"generated_passwords"</span>: <span class="tok-num">12453</span>,
   <span class="tok-key">"generated_passphrases"</span>: <span class="tok-num">3821</span>,
   <span class="tok-key">"total_api_calls"</span>: <span class="tok-num">16274</span>
-}</pre></div><p class="text-[#8B7355]/50 dark:text-[#B8A890]/50 text-xs mt-2">Content-Type: application/json</p></div></div>
+}</pre>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="rounded-2xl p-5 border border-[#6BBF59]/15" style="background: rgba(107,191,89,0.04);"><div class="flex items-start gap-3"><div class="text-[#6BBF59] text-xl mt-0.5"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></span></div><div><div class="font-semibold text-[#6BBF59] text-sm mb-1">Garantia de privacidade</div><p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Todas as respostas da API são geradas em tempo real com RNG criptograficamente seguro. Senhas e dados de usuário nunca são registrados, armazenados ou transmitidos além da resposta imediata. Servido por HTTPS com proteção Cloudflare.</p></div></div></div>
-      <div class="rounded-2xl p-5 border border-[#6BBF59]/15 mt-4" style="background: rgba(107,191,89,0.04);"><div class="flex items-start gap-3"><div class="text-[#6BBF59] text-xl mt-0.5"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span></div><div><div class="font-semibold text-[#6BBF59] text-sm mb-1">Código aberto (GPL v3)</div><p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Este servidor de API é open source. Audite, hospede você mesmo ou faça um fork no <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">GitHub</a>. O <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">site frontend</a> também. Ambos sob GPL v3; o nome TofuPass e a mascote continuam nossos, então use sua própria marca se publicar um fork público.</p></div></div></div>
+      <!-- Rate limits -->
+      <div class="endpoint-card mb-6 overflow-hidden">
+        <div class="px-6 py-5 border-b border-[#6BBF59]/10">
+          <div class="text-xs font-bold text-[#8B7355]/50 dark:text-[#B8A890]/50 uppercase tracking-widest mb-2">Limites de taxa</div>
+          <h2 class="text-2xl font-black text-[#4A3728] dark:text-[#F0E6D8]">Limites justos e privados</h2>
+        </div>
+        <div class="px-6 py-6">
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed mb-5">Os endpoints de geração ao vivo permitem uma senha ou frase-passe mantida por segundo, uma pequena almofada de 10 pedidos e 1.000 pedidos de geração por hora. Pedidos acima desses limites <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">429 Too Many Requests</code> com uma sugestão de repetição.</p>
+
+          <div class="rate-grid rate-grid-single">
+            <div>
+              <span class="rate-label">Cabeçalhos de resposta</span>
+              <code>X-RateLimit-Limit</code>
+              <code>X-RateLimit-Remaining-Hour</code>
+              <code>Retry-After</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Note -->
+      <div class="api-note p-5 border border-[#6BBF59]/15">
+        <div class="flex items-start gap-3">
+          <div class="text-[#6BBF59] text-xl mt-0.5"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"></rect><path d="M8 11V8a4 4 0 1 1 8 0v3"></path></svg></span></div>
+          <div>
+            <div class="font-semibold text-[#6BBF59] text-sm mb-1">Garantia de Privacidade</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Todas as respostas da API são geradas em tempo real usando a segurança criptográfica de Node <code class="text-[#4A3728]/70 dark:text-[#F0E6D8]/70 mono">crypto.randomInt</code>. Nenhuma senha gerada, frase-passe ou dados do usuário são registrados, armazenados ou transmitidos além da resposta imediata.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Open Source Note -->
+      <div class="api-note p-5 border border-[#6BBF59]/15 mt-4">
+        <div class="flex items-start gap-3">
+          <div class="text-[#6BBF59] text-xl mt-0.5"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></span></div>
+          <div>
+            <div class="font-semibold text-[#6BBF59] text-sm mb-1">Código aberto (GPL v3)</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Este servidor API é de código aberto. Auditoria da execução <a href="https://github.com/Tofu-Water-Drinker/tofupass-api" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">GitHub</a>. <a href="https://github.com/Tofu-Water-Drinker/tofupass" target="_blank" rel="noopener noreferrer" class="text-[#6BBF59] dark:text-[#7DD668] underline underline-offset-2 font-bold">local do frontend</a> É também. Ambos estão sob GPL v3. O nome TofuPass e mascote são ativos da marca.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </main>

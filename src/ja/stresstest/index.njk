@@ -1,6 +1,6 @@
 ---
 layout: base.njk
-title: パスワードテスト - TofuPass
+title: ストレステスター - TofuPass
 pageKey: stresstest
 extraCss:
 - /assets/css/stresstest.css
@@ -8,7 +8,9 @@ pageScripts:
 - /assets/js/stresstest-ja.js
 - /assets/js/stresstest.js
 backgroundDecor: leaves
+lang: ja
 ---
+
 
   <!-- CONTENT -->
   <main class="relative z-10 pt-28 pb-20 px-4">
@@ -39,7 +41,7 @@ backgroundDecor: leaves
           <div class="flex items-center justify-between mt-2">
             <button onclick="toggleVisibility()" id="visBtn"
               class="text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 hover:text-[#4A3728] dark:hover:text-[#F0E6D8] transition-colors flex items-center gap-1">
-              <span id="visIcon">👁</span> <span id="visText">表示</span>
+              <span id="visIcon">👁</span> <span id="visText">イベント</span>
             </button>
             <div id="char-count" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40"></div>
           </div>
@@ -49,7 +51,7 @@ backgroundDecor: leaves
         <div class="mb-6">
           <div class="flex items-center justify-between mb-2">
             <label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest">強み</label>
-            <span id="strength-label" class="strength-label text-[#8B7355]/50 dark:text-[#B8A890]/50 bg-[#6BBF59]/5 dark:bg-[#7DD668]/10">待機中</span>
+            <span id="strength-label" class="strength-label text-[#8B7355]/50 dark:text-[#B8A890]/50 bg-[#6BBF59]/5 dark:bg-[#7DD668]/10">待ち合わせ</span>
           </div>
           <div class="meter-track">
             <div id="meter-fill"></div>
@@ -103,13 +105,13 @@ backgroundDecor: leaves
             <div class="tooltip-wrap">
               🔑
               <div class="tooltip-content" style="left: 0; transform: none;">
-                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-匿名性</strong>: パスワードの SHA-1 ハッシュの最初の 5 文字のみが Have I Been Pwned に送信されます。 フルハッシュと実際のパスワードはデバイスを離れません。 APIは、その接頭辞ですべてのハッシュを返し、マッチングはローカルで行われます。
+                <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-匿名性</strong>: パスワードの SHA-1 ハッシュの先頭 5 文字のみが、I Been Pwned に送信されます。 フルハッシュと実際のパスワードはデバイスを離れません。 API は、そのプレフィックスですべてのハッシュを返し、マッチングはローカルで行われます。
               </div>
             </div>
           </div>
           <div>
-            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">100%プライベートブレアチェック</div>
-            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">漂流の検出の使用 <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-匿名性</strong> Have I Been Pwned経由で。 実際のパスワードは送信されません。 5文字のハッシュプレフィックスのみが送信されます。 キーアイコンをハバーして、もっと学びましょう。</p>
+            <div class="font-semibold text-[#4A3728] dark:text-[#F0E6D8] text-sm mb-1">プライバシーを守る漏えいチェック</div>
+            <p class="text-[#8B7355] dark:text-[#B8A890] text-xs leading-relaxed">漂流の検出の使用 <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-匿名性</strong> 経由して、私はPwned. 実際のパスワードは送信されません。 5文字のハッシュプレフィックスのみが送信されます。 キーアイコンをハバーして、もっと学びましょう。</p>
           </div>
         </div>
       </div>
@@ -126,7 +128,7 @@ backgroundDecor: leaves
         </div>
         <div class="stat-box">
           <div class="text-lg font-black text-[#4A3728] dark:text-[#F0E6D8]" id="stat-entropy">0</div>
-          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">エントロピーのビット</div>
+          <div class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-1">Entropyのビット</div>
         </div>
       </div>
 

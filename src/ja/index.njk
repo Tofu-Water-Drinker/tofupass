@@ -1,7 +1,7 @@
 ---
 layout: base.njk
-title: TofuPass - 安全で覚えやすいパスワード
-description: 日本語の覚えやすいパスワードをブラウザ内で生成します。
+title: TofuPass - 現実の受け渡しに使いやすい読みやすいパスワード
+description: 言いやすく、入力しやすく、教えやすく、リセットや一時共有もしやすい privacy-first なパスワードを生成します。アカウント、広告、分析はありません。
 pageKey: home
 extraCss:
 - /assets/css/home.css
@@ -13,7 +13,9 @@ backgroundDecor: leaves
 showAnnouncement: true
 eleventyExcludeFromCollections: true
 permalink: /ja/index.html
+lang: ja
 ---
+
 
   <!-- COLORFUL TOP BAND -->
   <div class="hero-band" aria-hidden="true"></div>
@@ -28,8 +30,8 @@ permalink: /ja/index.html
         <div class="generator-card p-6 sm:p-8 relative">
           <!-- Mascot + tagline -->
           <div class="flex flex-col items-center mb-5">
-            <a href="/ja/miso/" class="mascot-wrap" aria-label="大会 Miso">
-              <img id="generatorMascot" src="/tofu.png" alt="Miso TofuPassマスコット" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
+            <a href="/ja/miso/" class="mascot-wrap" aria-label="ミート・ミソ">
+              <img id="generatorMascot" src="/tofu.png" alt="TofuPassのマスコット" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
               <span id="mascotSparks" class="mascot-sparks" aria-hidden="true">
                 <span class="mascot-spark mascot-spark-1"></span>
                 <span class="mascot-spark mascot-spark-2"></span>
@@ -40,7 +42,6 @@ permalink: /ja/index.html
             </a>
             <p class="mt-3 text-xs font-bold uppercase tracking-[0.2em] text-[#8B7355]/50 dark:text-[#B8A890]/50">タップして生成・クリックしてコピー</p>
           </div>
-
           <!-- Password Display -->
           <button type="button" onclick="copyPassword()" id="passwordPanel"
             class="password-panel w-full px-5 py-5 mb-5 min-h-[72px] flex flex-col items-center justify-center text-center">
@@ -84,9 +85,9 @@ permalink: /ja/index.html
               <circle cx="12" cy="12" r="1.5"></circle>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">ソフト</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">シンプルで甘い</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">2 単語 + 記号 + 数字<br/>例) <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">ハッピーコアラ!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">Soft</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">一番入力しやすい</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">低リスク、一時的、使い捨ての用途に向いています。<br/>2 単語 + 記号 + 数字<br/>例: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">HappyKoala!73</span></p>
         </div>
 
         <!-- Firm -->
@@ -98,11 +99,11 @@ permalink: /ja/index.html
             </svg>
           </div>
           <div class="flex items-center gap-2 mb-1">
-            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">会社案内</div>
+            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">Firm</div>
             <span class="text-xs text-[#6BBF59] font-bold">おすすめ商品</span>
           </div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">強力で使用可能な</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">3単語+記号+数字<br/>例) <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">ダンスKoalaRiver!73</span></p>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">標準の受け渡し</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">リセット、サポート、授業、家族の受け渡しではまずこれを選びます。<br/>3 単語 + 記号 + 数字<br/>例: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaRiver!73</span></p>
         </div>
 
         <!-- Extra Firm -->
@@ -115,15 +116,12 @@ permalink: /ja/index.html
               <rect x="4" y="15" width="16" height="4" rx="1.5"></rect>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">余分な会社</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">高いパスワード</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">4 単語 + 記号 + 数字<br/>例) <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">ダンスKoalaCosmicRiver!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#E6A800] uppercase mb-1">Extra Firm</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">長く使う向け</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">より重要な認証情報で、サイトが長いパスワードを受け入れるときに使います。<br/>4 単語 + 記号 + 数字<br/>例: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaCosmicRiver!73</span></p>
         </div>
 
         </div>
-
-        <p class="text-xs text-[#8B7355]/60 dark:text-[#B8A890]/60 mt-3 font-semibold">セキュリティと使いやすさを兼ね備えたスイーツスポットです。</p>
-
         <a href="#why-tofupass" class="scroll-cue" aria-label="スクロールダウンして詳細を学ぶ">
           <span class="scroll-cue-icon ui-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
@@ -136,12 +134,12 @@ permalink: /ja/index.html
     </div>
   </main>
 
-  <!-- FEATURES SECTION (open layout, no cards) -->
+  <!-- LIGHTWEIGHT CONTEXT SECTION (open layout, no cards) -->
   <section id="why-tofupass" class="relative z-10 pt-16 pb-20 px-4">
     <div class="max-w-5xl mx-auto">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">何をするのか <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span> 異なる?</h2>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">実際のユーザビリティ、信頼できるランダム性、パターンの周りに構築されたパスワードジェネレータは、実際に機能することができます。</p>
+      <div class="text-center mb-14">
+        <h2 class="text-3xl sm:text-4xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">扱いにくい場面のためのパスワードジェネレーター。</h2>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-2xl mx-auto font-medium">ブラウザやパスワードマネージャーの生成機能は、オートフィルがすべて処理できる場面では便利です。TofuPass は、リセット対応、授業プリント、Wi-Fi ラベル、ルーター画面、家族の設定、デモなど、人が秘密を読んで入力しなければならない場面のためのものです。</p>
       </div>
       <div class="features-open grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-10">
 
@@ -153,8 +151,8 @@ permalink: /ja/index.html
               <path d="M8 11V8a4 4 0 1 1 8 0v3" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">劇場なしでの保証</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">ブラウザの使用 <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code> 従って無作為には、装飾的ではない実質的です。</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">読みやすさを意図して設計</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">単語ベースのわかりやすいレシピに、記号と短い数字を組み合わせることで、弱い習慣を教えずに、言う、入力する、確認する、受け渡すことがしやすくなります。</p>
         </div>
 
         <!-- Feature 2 -->
@@ -164,8 +162,8 @@ permalink: /ja/index.html
               <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">人間のために設計されている</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">単語ベースのパスワードはタイプし、リコールしやすくなります。これは、より少ない再利用、より少ない簡素化、および少数の粘着性があるノートを意味します。</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">最初からプライベート</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">Web 生成機能はブラウザ内で <code class="text-[#6BBF59] font-mono text-xs font-bold">crypto.getRandomValues()</code> を使って動きます。アカウント、広告、分析はなく、生成されたパスワードを TofuPass が保存することもありません。</p>
         </div>
 
         <!-- Feature 3 -->
@@ -177,8 +175,8 @@ permalink: /ja/index.html
               <path d="M9 14h4" stroke="currentColor" fill="none" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"></path>
             </svg>
           </div>
-          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">明確な、一貫したパターン</h3>
-          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">柔らかで、しっかりしていて、そして、そして、それぞれが馴染みのある資本単語パターン、共通記号、そして短い番号を保ちます、従ってあなたが得るものを常に知っています。</p>
+          <h3 class="text-lg font-extrabold mb-2 text-[#4A3728] dark:text-[#F0E6D8]">マネージャーと一緒に使う前提</h3>
+          <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass は受け渡し用のパスワードを作ります。長期的な秘密の保存、オートフィル、日常のアカウント保護は、本物のパスワードマネージャーが担当するべきです。</p>
         </div>
       </div>
     </div>
@@ -194,7 +192,7 @@ permalink: /ja/index.html
         </svg>
       </div>
 
-      <img src="/excited.png" alt="Miso 見てワクワク" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
+      <img src="/excited.png" alt="Miso 見 興奮" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
       <h2 class="text-2xl sm:text-3xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">パスワードをお持ちですか?</h2>
       <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-8 max-w-md mx-auto font-medium leading-relaxed">任意の既知のデータ侵害に現れているかどうか、それは亀裂にかかっているどのくらいの時間を参照してください。</p>
       <a href="/ja/stresstest/" class="inline-block cta-btn relative z-10 px-8 py-4 rounded-2xl font-bold text-base text-white shadow-xl mb-6">
@@ -212,18 +210,18 @@ permalink: /ja/index.html
     <div class="phonetic-sheet-head">
       <div class="flex items-center justify-between mb-3">
         <span class="text-sm font-extrabold uppercase tracking-[0.12em] text-[#4A3728] dark:text-[#F0E6D8]">電話ガイド</span>
-        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="電話ガイドを閉じる">×</button>
+        <button onclick="closePhoneticGuide()" data-close class="phonetic-close" aria-label="電話ガイドを閉じる">&times;</button>
       </div>
       <div id="phoneticPasswordEcho" class="phonetic-pw-echo font-mono text-lg font-bold text-[#6BBF59] break-all text-center mb-3"></div>
       <div class="flex gap-2">
-        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="軍隊NATOのphoneticガイド">
+        <button id="tabMilitary" class="tab-btn active" onclick="setPhoneticMode('military')" aria-selected="true" aria-label="軍NATOphoneticガイド">
           <span class="ui-icon phonetic-label-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <path d="M5 11a7 7 0 0 1 14 0"></path>
               <path d="M7 11v2a5 5 0 0 0 10 0v-2"></path>
               <path d="M4 11h16"></path>
             </svg>
-          </span>NATO
+          </span>佐藤 仁
         </button>
         <button id="tabKid" class="tab-btn" onclick="setPhoneticMode('kid')" aria-selected="false" aria-label="キッドフレンドリーなphoneticガイド">
           <span class="ui-icon phonetic-label-icon" aria-hidden="true">

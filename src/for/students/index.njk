@@ -1,0 +1,69 @@
+---
+layout: base.njk
+noindex: true
+title: TofuPass for Students - TofuPass
+description: Student-friendly password hygiene, security quizzes, and a printable completion certificate.
+pageKey: for
+extraCss:
+  - /assets/css/for.css
+roleKey: students
+kicker: For students
+heroTitle: Learn password safety without being lectured.
+lede: TofuPass pairs readable password generation with a student safety test covering passwords, phishing, MFA, shared devices, recovery, and account trouble.
+mascot: /excited.png
+proof: The student test does not require accounts or submit results.
+actions:
+  - label: Generate a password
+    href: /
+useKicker: Student training
+useTitle: Six short quizzes, one practical goal.
+useIntro: "Students can practice the decisions they actually face: making unique passwords, spotting fake sign-ins, protecting codes, and asking for help when something feels wrong."
+checks:
+  - Six quiz topics focused on password and account safety.
+  - Passing grade is 85 percent for each quiz.
+  - Completion unlocks a printable certificate with the student's name and grade.
+workflowTitle: Student safety path
+workflow:
+  - term: Learn
+    detail: Start with the password basics and account safety topics.
+  - term: Pass
+    detail: Complete all six quizzes with passing grades.
+  - term: Print
+    detail: Unlock the certificate, type a name, and print or save it as a PDF.
+playbookKicker: Student playbook
+playbookTitle: Practice what happens before an account gets weird.
+playbookIntro: The student version focuses on choices students actually make, from creating passwords to recognizing when a sign-in page or message feels off.
+modeTitle: Which tool fits the assignment
+modeRows:
+  - label: Test
+    title: Safety tutorial
+    copy: Use the student test to check password hygiene, phishing awareness, MFA basics, and recovery decisions.
+  - label: Firm
+    title: Personal school accounts
+    copy: Generate unique passwords for accounts that belong to one student and should not be shared.
+  - label: Phrase
+    title: Long-term projects
+    copy: Use passphrases for clubs, portfolios, or projects where length is allowed and the secret lasts.
+scenarioTitle: Student scenarios
+scenarios:
+  - label: New
+    title: A new class tool opens
+    copy: Make a unique password instead of reusing the one from email, games, or last year.
+  - label: Phish
+    title: A message asks for a login
+    copy: Pause before signing in, check the source, and ask a trusted adult when something feels urgent.
+  - label: Trouble
+    title: An account feels unsafe
+    copy: Change the password, sign out other sessions when possible, and report it to the right person.
+stripKicker: What students practice
+stripTitle: Password habits that show up in real life.
+stripItems:
+  - title: Unique
+    copy: One account should not unlock every account.
+  - title: Suspicious
+    copy: Fake sign-ins, strange links, and urgent messages deserve a pause.
+  - title: Recovery
+    copy: When an account feels unsafe, students should know who to tell and what to change.
+---
+
+{% include "for-detail-content.njk" %}

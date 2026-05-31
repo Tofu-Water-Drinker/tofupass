@@ -1,0 +1,106 @@
+---
+layout: base.njk
+title: TofuPass para Desenvolvedores - TofuPass
+description: Senhas legíveis privadas para demos, contas de encenação, tutoriais,
+  testes locais e fluxos de trabalho de desenvolvimento não secretos.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: Para desenvolvedores
+heroTitle: Senhas de demonstração sem expansão secreta acidental.
+lede: TofuPass é útil quando você precisa de credenciais legíveis para demos, usuários
+  de teste semeados, resets de estadiamento, tutoriais, aplicativos locais ou documentos
+  de suporte.
+mascot: /alert.png
+proof: Não é um substituto para chaves API ou gerenciamento secreto de produção. Perfeito
+  para senhas voltadas para humanos.
+actions:
+- label: Gerar uma senha
+  href: /pt/
+- label: Ver a API
+  href: /pt/api/
+useKicker: Ajuste de fluxo de trabalho Dev
+useTitle: Para senhas os humanos têm que ver.
+useIntro: O trabalho de desenvolvimento muitas vezes precisa de credenciais suficientemente
+  fortes para evitar maus exemplos, mas legíveis o suficiente para demos, documentos,
+  QA e usuários temporários.
+checks:
+- Use senhas legíveis geradas em tutoriais em vez de clássicos codificados.
+- Reinicie o estadiamento ou usuários de QA sem enviar mensagens sem sentido.
+- Mantenha segredos de produção, chaves de API e tokens em ferramentas de gerenciamento
+  secreto reais.
+workflowTitle: Plano de uso do desenvolvedor
+workflow:
+- term: Demonstração
+  detail: Use uma senha legível que pode ser falada ou digitada durante uma caminhada.
+- term: Staging
+  detail: Dê credenciais únicas aos usuários de teste em vez de reutilizar a mesma
+    senha compartilhada para sempre.
+- term: Docs
+  detail: Mostrar exemplos de senha realistas sem publicar uma credencial ao vivo.
+playbookKicker: Manual do desenvolvedor
+playbookTitle: Mantenha exemplos úteis sem normalizar segredos ruins.
+playbookIntro: TofuPass não é para fichas de produção. É para as senhas voltadas para
+  humanos que aparecem em demos, documentos, QA, suporte e testes locais.
+modeTitle: Qual o modo que se encaixa na tarefa dev
+modeRows:
+- label: Suave
+  title: Demos descartados
+  copy: Útil quando uma senha aparece na tela e será descartada após a passagem.
+- label: Firme
+  title: QA e usuários de estadiamento
+  copy: Um padrão legível para usuários semeados, testes de suporte e credenciais
+    que um humano pode precisar digitar.
+- label: Frase
+  title: Exemplos de equipa partilhada
+  copy: Use frases-passe para exemplos internos mais longos onde a legibilidade importa
+    mais do que brevidade.
+scenarioTitle: Cenários de desenvolvimento
+scenarios:
+- label: Docs
+  title: Um tutorial precisa de credenciais
+  copy: Mostrar exemplos gerados em vez de ensinar os leitores a copiar o administrador
+    e a senha.
+- label: QA
+  title: Usuários de teste precisam de rotação
+  copy: Dê a cada usuário semeado uma senha única e gire credenciais de encenação
+    compartilhadas em um cronograma.
+- label: Demonstração
+  title: Uma caminhada ao vivo está chegando
+  copy: Use uma senha legível na tela e segura para jogar fora após a sessão.
+apiPitchKicker: Ajustar API
+apiPitchTitle: Precisa de senhas geradas em um script ou fluxo de demonstração?
+apiPitchIntro: Use a API para documentos, dados de QA, configuração de encenação ou
+  demonstrações onde uma senha legível por humanos é útil. Manter segredos de produção
+  na gestão secreta real.
+apiPitchCta: Ver referência da API
+apiExampleLabel: Endpoint da senha
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Retorna uma senha legível gerada no servidor como texto simples, com suporte de linguagem
+  opcional.
+stripKicker: Higiene do desenvolvedor
+stripTitle: Exemplos melhores fazem padrões melhores.
+stripItems:
+- title: Humano
+  copy: Use TofuPass para credenciais que os humanos precisam ler, digitar ou reiniciar.
+- title: Temporário
+  copy: Rodar demo e encenar senhas quando deixarem de ser temporárias.
+- title: Separar
+  copy: Mantenha as senhas geradas longe de chaves de API, tokens e segredos de produção.
+lang: pt-BR
+audiencePrefix: /pt
+apiHref: /pt/api/
+audienceNavLabel: Outros públicos TofuPass
+audienceChooseKicker: Escolha outro campo
+audienceLabels:
+  teachers: Professores
+  helpdesk: Helpdesk
+  parents: Pais
+  students: Estudantes
+  homelab: Homelab
+  developers: Desenvolvedores
+---
+
+
+{% include "for-detail-content.njk" %}

@@ -1,12 +1,13 @@
 {
   "name": "tofupass",
   "version": "1.0.0",
-  "description": "Beautifully secure passwords",
+  "description": "Readable passwords for real-world handoffs",
   "private": true,
   "main": "desktop/main.js",
   "author": "Matthew Johnson / TofuWater",
   "scripts": {
     "build": "eleventy",
+    "build:api-pdf": "electron scripts/render-api-guide-pdf.js",
     "build:offline": "node Offline/build.js",
     "start": "eleventy --serve",
     "desktop": "npm run build:offline && electron .",

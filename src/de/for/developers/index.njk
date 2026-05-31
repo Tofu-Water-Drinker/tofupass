@@ -1,0 +1,110 @@
+---
+layout: base.njk
+title: TofuPass für Entwickler - TofuPass
+description: Private lesbare Passwörter für Demos, Inserate, Tutorials, lokale Tests
+  und nicht geheime Entwicklungs-Workflows.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: developers
+kicker: Für Entwickler
+heroTitle: Demo-Passwörter ohne zufällige geheime Raupe.
+lede: TofuPass ist nützlich, wenn Sie lesbare Anmeldeinformationen für Demos, gesägte
+  Testbenutzer, Inserate, Tutorials, lokale Apps oder Support-Docs benötigen.
+mascot: /alert.png
+proof: Kein Ersatz für API-Schlüssel oder Produktionsgeheimverwaltung. Perfekt für
+  menschliche Passwörter.
+actions:
+- label: Kennwort generieren
+  href: /de/
+- label: Die API ansehen
+  href: /de/api/
+useKicker: Dev Workflow fit
+useTitle: Für Passwörter müssen die Menschen sehen.
+useIntro: Entwicklungsarbeit benötigt oft Anmeldeinformationen, die stark genug sind,
+  um schlechte Beispiele zu vermeiden, aber lesbar genug für Demos, Docs, QA und temporäre
+  Benutzer.
+checks:
+- Verwenden Sie lesbare generierte Passwörter in Tutorials anstelle von Hardcoded
+  Klassikern.
+- Setzen Sie Staging- oder QA-Nutzer ohne E-Mailing Nonsense-Strings um.
+- Halten Sie Produktionsgeheimnisse, API-Schlüssel und Token in echtem Secret-Management-Tooling.
+workflowTitle: Nutzungsplan für Entwickler
+workflow:
+- term: Demonstranten
+  detail: Verwenden Sie ein lesbares Passwort, das während eines Durchlaufs gesprochen
+    oder eingegeben werden kann.
+- term: Staging
+  detail: Geben Sie Test-Nutzern einzigartige Anmeldeinformationen statt das gleiche
+    geteilte Passwort für immer wieder zu verwenden.
+- term: Ärzte
+  detail: Zeige realistische Passwortbeispiele, ohne eine Live-Berechtigung zu veröffentlichen.
+playbookKicker: Entwickler-Playbook
+playbookTitle: Halten Sie Beispiele nützlich, ohne schlechte Geheimnisse zu normalisieren.
+playbookIntro: TofuPass ist nicht für Produktionstoken. Es ist für die humanorientierten
+  Passwörter, die in Demos, Docs, QA, Unterstützung und lokalen Tests auftauchen.
+modeTitle: Welcher Modus passt zur dev-Task
+modeRows:
+- label: Weich
+  title: Wer ist da?
+  copy: Nützlich, wenn ein Passwort auf dem Bildschirm erscheint und nach dem Durchgang
+    verworfen wird.
+- label: Fichte
+  title: QA und Inszenierung von Benutzern
+  copy: Ein lesbarer Standard für gesägte Benutzer, Unterstützungstests und Anmeldeinformationen,
+    die ein Mensch eingeben muss.
+- label: Phrasen
+  title: Gemeinsame Teambeispiele
+  copy: Verwenden Sie Passphrasen für längerlebige interne Beispiele, bei denen die
+    Lesbarkeit mehr als brevity zählt.
+scenarioTitle: Entwicklungsszenarien
+scenarios:
+- label: Ärzte
+  title: Ein Tutorial braucht Anmeldeinformationen
+  copy: Zeigen Sie generierte Beispiele anstelle von Lehrlesern, um Admin und Passwort
+    zu kopieren.
+- label: QA
+  title: Testanwender benötigen Rotation
+  copy: Geben Sie jedem gesägten Benutzer ein einzigartiges Passwort und rotieren
+    Sie geteilte Eingabeinformationen auf einem Zeitplan.
+- label: Demonstranten
+  title: Ein Live Walkthrough kommt
+  copy: Verwenden Sie ein Passwort, das auf dem Bildschirm lesbar ist und sicher nach
+    der Sitzung wegwerfen.
+apiPitchKicker: API fit
+apiPitchTitle: Brauchen Sie generierte Passwörter in einem Skript oder Demo-Flow?
+apiPitchIntro: Verwenden Sie die API für Docs, QA-Daten, Staging Setup oder Demos,
+  wo ein human lesbares Passwort nützlich ist. Halten Sie Produktionsgeheimnisse in
+  echtem Geheimmanagement.
+apiPitchCta: API Referenz anzeigen
+apiExampleLabel: Passwort vergessen?
+apiExample: curl https://tofupass.com/api/password
+apiExampleNote: Gibt ein lesbares serverseitiges Passwort als Klartext zurück, mit optionaler
+  Sprachunterstützung.
+stripKicker: Entwicklerhygiene
+stripTitle: Bessere Beispiele machen bessere Standardeinstellungen.
+stripItems:
+- title: Mensch
+  copy: Verwenden Sie TofuPass für Anmeldeinformationen Menschen müssen lesen, tippen
+    oder zurücksetzen.
+- title: Vorübergehende
+  copy: Drehen Sie Demo und staging Passwörter, wenn sie aufhören, vorübergehend zu
+    sein.
+- title: getrennt
+  copy: Halten Sie generierte Passwörter weg von API-Schlüsseln, Token und Produktionsgeheimnissen.
+lang: de
+audiencePrefix: /de
+apiHref: /de/api/
+audienceNavLabel: Andere TofuPass Publikum
+audienceChooseKicker: Wählen Sie eine andere Tonhöhe
+audienceLabels:
+  teachers: Lehrer
+  helpdesk: Hilfe
+  parents: Eltern
+  students: Studenten
+  homelab: Homelab
+  developers: Entwickler
+---
+
+
+{% include "for-detail-content.njk" %}

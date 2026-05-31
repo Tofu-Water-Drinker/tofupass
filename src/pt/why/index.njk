@@ -1,97 +1,14 @@
 ---
 layout: base.njk
-title: Por que TofuPass - TofuPass
+title: Por que o TofuPass existe - TofuPass
+description: TofuPass existe para momentos de entrega humana em que uma senha precisa ser lida, digitada, falada, ensinada, redefinida ou compartilhada temporariamente.
 pageKey: why
-extraFonts:
-- https://fonts.bunny.net/css?family=caveat:700
 extraCss:
 - /assets/css/why.css
+backgroundDecor: leaves
+lang: pt-BR
+permalink: /pt/why/index.html
+whyLocale: pt
 ---
 
-  <main class="relative z-10 pt-28 pb-20 px-4">
-    <div class="max-w-2xl mx-auto">
-      <div class="text-center mb-14">
-        <h1 class="text-4xl sm:text-5xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">Porquê? <span class="brand-wordmark">Tofu<span class="brand-wordmark-accent">Pass</span></span></h1>
-        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">A versão curta de uma longa observação.</p>
-      </div>
-
-      <article class="why-article">
-
-        <!-- Section 1 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-pink">O problema</div>
-          <h2>Senhas com as quais as pessoas não podem viver não ficam seguras.</h2>
-          <p>Já há grandes geradores de senhas lá fora. DinoPass, por exemplo, torna a criação de senha simples e acessível. Eu próprio a usei durante anos.</p>
-          <p>Mas eu trabalho em TI. E o padrão que eu continuava vendo não era uma falta de ferramentas - foi o que aconteceu <em>após</em> As pessoas têm a senha. Eles reutilizavam-no, simplificavam-no ou colavam-no ao monitor.</p>
-        </section>
-
-        <!-- Divider -->
-        <div class="why-divider" aria-hidden="true">
-          <svg class="w-36 h-3 text-[#FFD166]/25" viewBox="0 0 150 12" fill="none">
-            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <!-- Section 2 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-yellow">O gatilho</div>
-          <h2>Pequeno atrito, grandes consequências.</h2>
-          <p>No momento em que uma senha cruza um limiar de atrito, as pessoas param de trabalhar <em>com</em> e começar a trabalhar <em>cerca</em> Ele. Os gatilhos são sempre os mesmos:</p>
-          <div class="why-grid">
-            <div class="why-grid-item">Demasiados capitais</div>
-            <div class="why-grid-item">Símbolos não familiares</div>
-            <div class="why-grid-item">Textos aleatórios longos</div>
-            <div class="why-grid-item">Substituições de caracteres</div>
-          </div>
-        </section>
-
-        <!-- Sticky note -->
-        <div class="sticky-note-wrap">
-          <div class="sticky-note">
-            <div class="sticky-note-tape"></div>
-            <p class="sticky-note-text">P@sw0rd123!</p>
-            <p class="sticky-note-sub">- e- mail de trabalho</p>
-          </div>
-        </div>
-
-        <!-- Section 3 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-green">A abordagem</div>
-          <h2>Estrutura sobre o caos.</h2>
-          <p>TofuPass foca em padrões legíveis em vez de aleatoriedade máxima. Blocos de palavras familiares, um símbolo comum, um número curto. Você tem senhas como:</p>
-          <div class="why-examples">
-            <span>Feliz Koala!73</span>
-            <span>DançandoKoalaRiver!73</span>
-            <span>WindyMonitorBrightLeaf# 88</span>
-          </div>
-          <p>Não inquebrável - mas verdadeiramente utilizável. E sob o capô, tudo ainda gera em seu navegador usando aleatoriedade criptográfica. Sem contas, sem análises, nada sai do teu dispositivo. Quando você quer um segredo de longa forma limpo, o <a href="/pt/passphrases/" class="text-[#6BBF59] dark:text-[#7DD668] hover:text-[#4A9F3F] underline underline-offset-2 font-bold transition-colors">gerador de frase- senha</a> está lá para esse trabalho.</p>
-        </section>
-
-        <!-- Divider -->
-        <div class="why-divider" aria-hidden="true">
-          <svg class="w-36 h-3 text-[#9B6DD7]/15" viewBox="0 0 150 12" fill="none">
-            <path d="M0 6 C 18 0, 37 12, 56 6 S 93 0, 112 6 S 131 12, 150 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-          </svg>
-        </div>
-
-        <!-- Section 4 -->
-        <section class="why-section">
-          <div class="why-section-label why-label-blue">O ajuste</div>
-          <h2>Não um substituto. Uma ponte.</h2>
-          <p>Se você estiver usando um gerenciador de senhas com strings aleatórias longas para tudo - ótimo. É o ideal. TofuPass existe para o resto do tempo: quando você precisa de algo forte o suficiente para uso real, simples o suficiente para lembrar, e privado o suficiente para que você não tenha que confiar em ninguém.</p>
-          <div class="pull-quote pull-quote-green">
-            Senhas simples são usadas. Senhas usadas permanecem únicas. Senhas únicas mantêm as pessoas seguras.
-          </div>
-        </section>
-
-      </article>
-
-      <!-- CTA -->
-      <div class="text-center mt-14">
-        <img src="/tofu.png" alt="Miso" class="w-14 h-14 mx-auto mb-4 mascot-glow" />
-        <a href="/" class="inline-block cta-btn px-8 py-4 rounded-2xl font-bold text-base text-white">
-          Tente o TofuPass
-        </a>
-      </div>
-    </div>
-  </main>
+{% include "why-content.njk" %}

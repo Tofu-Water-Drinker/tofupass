@@ -1,0 +1,90 @@
+---
+layout: base.njk
+title: 豆腐纸换家居
+description: 路由器,NAS盒,本地服务,VMS,和个人基础设施的可读唯一密码.
+pageKey: for
+extraCss:
+- /assets/css/for.css
+roleKey: homelab
+kicker: 为家居板建造者
+heroTitle: 你自建的服务器柜子有独特的秘密
+lede: TofuPass帮助家居实验室所有者避免密码在路由器,NAS盒,仪表板,VM,本地管理员账户和实验中重复使用.
+mascot: /tofu.png
+proof: 在浏览器中运行, 工作顺利离线, 不收集您生成的密码 。
+actions:
+- label: 生成密码
+  href: /zh-cn/
+- label: 写一个密码句
+  href: /zh-cn/passphrases/
+useKicker: 方便实验室的默认
+useTitle: 别让实验室分享一个秘密
+useIntro: 居室长在边上 TofuPass在临时服务成为永久基础设施之前会给你提供快速独特的密码.
+checks:
+- 对路由器、NAS管理员、超视距器和密码管理器使用Extra Firm或密码句。
+- 给每个仪表板,VM, 和当地服务 自己的证书。
+- 在您的密码管理器或金库中存储最终机密, 而不是在 README 中 。
+workflowTitle: 故居秘密计划
+workflow:
+- term: 核心装备
+  detail: 对路由器,NAS,超透视器,和回收账户使用最强实用模式.
+- term: 本地应用程序
+  detail: 生成仪表板、数据库、容器和测试服务的独特证书。
+- term: 文档
+  detail: 在密码管理器中保存这个秘密,并保持设置笔记,不附带直播密码.
+playbookKicker: Homelab 游戏本
+playbookTitle: 建设像实验室 以后会变得重要。
+playbookIntro: 多数家居板从实验开始,慢慢成为个人基础设施. 独特的密码使这种增长不会变成一个共享爆炸半径。
+modeTitle: 哪种模式适合服务
+modeRows:
+- label: 企业
+  title: 临时仪表板
+  copy: 适合本地工具和网络用户界面,这些工具和用户界面虽然未曝光,但仍应获得独特的认证。
+- label: 额外
+  title: 网络和存储
+  copy: 在路由器、NAS管理器、超显像器、备份系统 以及任何有广泛访问权限的东西中使用Extra Firm。
+- label: 词组
+  title: 长寿金库条目
+  copy: 接受长度时使用密码句,想要一个可以在周末建设后存活下来的秘密.
+scenarioTitle: 实验室设想方案
+scenarios:
+- label: 路由器
+  title: 网络核心被触动了
+  copy: 在更改过多的设置之前, 替换默认的证书并存储恢复细节 。
+- label: 自愿
+  title: 测试盒变成永久
+  copy: 一旦服务开始持有真实数据或真实访问,则旋转原始快速密码.
+- label: 文档
+  title: 设置注释需要清理
+  copy: 将直播密码移动到管理器中,并只留下账户名称、URL和旋转日期的笔记。
+apiPitchKicker: 自动配置
+apiPitchTitle: 用于设置脚本,而非金库替换.
+apiPitchIntro: 当实验室脚本需要可读的启动密码或密码句时使用API,然后将最后的秘密存储在您的管理器或金库中.
+apiPitchCta: 参见 API 选项
+apiExampleLabel: 密码句结束点
+apiExample: curl https://tofupass.com/api/passphrase?count=5
+apiExampleNote: 返回一个连字符密码句, 您可以在设置后移动到您的金库 。
+stripKicker: 个人基础设施
+stripTitle: 把实验室当做以后的事
+stripItems:
+- title: 隔离
+  copy: 一个泄露的仪表板密码 不应该打开实验室的其余部分
+- title: 升级
+  copy: 将长寿服务从快速密码移动到密码或库生成的秘密.
+- title: 恢复
+  copy: 保持恢复路径的私人性,独特性,并存储在可以找到的地方。
+lang: zh-CN
+audiencePrefix: /zh-cn
+apiHref: /zh-cn/api/
+audienceNavLabel: 其他TofuPass观众
+audienceChooseKicker: 选择另一个投出
+audienceLabels:
+  teachers: 教师
+  helpdesk: 服务台
+  parents: 家长
+  students: 学生
+  homelab: 家园
+  developers: 开发者
+---
+
+
+{% include "for-detail-content.njk" %}

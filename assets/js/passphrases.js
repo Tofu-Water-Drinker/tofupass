@@ -4,6 +4,9 @@
     words: 'words',
     clickToCopy: 'Click passphrase to copy',
     copied: 'Copied to clipboard',
+    passphraseGenerated: 'New passphrase generated.',
+    passphraseCopied: 'Passphrase copied.',
+    copyFailed: 'Copy failed. Select the passphrase and copy it manually.',
     unavailable: 'Word list unavailable'
   }, locale.text || {});
   const state = {
@@ -13,6 +16,15 @@
   };
   let currentPassphrase = '';
   let wordPool = [];
+
+  function announceStatus(message) {
+    const status = document.getElementById('passphraseStatus');
+    if (!status) return;
+    status.textContent = '';
+    window.setTimeout(() => {
+      status.textContent = message;
+    }, 20);
+  }
 
   function getSecureRandomInt(max) {
     if (!Number.isInteger(max) || max <= 0) {
@@ -72,7 +84,7 @@
     hint.textContent = text.clickToCopy;
   }
 
-  function generatePassphrase() {
+  function generatePassphrase(shouldAnnounce = true) {
     if (!wordPool.length) {
       renderPassphrase(text.unavailable);
       return;
@@ -85,6 +97,7 @@
 
     currentPassphrase = words.join(state.separator);
     renderPassphrase(currentPassphrase);
+    if (shouldAnnounce) announceStatus(text.passphraseGenerated);
   }
 
   function onCopySuccess() {
@@ -94,10 +107,15 @@
 
     panel.classList.add('copied');
     hint.textContent = text.copied;
+    announceStatus(text.passphraseCopied);
     setTimeout(() => {
       panel.classList.remove('copied');
       hint.textContent = text.clickToCopy;
     }, 1800);
+  }
+
+  function onCopyFailure() {
+    announceStatus(text.copyFailed);
   }
 
   function fallbackCopy(text) {
@@ -109,10 +127,13 @@
     ta.focus();
     ta.select();
     try {
-      document.execCommand('copy');
-      onCopySuccess();
+      if (document.execCommand('copy')) {
+        onCopySuccess();
+      } else {
+        onCopyFailure();
+      }
     } catch (e) {
-      // Ignore clipboard failures after the fallback attempt.
+      onCopyFailure();
     }
     document.body.removeChild(ta);
   }
@@ -132,7 +153,7 @@
   window.addEventListener('DOMContentLoaded', () => {
     wordPool = getWordPool();
     syncControls();
-    generatePassphrase();
+    generatePassphrase(false);
 
     const generateButton = document.getElementById('passphraseGenerate');
     const copyButton = document.getElementById('passphraseCopy');

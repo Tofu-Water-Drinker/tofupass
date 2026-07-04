@@ -2,6 +2,32 @@
   const storageKey = 'tofupass-language';
   const cookieName = 'tofupass_language';
   const supported = ['en', 'es', 'pt', 'fr', 'de', 'ja', 'zh-cn', 'ar', 'id', 'hi', 'ru'];
+  const languageCodes = {
+    en: 'EN',
+    es: 'ES',
+    pt: 'PT',
+    fr: 'FR',
+    de: 'DE',
+    ja: 'JA',
+    'zh-cn': 'ZH',
+    ar: 'AR',
+    id: 'ID',
+    hi: 'HI',
+    ru: 'RU',
+  };
+  const languageNames = {
+    en: 'English',
+    es: 'Spanish',
+    pt: 'Portuguese',
+    fr: 'French',
+    de: 'German',
+    ja: 'Japanese',
+    'zh-cn': 'Simplified Chinese',
+    ar: 'Arabic',
+    id: 'Indonesian',
+    hi: 'Hindi',
+    ru: 'Russian',
+  };
   const localizedRoutes = [
     '/',
     '/passphrases/',
@@ -21,6 +47,9 @@
     '/teachers/',
     '/helpdesk/',
     '/careers/',
+  ];
+  const unlocalizedRoutes = [
+    '/accessibility/',
   ];
   const routeMap = {};
 
@@ -84,6 +113,7 @@
 
   function toLocalizedPath(path, language) {
     const englishPath = toEnglishPath(path);
+    if (unlocalizedRoutes.includes(englishPath)) return englishPath;
     return routeMap[language][englishPath] || `/${language}/`;
   }
 
@@ -101,16 +131,20 @@
     }
   }
 
+  // The URL always wins: whatever language page someone opens is the one they
+  // see. The saved preference is only applied on the bare homepage, where the
+  // visitor hasn't expressed any language intent yet.
   const currentLanguage = getCurrentLanguage();
   const storedLanguage = getStoredLanguage();
-  if (storedLanguage && storedLanguage !== currentLanguage && !window.location.hash.includes('no-lang-redirect')) {
-    const target = targetPathFor(storedLanguage);
-    if (target !== normalizePath(window.location.pathname)) {
-      window.location.replace(`${target}${window.location.search}${window.location.hash}`);
-      return;
-    }
-  } else {
-    rememberLanguage(currentLanguage);
+  const isRootLanding = normalizePath(window.location.pathname) === '/';
+  if (
+    isRootLanding &&
+    storedLanguage &&
+    storedLanguage !== currentLanguage &&
+    !window.location.hash.includes('no-lang-redirect')
+  ) {
+    window.location.replace(`/${storedLanguage}/${window.location.search}${window.location.hash}`);
+    return;
   }
 
   window.addEventListener('DOMContentLoaded', () => {
@@ -125,10 +159,21 @@
     function setActiveLanguage(language) {
       select.value = language;
       if (currentLabel) {
-        currentLabel.textContent = select.options[select.selectedIndex].textContent;
+        currentLabel.textContent = languageCodes[language] || language.toUpperCase();
+      }
+      if (button) {
+        const baseLabel = button.getAttribute('data-label') || button.getAttribute('aria-label') || 'Language';
+        if (!button.getAttribute('data-label')) button.setAttribute('data-label', baseLabel);
+        button.setAttribute('aria-label', `${baseLabel}: ${languageNames[language] || language}`);
       }
       options.forEach((option) => {
-        option.setAttribute('aria-selected', option.dataset.languageCode === language ? 'true' : 'false');
+        const isSelected = option.dataset.languageCode === language;
+        option.setAttribute('aria-selected', isSelected ? 'true' : 'false');
+        option.setAttribute('aria-current', isSelected ? 'true' : 'false');
+        option.setAttribute(
+          'aria-label',
+          `${languageNames[option.dataset.languageCode] || option.dataset.languageCode}${isSelected ? ', current language' : ''}`
+        );
       });
     }
 
@@ -169,10 +214,16 @@
     });
 
     button.addEventListener('keydown', (event) => {
-      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+      if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp' && event.key !== 'Home' && event.key !== 'End') return;
       event.preventDefault();
       openMenu();
-      focusOption(getCurrentLanguage());
+      if (event.key === 'Home') {
+        options[0].focus();
+      } else if (event.key === 'End') {
+        options[options.length - 1].focus();
+      } else {
+        focusOption(getCurrentLanguage());
+      }
     });
 
     options.forEach((option, index) => {
@@ -188,6 +239,11 @@
         if (event.key === 'Escape') {
           closeMenu();
           button.focus();
+          return;
+        }
+        if (event.key === 'Home' || event.key === 'End') {
+          event.preventDefault();
+          options[event.key === 'Home' ? 0 : options.length - 1].focus();
           return;
         }
         if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;

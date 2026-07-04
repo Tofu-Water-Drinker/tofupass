@@ -15,3 +15,6 @@ assets/js/wordlists.js
 
 # Stray RTF drafts (API source lives in its own repo)
 *.rtf
+
+# Local translation tooling venv
+.translation-venv/

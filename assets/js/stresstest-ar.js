@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: 'إظهار', hide: 'إخفاء', chars: 'أحرف', waiting: 'انتظار', notYet: 'ليس بعد', checkingBreaches: 'جار فحص قواعد التسريب...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: 'فوري', compromised: 'مخترقة', instantaneous: 'فوري', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: 'ضعيفة جدًا', weak: 'ضعيفة', moderate: 'متوسطة', strong: 'قوية', veryStrong: 'قوية جدًا' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "إظهار",
+    "hide": "إخفاء",
+    "chars": "أحرف",
+    "waiting": "انتظار",
+    "notYet": "ليس بعد",
+    "checkingBreaches": "جار فحص قواعد التسريب...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "فوري",
+    "compromised": "مخترقة",
+    "instantaneous": "فوري",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "ضعيفة جدًا",
+    "weak": "ضعيفة",
+    "moderate": "متوسطة",
+    "strong": "قوية",
+    "veryStrong": "قوية جدًا",
+    "passwordVisible": "كلمة المرور ظاهرة.",
+    "passwordHidden": "كلمة المرور مخفية.",
+    "resultsSummary": "القوة: {strength}. زمن التخمين المقدر: {time}. الأحرف: {length}. حجم المجموعة: {pool}. الإنتروبيا: {entropy} بت.",
+    "breachedSummary": "كلمة مرور مخترقة. وُجدت في {count} سجلات تسريب معروفة.",
+    "emptySummary": "أدخل كلمة مرور لرؤية التقدير."
+  }
+};

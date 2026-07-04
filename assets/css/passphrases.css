@@ -1,4 +1,4 @@
-/* ── Passphrases page ── */
+/* ── Passphrases page: matched to the home generator's kawaii tofu look ── */
 
 .passphrase-band {
   position: absolute;
@@ -6,9 +6,24 @@
   left: 0;
   right: 0;
   height: 360px;
-  background: linear-gradient(135deg, #6BBF59 0%, #A8E6CF 38%, #5B9FD6 72%, #FFD166 100%);
+  background: linear-gradient(120deg, #8BC34A 0%, #6BBF59 24%, #A8E6CF 48%, #FFD166 74%, #FF9EAF 100%);
+  background-size: 180% 180%;
+  animation: heroDrift 18s ease-in-out infinite alternate;
   pointer-events: none;
   z-index: 0;
+  overflow: hidden;
+}
+@keyframes heroDrift {
+  from { background-position: 0% 0%; }
+  to { background-position: 100% 100%; }
+}
+.passphrase-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(320px 200px at 18% 28%, rgba(255, 255, 255, 0.28), transparent 70%),
+    radial-gradient(420px 260px at 82% 18%, rgba(255, 255, 255, 0.22), transparent 70%);
 }
 .passphrase-band::after {
   content: '';
@@ -21,6 +36,7 @@
   border-radius: 50% 50% 0 0;
 }
 
+/* ── Layout ── */
 .passphrase-stage {
   min-height: calc(100svh - 6rem);
   display: grid;
@@ -44,8 +60,10 @@
   margin-top: 1.75rem;
   padding: 0.75rem 1rem;
   border-radius: 1rem;
-  border: 2px dashed rgba(107, 191, 89, 0.28);
-  background: var(--bg-surface-alt);
+  border: 2px dashed rgba(107, 191, 89, 0.3);
+  background:
+    linear-gradient(180deg, rgba(107, 191, 89, 0.09), rgba(107, 191, 89, 0.04)),
+    var(--bg-surface);
   color: #6BBF59;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
   font-weight: 800;
@@ -53,13 +71,22 @@
   box-shadow: 0 8px 24px var(--shadow-base);
 }
 
+/* ── Generator card (mirrors .generator-card on home) ── */
 .passphrase-tool {
+  position: relative;
   width: 100%;
   padding: clamp(1.25rem, 3vw, 2rem);
   border-radius: 2rem;
   border: 2px solid var(--border-subtle);
-  background: var(--bg-surface);
-  box-shadow: 0 10px 44px var(--shadow-base);
+  /* Green ribbon accent drawn as a background layer so it clips to the
+     card's rounded corners at any size (a positioned bar overhangs them). */
+  background:
+    linear-gradient(90deg, #6BBF59, #A8E6CF 55%, #8BC34A) top / 100% 6px no-repeat,
+    var(--bg-surface);
+  box-shadow:
+    0 8px 40px var(--shadow-base),
+    0 24px 64px rgba(107, 191, 89, 0.08);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 .passphrase-tool-head {
   display: flex;
@@ -78,6 +105,8 @@
   font-size: 0.76rem;
   font-weight: 900;
 }
+
+/* ── Click-to-copy panel (mirrors .password-panel on home) ── */
 .passphrase-panel {
   width: 100%;
   min-height: 9.5rem;
@@ -87,37 +116,38 @@
   justify-content: center;
   gap: 0.9rem;
   padding: 1.35rem;
-  border-radius: 1.4rem;
-  border: 2px dashed rgba(91, 159, 214, 0.3);
+  border-radius: 1.25rem;
+  border: 2px dashed rgba(139, 195, 74, 0.3);
   background:
-    linear-gradient(135deg, rgba(91, 159, 214, 0.08), rgba(107, 191, 89, 0.07)),
-    var(--bg-surface-alt);
+    linear-gradient(180deg, rgba(107, 191, 89, 0.09), rgba(107, 191, 89, 0.04)),
+    var(--bg-surface);
   color: var(--text-primary);
   cursor: pointer;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), border-color 0.2s ease, box-shadow 0.25s ease, background 0.25s ease;
 }
 .passphrase-panel:hover {
-  transform: translateY(-3px);
-  border-color: rgba(107, 191, 89, 0.42);
-  box-shadow: 0 12px 32px rgba(91, 159, 214, 0.12);
+  transform: translateY(-3px) scale(1.01);
+  border-color: rgba(139, 195, 74, 0.45);
+  box-shadow: 0 8px 30px rgba(107, 191, 89, 0.12);
 }
 .passphrase-panel.copied {
   border-style: solid;
-  border-color: rgba(107, 191, 89, 0.6);
-  box-shadow: 0 0 26px rgba(107, 191, 89, 0.2);
+  border-color: rgba(139, 195, 74, 0.6);
+  box-shadow: 0 0 24px rgba(107, 191, 89, 0.2);
 }
 .passphrase-display {
   max-width: 100%;
-  color: #5B9FD6;
+  color: #6BBF59;
   font-family: 'JetBrains Mono', 'Courier New', monospace;
-  font-size: clamp(1.25rem, 3.2vw, 2.15rem);
-  font-weight: 900;
+  font-size: clamp(1.25rem, 3.2vw, 2rem);
+  font-weight: 800;
   line-height: 1.32;
+  letter-spacing: 0.04em;
   overflow-wrap: anywhere;
   text-align: center;
 }
 .passphrase-refresh {
-  animation: passphraseRefresh 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+  animation: passphraseRefresh 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 .passphrase-hint {
   color: var(--text-secondary);
@@ -125,11 +155,16 @@
   font-weight: 900;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+.passphrase-panel:hover .passphrase-hint {
+  color: #6BBF59;
 }
 
+/* ── Actions ── */
 .passphrase-actions {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: 1fr;
   gap: 0.75rem;
   margin-top: 1rem;
 }
@@ -139,26 +174,8 @@
   color: #fff;
   font-weight: 900;
 }
-.passphrase-copy-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.45rem;
-  min-width: 7rem;
-  padding: 0.9rem 1rem;
-  border-radius: 1rem;
-  border: 2px solid rgba(91, 159, 214, 0.18);
-  background: rgba(91, 159, 214, 0.08);
-  color: #5B9FD6;
-  font-weight: 900;
-  transition: transform 0.22s ease, background 0.2s ease, border-color 0.2s ease;
-}
-.passphrase-copy-btn:hover {
-  transform: translateY(-2px);
-  border-color: rgba(91, 159, 214, 0.32);
-  background: rgba(91, 159, 214, 0.12);
-}
 
+/* ── Option controls ── */
 .passphrase-controls {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -179,35 +196,51 @@
   gap: 0.35rem;
   padding: 0.35rem;
   border-radius: 1rem;
-  background: rgba(74, 55, 40, 0.04);
+  border: 2px solid var(--border-subtle);
+  background: var(--bg-surface-alt);
 }
 .segmented-control button {
   flex: 1 1 auto;
   min-width: 2.25rem;
   padding: 0.48rem 0.58rem;
   border-radius: 0.75rem;
+  border: 2px solid transparent;
   color: var(--text-secondary);
   font-size: 0.8rem;
   font-weight: 900;
-  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+.segmented-control button:hover {
+  color: var(--text-primary);
+  transform: translateY(-1px);
 }
 .segmented-control button[aria-pressed="true"] {
-  background: var(--bg-surface);
+  background: rgba(107, 191, 89, 0.12);
+  border-color: rgba(107, 191, 89, 0.32);
   color: #6BBF59;
-  box-shadow: 0 4px 12px var(--shadow-base);
+  box-shadow: 0 4px 12px rgba(107, 191, 89, 0.12);
 }
 
+/* ── Guidance notes (soft cards, like the home level cards) ── */
 .passphrase-notes {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+  gap: 1rem;
   padding-top: 1rem;
 }
 .note-strip {
   display: flex;
   gap: 1rem;
-  padding-left: 1.25rem;
-  border-left: 4px solid;
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+  border: 2px solid transparent;
+  background: var(--bg-surface);
+  box-shadow: 0 2px 12px var(--shadow-base);
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.2s ease;
+}
+.note-strip:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(74, 55, 40, 0.1);
 }
 .note-strip h2 {
   margin: 0 0 0.35rem;
@@ -221,28 +254,41 @@
   font-size: 0.9rem;
   line-height: 1.65;
 }
-.note-strip-green { border-left-color: #6BBF59; }
-.note-strip-yellow { border-left-color: #FFD166; }
+.note-strip-green {
+  border-color: rgba(107, 191, 89, 0.2);
+  background: linear-gradient(135deg, rgba(107, 191, 89, 0.07), rgba(107, 191, 89, 0.02)), var(--bg-surface);
+}
+.note-strip-green:hover { border-color: rgba(107, 191, 89, 0.35); }
+.note-strip-yellow {
+  border-color: rgba(255, 209, 102, 0.28);
+  background: linear-gradient(135deg, rgba(255, 209, 102, 0.09), rgba(255, 209, 102, 0.02)), var(--bg-surface);
+}
+.note-strip-yellow:hover { border-color: rgba(255, 209, 102, 0.45); }
 .note-icon {
-  width: 2.6rem;
-  height: 2.6rem;
+  width: 2.85rem;
+  height: 2.85rem;
   flex-shrink: 0;
-  border-radius: 999px;
+  border-radius: 18px;
+  border: 2px solid;
 }
 .note-strip-green .note-icon {
-  background: rgba(107, 191, 89, 0.1);
+  background: rgba(107, 191, 89, 0.08);
+  border-color: rgba(107, 191, 89, 0.2);
   color: #6BBF59;
 }
 .note-strip-yellow .note-icon {
-  background: rgba(255, 209, 102, 0.14);
+  background: rgba(255, 209, 102, 0.12);
+  border-color: rgba(255, 209, 102, 0.25);
   color: #E6A800;
 }
 
 @keyframes passphraseRefresh {
-  0% { opacity: 0.45; transform: translateY(8px); filter: blur(3px); }
-  100% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  0% { opacity: 0.4; transform: translateY(8px) scale(0.97); filter: blur(3px); }
+  60% { transform: translateY(-3px) scale(1.01); }
+  100% { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
 }
 
+/* ── Responsive ── */
 @media (max-width: 900px) {
   .passphrase-stage {
     grid-template-columns: 1fr;
@@ -266,18 +312,15 @@
   .passphrase-notes {
     grid-template-columns: 1fr;
   }
-  .passphrase-actions {
-    grid-template-columns: 1fr;
-  }
-  .passphrase-copy-btn {
-    width: 100%;
-  }
 }
 
 @media (max-width: 420px) {
   .passphrase-tool {
     border-radius: 1.5rem;
     padding: 1rem;
+  }
+  .passphrase-tool::before {
+    border-radius: calc(1.5rem - 2px) calc(1.5rem - 2px) 0 0;
   }
   .passphrase-panel {
     min-height: 8.75rem;

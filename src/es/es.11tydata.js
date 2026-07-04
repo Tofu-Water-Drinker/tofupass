@@ -16,6 +16,7 @@ module.exports = {
     { key: "about", label: "Acerca de", href: "/es/about/" },
     { key: "for", label: "Para", href: "/es/for/" },
     { key: "privacy", label: "Privacidad", href: "/es/privacy/" },
+    { key: "accessibility", label: "Accesibilidad", href: "/accessibility/" },
     { key: "source", label: "Código", href: "https://github.com/Tofu-Water-Drinker/tofupass", external: true },
   ],
 };

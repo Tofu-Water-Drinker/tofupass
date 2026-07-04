@@ -1,39 +1,76 @@
 window.tofupassLocale = {
-  text: {
-    clickToCopy: 'Clique para copiar',
-    copied: 'Copiado para a área de transferência',
-    emptyPhonetic: 'Gere uma senha para ver uma guia fonética legível.',
-    letter: 'Letra',
-    uppercaseLetter: 'Letra maiúscula',
-    number: 'Número',
-    symbol: 'Símbolo',
-    capitalPrefix: 'maiúscula',
-    angryMascotPhrase: 'Desculpa, vou tentar criar uma senha que você goste de verdade.'
+  "text": {
+    "clickToCopy": "Clique para copiar",
+    "copied": "Copiado para a área de transferência",
+    "emptyPhonetic": "Gere uma senha para ver uma guia fonética legível.",
+    "letter": "Letra",
+    "uppercaseLetter": "Letra maiúscula",
+    "number": "Número",
+    "symbol": "Símbolo",
+    "capitalPrefix": "maiúscula",
+    "angryMascotPhrase": "Desculpa, vou tentar criar uma senha que você goste de verdade.",
+    "passwordCopied": "Senha copiada.",
+    "copyFailed": "Não foi possível copiar. Selecione a senha e copie manualmente.",
+    "passwordGenerated": "Nova senha gerada."
   },
-  kidAlphabet: {
-    a:'árvore',b:'barco',c:'casa',d:'dado',e:'estrela',f:'flor',g:'gato',h:'hotel',i:'ilha',j:'janela',k:'kiwi',l:'lua',m:'mesa',n:'nuvem',o:'ovo',p:'pão',q:'queijo',r:'rio',s:'sol',t:'tigre',u:'uva',v:'vela',w:'web',x:'xícara',y:'yoga',z:'zebra'
+  "kidAlphabet": {
+    "a": "árvore",
+    "b": "barco",
+    "c": "casa",
+    "d": "dado",
+    "e": "estrela",
+    "f": "flor",
+    "g": "gato",
+    "h": "hotel",
+    "i": "ilha",
+    "j": "janela",
+    "k": "kiwi",
+    "l": "lua",
+    "m": "mesa",
+    "n": "nuvem",
+    "o": "ovo",
+    "p": "pão",
+    "q": "queijo",
+    "r": "rio",
+    "s": "sol",
+    "t": "tigre",
+    "u": "uva",
+    "v": "vela",
+    "w": "web",
+    "x": "xícara",
+    "y": "yoga",
+    "z": "zebra"
   },
-  symbolNames: {
-    '!':'Ponto de exclamação',
-    '@':'Arroba',
-    '#':'Cerquilha',
-    '$':'Cifrão',
-    '?':'Ponto de interrogação',
-    '*':'Asterisco'
+  "symbolNames": {
+    "!": "Ponto de exclamação",
+    "@": "Arroba",
+    "#": "Cerquilha",
+    "$": "Cifrão",
+    "?": "Ponto de interrogação",
+    "*": "Asterisco"
   },
-  numberNames: {
-    '0':'zero','1':'um','2':'dois','3':'três','4':'quatro','5':'cinco','6':'seis','7':'sete','8':'oito','9':'nove'
+  "numberNames": {
+    "0": "zero",
+    "1": "um",
+    "2": "dois",
+    "3": "três",
+    "4": "quatro",
+    "5": "cinco",
+    "6": "seis",
+    "7": "sete",
+    "8": "oito",
+    "9": "nove"
   },
-  mascotPhrases: [
-    'Miso aprovou essa.',
-    'Recém-saída da prensa de tofu.',
-    'Forte, bonita e pronta para copiar.',
-    'Essa ficou com ótima energia.',
-    'Uma senha limpa e bem comportada.',
-    'Bom gosto para segredos.',
-    'Pronta para a área de transferência.',
-    'Feita aqui mesmo, com cuidado.',
-    'Essa saiu firme e elegante.',
-    'Miso está orgulhoso.'
+  "mascotPhrases": [
+    "Miso aprovou essa.",
+    "Recém-saída da prensa de tofu.",
+    "Forte, bonita e pronta para copiar.",
+    "Essa ficou com ótima energia.",
+    "Uma senha limpa e bem comportada.",
+    "Bom gosto para segredos.",
+    "Pronta para a área de transferência.",
+    "Feita aqui mesmo, com cuidado.",
+    "Essa saiu firme e elegante.",
+    "Miso está orgulhoso."
   ]
 };

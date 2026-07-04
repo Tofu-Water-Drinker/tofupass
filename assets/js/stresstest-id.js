@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: 'Tampilkan', hide: 'Sembunyikan', chars: 'karakter', waiting: 'Menunggu', notYet: 'Belum', checkingBreaches: 'Memeriksa basis data bocor...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: 'Instan', compromised: 'Terkonfirmasi bocor', instantaneous: 'Instan', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: 'Sangat lemah', weak: 'Lemah', moderate: 'Sedang', strong: 'Kuat', veryStrong: 'Sangat kuat' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "Tampilkan",
+    "hide": "Sembunyikan",
+    "chars": "karakter",
+    "waiting": "Menunggu",
+    "notYet": "Belum",
+    "checkingBreaches": "Memeriksa basis data bocor...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "Instan",
+    "compromised": "Terkonfirmasi bocor",
+    "instantaneous": "Instan",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "Sangat lemah",
+    "weak": "Lemah",
+    "moderate": "Sedang",
+    "strong": "Kuat",
+    "veryStrong": "Sangat kuat",
+    "passwordVisible": "Kata sandi terlihat.",
+    "passwordHidden": "Kata sandi disembunyikan.",
+    "resultsSummary": "Kekuatan: {strength}. Perkiraan waktu retas: {time}. Karakter: {length}. Ukuran kumpulan: {pool}. Entropi: {entropy} bit.",
+    "breachedSummary": "Kata sandi terkompromi. Ditemukan di {count} catatan kebocoran yang dikenal.",
+    "emptySummary": "Masukkan kata sandi untuk melihat perkiraan."
+  }
+};

@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: 'दिखाएँ', hide: 'छिपाएँ', chars: 'अक्षर', waiting: 'प्रतीक्षा', notYet: 'अभी नहीं', checkingBreaches: 'लीक डेटाबेस जाँचा जा रहा है...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: 'तुरंत', compromised: 'समझौता हुआ', instantaneous: 'तुरंत', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: 'बहुत कमजोर', weak: 'कमजोर', moderate: 'मध्यम', strong: 'मजबूत', veryStrong: 'बहुत मजबूत' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "दिखाएँ",
+    "hide": "छिपाएँ",
+    "chars": "अक्षर",
+    "waiting": "प्रतीक्षा",
+    "notYet": "अभी नहीं",
+    "checkingBreaches": "लीक डेटाबेस जाँचा जा रहा है...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "तुरंत",
+    "compromised": "समझौता हुआ",
+    "instantaneous": "तुरंत",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "बहुत कमजोर",
+    "weak": "कमजोर",
+    "moderate": "मध्यम",
+    "strong": "मजबूत",
+    "veryStrong": "बहुत मजबूत",
+    "passwordVisible": "पासवर्ड दिखाई दे रहा है.",
+    "passwordHidden": "पासवर्ड छिपा दिया गया.",
+    "resultsSummary": "मजबूती: {strength}. अनुमानित क्रैक समय: {time}. अक्षर: {length}. पूल आकार: {pool}. एंट्रॉपी: {entropy} बिट्स.",
+    "breachedSummary": "समझौता हुआ पासवर्ड. {count} ज्ञात ब्रीच रिकॉर्ड में मिला.",
+    "emptySummary": "अनुमान देखने के लिए पासवर्ड दर्ज करें."
+  }
+};

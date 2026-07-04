@@ -15,11 +15,11 @@ lang: pt-BR
 
   <div class="passphrase-band" aria-hidden="true"></div>
 
-  <main class="relative z-10 pt-24 pb-20 px-4">
+  <main id="main-content" class="relative z-10 pt-24 pb-20 px-4">
     <div class="max-w-5xl mx-auto">
       <section class="passphrase-stage">
         <div class="passphrase-copy">
-          <img src="/excited.png" alt="Miso parece animado" class="w-20 h-20 mb-5 mascot-glow" />
+          <img width="500" height="500" src="/excited.webp" alt="Miso parece animado" class="w-20 h-20 mb-5 mascot-glow" />
           <p class="passphrase-kicker">Longos segredos legíveis</p>
           <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">Frases-passe</h1>
           <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">Segredos longos e de baixa fricção para lugares onde o comprimento é bem-vindo e memorizabilidade importa mais do que cumprir regras de símbolos exigentes.</p>
@@ -35,25 +35,21 @@ lang: pt-BR
             <span class="passphrase-badge" id="passphraseCountBadge">4 palavras</span>
           </div>
 
-          <button type="button" id="passphrasePanel" class="passphrase-panel">
-            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">Gerando...</output>
+          <button type="button" id="passphrasePanel" class="passphrase-panel" aria-labelledby="passphraseLabel passphraseDisplay" aria-describedby="passphraseHint">
+            <span id="passphraseLabel" class="sr-only">Frase-senha gerada</span>
+            <output id="passphraseDisplay" class="passphrase-display" aria-labelledby="passphraseLabel">Gerando...</output>
             <span id="passphraseHint" class="passphrase-hint">Clique na frase- senha para copiar</span>
           </button>
 
           <div class="passphrase-actions">
             <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">Gerar nova frase- senha</button>
-            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
-              <span class="ui-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              </span>
-              Copiar
-            </button>
           </div>
+          <div id="passphraseStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
           <div class="passphrase-controls" aria-label="Opções da frase- senha">
             <div>
-              <div class="control-label">Palavras</div>
-              <div class="segmented-control" data-control="count">
+              <div class="control-label" id="passphraseWordsLabel">Palavras</div>
+              <div class="segmented-control" data-control="count" role="group" aria-labelledby="passphraseWordsLabel">
                 <button type="button" data-count="4" aria-pressed="true">4</button>
                 <button type="button" data-count="5" aria-pressed="false">5</button>
                 <button type="button" data-count="6" aria-pressed="false">6</button>
@@ -62,8 +58,8 @@ lang: pt-BR
             </div>
 
             <div>
-              <div class="control-label">Separador</div>
-              <div class="segmented-control" data-control="separator">
+              <div class="control-label" id="passphraseSeparatorLabel">Separador</div>
+              <div class="segmented-control" data-control="separator" role="group" aria-labelledby="passphraseSeparatorLabel">
                 <button type="button" data-separator="-" aria-pressed="true">-</button>
                 <button type="button" data-separator=" " aria-pressed="false">espaço</button>
                 <button type="button" data-separator="." aria-pressed="false">.</button>
@@ -71,8 +67,8 @@ lang: pt-BR
             </div>
 
             <div>
-              <div class="control-label">Processo</div>
-              <div class="segmented-control" data-control="case">
+              <div class="control-label" id="passphraseCaseLabel">Processo</div>
+              <div class="segmented-control" data-control="case" role="group" aria-labelledby="passphraseCaseLabel">
                 <button type="button" data-case="lower" aria-pressed="true">mais baixo</button>
                 <button type="button" data-case="title" aria-pressed="false">Título</button>
               </div>

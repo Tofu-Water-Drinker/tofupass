@@ -21,6 +21,32 @@
       position: relative;
       min-height: 100vh;
     }
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 20;
+      transform: translateY(-160%);
+      background: #fff;
+      color: #2d1b4e;
+      border: 3px solid #FFD166;
+      border-radius: 0.6rem;
+      padding: 0.65rem 0.95rem;
+      font-weight: 900;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
+      transition: transform 0.18s ease;
+    }
+    .skip-link:focus,
+    .skip-link:focus-visible {
+      transform: translateY(0);
+      outline: none;
+    }
+    a:focus-visible,
+    button:focus-visible {
+      outline: 4px solid #FFD166;
+      outline-offset: 4px;
+    }
     body.shake { animation: shake 0.45s cubic-bezier(0.36, 0.07, 0.19, 0.97) both; }
     @keyframes shake {
       10%, 90% { transform: translate3d(-2px, 0, 0); }
@@ -463,9 +489,24 @@
       .case-file { font-size: 0.72rem; }
       .mascot-wrap { width: 100px; height: 100px; }
     }
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+      #fireworks,
+      #confetti {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   <canvas id="fireworks" aria-hidden="true"></canvas>
   <canvas id="confetti" aria-hidden="true"></canvas>
 
@@ -490,7 +531,7 @@
   <div class="banner" aria-hidden="true">CHEATER!</div>
 
   <!-- Main card -->
-  <main class="card" role="main">
+  <main id="main-content" class="card" tabindex="-1">
     <div class="keycaps" aria-label="Konami code sequence" role="img">
       <span class="keycap">↑</span>
       <span class="keycap">↑</span>
@@ -506,7 +547,7 @@
 
     <div class="mascot-wrap" aria-hidden="true">
       <span class="cop-hat" aria-hidden="true"></span>
-      <img src="../tofu.png" alt="" onerror="this.outerHTML='<svg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'><rect x=\'15\' y=\'25\' width=\'70\' height=\'60\' rx=\'14\' fill=\'#FFF8F0\' stroke=\'#E8D9C4\' stroke-width=\'2.5\'/><circle cx=\'38\' cy=\'55\' r=\'4\' fill=\'#4A3728\'/><circle cx=\'62\' cy=\'55\' r=\'4\' fill=\'#4A3728\'/><path d=\'M 42 68 Q 50 74 58 68\' stroke=\'#4A3728\' stroke-width=\'2.5\' fill=\'none\' stroke-linecap=\'round\'/><ellipse cx=\'30\' cy=\'65\' rx=\'5\' ry=\'3\' fill=\'#FFB5B5\' opacity=\'0.7\'/><ellipse cx=\'70\' cy=\'65\' rx=\'5\' ry=\'3\' fill=\'#FFB5B5\' opacity=\'0.7\'/><path d=\'M 50 25 Q 45 12 40 18 M 50 25 Q 55 12 60 18\' stroke=\'#6BBF59\' stroke-width=\'3\' fill=\'none\' stroke-linecap=\'round\'/></svg>';" />
+      <img width="512" height="512" src="../tofu.webp" alt="" onerror="this.outerHTML='<svg viewBox=\'0 0 100 100\' xmlns=\'http://www.w3.org/2000/svg\'><rect x=\'15\' y=\'25\' width=\'70\' height=\'60\' rx=\'14\' fill=\'#FFF8F0\' stroke=\'#E8D9C4\' stroke-width=\'2.5\'/><circle cx=\'38\' cy=\'55\' r=\'4\' fill=\'#4A3728\'/><circle cx=\'62\' cy=\'55\' r=\'4\' fill=\'#4A3728\'/><path d=\'M 42 68 Q 50 74 58 68\' stroke=\'#4A3728\' stroke-width=\'2.5\' fill=\'none\' stroke-linecap=\'round\'/><ellipse cx=\'30\' cy=\'65\' rx=\'5\' ry=\'3\' fill=\'#FFB5B5\' opacity=\'0.7\'/><ellipse cx=\'70\' cy=\'65\' rx=\'5\' ry=\'3\' fill=\'#FFB5B5\' opacity=\'0.7\'/><path d=\'M 50 25 Q 45 12 40 18 M 50 25 Q 55 12 60 18\' stroke=\'#6BBF59\' stroke-width=\'3\' fill=\'none\' stroke-linecap=\'round\'/></svg>';" />
     </div>
 
     <span class="kicker" id="kicker">Achievement Unlocked</span>
@@ -555,6 +596,10 @@
     (function () {
       var canvas = document.getElementById('fireworks');
       if (!canvas) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        canvas.hidden = true;
+        return;
+      }
       var ctx = canvas.getContext('2d');
       var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
 
@@ -721,6 +766,10 @@
     (function () {
       var canvas = document.getElementById('confetti');
       if (!canvas) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        canvas.hidden = true;
+        return;
+      }
       var ctx = canvas.getContext('2d');
       var W = 0, H = 0, DPR = Math.min(window.devicePixelRatio || 1, 2);
       function resize() {
@@ -785,6 +834,7 @@
 
     // ── Screen shake ─────────────────────────────────────
     (function () {
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
       document.body.classList.add('shake');
       setTimeout(function () { document.body.classList.remove('shake'); }, 500);
     })();
@@ -854,6 +904,10 @@
     // ── Konami keycap illumination ───────────────────────
     (function () {
       var caps = document.querySelectorAll('.keycap');
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        caps.forEach(function (cap) { cap.classList.add('lit'); });
+        return;
+      }
       caps.forEach(function (cap, i) {
         setTimeout(function () { cap.classList.add('lit'); }, 600 + i * 90);
       });

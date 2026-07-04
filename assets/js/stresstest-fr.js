@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: 'Afficher', hide: 'Masquer', chars: 'caractères', waiting: 'En attente', notYet: 'Pas encore', checkingBreaches: 'Vérification des fuites...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: 'Instantané', compromised: 'Compromis', instantaneous: 'Instantané', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: 'Très faible', weak: 'Faible', moderate: 'Moyen', strong: 'Fort', veryStrong: 'Très fort' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "Afficher",
+    "hide": "Masquer",
+    "chars": "caractères",
+    "waiting": "En attente",
+    "notYet": "Pas encore",
+    "checkingBreaches": "Vérification des fuites...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "Instantané",
+    "compromised": "Compromis",
+    "instantaneous": "Instantané",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "Très faible",
+    "weak": "Faible",
+    "moderate": "Moyen",
+    "strong": "Fort",
+    "veryStrong": "Très fort",
+    "passwordVisible": "Mot de passe visible.",
+    "passwordHidden": "Mot de passe masqué.",
+    "resultsSummary": "Robustesse : {strength}. Temps estimé pour le casser : {time}. Caractères : {length}. Taille du jeu : {pool}. Entropie : {entropy} bits.",
+    "breachedSummary": "Mot de passe compromis. Trouvé dans {count} enregistrements de fuites connues.",
+    "emptySummary": "Saisissez un mot de passe pour voir l’estimation."
+  }
+};

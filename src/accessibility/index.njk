@@ -1,0 +1,63 @@
+---
+layout: base.njk
+title: Accessibility - TofuPass
+description: TofuPass accessibility notes and current support goals.
+pageKey: accessibility
+extraCss:
+  - /assets/css/privacy.css
+backgroundDecor: leaves
+---
+
+  <main id="main-content" class="relative z-10 pt-28 pb-20 px-4">
+    <div class="max-w-2xl mx-auto">
+
+      <div class="text-center mb-12">
+        <h1 class="text-4xl sm:text-5xl font-black text-[#4A3728] dark:text-[#F0E6D8] mb-3"><span class="gradient-text">Accessibility</span></h1>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-base max-w-md mx-auto">TofuPass should be friendly to use in real life, with or without a mouse.</p>
+      </div>
+
+      <section class="section-card rounded-2xl p-7 mb-5" aria-labelledby="accessibilityIntro">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#6BBF59]/10 border border-[#6BBF59]/20 text-[#6BBF59]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path><path d="m9 12 2 2 4-4"></path></svg></span></div>
+          <div>
+            <h2 id="accessibilityIntro" class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">What I am aiming for</h2>
+            <p class="text-[#8B7355]/70 dark:text-[#B8A890]/70 text-sm mt-0.5">Lightweight, private, and easier to use.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">TofuPass is meant to be usable by real people in real situations. That includes people using keyboards, screen readers, zoom, high contrast settings, reduced motion, translation tools, touch devices, and other assistive technology.</p>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed mt-4">I am working toward WCAG 2.2 AA support while keeping TofuPass lightweight, private, and easy to use.</p>
+      </section>
+
+      <section class="section-card rounded-2xl p-7 mb-5" aria-labelledby="careAbout">
+        <div class="flex items-start gap-4 mb-5">
+          <div class="icon-wrap bg-[#5B9FD6]/10 border border-[#5B9FD6]/20 text-[#5B9FD6]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span></div>
+          <div>
+            <h2 id="careAbout" class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">What I care about</h2>
+            <p class="text-[#8B7355]/70 dark:text-[#B8A890]/70 text-sm mt-0.5">Small choices that make the site calmer and clearer.</p>
+          </div>
+        </div>
+        <ul class="no-list">
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>Clear keyboard navigation</span></li>
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>Visible focus states</span></li>
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>Helpful labels for screen readers</span></li>
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>Reduced motion support</span></li>
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>Plain-English explanations</span></li>
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>Readable contrast</span></li>
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>No accounts, no ads, no tracking, and no CAPTCHA</span></li>
+          <li><span class="inline-icon text-[#6BBF59] mt-0.5 text-lg" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12 4 4 10-10"></path></svg></span><span>Password generation that stays in your browser</span></li>
+        </ul>
+      </section>
+
+      <section class="section-card rounded-2xl p-7" aria-labelledby="accessibilityContact">
+        <div class="flex items-start gap-4 mb-4">
+          <div class="icon-wrap bg-[#FFD166]/10 border border-[#FFD166]/25 text-[#E6A800]"><span class="inline-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="12" rx="2"></rect><path d="m5 8 7 5 7-5"></path></svg></span></div>
+          <div>
+            <h2 id="accessibilityContact" class="text-lg font-bold text-[#4A3728] dark:text-[#F0E6D8]">Tell me what gets in the way</h2>
+            <p class="text-[#8B7355]/70 dark:text-[#B8A890]/70 text-sm mt-0.5">Useful reports beat perfect reports.</p>
+          </div>
+        </div>
+        <p class="text-[#8B7355] dark:text-[#B8A890] text-sm leading-relaxed">If something on TofuPass is hard to use, confusing, or inaccessible, please tell me so I can fix it. Email <span class="text-[#6BBF59] font-semibold">hello&lt;at&gt;tofuwater.com</span>.</p>
+      </section>
+
+    </div>
+  </main>

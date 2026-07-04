@@ -21,7 +21,12 @@ const stressLocale = window.tofupassStressLocale || {};
       weak: 'Weak',
       moderate: 'Moderate',
       strong: 'Strong',
-      veryStrong: 'Very Strong'
+      veryStrong: 'Very Strong',
+      passwordVisible: 'Password visible.',
+      passwordHidden: 'Password hidden.',
+      resultsSummary: 'Strength: {strength}. Estimated crack time: {time}. Characters: {length}. Pool size: {pool}. Entropy: {entropy} bits.',
+      breachedSummary: 'Compromised password. Found in {count} known breach records.',
+      emptySummary: 'Enter a password to see the estimate.'
     }, stressLocale.text || {});
 
 const pwdInput = document.getElementById('password');
@@ -33,18 +38,41 @@ const pwdInput = document.getElementById('password');
     const scanningText = document.getElementById('scanning-text');
     const charCount = document.getElementById('char-count');
     const strengthLabel = document.getElementById('strength-label');
+    const meterTrack = document.querySelector('.meter-track');
     const statLength = document.getElementById('stat-length');
     const statPool = document.getElementById('stat-pool');
     const statEntropy = document.getElementById('stat-entropy');
+    const stressStatus = document.getElementById('stressStatus');
 
     let debounceTimer;
+    let announceTimer;
     let isVisible = false;
+
+    function formatText(template, values) {
+      return Object.keys(values).reduce((output, key) => {
+        return output.replace(`{${key}}`, values[key]);
+      }, template);
+    }
+
+    function announce(message, delay = 750) {
+      if (!stressStatus) return;
+      clearTimeout(announceTimer);
+      announceTimer = setTimeout(() => {
+        stressStatus.textContent = '';
+        window.setTimeout(() => {
+          stressStatus.textContent = message;
+        }, 20);
+      }, delay);
+    }
 
     function toggleVisibility() {
       isVisible = !isVisible;
       pwdInput.type = isVisible ? 'text' : 'password';
       document.getElementById('visText').textContent = isVisible ? stressText.hide : stressText.show;
       document.getElementById('visIcon').textContent = isVisible ? '🙈' : '👁';
+      const visButton = document.getElementById('visBtn');
+      if (visButton) visButton.setAttribute('aria-pressed', String(isVisible));
+      announce(isVisible ? stressText.passwordVisible : stressText.passwordHidden, 100);
     }
 
     function getStrengthLabel(score) {
@@ -121,6 +149,11 @@ const pwdInput = document.getElementById('password');
         strengthLabel.textContent = stressText.compromised;
         strengthLabel.style.color = '#FF7A7A';
         strengthLabel.style.background = 'rgba(255,122,122,0.1)';
+        if (meterTrack) {
+          meterTrack.setAttribute('aria-valuenow', '0');
+          meterTrack.setAttribute('aria-valuetext', stressText.compromised);
+        }
+        announce(formatText(stressText.breachedSummary, { count: breachCount.toLocaleString() }));
       } else {
         breachCard.style.display = 'none';
         let timeStr;
@@ -145,6 +178,17 @@ const pwdInput = document.getElementById('password');
         strengthLabel.textContent = sl.text;
         strengthLabel.style.color = sl.color;
         strengthLabel.style.background = sl.bg;
+        if (meterTrack) {
+          meterTrack.setAttribute('aria-valuenow', String(Math.round(score)));
+          meterTrack.setAttribute('aria-valuetext', sl.text);
+        }
+        announce(formatText(stressText.resultsSummary, {
+          strength: sl.text,
+          time: timeStr,
+          length: statLength.textContent,
+          pool: statPool.textContent,
+          entropy: statEntropy.textContent
+        }));
       }
     }
 
@@ -157,11 +201,55 @@ const pwdInput = document.getElementById('password');
       strengthLabel.textContent = stressText.waiting;
       strengthLabel.style.color = '#8B7355';
       strengthLabel.style.background = 'rgba(139,195,74,0.06)';
+      if (meterTrack) {
+        meterTrack.setAttribute('aria-valuenow', '0');
+        meterTrack.setAttribute('aria-valuetext', stressText.waiting);
+      }
       statLength.textContent = '0';
       statPool.textContent = '0';
       statEntropy.textContent = '0';
       charCount.textContent = '';
+      announce(stressText.emptySummary);
+    }
+
+    function closeTooltip(button) {
+      const id = button.getAttribute('aria-controls');
+      const content = id ? document.getElementById(id) : null;
+      button.setAttribute('aria-expanded', 'false');
+      if (content) content.hidden = true;
+    }
+
+    function setupTooltips() {
+      const buttons = Array.from(document.querySelectorAll('.tooltip-toggle[aria-controls]'));
+      buttons.forEach((button) => {
+        const content = document.getElementById(button.getAttribute('aria-controls'));
+        if (!content) return;
+
+        button.addEventListener('click', () => {
+          const isOpen = button.getAttribute('aria-expanded') === 'true';
+          buttons.forEach(closeTooltip);
+          button.setAttribute('aria-expanded', String(!isOpen));
+          content.hidden = isOpen;
+        });
+
+        button.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeTooltip(button);
+            button.focus();
+          }
+        });
+      });
+
+      document.addEventListener('click', (event) => {
+        if (event.target.closest('.tooltip-wrap')) return;
+        buttons.forEach(closeTooltip);
+      });
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') buttons.forEach(closeTooltip);
+      });
     }
 
     pwdInput.addEventListener('input', updateLogic);
     hwSelect.addEventListener('change', updateLogic);
+    setupTooltips();

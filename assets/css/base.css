@@ -6,9 +6,10 @@
   --bg-surface: #ffffff;
   --bg-surface-alt: rgba(255, 248, 240, 0.97);
   --text-primary: #4A3728;
-  --text-secondary: #8B7355;
+  --text-secondary: #80694D;
   --text-tertiary: #6B5744;
   --accent-green: #6BBF59;
+  --focus-ring: #2F7D32;
   --nav-bg: rgba(255, 255, 255, 0.85);
   --nav-border: rgba(255, 255, 255, 0.3);
   --border-subtle: rgba(139, 195, 74, 0.12);
@@ -27,6 +28,7 @@ html.dark {
   --text-secondary: #B8A890;
   --text-tertiary: #C4B5A0;
   --accent-green: #7DD668;
+  --focus-ring: #A8E6CF;
   --nav-bg: rgba(26, 20, 18, 0.9);
   --nav-border: rgba(107, 191, 89, 0.15);
   --border-subtle: rgba(139, 195, 74, 0.15);
@@ -44,13 +46,78 @@ html.dark {
 *::after { box-sizing: border-box; }
 code, pre, .mono { font-family: 'JetBrains Mono', 'Courier New', monospace; }
 body {
-  background: var(--bg);
+  background:
+    radial-gradient(1100px 480px at 85% -8%, rgba(139, 195, 74, 0.07), transparent 70%),
+    radial-gradient(900px 420px at 8% -6%, rgba(255, 209, 102, 0.06), transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
   min-height: 100vh;
   color: var(--text-primary);
   overflow-x: hidden;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 img, svg { max-width: 100%; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+main,
+[id] {
+  scroll-margin-top: 5.25rem;
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 1000;
+  transform: translateY(-150%);
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.72rem 1rem;
+  border-radius: 0.85rem;
+  border: 3px solid var(--focus-ring);
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  box-shadow: 0 12px 30px var(--shadow-strong);
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform 0.18s ease;
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: none;
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--focus-ring) 18%, transparent);
+}
+
+:where(button, input, select, textarea) {
+  font: inherit;
+}
+
+button {
+  touch-action: manipulation;
+}
 
 /* ── Background decorations (container kept for compat, children hidden) ── */
 .bg-deco { display: none; }
@@ -677,4 +744,61 @@ html.dark .theme-icon-sun {
 html.dark .theme-icon-moon {
   transform: translateY(-120%) rotate(-45deg);
   opacity: 0;
+}
+
+.footer-link,
+.footer-social-link,
+.language-option {
+  min-height: 2.5rem;
+}
+
+.footer-social-link {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.footer-support-link {
+  width: auto;
+  min-height: 2.5rem;
+  padding-inline: 0.78rem;
+}
+
+.language-option:focus-visible,
+.nav-links a:focus-visible,
+.footer-link:focus-visible,
+.footer-social-link:focus-visible,
+.cta-btn:focus-visible,
+.theme-toggle:focus-visible,
+.nav-toggle:focus-visible {
+  outline: 3px solid var(--focus-ring);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px color-mix(in srgb, var(--focus-ring) 18%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  .mascot-glow:hover,
+  .cta-btn:hover,
+  .footer-link:hover,
+  a.footer-social-link:hover,
+  .language-button:hover,
+  .language-option:active {
+    transform: none !important;
+  }
+}
+
+@media (forced-colors: active) {
+  .skip-link,
+  :where(a, button, input, select, textarea, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 3px solid Highlight;
+    box-shadow: none;
+  }
 }

@@ -21,7 +21,8 @@ lang: es-MX
   <div class="hero-band" aria-hidden="true"></div>
 
   <!-- GENERATOR (front and center) -->
-  <main class="relative z-10 pt-24 pb-16 px-4">
+  <main id="main-content" class="relative z-10 pt-24 pb-16 px-4">
+    <h1 class="sr-only">{{ title }}</h1>
     <div class="max-w-5xl mx-auto text-center">
       <div class="hero-stage">
 
@@ -31,7 +32,7 @@ lang: es-MX
           <!-- Mascot + tagline -->
           <div class="flex flex-col items-center mb-5">
             <a href="/es/miso/" class="mascot-wrap" aria-label="Conoce a Miso">
-              <img id="generatorMascot" src="/tofu.png" alt="Miso la mascota TofuPass" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
+              <img width="512" height="512" id="generatorMascot" src="/tofu.webp" alt="" aria-hidden="true" class="mascot-squish w-24 h-24 sm:w-28 sm:h-28 mascot-glow" />
               <span id="mascotSparks" class="mascot-sparks" aria-hidden="true">
                 <span class="mascot-spark mascot-spark-1"></span>
                 <span class="mascot-spark mascot-spark-2"></span>
@@ -44,20 +45,21 @@ lang: es-MX
           </div>
           <!-- Password Display -->
           <button type="button" onclick="copyPassword()" id="passwordPanel"
-            class="password-panel w-full px-5 py-5 mb-5 min-h-[72px] flex flex-col items-center justify-center text-center">
-            <p id="passwordDisplay" class="text-2xl sm:text-3xl font-bold text-center text-[#6BBF59] break-all leading-snug">
+            class="password-panel w-full px-5 py-5 mb-5 min-h-[72px] flex flex-col items-center justify-center text-center" aria-labelledby="passwordLabel passwordDisplay" aria-describedby="passwordHint">
+            <span id="passwordLabel" class="sr-only">Contraseña generada</span>
+            <output id="passwordDisplay" class="text-2xl sm:text-3xl font-bold text-center text-[#6BBF59] leading-snug" aria-labelledby="passwordLabel">
               Generando...
-            </p>
+            </output>
             <span id="passwordHint" class="password-hint mt-3 text-[11px] font-bold uppercase tracking-[0.22em]">Haga clic en la contraseña para copiar</span>
           </button>
 
           <!-- Action Buttons -->
           <div class="flex gap-3 flex-col sm:flex-row">
-            <button id="generateBtn" onclick="generateNewPassword()"
+            <button type="button" id="generateBtn" onclick="generateNewPassword()"
               class="cta-btn flex-1 relative z-10 px-6 py-3 rounded-xl font-bold text-base text-white shadow-lg">
               Generar nueva contraseña
             </button>
-            <button id="phoneticBtn" onclick="togglePhoneticGuide()" aria-expanded="false"
+            <button type="button" id="phoneticBtn" onclick="togglePhoneticGuide()" aria-expanded="false"
               class="flex-1 px-6 py-3 rounded-xl font-semibold text-sm transition-all">
               <span class="ui-icon phonetic-label-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24">
@@ -73,11 +75,12 @@ lang: es-MX
         </div>
 
         <!-- LEVEL SELECTOR CARDS -->
-        <div class="firmness-grid grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+        <div id="passwordStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+        <div class="firmness-grid grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4" role="radiogroup" aria-label="Fuerza de la contraseña">
 
         <!-- Soft -->
-        <div class="level-card p-5 text-left"
-          id="card-soft" onclick="selectLevel('soft')">
+        <div class="level-card p-5 text-left active-soft"
+          id="card-soft" onclick="selectLevel('soft')" role="radio" aria-checked="true" tabindex="0">
           <div class="ui-icon level-icon icon-soft" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <path d="M12 12c0-3-2-5-4-5-1.7 0-3 1.3-3 3 0 2 2 4 7 7"></path>
@@ -85,30 +88,30 @@ lang: es-MX
               <circle cx="12" cy="12" r="1.5"></circle>
             </svg>
           </div>
-          <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase mb-1">Soft</div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Más fácil de escribir</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Mejor para usos temporales, desechables o de bajo riesgo.<br/>2 palabras + símbolo + número<br/>Por ejemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">HappyKoala!73</span></p>
+          <div class="flex items-center gap-2 mb-1">
+            <div class="text-xs font-extrabold tracking-widest text-[#FF7A7A] uppercase">Soft</div>
+            <span class="text-xs text-[#FF7A7A] font-bold">Recomendado</span>
+          </div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Para las entregas más fáciles</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Compartir rápido, accesos temporales y todo lo que se lee en voz alta.<br/>2 palabras + símbolo + número<br/>Por ejemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">HappyKoala!73</span></p>
         </div>
 
         <!-- Firm -->
-        <div class="level-card p-5 text-left active-firm"
-          id="card-firm" onclick="selectLevel('firm')">
+        <div class="level-card p-5 text-left"
+          id="card-firm" onclick="selectLevel('firm')" role="radio" aria-checked="false" tabindex="-1">
           <div class="ui-icon level-icon icon-firm" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <path d="M12 3l7 3v5c0 5-3.2 8.4-7 10-3.8-1.6-7-5-7-10V6l7-3z"></path>
             </svg>
           </div>
-          <div class="flex items-center gap-2 mb-1">
-            <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase">Firm</div>
-            <span class="text-xs text-[#6BBF59] font-bold">Recomendado</span>
-          </div>
-          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Entrega predeterminada</div>
-          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Empieza aquí para la mayoría de reinicios, soporte, clase y familia.<br/>3 palabras + símbolo + número<br/>Por ejemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaRiver!73</span></p>
+          <div class="text-xs font-extrabold tracking-widest text-[#6BBF59] uppercase mb-1">Firm</div>
+          <div class="font-extrabold text-[#4A3728] dark:text-[#F0E6D8] text-base mb-1">Mundo real</div>
+          <p class="text-xs text-[#8B7355] dark:text-[#B8A890] leading-relaxed">Más resistencia para cuentas y entregas que permanecen.<br/>3 palabras + símbolo + número<br/>Por ejemplo: <span class="text-[#4A3728] dark:text-[#F0E6D8] font-mono font-bold">DancingKoalaRiver!73</span></p>
         </div>
 
         <!-- Extra Firm -->
         <div class="level-card p-5 text-left"
-          id="card-extra" onclick="selectLevel('extra')">
+          id="card-extra" onclick="selectLevel('extra')" role="radio" aria-checked="false" tabindex="-1">
           <div class="ui-icon level-icon icon-extra" aria-hidden="true">
             <svg viewBox="0 0 24 24">
               <rect x="4" y="5" width="16" height="4" rx="1.5"></rect>
@@ -192,7 +195,7 @@ lang: es-MX
         </svg>
       </div>
 
-      <img src="/excited.png" alt="Miso se ve emocionado" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
+      <img width="500" height="500" src="/excited.webp" alt="Miso se ve emocionado" class="w-20 h-20 mx-auto mb-6 mascot-glow" style="animation: mascotIdle 3s ease-in-out infinite;" />
       <h2 class="text-2xl sm:text-3xl font-black mb-3 text-[#4A3728] dark:text-[#F0E6D8]">¿Ya tienes una contraseña?</h2>
       <p class="text-[#8B7355] dark:text-[#B8A890] text-sm mb-8 max-w-md mx-auto font-medium leading-relaxed">Mira cuánto tardaría en romperse y si aparece en cualquier violación de datos conocida.</p>
       <a href="/es/stresstest/" class="inline-block cta-btn relative z-10 px-8 py-4 rounded-2xl font-bold text-base text-white shadow-xl mb-6">

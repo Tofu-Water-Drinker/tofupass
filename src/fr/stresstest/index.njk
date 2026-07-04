@@ -13,7 +13,7 @@ lang: fr
 
 
   <!-- CONTENT -->
-  <main class="relative z-10 pt-28 pb-20 px-4">
+  <main id="main-content" class="relative z-10 pt-28 pb-20 px-4">
     <div class="max-w-xl mx-auto">
 
       <!-- Header -->
@@ -27,7 +27,7 @@ lang: fr
 
         <!-- Password Input -->
         <div class="mb-6">
-          <label class="block text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest mb-2">Votre mot de passe</label>
+          <label for="password" class="block text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest mb-2">Votre mot de passe</label>
           <input
             id="password"
             type="password"
@@ -37,23 +37,25 @@ lang: fr
             autocapitalize="off"
             spellcheck="false"
             class="pw-input"
+            aria-describedby="passwordHelp char-count"
           />
+          <p id="passwordHelp" class="stress-helper">Analyse dans votre navigateur. TofuPass ne reçoit pas ce mot de passe.</p>
           <div class="flex items-center justify-between mt-2">
-            <button onclick="toggleVisibility()" id="visBtn"
+            <button type="button" onclick="toggleVisibility()" id="visBtn" aria-pressed="false" aria-controls="password"
               class="text-xs text-[#8B7355]/50 dark:text-[#B8A890]/50 hover:text-[#4A3728] dark:hover:text-[#F0E6D8] transition-colors flex items-center gap-1">
-              <span id="visIcon">👁</span> <span id="visText">Afficher</span>
+              <span id="visIcon" aria-hidden="true">👁</span> <span id="visText">Afficher</span>
             </button>
-            <div id="char-count" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40"></div>
+            <div id="char-count" class="text-xs text-[#8B7355]/40 dark:text-[#B8A890]/40" aria-live="polite" aria-atomic="true"></div>
           </div>
         </div>
 
         <!-- Strength Meter -->
         <div class="mb-6">
           <div class="flex items-center justify-between mb-2">
-            <label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest">Résistance</label>
+            <span id="strengthText" class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest">Résistance</span>
             <span id="strength-label" class="strength-label text-[#8B7355]/50 dark:text-[#B8A890]/50 bg-[#6BBF59]/5 dark:bg-[#7DD668]/10">Attendre</span>
           </div>
-          <div class="meter-track">
+          <div class="meter-track" role="meter" aria-labelledby="strengthText" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="En attente">
             <div id="meter-fill"></div>
           </div>
         </div>
@@ -63,8 +65,8 @@ lang: fr
           <div class="flex items-center gap-2 mb-2">
             <label class="text-xs font-bold text-[#8B7355] dark:text-[#B8A890] uppercase tracking-widest" for="hardware">Matériel d'attaque</label>
             <div class="tooltip-wrap">
-              <button class="w-4 h-4 rounded-full bg-[#6BBF59]/10 dark:bg-[#7DD668]/15 text-[#8B7355] dark:text-[#B8A890] text-xs flex items-center justify-center hover:bg-[#6BBF59]/20 dark:hover:bg-[#7DD668]/25 transition-colors">?</button>
-              <div class="tooltip-content">
+              <button type="button" class="tooltip-toggle" aria-expanded="false" aria-controls="hardwareHelp" aria-label="Ouvrir l’explication du matériel d’attaque">?</button>
+              <div id="hardwareHelp" class="tooltip-content" hidden>
                 <strong class="text-[#4A3728] dark:text-[#F0E6D8]">Vitesse d'attaque</strong> représente combien de mots de passe par seconde le matériel peut faire. Les GPU modernes peuvent tester des milliards de hachages par seconde sur des bases de données hors ligne.
               </div>
             </div>
@@ -103,8 +105,8 @@ lang: fr
         <div class="flex items-start gap-3">
           <div class="text-xl mt-0.5">
             <div class="tooltip-wrap">
-              🔑
-              <div class="tooltip-content" style="left: 0; transform: none;">
+              <button type="button" class="tooltip-toggle tooltip-key" aria-expanded="false" aria-controls="breachHelp" aria-label="Ouvrir l’explication de la vérification des fuites">🔑</button>
+              <div id="breachHelp" class="tooltip-content" style="left: 0; transform: none;" hidden>
                 <strong class="text-[#4A3728] dark:text-[#F0E6D8]">k-Anonymité</strong>: Seuls les 5 premiers caractères du hachage SHA-1 de votre mot de passe sont envoyés à Have I Been Pwned. Le hachage complet et votre mot de passe réel ne quittent jamais votre appareil. L'API retourne tous les hashes avec ce préfixe, et la correspondance est faite localement.
               </div>
             </div>
@@ -115,6 +117,7 @@ lang: fr
           </div>
         </div>
       </div>
+      <div id="stressStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
       <!-- Stats Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">

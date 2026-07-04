@@ -6,10 +6,11 @@
   "main": "desktop/main.js",
   "author": "Matthew Johnson / TofuWater",
   "scripts": {
-    "build": "eleventy",
+    "build": "npm run build:css && eleventy && node scripts/minify-assets.js",
+    "build:css": "tailwindcss -c tailwind.config.js -i tailwind.source.css -o assets/css/tailwind.css --minify",
     "build:api-pdf": "electron scripts/render-api-guide-pdf.js",
     "build:offline": "node Offline/build.js",
-    "start": "eleventy --serve",
+    "start": "npm run build:css && eleventy --serve",
     "desktop": "npm run build:offline && electron .",
     "dist": "npm run build:offline && electron-builder --publish never",
     "dist:all": "npm run build:offline && electron-builder --mac dmg --win nsis --linux AppImage",
@@ -75,6 +76,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "electron": "^42.1.0",
-    "electron-builder": "^26.8.1"
+    "electron-builder": "^26.8.1",
+    "esbuild": "^0.28.1",
+    "tailwindcss": "^3.4.19"
   }
 }

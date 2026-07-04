@@ -5,6 +5,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("alert.png");
   eleventyConfig.addPassthroughCopy("excited.png");
   eleventyConfig.addPassthroughCopy("MisoUN.png");
+  eleventyConfig.addPassthroughCopy("tofu.webp");
+  eleventyConfig.addPassthroughCopy("alert.webp");
+  eleventyConfig.addPassthroughCopy("excited.webp");
+  eleventyConfig.addPassthroughCopy("MisoUN.webp");
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("robots.txt");
   eleventyConfig.addPassthroughCopy("sitemap.xml");

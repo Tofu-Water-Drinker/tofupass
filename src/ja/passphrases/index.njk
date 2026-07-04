@@ -15,11 +15,11 @@ lang: ja
 
   <div class="passphrase-band" aria-hidden="true"></div>
 
-  <main class="relative z-10 pt-24 pb-20 px-4">
+  <main id="main-content" class="relative z-10 pt-24 pb-20 px-4">
     <div class="max-w-5xl mx-auto">
       <section class="passphrase-stage">
         <div class="passphrase-copy">
-          <img src="/excited.png" alt="Miso 見 興奮" class="w-20 h-20 mb-5 mascot-glow" />
+          <img width="500" height="500" src="/excited.webp" alt="Miso 見 興奮" class="w-20 h-20 mb-5 mascot-glow" />
           <p class="passphrase-kicker">読みやすい長い秘密</p>
           <h1 class="text-4xl sm:text-5xl font-black mb-4 text-[#4A3728] dark:text-[#F0E6D8]">パスフレーズ</h1>
           <p class="text-[#8B7355] dark:text-[#B8A890] text-base leading-relaxed max-w-md">長さが歓迎され、記憶可能性が会議のfussyの記号の規則よりも重要である場所のための長い、低摩擦の秘密。</p>
@@ -35,25 +35,21 @@ lang: ja
             <span class="passphrase-badge" id="passphraseCountBadge">4 単語</span>
           </div>
 
-          <button type="button" id="passphrasePanel" class="passphrase-panel">
-            <output id="passphraseDisplay" class="passphrase-display" aria-live="polite">生成...</output>
+          <button type="button" id="passphrasePanel" class="passphrase-panel" aria-labelledby="passphraseLabel passphraseDisplay" aria-describedby="passphraseHint">
+            <span id="passphraseLabel" class="sr-only">生成されたパスフレーズ</span>
+            <output id="passphraseDisplay" class="passphrase-display" aria-labelledby="passphraseLabel">生成...</output>
             <span id="passphraseHint" class="passphrase-hint">パスフレーズをクリックしてコピーする</span>
           </button>
 
           <div class="passphrase-actions">
             <button type="button" id="passphraseGenerate" class="cta-btn passphrase-generate">新しいパスフレーズを生成</button>
-            <button type="button" id="passphraseCopy" class="passphrase-copy-btn">
-              <span class="ui-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              </span>
-              コピー
-            </button>
           </div>
+          <div id="passphraseStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
 
           <div class="passphrase-controls" aria-label="パスフレーズオプション">
             <div>
-              <div class="control-label">ワード</div>
-              <div class="segmented-control" data-control="count">
+              <div class="control-label" id="passphraseWordsLabel">ワード</div>
+              <div class="segmented-control" data-control="count" role="group" aria-labelledby="passphraseWordsLabel">
                 <button type="button" data-count="4" aria-pressed="true">4</button>
                 <button type="button" data-count="5" aria-pressed="false">5</button>
                 <button type="button" data-count="6" aria-pressed="false">6</button>
@@ -62,8 +58,8 @@ lang: ja
             </div>
 
             <div>
-              <div class="control-label">セパレーター</div>
-              <div class="segmented-control" data-control="separator">
+              <div class="control-label" id="passphraseSeparatorLabel">セパレーター</div>
+              <div class="segmented-control" data-control="separator" role="group" aria-labelledby="passphraseSeparatorLabel">
                 <button type="button" data-separator="-" aria-pressed="true">-</button>
                 <button type="button" data-separator=" " aria-pressed="false">スペース</button>
                 <button type="button" data-separator="." aria-pressed="false">.</button>
@@ -71,8 +67,8 @@ lang: ja
             </div>
 
             <div>
-              <div class="control-label">ケースケース</div>
-              <div class="segmented-control" data-control="case">
+              <div class="control-label" id="passphraseCaseLabel">ケースケース</div>
+              <div class="segmented-control" data-control="case" role="group" aria-labelledby="passphraseCaseLabel">
                 <button type="button" data-case="lower" aria-pressed="true">ダウンロー</button>
                 <button type="button" data-case="title" aria-pressed="false">タイトル</button>
               </div>

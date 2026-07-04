@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: '显示', hide: '隐藏', chars: '字符', waiting: '等待中', notYet: '尚未', checkingBreaches: '正在检查泄露数据库...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: '瞬间', compromised: '已泄露', instantaneous: '瞬间', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: '很弱', weak: '弱', moderate: '中等', strong: '强', veryStrong: '很强' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "显示",
+    "hide": "隐藏",
+    "chars": "字符",
+    "waiting": "等待中",
+    "notYet": "尚未",
+    "checkingBreaches": "正在检查泄露数据库...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "瞬间",
+    "compromised": "已泄露",
+    "instantaneous": "瞬间",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "很弱",
+    "weak": "弱",
+    "moderate": "中等",
+    "strong": "强",
+    "veryStrong": "很强",
+    "passwordVisible": "密码已显示。",
+    "passwordHidden": "密码已隐藏。",
+    "resultsSummary": "强度：{strength}。预计破解时间：{time}。字符数：{length}。字符池大小：{pool}。熵：{entropy} 位。",
+    "breachedSummary": "密码已泄露。在 {count} 条已知泄露记录中找到。",
+    "emptySummary": "输入密码即可查看估算。"
+  }
+};

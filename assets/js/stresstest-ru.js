@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: 'Показать', hide: 'Скрыть', chars: 'символов', waiting: 'Ожидание', notYet: 'Пока нет', checkingBreaches: 'Проверка баз утечек...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: 'Мгновенно', compromised: 'Скомпрометирован', instantaneous: 'Мгновенно', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: 'Очень слабый', weak: 'Слабый', moderate: 'Средний', strong: 'Сильный', veryStrong: 'Очень сильный' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "Показать",
+    "hide": "Скрыть",
+    "chars": "символов",
+    "waiting": "Ожидание",
+    "notYet": "Пока нет",
+    "checkingBreaches": "Проверка баз утечек...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "Мгновенно",
+    "compromised": "Скомпрометирован",
+    "instantaneous": "Мгновенно",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "Очень слабый",
+    "weak": "Слабый",
+    "moderate": "Средний",
+    "strong": "Сильный",
+    "veryStrong": "Очень сильный",
+    "passwordVisible": "Пароль виден.",
+    "passwordHidden": "Пароль скрыт.",
+    "resultsSummary": "Надежность: {strength}. Оценочное время взлома: {time}. Символов: {length}. Размер набора: {pool}. Энтропия: {entropy} бит.",
+    "breachedSummary": "Скомпрометированный пароль. Найден в {count} известных записях утечек.",
+    "emptySummary": "Введите пароль, чтобы увидеть оценку."
+  }
+};

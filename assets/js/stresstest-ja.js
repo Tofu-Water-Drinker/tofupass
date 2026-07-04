@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: '表示', hide: '隠す', chars: '文字', waiting: '待機中', notYet: 'まだ', checkingBreaches: '漏えいデータベースを確認中...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: '即時', compromised: '漏えい済み', instantaneous: '即時', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: 'とても弱い', weak: '弱い', moderate: '普通', strong: '強い', veryStrong: 'とても強い' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "表示",
+    "hide": "隠す",
+    "chars": "文字",
+    "waiting": "待機中",
+    "notYet": "まだ",
+    "checkingBreaches": "漏えいデータベースを確認中...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "即時",
+    "compromised": "漏えい済み",
+    "instantaneous": "即時",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "とても弱い",
+    "weak": "弱い",
+    "moderate": "普通",
+    "strong": "強い",
+    "veryStrong": "とても強い",
+    "passwordVisible": "パスワードを表示しました。",
+    "passwordHidden": "パスワードを隠しました。",
+    "resultsSummary": "強度: {strength}。推定解読時間: {time}。文字数: {length}。文字種の数: {pool}。エントロピー: {entropy} ビット。",
+    "breachedSummary": "漏えい済みのパスワードです。既知の漏えい記録 {count} 件で見つかりました。",
+    "emptySummary": "推定を見るにはパスワードを入力してください。"
+  }
+};

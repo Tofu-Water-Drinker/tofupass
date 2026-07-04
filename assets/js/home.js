@@ -2,6 +2,9 @@
     const text = Object.assign({
       clickToCopy: 'Click password to copy',
       copied: 'Copied to clipboard',
+      passwordCopied: 'Password copied.',
+      copyFailed: 'Copy failed. Select the password and copy it manually.',
+      passwordGenerated: 'New password generated.',
       emptyPhonetic: 'Generate a password to see a readable phonetic spelling.',
       letter: 'Letter',
       uppercaseLetter: 'Uppercase letter',
@@ -66,7 +69,7 @@
       "I feel great about that one."
     ];
     let currentPassword = "";
-    let currentLevel = 'firm';
+    let currentLevel = 'soft';
     let phoneticMode = 'military';
     let lastFocusedElement = null;
     let mascotBubbleTimeout = null;
@@ -77,6 +80,16 @@
     const angryMascotWindowMs = 2800;
     const angryMascotDurationMs = 2600;
     const angryMascotPhrase = text.angryMascotPhrase;
+    const levels = ['soft', 'firm', 'extra'];
+
+    function announcePasswordStatus(message) {
+      const status = document.getElementById('passwordStatus');
+      if (!status) return;
+      status.textContent = '';
+      window.setTimeout(() => {
+        status.textContent = message;
+      }, 20);
+    }
 
     function getSecureRandomInt(max) {
       if (!Number.isInteger(max) || max <= 0) {
@@ -92,7 +105,7 @@
 
       return buffer[0] % max;
     }
-    function generate(firmness) {
+    function generate(firmness, shouldAnnounce = true) {
       const getRandom = (list) => list[getSecureRandomInt(list.length)];
       const cap = (s) => s.charAt(0).toUpperCase() + s.slice(1);
       const buildPassword = (words) => {
@@ -125,6 +138,7 @@
       passwordDisplay.classList.remove('password-refresh');
       void passwordDisplay.offsetWidth;
       passwordDisplay.textContent = password;
+      fitPasswordDisplay();
       passwordDisplay.classList.add('password-refresh');
       const panel = document.getElementById('passwordPanel');
       const hint = document.getElementById('passwordHint');
@@ -132,6 +146,23 @@
       hint.textContent = text.clickToCopy;
       const drawer = document.getElementById('phoneticDrawer');
       if (drawer && drawer.classList.contains('active')) { syncPasswordEcho(); renderPhoneticGuide(); }
+      if (shouldAnnounce) announcePasswordStatus(text.passwordGenerated);
+    }
+    function fitPasswordDisplay() {
+      // Shrink the font just enough that the password always sits on one line.
+      const display = document.getElementById('passwordDisplay');
+      if (!display) return;
+      display.style.fontSize = '';
+      display.style.letterSpacing = '';
+      display.style.whiteSpace = '';
+      let size = parseFloat(window.getComputedStyle(display).fontSize);
+      while (size > 12 && display.scrollWidth > display.clientWidth) {
+        size -= 1;
+        display.style.fontSize = size + 'px';
+        if (size < 18) display.style.letterSpacing = '0.01em';
+      }
+      // Absolute fallback: wrap rather than clip if it still can't fit.
+      if (display.scrollWidth > display.clientWidth) display.style.whiteSpace = 'normal';
     }
     function generateNewPassword() {
       const button = document.getElementById('generateBtn');
@@ -143,9 +174,11 @@
     }
     function selectLevel(level) {
       currentLevel = level;
-      ['soft','firm','extra'].forEach(l => {
+      levels.forEach(l => {
         const c = document.getElementById('card-' + l);
         c.classList.remove('active-soft','active-firm','active-extra');
+        c.setAttribute('aria-checked', String(l === level));
+        c.setAttribute('tabindex', l === level ? '0' : '-1');
       });
       document.getElementById('card-' + level).classList.add('active-' + level);
       generate(level);
@@ -158,11 +191,16 @@
         var hint = document.getElementById('passwordHint');
         panel.classList.add('copied');
         hint.textContent = text.copied;
+        announcePasswordStatus(text.passwordCopied);
         if (mascotMood !== 'angry' && getSecureRandomInt(10) === 0) celebrateMascot();
         setTimeout(function() {
           hint.textContent = text.clickToCopy;
           panel.classList.remove('copied');
         }, 1800);
+      }
+
+      function onCopyFailure() {
+        announcePasswordStatus(text.copyFailed);
       }
 
       function fallbackCopy(text) {
@@ -174,9 +212,12 @@
         ta.focus();
         ta.select();
         try {
-          document.execCommand('copy');
-          onCopySuccess();
-        } catch (e) { /* ignore */ }
+          if (document.execCommand('copy')) {
+            onCopySuccess();
+          } else {
+            onCopyFailure();
+          }
+        } catch (e) { onCopyFailure(); }
         document.body.removeChild(ta);
       }
 
@@ -353,8 +394,47 @@
       if (drawer.classList.contains('active')) closePhoneticGuide();
       else openPhoneticGuide();
     }
+
+    function setupLevelCards() {
+      const cards = levels
+        .map((level) => document.getElementById('card-' + level))
+        .filter(Boolean);
+
+      cards.forEach((card, index) => {
+        card.addEventListener('keydown', (event) => {
+          const currentIndex = levels.indexOf(currentLevel);
+          let nextIndex = currentIndex;
+
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            selectLevel(levels[index]);
+            return;
+          }
+
+          if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
+            nextIndex = (currentIndex + 1) % levels.length;
+          } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
+            nextIndex = (currentIndex - 1 + levels.length) % levels.length;
+          } else if (event.key === 'Home') {
+            nextIndex = 0;
+          } else if (event.key === 'End') {
+            nextIndex = levels.length - 1;
+          } else {
+            return;
+          }
+
+          event.preventDefault();
+          selectLevel(levels[nextIndex]);
+          const nextCard = document.getElementById('card-' + levels[nextIndex]);
+          if (nextCard) nextCard.focus();
+        });
+      });
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
-      generate('firm');
+      setupLevelCards();
+      generate('soft', false);
+      window.addEventListener('resize', fitPasswordDisplay);
 
       const announcement = document.querySelector('[data-announcement]');
       const announcementClose = document.querySelector('[data-announcement-close]');
@@ -396,9 +476,6 @@
             first.focus();
           }
         }
-      }
-      if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
-        e.preventDefault(); generate(currentLevel);
       }
     });
     document.addEventListener('click', function(e) {

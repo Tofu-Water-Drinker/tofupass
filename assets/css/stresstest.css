@@ -17,7 +17,21 @@
       outline: none;
     }
     .pw-input:focus { border-color: #6BBF59; box-shadow: 0 0 0 3px rgba(107,191,89,0.12); }
-    .pw-input::placeholder { color: var(--text-secondary); font-family: 'Nunito', sans-serif; font-size: 0.95rem; opacity: 0.5; }
+    .pw-input::placeholder { color: var(--text-secondary); font-family: 'Nunito', sans-serif; font-size: 0.95rem; opacity: 0.72; }
+    .stress-helper {
+      margin: 0.45rem 0 0;
+      color: var(--text-secondary);
+      font-size: 0.76rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    #visBtn {
+      min-height: 2rem;
+      min-width: 3.25rem;
+      padding: 0.25rem 0.2rem;
+      border-radius: 0.55rem;
+    }
 
     /* Strength meter */
     .meter-track {
@@ -41,7 +55,7 @@
       background-repeat: no-repeat; background-position: right 14px center;
       padding-right: 36px;
     }
-    .hw-select:focus { border-color: #6BBF59; }
+    .hw-select:focus { border-color: #6BBF59; box-shadow: 0 0 0 3px rgba(107,191,89,0.14); }
     .hw-select option { background: var(--bg-surface); color: var(--text-primary); }
 
     /* Time display */
@@ -60,6 +74,29 @@
 
     /* Tooltip */
     .tooltip-wrap { position: relative; display: inline-block; }
+    .tooltip-toggle {
+      width: 2rem;
+      height: 2rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      border: 2px solid rgba(107, 191, 89, 0.18);
+      background: rgba(107, 191, 89, 0.09);
+      color: var(--text-primary);
+      font-size: 0.82rem;
+      font-weight: 900;
+      line-height: 1;
+      transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+    }
+    .tooltip-toggle:hover,
+    .tooltip-toggle[aria-expanded="true"] {
+      background: rgba(107, 191, 89, 0.16);
+      border-color: rgba(107, 191, 89, 0.34);
+    }
+    .tooltip-key {
+      font-size: 1rem;
+    }
     .tooltip-content {
       display: none; position: absolute; bottom: calc(100% + 10px); left: 50%; transform: translateX(-50%);
       background: var(--bg-surface); border: 2px solid rgba(139,195,74,0.12);
@@ -67,7 +104,7 @@
       line-height: 1.6; color: var(--text-primary); z-index: 50;
       box-shadow: 0 10px 30px rgba(74,55,40,0.08);
     }
-    .tooltip-wrap:hover .tooltip-content { display: block; }
+    .tooltip-content:not([hidden]) { display: block; }
     .tooltip-content::after {
       content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
       border: 6px solid transparent; border-top-color: rgba(139,195,74,0.12);

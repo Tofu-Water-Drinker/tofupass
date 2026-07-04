@@ -1,1 +1,31 @@
-window.tofupassStressLocale = { text: { show: 'Anzeigen', hide: 'Ausblenden', chars: 'Zeichen', waiting: 'Warten', notYet: 'Noch nicht', checkingBreaches: 'Prüfe Leak-Datenbanken...', breached: 'Found in <strong>{count}</strong> breaches.', instantCompromised: 'Sofort', compromised: 'Kompromittiert', instantaneous: 'Sofort', seconds: 's', minutes: 'min', hours: 'h', days: 'd', years: 'y', millionYears: 'million years', eons: 'Eons', veryWeak: 'Sehr schwach', weak: 'Schwach', moderate: 'Mittel', strong: 'Stark', veryStrong: 'Sehr stark' } };
+window.tofupassStressLocale = {
+  "text": {
+    "show": "Anzeigen",
+    "hide": "Ausblenden",
+    "chars": "Zeichen",
+    "waiting": "Warten",
+    "notYet": "Noch nicht",
+    "checkingBreaches": "Prüfe Leak-Datenbanken...",
+    "breached": "Found in <strong>{count}</strong> breaches.",
+    "instantCompromised": "Sofort",
+    "compromised": "Kompromittiert",
+    "instantaneous": "Sofort",
+    "seconds": "s",
+    "minutes": "min",
+    "hours": "h",
+    "days": "d",
+    "years": "y",
+    "millionYears": "million years",
+    "eons": "Eons",
+    "veryWeak": "Sehr schwach",
+    "weak": "Schwach",
+    "moderate": "Mittel",
+    "strong": "Stark",
+    "veryStrong": "Sehr stark",
+    "passwordVisible": "Passwort sichtbar.",
+    "passwordHidden": "Passwort ausgeblendet.",
+    "resultsSummary": "Stärke: {strength}. Geschätzte Knackzeit: {time}. Zeichen: {length}. Zeichenvorrat: {pool}. Entropie: {entropy} Bits.",
+    "breachedSummary": "Kompromittiertes Passwort. In {count} bekannten Leak-Einträgen gefunden.",
+    "emptySummary": "Geben Sie ein Passwort ein, um die Schätzung zu sehen."
+  }
+};
